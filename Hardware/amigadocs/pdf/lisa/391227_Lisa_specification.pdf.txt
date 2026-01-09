@@ -1,0 +1,839 @@
+                               08/15/91
+
+                   INTEGRATED CIRCUIT SPECIFICATION
+
+                               for the
+
+                       LISA DISPLAY CONTROLLER
+                       Commodore P/N 391227-01
+
+            Copyright 1990,1991 COMMODORE ELECTRONICS LTD.
+Information contained herein is the unpublished, confidential and
+trade secret property of Commodore Business Machines, Inc. Use,
+reproduction or disclosure of this information without prior
+explicit written permission of Commodore is strictly prohibited.
+
+
+
+
+                 Revisions:
+08/15/91:        in section 3.3 revised input and tristate leakage
+                 specs, reflecting presence of TTL level shifter
+08/02/91:        general overhaul of timing specs. Reversed pins
+                 24&25 in pin descriptions (2.2)
+07/26/91:        replaced missing pins in section 2.2, fixed
+                 3.4.12,13 timing specs relating to MLD_
+07/23/91:        added footnote to timing section, specifying video
+                 outputs, eliminated CCK driven Dx timings, fixed
+                 WIDE timing spec.
+06/29/91:        added sheet behind cover which addresses changes
+                 to the current revision.
+06/13/91:        corrected 3.4.12-
+                 15(SCLK),3.4.20(WIDE),3.4.28(video)
+06/07/91:        removed functional definition already included in
+                 AA spec, corrected desription of ECSENA
+06/03/91:        SCLK,MLD ,WIDE now all spec'd for 2TTL/5OpF
+05/08/91:        modified MLD_,WIDB parametric specs.
+05/03/91:        cleaned up parametric specs,clarified ECSENA
+04/30/91:        revised description of LISAID
+11/14/90:        moved FMODE to 1FC, added scan-doubling
+08/29/90:        PINS 24 & 25 REVERSED IN PINOUT
+List of changes to Ri:
+
+
+1.)   FMODE now resides at $1FC not $076 as before.
+2.)   Data bus drivers now disabled on D(15:0)
+3.)   internal data bus configuration logic changes state 1/2 bus
+      cycle later(should be transparent to ATE)
+4.)   RDRAM bit moved to BPLCON2 from BPLCON3 (may have already
+      been done to ROA ???)
+5 )   Sprite scan-double mod: FMODE(15) (SSCAN2) when high causes
+      SH1O bit compare of sprite position to be disabled, in other
+      words a "don't care .
+6.)   BRDRBLNK logic fixed: BLANK=OLDCBD+BRDRBLNK*DSPN~
+7.)   Newtek fix - hardwired end of blanking occurs 140nS earlier,
+      at $05D .
+8.)   OSPRMx bits are now used whenever attached sprites are
+      active. Choice between OSPRMx and ESPRMx formerly depended
+      on attached sprite data content data content.
+1.1 GENERAL DESCRIPTION
+This Specification describes the requirements for Lisa, a Display
+Controller Integrated Circuit (I.C.) . offering considerable
+advantages to our Amiga product line, both new features and
+higher performance.
+The basic function of Lisa is to accept bitplane data and sprite
+data from chip ram, and serialize and prioritize them to provide
+a set of signals suitable for input to a video DAC. Lisa also
+provides mouse/joystick circuitry and genlock support.
+New features for Lisa (as compared to ECS Denise) :
+s      32 bit wide data bus supports input of 32-bit wide
+       bitplane data and allows doubling of memory bandwidth.
+       Additional doubling of bandwidth can be achieved by using
+       Fast Page Mode Ram. The same bandwidth enhancements are
+       available for sprites. Also the maximum number of
+       bitplanes useable in all modes was increased to eight
+       (8).
+s      The Color Palette has been expanded to 256 colors deep
+       and 25 bits wide(8 RED,8 GREEN,8 BLUE,1 GENLOCK). This
+       permits display of 256 simultaneous colors in all
+       resolutions. A palette of 16,777,220 colors is available
+       in all resolutions.
+s      28Mhz clock input allows for cleaner definition of HIRES
+       and SHRES pixels. ALICE's clock generator is synchronized
+       by means of LISA's 14MHz and SCLK outputs. Genlock XCLK
+       and XCLKEN* pins have been eliminated (external MUX is
+       now required) .
+s      A new register bit allows sprites to appear in the screen
+       border regions.
+s      A bitplane mask field of 8 bits allows an address offset
+       into the color palette. Two 4-bit mask fields do the same
+       for odd and even sprites.
+s      In Dual Playfield modes, 2 4~bitplane playfields are now
+       possible in all resolutions.
+s      Two extra high-order playfield scroll bits allow seamless
+       scrolling of up to 64 bit wide bitplanes in all
+       resolutions. Resolution of bitplane scroll, display
+       window, and horizontal sprite position has been improved
+       to 3Sns in all resolutions.
+s      A new 8 bitplane HAM mode has been created, 6 for colors
+       and 2 for control bits. Both HAM modes are available in
+       all resolutions (not just LORES as before).
+s      A RST input pin has been added, which resets all the
+       bits contained in registers that were new for ECS or
+       LISA:
+       BPLCON3, BPLCON4, CLXCON2, DIWHIGH, FMODE.
+s      Hardware Scan Doubling support has been added(modified
+       SPRxPOS SH1O bit definition).
+LISA Chip Elements:   256 Color Registers
+                      8 64-bit Bitplane Shift Registers
+                      Bitplane Priority and Control Registers
+                      Color Select Decoder
+                      Priority Control Logic
+                      8 Sprite Serial Lines
+                      8 64-bit Sprite Shift Registers (2 planes
+                                    wide)
+                      16 bit Serial Mouse/Joystick/Configuration
+                      Port
+                      Sprite Position Compare Logic
+                      Sprite Horizontal Control Registers
+                      Collision Detect Logic.
+                      Collision Control Register.
+                      Collision Storage Register.
+                      Buffer - Data Bus.
+                      Buffer - Register Address Decode.
+                      Full 25 Bit Digital Video Port
+1.2 PIN CONFIGURATION
+/--------------------------------------------------------------\
+|73 72 71 70 69 68 67 66 65 64 63 62 61 60 59 58 57 56 55 54 53|
+|74                                                          52|
+|75                                                          51|
+|76                                                          50|
+|77                                                          49|
+|78                                                          48|
+|79                                                          47|
+|80                                                          46|
+|81                                                          45|
+|82                                                          44|
+|83                                                          43|
+|84                       4203                               42|
+|01                                                          41|
+|02                                                          40|
+|03                                                          39|
+|04                                                          38|
+|05                                                          37|
+|06                                                          36|
+|07                                                          35|
+|08                                                          34|
+|09                                                          33|
+|10                                                          32|
+\11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31/
+ \------------------------------------------------------------/
+
+ PIN   NAME   TYPE   PIN NAME TYPE   PIN   NAME TYPE   PIN NAME   TYPE
+  1    VSS     G     22 SCLK   VO     43   C28OUT VO   64 D26      IO
+  2    D6      IO    23 C14O   VO     44   G4     VO   65 D25      IO
+  3    D5      IO    24 RST_   I      45   GS     VO   66 D24      IO
+  4    D4      IO    25 C28M   I      46   G6     VO   67 D23      IO
+  5    D3      IO    26 SOG    VO     47   G7     VO   68 D22      IO
+  6    D2      IO    27 BLANK VO      48   RO     VO   69 D21      IO
+  7    Dl      IO    28 ZD     VO     49   R1     VO   70 D20      IO
+  8    DO      IO    29 BC     VO     50   R2     VO   71 D19      IO
+  9    CAS_    I     30 VDD    P      51   R3     VO   72 D18      IO
+ 10    CCK     I     31 B1     VO     52   R4     VO   73 D17      IO
+ 11    WIDE    DO    32 B2     VO     53   VSS    G    74 D16      IO
+ 12    RGA8    I     33 VSS    G      54   RS     VO   75 DlS      IO
+ 13    RGA7    I     34 B3     VO     55   R6     VO   76 D14      IO
+ 14    RGA6    I     35 B4     VO     56   VDD    P    77 D13      IO
+ 15    RGA5    I     36 B5     VO     57   R7     VO   78 D12      IO
+ 16    RGA4    I     37 B6     VO     58   BRST_ VO    79 D11      IO
+ 17    RGA3    I     38 B7     VO     59   D31    IO   80 D1O      IO
+ 18    RGA2    I     39 GO     VO     60   D30    IO   81 D9       IO
+ 19    RGAl    I     40 Gl     VO     61   D29    IO   82 D8       IO
+ 20    MDAT    I     41 G2     VO     62   D28    IO   83 VDD      P
+ 21    MLD_    DO    42 G3     VO     63   D27    IO   84 D7       IO
+2.1     REGISTER MAP
+register        addr    R/W function
+BPL1DAT 110     W       Bit plane data parallel to serial
+BPL2 DAT 112            conversion (16/32 bits) . These registers
+BPL3DAT 114             receive the DMA data fetched from RAM
+BPL4 DAT 116            by the bitplane address pointers. They
+BPLSDAT 118             may also be written by either the
+BPL6DAT 11A             copper or the CPU. They act as a 8 word
+BPL7DAT 11C             parallel to serial buffer for up to 8
+BPL8DAT 11E             bitplanes. The parallel to serial
+                        conversion is triggered whenever BP1 is
+                        written, indicating the transmission of
+                        all bitplanes for the next 16/32/64 pixels.
+                        The MSB is output first and is
+                        therefore always on the left.
+BPLCON0 100     W       Bitplane control reg. (misc. bits)
+BPLCON1 102     W       Bitplane control reg. (horiz scroll)
+BPLCON2 104     W       Bitplane control reg. (video priority)
+BPLCON3 106     W       Bitplane control reg. (new features)
+BPLCON4 l0C     W       Bitplane control reg. (mask bits)
+These 5 registers control the operation of of the bitplanes and
+various aspects of the display as explained below:
+ BIT#    BPLCON0    BPLCON1   BPLCON2    BPLCON3       BPLCON4
+  15     HIRES      PF2H7       x        BANK2=0       BPLAM7=0
+  14     BPU2       PF2H6     ZDBPSEL2   BANK1=0       BPLAM6=0
+  13     BPU1       PF2H1     ZDBPSEL1   BANK0=0       BPLAM5=0
+  12     BPU0       PF2H0     ZDBPSEL0   PF2OF2=0      BPLAM4=0
+  11     HAM        PF1H7     ZDBPEN     PF2OF1=1      BPLAM3=0
+  10     DPF        PF1H6     ZDCTEN     PF2OF0=1      BPLAM2=0
+  09     COLOR      PF1H1     KILLEHB    LOCT=0        BPLAM1=0
+  08     GAUD       PF1H0     RD RAM 0     x           BPLAM0=0
+  07      y         PF2HS     SOGEN=0    SPRES1=0      ESPRM7=0
+  06     SHRES      PF2H4     PF2PRI     SPRES0=0      ESPRM6=0
+  OS     BYPASS=0   PF2H3     PF2P2      BRDRBLNK= 0   ESPRMS=0
+  04     BPU3=0     PF2H2     PF2P1      BRDNTRAN= 0   ESPRM4=1
+  03      y         PF1H5     PF2P0        x           OSPRM7=0
+  02      y         PF1H4     PF1P2      ZDCLKEN=0     OSPRM6=0
+  01      y         PF1H3     PF1P1      BRDSPRT=0     OSPRMS=0
+  00     ECSENA=0   PF1H2     PF1P0      EXTBLKEN= 0   OSPRM4=1
+         x= don't care; but drive to 0 for upward compatibility'
+         y= register bits contained in ALICE, not defined here.
+         =0/=1 bit values initialized by RST_ pin going low
+         HIRES=High resolution mode (70nS pixel width)
+         BPUx=Bit plane use code 0000-1000 (NONE thru 8 inclusive)
+         HAM=Hold and Modify mode, now using either 6 or 8
+            bitplanes. New mode is automatically invoked when
+            BPU=1000.
+         DPF=Double playfield (PF1=odd bitplanes PF2=even
+            bitplanes), now available in all resolutions.
+         COLOR=enables Color Burst output signal GAUD=Genlock
+            audio enable. This level appears on the
+         ZD pin on Lisa during all blanking intervals,unless ZDCLK
+            is set.
+         SHRES= Super-hi-res mode (35nS pixel width)
+            BYPASS=bitplanes are scrolled and prioritized
+            normally, but bypass color table and 8 bit wide data
+            appear on R(7:0).
+         ECSENA= When low(default), the following bits in BPLCON3
+            are
+            disabled: BRDRBLNK,BRDNTRAN, ZDCLKEN,BRDSPRT, and
+            EXTBLKEN. These S bits can always be set by writing to
+        BPLCON3, however there effects are inhibited until
+        ECSENA goes high. This allows rapid context switching
+        between pre-ECS viewports and new ones.
+    PF2Hx= Playfield 2 horizontal scroll code, x= 7-0
+    PFlHx= Playfield 1 horizontal scroll code, x= 7-0
+       where PFxH0=LSB=35nS= 1 SHRES pixel (bits have been
+       renamed, old PFxHO now PFxH1,etc.) . Note that scroll
+       range has been quadrupled to allow for wider (64 bits)
+       bitplanes.
+    ZDBPSELx= 3 bit field which selects which bitplane is to
+        be used for ZD when ZDBPEN is set;000 selects BP1,111
+        selects BP8,etc.
+    ZDBPEN= causes ZD pin to mirror bitplane selected by
+        ZDBPSELx bits. This does not disable the ZD mode
+        defined by ZDCTEN, but rather is “ored" with it.
+    ZDCTEN= causes ZD pin to mirror bit #15 of the active
+        entry in the high color table.
+    KILLEHB= disables ExtraHalfBrite mode. If BPU=0110,HAM=0,
+        DPF=0, and KILLEHB=0 then ExtraHalfBrite mode is
+        defined; this dictates that whenever BP6=1 the color
+        selected by the other S bitplanes is halved in
+        intensity.
+    RDRAM= causes Color Table accesses to be a read instead
+        of a write .
+    SOGEN= causes SOG (sync on green) output pin to go high
+    PF2PRI= gives Playfield 2 priority over Playfield 1.
+    PF2Px= Playfield 2 priority code (with resp. to sprites)
+    PF1Px= Playfield 1 priority code (with resp. to sprites)
+        A priority of 0 places the playfield in front of all
+        the sprites; a priority of 4 places it behind them
+        all.
+        BANKx= selects 1 of 8 Color Palette banks, x= 0-2
+    PF2OF2,1,0= determines playfield color table offset when
+        Playfield 2 has priority in dual playfield mode:
+     PF2OF2       Affected Playfield   Offset
+                      Address Bit
+     2   1   0   8 7 6 5 4 3 2 1       (dec)
+     0   0   0   - - - - - - - 1        none
+     0   0   1   - - - - - - 1 -          2
+     0   1   0   - - - - - 1 - -          4
+     0   1   1   - - - - 1 - - -          8
+     1   0   0   - - - 1 - - - -          16
+     1   0   1   - - 1 - - - - -          32
+     1   1   0   - 1 - - - - - -          64
+     1   1   1   1 - - - - - - -         128
+
+LOCT dictates that subsequent color palette values will be
+   written to a second 12-bit color palette,constituting the
+   RGB low-order bits. Writes to the normal high-order color
+   palette write to the low-order color palette as well.
+SPRES1,0= determines resolution of all 8 sprites. ECS defaults
+   are 140n5,140n5,70n5 for LORES,HIRES,and SHRES playfields,
+   respectively .
+         SPRES1 SPRES0    SPRITE RESOLUTION
+           0     0          ECS defaults
+           0     1          LORES(140nS)
+           1     0          HIRES(70nS)
+           1     1          SHRES(35nS)
+BRDRBLNK= "border area " is blackened instead of displaying
+     color (0) .
+  BRDNTRAN= "border area " is non-transparent (ZD pin is low
+     when border is displayed)
+  ZDCLKEN= ZD pin outputs a 14MHZ clock whose falling edge
+  coincides with high-res(7MHZ) video data. This bit when set
+     disables all other ZD pin functions.
+  BRDRSPRT= enables sprites outside the display window.
+  EXTBLKEN= causes Blank output to be programmable instead of
+     reflecting internal fixed decodes.
+  BPLAMx= 8 bit field is XOR'd with the 8 bit bitplane color
+     address, thereby altering the color address sent to the
+     color table.
+  ESPRMx= 4 bit field provides the 4 high order color table
+     address bits for even sprites (SPRO, SPR2, SPR4, SPR6)
+  (default=0001)
+  OSPRMx= 4 bit field provides the 4 high order color table
+     address bits for odd sprites (SPR1, SPR3,SPRS, SPR7)
+  (default=0001)
+CLXCON    098   W       Collision Control This register controls
+                        which Bitplanes are included (enabled) in
+                        collision detection, and their required
+                        state if included. It also controls the
+                        individual inclusion of odd numbered
+                        sprites in the collision detection, by
+                        logically OR-ing them with their
+                        corresponding even numbered sprite .
+BIT#   FUNCTION      DESCRIPTION
+15      ENSP7 ENable Sprite 7 (ORed with Sprite 6)
+14      ENSPS ENable Sprite 5 (ORed with Sprite 4)
+13      ENSP3 ENable Sprite 3 (ORed with Sprite 2)
+12      ENSP1 ENable Sprite 1 (ORed with Sprite 0)
+11      ENBP6 ENable Bit Plane 6 (Match required for collision)
+10      ENBPS ENable Bit Plane 5 (Match required for collision)
+09      ENBP4 ENable Bit Plane 4 (Match required for collision)
+08      ENBP3 ENable Bit Plane 3 (Match required for collision)
+07      ENBP2 ENable Bit Plane 2 (Match required for collision)
+06      ENBP1 ENable Bit Plane 1 (Match required for collision)
+O5      MVBP6 Match Value for Bit Plane 6 collision
+04      MVBP5 Match Value for Bit Plane 5 collision
+03      MVBP4 Match Value for Bit Plane 4 collision
+02      MVBP3 Match Value for Bit Plane 3 collision
+01      MVBP2 Match Value for Bit Plane 2 collision
+00      MVBP1 Match Value for Bit Plane 1 collision
+
+CLXCON2   10E   W       Extended Collision Control. This register
+                        controls when bitplanes 7&8 are included
+                        in collision detection, and their required
+                        state if included.
+                        **** BITS INITIALIZED BY RESET ****
+BIT# FUNCTION       DESCRIPTION
+15-08    -          unused
+07     ENBP8        ENable Bit Plane 8 (Match req'd for collision)
+06     ENBP7        ENable Bit Plane 7 (Match req'd for collision)
+05-02    -          unused
+01     MVBP8        Match Value for Bit Plane 8 collision
+00     MVBP7        Match Value for Bit Plane 7 collision
+          NOTE: Disabled Bit Planes cannot prevent collisions.
+                Therefore if all Bit Planes are disabled,
+                collisions will be continuous, regardless of the
+                match values.
+CLXDAT    00E     R      Collision Data Register (Read and Clear)
+
+                This address reads (and clears) the collision
+                detection register. The bit assignments are below
+                .
+          NOTE: Playfield 1 includes all odd numbered enabled
+                bitplanes (BP1,BP3,BPS,BP7)
+                Playfield 2 includes all even numbered enabled
+                bitplanes (BP2,BP4,BP6,BP8)
+BIT #            COLLISIONS REGISTERED
+15        unused
+14        Sprite4 (or 5) to Sprite 6(or 7)
+13        Sprite2 (or 3) to Sprite 6(or 7)
+12        Sprite2 (or 3) to Sprite 4(or 5)
+11        Sprite0 (or 1) to Sprite 6(or 7)
+10        Sprite0 (or 1) to Sprite 4(or 5)
+09        Sprite0 (or 1) to Sprite 2(or 3)
+08        Playfield 2 to Sprite 6 (or 7)
+07        Playfield 2 to Sprite 4 (or 5)
+06        Playfield 2 to Sprite 2 (or 3)
+05        Playfield 2 to Sprite 0 (or 1)
+04        Playfield 1 to Sprite 6 (or 7)
+03        Playfield 1 to Sprite 4 (or S)
+02        Playfield 1 to Sprite 2 (or 3)
+01        Playfield 1 to Sprite 0 (or 1)
+00        Playfield 1 to Playfield 2
+COLORxx 180-1BE W COLOR table xx
+                  There are thirty-two (32) of these registers
+                  (xx=00~31) and together with the banking bits they
+                  address the 256 locations in the Color Palette.
+                  There are actually 2 sets of color registers,
+                  selection of which is controlled by the LOCT
+                  register bit. When LOCT=0, the 4 MSB of
+                  RED,GREEEN, and BLUE video data are selected along
+                  with the ZD bit for Genlocks. The low-order set of
+                  registers is also selected simultaneously, so that
+                  the 4 bit values are automatically extended to 8
+                  bits. This provides compatibility with old
+                  software. If the full range of palette values are
+                  desired, then LOCT can be set high and independent
+                  values for the 4 LSB of RED,GREEN, and BLUE can be
+                  written. The low-order color registers do not
+                  contain a transparency(T) bit. The Table below
+                  shows the color register bit usage.
+BIT *     15,14,13,12,   11,10,09,08,   07,06,05,04,   03,02,01,00
+LOCT=0     T X X X       R7 R6 RS R4    G7 G6 GS G4    B7 B6 B5 B4
+LOCT=1     X X X X       R3 R2 R1 R0    G3 G2 G1 GO    B3 B2 B1 HO
+
+T = TRANSPARENCY       R = RED   G = GREEN    B = BLUE    X = UNUSED
+
+T of COLOROC thru COLOR31 sets ZD pin HI when color is selected
+in all video modes.
+DIWHICH     1E4   W    Display Window upper bits - start/stop
+                  This is an added register for the ECS chips,
+                  allowing larger display window start & stop
+                  ranges. DIWSTART/DIWSTOP set bit#13, while bits
+                  #12,11,5,4,3
+                     are reset. If DIWHIGH is written subsequent to
+                     DIWSTART and DIWSTOP then these horrizontal bit
+                     values are overridden.
+Bit# 15    14       13 12 11       10       09   08   07   06 OS 04       03   02    01
+Use x      x        H1O H1 H0       y        y    y    x   H10 H1 HO      y     y     y
+                      (stop)                                (start)
+        Don't care bits (x) should always be set to 0 to maintain
+        upwards compatibility. ALICE bits (y) are defined in a
+        separate document. Hi values define a 70nS increment and
+        HO values define a 35nS increment.
+DIWSTOP 090          W           Display Window Stop horiz. bits
+DIWSTRT 08E          W           Display Window Start horiz. bits
+
+        These registers control the Display Window size &
+        position, by locating the beginning & end of the
+        horizontal display line .
+
+        Bit# 15 14 13 12 11 iO 09 08 07 06 OS 04 03 02 01 00
+        Use     y    y   y   y    y     y    y   y    H9 H8 H7 H6 HS H4 H3 H2
+        Don't care bits (x) should always be set to 0 to maintain
+        upwards compatibility. ALICE bits (y) are defined in a
+        separate document. In all 3 display window registers,
+        horizontal bit positions have been renamed to reflect
+        HIRES pixel increments, eg. what used to be called HO is
+        now referred to as H2.
+
+FMODE     1FC        W           Fetch Mode
+
+        This register controls the fetch mechanism for sprites and
+        bitplanes
+          BIT#       FUNCTION                DESCRIPTION
+          15         SSCAN2                   global enable for sprite scan-
+                                              doubling
+          14          BSCAN2                 enables use of 2nd P/F modulus on
+                                               an alternate line basis to support
+                                               bitplane scan doubling.
+          13-04         x                     unused)
+          03          SPAGEM                 Sprite Page Mode (double CAS)
+          02          SPR32                  Sprite 32 Bit Wide Mode
+          01          BPAGEM                 Bitplane Page Mode (double CAS)
+          00          BPL32                  Bitplane 32 Bit Wide Mode
+
+BPAGEM BPL32         Bitplane Fetch Increment              Memory Cycle        Bus Width
+  0       0          by 2 bytes(as before)                 normal CAS               16
+  0       1          by 4 bytes                            normal CAS               32
+  1       0          by 4 bytes                            double CAS               16
+  1       1          by 8 bytes                            double CAS               32
+
+SPAGEM SPR32          Sprite Fetch Increment               Memory Cycle    Bus Width
+  0     0             by 2 bytes (as before)               normal CAS        16
+  0     1             by 4 bytes                           normal CAS        32
+  1     0             by 4 bytes                           double CAS        16
+  1     1             by 8 bytes                           double CAS        32
+HBSTOP    1C6     W     Horizontal STOP position
+HBSTRT    1C4     W     Horizontal STaRT position
+                 Bits 7-0 contain the stop and start positions,
+                 respectively, for programmed horizontal blanking
+                 in 280nS increments. Bits 10-8 provide a fine
+                 position control in 35nS increments.
+         BIT#    FUNCTION        DESCRIPTION
+         15-11   x               (unused)
+         iO      H2              140nS
+         09      Hi              70nS
+         08      HO              35nS
+         07      H10             35840nS
+         06      H9              17920nS
+         OS      H8              8960nS
+         04      H7              4480nS
+         03      H6              2240nS
+         02      H5              1120nS
+         01      H4              560nS
+         00      H3              280nS
+JOY0DAT 00A      R      JOYstick/mouse 0 DATa
+JOYlDAT 00C      R      JOYstick-mouse 1 DATa
+
+                 These addresses each read a pair of 8 bit mouse
+                 counters. 0=left controller pair, 1=right
+                 controller pair (4 counters total) . Each counter
+                 is clocked by 2 of 8 signals from the MDAT serial
+                 stream. Bits 0 and 1 of each counter reflect the
+                 state of the 2 associated mouse controller port
+                 pins,allowing these pins to double as joystick
+                 switch inputs. These 8 signals are the first 8
+                 signals shifted into LISA, preceding the optional
+                 LISAID configuration bits.
+Mouse counter usage:
+Bit #   15 14 13 12 11 10 09 08       07 06 OS 04 03 02 01 00
+0DAT    Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0       X7,X6,X5,X4,X3,X2,X1,X0
+1DAT    Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0       X7,X6,X5,X4,X3,X2,X1,X0
+
+                 The following Table shows the Mouse/Joystick port
+                 pin usage. The pins (and their functions) are
+                 sampled once every 16 bus cycles, and shifted into
+                 the LISA chip during the clock times shown in the
+                 Table. This Table is for reference only, and
+                 should not be needed by the programmer.
+                 NOTE: The joystick functions are all “active low"
+                 at the port pins.
+CONN     JOYSTICK        MOUSE         PIN      SERIAL SAMPLE
+PIN      FUNCTION     FUNCTION         NAME    POSITION ON
+L1       FORWARD*        Y             M0V        15   CCK hi
+L3       LEFT*           YQ            M0V        14   CCK io
+L2       BACK*           X             M0H        13   CCK hi
+L4       RIGHT*          XQ            M0H        12   CCK io
+R1       FORWARD*        Y             M1V        11   CCK hi
+R3       LEFT*           YQ            M1V        10   CCK io
+R2       BACK*           X             M1H         9   CCK hi
+R4       RIGHT*          XQ            M1H         8   CCK io
+                 NOTE: serial positions listed are MSB first
+                 Mouse Counters.     The LEFT and RIGHT joystick
+                 functions (active high) are directly available on
+                 the Y1 and Xl bits of each counter. In order to
+                 recreate the FORWARD and BACK joystick functions;
+                 however,   it is necessary to (exclusive OR) the
+                 lower two bits of each counter.          This is
+                 illustrated in the following table.
+To Detect        Read these Counter Bits
+Forward          Y1 xor YO (BIT#09 xor BIT#08)
+Left             Y1
+Back             X1 xor XQ (BIT#01 xor BIT#00)
+Right            X1
+
+JOYTEST 036      W       Write to all 4 Joystick-mouse counters       at
+                         once. Mouse-counter write test data.
+BIT#      15,14,13,12,11,10,09,08       07,06,05,04,03,02,01,00
+0DAT      Y7,Y6,Y5,Y4,Y3,Y2,xx xx       X7,X6,X5,X4,X3,X2,xx,xx
+1DAT      Y7,Y6,Y5,Y4,Y3,Y2,xx xx       X7,X6,X5,X4,X3,X2,xx xx
+
+LISAID 07C R         Lisa/Denise revision level (formerly DENISEID)
+
+                 The 8 LSB of this register identify the chip
+                 revision. The early Denise revision levels do not
+                 have this register, so whatever was previously
+                 written to the data bus on the previous access
+                 will still be there during this read cycle. ECS
+                 DENISE(8373Rx) returns hex (FC) while prototype
+                 8369Rx returned hex (FE). LISA returns hex (F8).
+                 The 8 low-order bits bits are encoded as follows:
+          BIT#   Description
+
+           7-4   Lisa/Denise/ECS Denise Revision level(decrement to
+                 bump revision level, hex F represents 0th rev.
+                 level) .
+           3     maintain as a 1 for future generation
+           2     When low indicates AA feature set(LISA)
+           1     When low indicates ECS feature set (LISA or ECS
+                 Denise)
+           0     maintain as a 1 for future generation
+                 The 8 MSB are loaded by the 8 MSB shifted into the
+                 mouse serial port. These are intended for
+                 configuration jumpers on the mother board.
+SPRxPOS 140      W       Sprite x Vert~Horiz start position data.
+        148
+        150
+        158
+        160
+        168
+        170
+        178
+BIT #      SYM           FUNCTION
+15-08      y
+07-00     SH1O-SH3       Sprite horizontal start value. Low-order 3
+                         bits are in SPRxCTL register below. If SSCAN2
+                         bit in FMODE is set, then disable SH1O
+                         horizontal coincidence detect. This bitis
+                         then free to be used by ALICE as an
+                         individual scan double enable.
+SPRxCTL 142     W      Sprite x Vert stop position and control data.
+        14A            These two (2) registers work together as
+        152            position, size and feature Sprite control
+        15A            registers. They are usually loaded by the
+        162            Sprite DMA channel, during horizontal blanking,
+        16A            however they may be loaded by either processor
+        172            at any time (writing this address disables
+        17A            Sprite horizontal
+                       comparator circuit) .
+BIT #     SYM          FUNCTION
+
+15-08     y
+07        ATT          Sprite attach control bit (odd Sprites only)
+06-05     y
+04        SH1          Start horiz. value, 70nS sprite position bit
+                       Start
+03        SH0          horiz. value, 35nS sprite position bit
+02-01     y
+00        SH2          Start horiz. value, 140nS sprite position   bit.
+SPRxDATA    144     W Sprite x image data register A.
+            14C
+            154
+            15C
+            164
+            16C
+            174
+            17C
+SPRxDATB    146  W Sprite x image data register B.
+            14E    These 2 registers buffer the Sprite image
+            156    data. They are usually loaded by either
+            15E    processor at any time. When horizontal
+            166     coincidence occurs the buffers are dumped
+            16E    into shift registers and serially
+            176    output to the display, MSB is the first pixel
+            17E    output. NOTE: Writing to the DATA buffer
+                   enables (arms) the sprite. Writing to
+                   the SPRxCTL register disables the Sprite.
+                   If enabled, data in the DATA and DATB
+                   buffers will be output whenever the beam
+                   counter equals the Sprite horizontal
+                   position value in the SPRxPOS register.
+STREQU     038 S   Strobe for horiz. reset with VB and EQU.
+STRVBL     03A S   Strobe for horiz. reset with VB
+STRHOR     03C S   Strobe for horiz. reset
+STRLONG    03E S   Strobe for long horiz. line(228 CC)
+                    One of the first 3 strobe addresses above is
+                    placed on the RGA bus during the first refresh
+                    time slot. The STRLONG is used during the second
+                    refresh time slot of every other line, to
+                    identify lines with long counts (228). There are
+                    4 refresh time slots, and any not used for strobes
+                    will leave a null (FF) address on the RGA bus.
+VHPOSW   02C       W Write vert./horiz. beam position
+Bit #    15 14 13 12 11 10 09 08            07   06   05 04 03 02 01 00
+USE      y     y    y   y   y   y   y   y    H10 H9 H8 H7 H6 H5 H4 H3
+
+H10 thru H3 allow the programmer to move the horizontal beam
+position in 280ns increments. This is primarily used for test
+purposes.
+2.2     PIN DESCRIPTION
+PIN  PIN             PIN
+NAME NUMBER          TYPE    SIGNAL DESCRIPTION
+
+D0       59-82       IO     DATA BUS (0:31) - 32 bit bidirectional
+         84                 system databus.If BPWIDE and SPWIDE register
+D31      2-8                bits are low, only D31~D16 are used.
+
+RGA1     12-19 I            RGA Address inputs - sampled on falling edge
+of
+                            CCK .
+RGA8
+WIDE     11          O      Goes HI when 32 bit bus is required.
+
+MDAT     20       I         Mouse data input - 16 bits of serial data is
+MLD      21       O         accepted here from an external shift register
+                            running at 3.57MHz. Data transitions should
+SCLK     22       O         occur at rising edge of CCK.
+                            Mouse data shift/load - signals external
+                            shift register to reload. Signal is low
+                            during low half of CCK every 16 cycles. MLD
+                            and MDAT signals are compatible with use of a
+                            'LS166.
+                            ALICE clock synchonization pulse - falling
+                            edge of this signal causes ALICE CCK (Cl) to
+                            be synchronized with LISA's internal CCK.
+                            This allows jitter-free timing between
+                            ALICE's HSYNC/VSYNC and LISA's analog video.
+
+C14O     23      CO         14MHz clock output - sent to ALICE to
+                            generate her internal clock phases
+                            (C1,C2,C3,C4), as well as C7M,CDAC_, and CCK
+RST_     24       I         System Reset - when low,bits in all registers
+                            new for ECS or LISA are cleared: BPLCON3,
+                            BPLCON4,FMODE, CLXCON2,DIWHIGH.
+                            Also LISA's clock generator is reset to a
+                            known state.
+C28M     25      CI         Master clock for LISA. All internal video
+                            timebases as well as external video timing
+                            are derived from this clock. ALICE is
+                            synchronized to this clock as well(via C140).
+SOG      26      O          Sync-On-Green - goes high when SOG bit in
+                            BPLCON3 is set. For proper operation, ALICE
+                            should send a positive composite sync.
+BLANK    27      O          Blanking - controls blanking pedastal and
+                            inhibition of RGB guns during blanking
+                            intervals. NOTE: RGB outputs are free to
+                            wiggle during blanking interval defined by
+                            this pin allowing binking of analog RGB while
+                            non-standard display devices are being used.
+ZD       28      O          Zero-Detect - active high signal used to
+                            control transparency in an external genlock
+                            device.
+R0-R7   48-52        Red,green, and blue gun outputs,
+        54-55        respectively. R7,G7, and B7 are the MSB.
+        57
+G0-G7   39-42
+        44-47
+B0-B7   29
+        31-32
+        34-38
+
+C28OUT 43       O    Buffered 28MHz clock out used to synchronize
+                     digital video output stream.
+
+BRST    58      O    Burst Window output - occurs at the beginning
+                     of NTSC horizontal lines to qualify an
+                     externally generated chroma clock. This
+                     window is inhibited during equalization lines
+
+CAS__   9       I    Data Bus Strobe - when in fast-page mode,
+                     data bus is latched during both rising edges
+                     of CAS_ resulting in two data fetches per
+                     memory cycle.
+
+CCK     10      CI   Color Clock input - 3.57MHz clock used by
+LISA
+                     to strobe RGA addresses, non-page-mode data,
+                     and mouse serial input. This clock is
+                     considered to be asynchronous to the video
+                      stream.
+VSS     1       P    Ground - these should be tied to a common
+        33           ground plane.
+        53
+VDD     30           +5V Supply - these should be tied to the main
+        56           PCB power plane.
+        83
+3.1    ABSOLUTE MAXIMUM RATINGS
+      Stresses above those listed may cause permanent damage to the
+      circuit. Functional operation of the device at these or any
+      conditions other than those indicated in the operating
+      conditions of this specification is not implied. Exposure to
+      the maximum ratings for extended periods may adversely affect
+      device reliability.
+      characteristic                   min              max    units
+  3.1.1 ambient temperature under bias -25              +125   deg. c.
+  3.1.2 storage temperature            -65              +150   deg. c.
+  3.1.3 applied supply voltage         -0.5             +7.0   volts
+  3.1.4 applied output voltage         -0.5             +5.5   volts
+  3.1.5 applied input voltage          -2.0             +7.0   volts
+  3.1.6 power dissipation                -               1.5   watt
+  3.1.7 output current(1 pin at a time)                 -100   +100 mA
+3.2 OPERATING CONDITIONS
+      All electrical characteristics are specified over the entire
+      range of the operating conditions unless specifically noted.
+      All voltages are referenced to Vss = 0.0V.
+ Condition                                 Min  Max         Units
+3.2.1 Supply voltage (Vcc)                 4.75 5.25         volts
+3.2.2 Free air temperature                  0    70          Deg. C.
+
+3.3 INTERFACE CHARACTERISTICS
+     Characteristic        Symbol   Min    Max      units   Conditions   Note
+3.3.1 Input high level       Vih    2.0    Vcc+0 .3 volts                (I, IO)
+3.3.2 Input low level        Vil    -0.3   0.8      volts                (I,IO)
+3.3.3 Data Out high level    Voh    .7 *Vcc         volts   Ioh = -40uA (IO,DO)
+3.3.4 Data Out low level     Vol    0.4             volts   Iol = +800uA(IO,DO)
+3.3.5 Video Out high level   Voh    . 7*Vcc         volts   loh = -20uA (VO)
+3.3.6 Video Out low level    Vol    0.4             volts   Iol = +400uA(VO)
+3.3.5 Input current          Iin    0.25   1.0      mA      Vin=1.4V     (I)
+3.3.6 Tristate Out current   Iio    0.25   1.0      mA      Vio=1 . 4V (IO)
+                                                            (Deselected)
+3.3.7 Supply current         Icc           400     mA       Outputs open (P)
+                                                            (Vcc = 5.25V)
+
+
+        (I) input pins CAS_,CCK,RGAx,MDAT,RS_T_,C28M
+        (IO) I/O pins Dx
+        (DO) output pins WIDE,MLD_,SCLK
+        (VO) output pins SOG,BLANK,ZD,Rx,Gx,Bx,C28OUT,BRST_,C140
+        (P) supply pins VDD
+3.4 SWITCHING CHARACTERISTICS
+   Switching characteristics are specified for input waveforms
+   switching between 0.4V low level and 2.4V high level with
+   10%~90% rise and fall times of 5ns. Time measurements of
+   transitions into high impedance are referenced to Vol+0.2V
+   and Voh-0.2V levels.
+     Characteristic    Symbol    Min    Typ   Max   Unit   Notes Load
+
+3.4.1 C28M period      tpC28M    30      35 10K     nSec
+3.4.2 C28M width lo/hi twC28M    15     17.5 --     nSec
+3.4.3 C28M rise/fall   trC28M    --     --   5      nSec
+                       tpC28O
+3.4.4 C28OUT period    twC28O    30     35   --     nSec          1
+3.4.5 C280UT wid lo/hi trC28O    15     17.5 --     nSec          1
+3.4.6 C280UT rise/fall trC28O    --     --   5      nSec          1
+3.4.7 C28OUT prop. Dly tdC28O    0      -    20     nSec          1
+      (reference: C28M rise)
+3.4.8 C14O period      tpCl4O    60     70    --    nSec          1
+3.4.9 C14O width lo/hi twC14O    30     35    --    nSec          1
+3.4.10 C14O rise/fall trC14O     --     --     5    nSec          1
+3.4.11 C14O prop.delay tdC14O    0      --    20    nSec          1
+      (reference: C14M fall)
+3.4.12 CCK period      tpCCK     240    280   10K   nSec (tpC28M)*8
+3.4.13 CCK rise/fall trCCK       --     --    10    nSec
+3.4.14 CAS period      tpCAS     240    280   10K   nSec
+3.4.15 CAS_ rise/fall trCAS_     --     --    10    nSec
+3.4.16 SCLK period     tpSCLK    240    280   --    nSec          3
+3.4.17 SCLK width hi   twSCLK    65     70    --    nSec          3
+3.4.18 SCLK rise/fall trSCLK     --     --    5     nSec          3
+3.4.19 SCLK prop.delay tdSCLK    0      --    20    nSec          3
+      (reference: C14O fall)
+3.4.20 MLD period      tpMLD_    3840   4480 --     nSec          3
+3.4.21 MLD width io    twMLD_    240    280 --      nSec          3
+3.4.22 MLD rise/fall   trMLD_    --     --   5      nSec          3
+3.4.23 MLD prop. delay tdMLD_    0      --   25     nSec          3
+      (reference: C14O rise)
+3.4.24 MDAT setup time tsMDAT    15     --    --    nSec
+      (reference: C14O rise)
+3.4.25 MDAT hold time thMDAT     15     --    --    nSec
+      (reference: C14O rise)
+3.4.26 RGA setup       tsRGAx    30     --    --    nSec
+      (reference: CCK fall)
+3.4.27 RGA hold        thRGAx    30     --    --    nSec
+      (reference: CCK fall)
+3.4.28 WIDE prop.delay tdWIDE    0      --    30    nSec          3
+      (reference: CCK rise)
+3.4.29 Dx out dly      tdDxo     0      --    90    nSec          2
+      (reference: CCK fall)
+3.4.30 Dx out hold     thDxo     10     --    --    nSec          2
+      (reference: CCK rise)
+3.4.31 Dx inp setup    tsDxi     20     --    --    nSec
+      (reference: CAS_rise)
+3.4.32 Dx inp hold     thDxi     20     --    --    nSec
+      (reference: CAS_rise)
+3.4.33 RST_ setup      tsRST__   10     --    --    nSec
+      (reference: C28M fall)
+3.4.34 RST_ hold       thRST__   10     --    --    nSec
+      (reference: C28M fall)
+3.4.35 video out skew tdVID      -10    0     10    nSec Rx,Gx,Bx 1
+      (reference: C280 fall)                        BLANK,ZD,BRST
+3.4.36 SOG prop. delay tdS_OG    --     --    280   nSec          1
+      (reference: CCK rise)
+   Loading: 1.   3OpF + 1 LS_TTL     (1 x 4OOuA   source)
+            2.   1OOpF+ 2 LS TTL     (2 x 4OOuA   source)
+            3.   50pF + 2 LS TTL     (2 x 4OOuA   source)
+4.1 MARKING
+   Parts shall be marked with Commodore part number,
+   manufacturers identification and EIA data code. Pin 1 shall
+   be identified.
+4.2 PACKAGING
+   The circuit shall be packaged in a standard plastic or
+   ceramic 84 pin leaded chip carrier.
+

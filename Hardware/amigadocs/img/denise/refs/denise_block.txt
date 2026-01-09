@@ -1,0 +1,11 @@
+FlG. 9.
+
+A=
+
+(8)x2
+SPRITE BUS
+
+SPRITE
+SELECT
+(SERIALIZER)
+

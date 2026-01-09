@@ -1,22 +1,28 @@
 /*
  * SPDX-License-Identifier: MIT
  * 
- * AGNUS chip register definitions for Amiga
- * Based on AGNUS specification document and Amiga Hardware Reference Manual
- * Addresses: $DFF000-$DFF1FF (shared with other custom chips)
+ * Enhanced AGNUS chip register definitions for Amiga
+ * Based on Amiga Hardware Reference Manual and AGNUS specification (390544)
+ * Includes all registers from the official specification document
  */
 
-#ifndef AGNUS_H
-#define AGNUS_H
+#ifndef ENHANCED_AGNUS_H
+#define ENHANCED_AGNUS_H
 
 #include "amiga_custom_chips.h"
 
-// AGNUS base address is shared with other custom chips at 0xDFF000
+// AGNUS base address is 0xDFF000
+#ifndef AGNUS_BASE
 #define AGNUS_BASE 0xDFF000
+#endif
 
-// DMA Control Registers (shared with PAULA)
+// DMA Control Registers
+#ifndef DMACONR
 #define DMACONR  (AGNUS_BASE + 0x002)  // Read DMA control / blitter status
+#endif
+#ifndef DMACON
 #define DMACON   (AGNUS_BASE + 0x096)  // Write DMA control (set/clear)
+#endif
 
 // Beam Position Registers
 #define VPOSR    (AGNUS_BASE + 0x004)  // Read vertical MSB + frame flop
@@ -36,8 +42,8 @@
 #define COP1LCL  (AGNUS_BASE + 0x082)  // Copper list 1 pointer low
 #define COP2LCH  (AGNUS_BASE + 0x084)  // Copper list 2 pointer high
 #define COP2LCL  (AGNUS_BASE + 0x086)  // Copper list 2 pointer low
-#define COPJMP1  (AGNUS_BASE + 0x088)  // Copper restart at first location
-#define COPJMP2  (AGNUS_BASE + 0x08A)  // Copper restart at second location
+#define COPJMP1  (AGNUS_BASE + 0x088)  // Copper restart 1
+#define COPJMP2  (AGNUS_BASE + 0x08A)  // Copper restart 2
 #define COPINS   (AGNUS_BASE + 0x08C)  // Copper instruction fetch identify
 
 // Bitplane Pointers (DMA)
@@ -53,21 +59,16 @@
 #define BPL5PTL  (AGNUS_BASE + 0x0F2)  // Bitplane 5 pointer low
 #define BPL6PTH  (AGNUS_BASE + 0x0F4)  // Bitplane 6 pointer high
 #define BPL6PTL  (AGNUS_BASE + 0x0F6)  // Bitplane 6 pointer low
-#define BPL7PTH  (AGNUS_BASE + 0x0F8)  // Bitplane 7 pointer high (AGA)
-#define BPL7PTL  (AGNUS_BASE + 0x0FA)  // Bitplane 7 pointer low (AGA)
-#define BPL8PTH  (AGNUS_BASE + 0x0FC)  // Bitplane 8 pointer high (AGA)
-#define BPL8PTL  (AGNUS_BASE + 0x0FE)  // Bitplane 8 pointer low (AGA)
 
 // Bitplane Modulo Registers
-#define BPL1MOD  (AGNUS_BASE + 0x108)  // Bitplane 1 modulo (odd planes)
-#define BPL2MOD  (AGNUS_BASE + 0x10A)  // Bitplane 2 modulo (even planes)
+#define BPL1MOD  (AGNUS_BASE + 0x108)  // Bitplane 1 modulo
+#define BPL2MOD  (AGNUS_BASE + 0x10A)  // Bitplane 2 modulo
 
 // Bitplane Control Registers
-#define BPLCON0  (AGNUS_BASE + 0x100)  // Bitplane control 0 (miscellaneous control bits)
-#define BPLCON1  (AGNUS_BASE + 0x102)  // Bitplane control 1 (horizontal scroll)
-#define BPLCON2  (AGNUS_BASE + 0x104)  // Bitplane control 2 (priority control)
-#define BPLCON3  (AGNUS_BASE + 0x106)  // Bitplane control 3 (enhanced features - ECS)
-#define BPLCON4  (AGNUS_BASE + 0x10C)  // Bitplane control 4 (enhanced features - AGA)
+#define BPLCON0  (AGNUS_BASE + 0x100)  // Bitplane control 0
+#define BPLCON1  (AGNUS_BASE + 0x102)  // Bitplane control 1
+#define BPLCON2  (AGNUS_BASE + 0x104)  // Bitplane control 2
+#define BPLCON3  (AGNUS_BASE + 0x106)  // Bitplane control 3
 
 // Bitplane Data Registers
 #define BPL1DAT  (AGNUS_BASE + 0x110)  // Bitplane 1 data
@@ -76,8 +77,6 @@
 #define BPL4DAT  (AGNUS_BASE + 0x116)  // Bitplane 4 data
 #define BPL5DAT  (AGNUS_BASE + 0x118)  // Bitplane 5 data
 #define BPL6DAT  (AGNUS_BASE + 0x11A)  // Bitplane 6 data
-#define BPL7DAT  (AGNUS_BASE + 0x11C)  // Bitplane 7 data (AGA)
-#define BPL8DAT  (AGNUS_BASE + 0x11E)  // Bitplane 8 data (AGA)
 
 // ECS Beam / Timing Registers
 #define HTOTAL   (AGNUS_BASE + 0x1C0)  // Horizontal line count (ECS)
@@ -92,9 +91,9 @@
 #define HSSTRT   (AGNUS_BASE + 0x1DE)  // HSYNC start (ECS)
 #define VSSTRT   (AGNUS_BASE + 0x1E0)  // VSYNC start (ECS)
 #define HCENTER  (AGNUS_BASE + 0x1E2)  // Horizontal position for Vsync on interlace (ECS)
-#define DIWHIGH  (AGNUS_BASE + 0x1E4)  // Display window upper bits for start/stop (ECS)
+#define DIWHIGH  (AGNUS_BASE + 0x1E4)  // Display window upper bits (ECS)
 
-// UHRES (Ultra High Resolution) Registers (ECS/AGA)
+// UHRES (Ultra High Resolution) Registers
 #define SPRHSTRT (AGNUS_BASE + 0x1D0)  // UHRES sprite vertical start
 #define SPRHSTOP (AGNUS_BASE + 0x1D2)  // UHRES sprite vertical stop
 #define BPLHSTRT (AGNUS_BASE + 0x1D4)  // UHRES bitplane vertical start
@@ -104,14 +103,14 @@
 #define BPLHMOD  (AGNUS_BASE + 0x1E6)  // UHRES bitplane modulo
 #define SPRHPTH  (AGNUS_BASE + 0x1E8)  // UHRES sprite pointer high
 #define SPRHPTL  (AGNUS_BASE + 0x1EA)  // UHRES sprite pointer low
-#define BPLHPTH  (AGNUS_BASE + 0x1EC)  // UHRES bitplane pointer high
-#define BPLHPTL  (AGNUS_BASE + 0x1EE)  // UHRES bitplane pointer low
+#define BPLHPTH  (AGNUS_BASE + 0x1EC)  // VRAM (UHRES) bitplane pointer high
+#define BPLHPTL  (AGNUS_BASE + 0x1EE)  // VRAM (UHRES) bitplane pointer low
 
 // Blitter Registers
 #define BLTCON0  (AGNUS_BASE + 0x040)  // Blitter control 0
 #define BLTCON1  (AGNUS_BASE + 0x042)  // Blitter control 1
-#define BLTAFWM  (AGNUS_BASE + 0x044)  // Blitter first word mask for source A
-#define BLTALWM  (AGNUS_BASE + 0x046)  // Blitter last word mask for source A
+#define BLTAFWM  (AGNUS_BASE + 0x044)  // First word mask (source A)
+#define BLTALWM  (AGNUS_BASE + 0x046)  // Last word mask (source A)
 
 // Blitter Pointer Registers
 #define BLTCPTH  (AGNUS_BASE + 0x048)  // Source C pointer high
@@ -161,10 +160,29 @@
 #define SPR7PTH  (AGNUS_BASE + 0x13C)  // Sprite 7 pointer high
 #define SPR7PTL  (AGNUS_BASE + 0x13E)  // Sprite 7 pointer low
 
+// UHRES Bitplane and Sprite Registers (AGA)
+#define BPLHPTH  (AGNUS_BASE + 0x1EC)  // UHRES bitplane pointer high
+#define BPLHPTL  (AGNUS_BASE + 0x1EE)  // UHRES bitplane pointer low
+#define SPRHPTH  (AGNUS_BASE + 0x1E8)  // UHRES sprite pointer high
+#define SPRHPTL  (AGNUS_BASE + 0x1EA)  // UHRES sprite pointer low
+#define BPLHMOD  (AGNUS_BASE + 0x1E6)  // UHRES bitplane modulo
+#define SPRHSTRT (AGNUS_BASE + 0x1D0)  // UHRES sprite vertical start
+#define SPRHSTOP (AGNUS_BASE + 0x1D2)  // UHRES sprite vertical stop
+#define BPLHSTRT (AGNUS_BASE + 0x1D4)  // UHRES bitplane vertical start
+#define BPLHSTOP (AGNUS_BASE + 0x1D6)  // UHRES bitplane vertical stop
+#define HHPOSW   (AGNUS_BASE + 0x1D8)  // DUAL mode hires H beam counter write
+#define HHPOSR   (AGNUS_BASE + 0x1DA)  // DUAL mode hires H beam counter read
+
 // Additional AGA registers
-#define BPLHDAT  (AGNUS_BASE + 0x07A)  // UHRES bitplane data identifier
-#define SPRHDAT  (AGNUS_BASE + 0x078)  // UHRES sprite data identifier
+#define BPLHDT   (AGNUS_BASE + 0x07A)  // UHRES bitplane data identifier
+#define SPRHDT   (AGNUS_BASE + 0x078)  // UHRES sprite data identifier
+#define BPLHPTR  (AGNUS_BASE + 0x1EC)  // UHRES bitplane pointer (high)
+#define SPRHPTR  (AGNUS_BASE + 0x1E8)  // UHRES sprite pointer (high)
+
+// Fetch Mode Register (AGA)
 #define FMODE    (AGNUS_BASE + 0x1FC)  // Fetch mode register
+
+// No Operation Register
 #define NOOP     (AGNUS_BASE + 0x1FE)  // No operation/NULL (Copper NOP instruction)
 
 // Refresh
@@ -223,12 +241,12 @@
 #define BPLCON0_GAUD      0x0100  // Genlock audio enable
 #define BPLCON0_UHRES     0x0080  // Ultra high resolution
 #define BPLCON0_SHRES     0x0040  // Super high resolution
-#define BPLCON0_RESERVED  0x0020  // Reserved
+#define BPLCON0_BPEN      0x0020  // Bitplane enable
 #define BPLCON0_LACE      0x0010  // Interlace enable
 #define BPLCON0_LPEN      0x0008  // Light pen enable
 #define BPLCON0_ESY       0x0004  // External sync enable
 #define BPLCON0_EVB       0x0002  // Even field/vertical blank bit
-#define BPLCON0_DEN       0x0001  // Display enable
+#define BPLCON0_DIS       0x0001  // Display disable
 
 // BPLCON1 register bits (horizontal scroll)
 #define BPLCON1_HSCROLL_MASK 0x000F  // Horizontal scroll mask (4 bits)
@@ -243,7 +261,7 @@
 #define BPLCON2_PF1P1     0x02      // Playfield 1 priority bit 1
 #define BPLCON2_PF1P0     0x01      // Playfield 1 priority bit 0
 
-// BPLCON3 register bits (ECS features)
+// BPLCON3 register bits (enhanced features)
 #define BPLCON3_EXTBLKEN  0x80      // External blank enable
 #define BPLCON3_BRDNTRAN  0x40      // Border not transparent
 #define BPLCON3_BRDBLNK   0x20      // Border blank
@@ -252,16 +270,6 @@
 #define BPLCON3_PIXE1     0x04      // Pixel clock enable bit 1
 #define BPLCON3_PIXE0     0x02      // Pixel clock enable bit 0
 #define BPLCON3_COLORON   0x01      // Color on
-
-// BPLCON4 register bits (AGA features)
-#define BPLCON4_SPOV0     0x0001    // Sprite pointer override bit 0
-#define BPLCON4_SPOV1     0x0002    // Sprite pointer override bit 1
-#define BPLCON4_SPOV2     0x0004    // Sprite pointer override bit 2
-#define BPLCON4_SPOV3     0x0008    // Sprite pointer override bit 3
-#define BPLCON4_BPOV0     0x0010    // Bitplane pointer override bit 0
-#define BPLCON4_BPOV1     0x0020    // Bitplane pointer override bit 1
-#define BPLCON4_BPOV2     0x0040    // Bitplane pointer override bit 2
-#define BPLCON4_BPOV3     0x0080    // Bitplane pointer override bit 3
 
 // BEAMCON0 register bits (ECS)
 #define BEAMCON0_VARVBLANK 0x8000  // Variable VBLANK enable
@@ -278,8 +286,8 @@
 #define BEAMCON0_HSYE      0x0010  // HSYNC output enable
 #define BEAMCON0_VSYE      0x0008  // VSYNC output enable
 #define BEAMCON0_BLKE      0x0004  // Blank output enable
-#define BEAMCON0_DIS       0x0002  // Display disable
-#define BEAMCON0_PAL       0x0001  // PAL mode
+#define BEAMCON0_DIS      0x0002   // Display disable
+#define BEAMCON0_PAL      0x0001   // PAL mode
 
 // Blitter Control 0 (BLTCON0) bits
 #define BLTCON0_USEA      0x0001  // Use A channel
@@ -321,24 +329,44 @@
 // Lightpen enable bit in BPLCON0
 #define BPLCON0_LPEN      0x0008  // Light pen enable
 
-// Agnus revision levels
-#define AGNUS_REVISION_OCS    0xF8    // Original Chip Set revision
-#define AGNUS_REVISION_ECS    0xF8    // Enhanced Chip Set revision  
-#define AGNUS_REVISION_AGA    0xFB    // Advanced Graphics Architecture revision
+// Bitplane data register addresses for AGA (8 bitplanes)
+#define BPL7PTH  (AGNUS_BASE + 0x0F8)  // Bitplane 7 pointer high (AGA)
+#define BPL7PTL  (AGNUS_BASE + 0x0FA)  // Bitplane 7 pointer low (AGA)
+#define BPL8PTH  (AGNUS_BASE + 0x0FC)  // Bitplane 8 pointer high (AGA)
+#define BPL8PTL  (AGNUS_BASE + 0x0FE)  // Bitplane 8 pointer low (AGA)
+#define BPL7DAT  (AGNUS_BASE + 0x11C)  // Bitplane 7 data (AGA)
+#define BPL8DAT  (AGNUS_BASE + 0x11E)  // Bitplane 8 data (AGA)
 
-// Function prototypes for AGNUS register access
-extern uint16_t agnus_read_register(uint32_t addr);
-extern void agnus_write_register(uint32_t addr, uint16_t value);
-extern void agnus_set_dma_control(uint16_t control);
-extern uint16_t agnus_get_dma_status(void);
-extern void agnus_set_display_window(uint16_t start, uint16_t stop);
-extern void agnus_set_data_fetch(uint16_t start, uint16_t stop);
-extern void agnus_set_bitplane_modulo(uint16_t odd_mod, uint16_t even_mod);
-extern void agnus_set_blitter_control(uint16_t con0, uint16_t con1);
-extern void agnus_set_copper_pointers(uint32_t ptr1, uint32_t ptr2);
-extern void agnus_set_sprite_pointers(uint32_t *pointers, int count);
-extern void agnus_set_bitplane_pointers(uint32_t *pointers, int count);
-extern void agnus_set_beam_counter_control(uint16_t control);
-extern void agnus_set_timing_registers(uint16_t htotal, uint16_t vtotal);
+// Additional AGA registers
+#define BPLCON4  (AGNUS_BASE + 0x10C)  // Bitplane control 4 (AGA)
+#define CLXCON2  (AGNUS_BASE + 0x10E)  // Extended collision control (AGA)
 
-#endif // AGNUS_H
+// BPLCON4 register bits (AGA)
+#define BPLCON4_SPOV0     0x0001  // Sprite pointer override bit 0
+#define BPLCON4_SPOV1     0x0002  // Sprite pointer override bit 1
+#define BPLCON4_SPOV2     0x0004  // Sprite pointer override bit 2
+#define BPLCON4_SPOV3     0x0008  // Sprite pointer override bit 3
+#define BPLCON4_BPOV0     0x0010  // Bitplane pointer override bit 0
+#define BPLCON4_BPOV1     0x0020  // Bitplane pointer override bit 1
+#define BPLCON4_BPOV2     0x0040  // Bitplane pointer override bit 2
+#define BPLCON4_BPOV3     0x0080  // Bitplane pointer override bit 3
+
+// FMODE register bits (AGA)
+#define FMODE_BURST       0x8000  // Fast page mode burst enable
+#define FMODE_ESM         0x4000  // Extended shift mode
+#define FMODE_ECS         0x2000  // ECS compatibility mode
+#define FMODE_ERSY        0x1000  // External resync
+#define FMODE_TEN         0x0800  // Timer enable
+#define FMODE_LATE        0x0400  // Late address timing
+#define FMODE_INVSE       0x0200  // Invert serial clock enable
+#define FMODE_INVSO       0x0100  // Invert serial clock out
+#define FMODE_THREE        0x0080  // Three voice mode
+#define FMODE_SCH0         0x0040  // Serial clock high bit 0
+#define FMODE_SCH1         0x0020  // Serial clock high bit 1
+#define FMODE_SCH2         0x0010  // Serial clock high bit 2
+#define FMODE_SCH3         0x0008  // Serial clock high bit 3
+#define FMODE_SCH4         0x0004  // Serial clock high bit 4
+#define FMODE_SCH5         0x0002  // Serial clock high bit 5
+#define FMODE_SCH6         0x0001  // Serial clock high bit 6
+
+#endif // ENHANCED_AGNUS_H

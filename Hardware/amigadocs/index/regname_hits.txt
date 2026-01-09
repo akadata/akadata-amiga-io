@@ -1,0 +1,501 @@
+_text/index/dff_index.csv:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9557:BPLCON0,($DFF100)
+_text/index/dff_index.csv:16:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,10103:,ADKCON
+_text/index/dff_index.csv:17:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,10104:,ADKCONR
+_text/index/dff_index.csv:35:_text/index/dff_hits.txt,9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0,($DFF100)
+_text/index/dff_index.csv:42:_text/index/dff_hits.txt,16:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:,ADKCON
+_text/index/dff_index.csv:43:_text/index/dff_hits.txt,17:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:,ADKCONR
+_text/index/dff_hits.txt:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/index/dff_hits.txt:16:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/index/dff_hits.txt:17:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/index/addr_hits.txt:58:_text/index/dff_hits.txt:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/index/addr_hits.txt:65:_text/index/dff_hits.txt:16:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/index/addr_hits.txt:66:_text/index/dff_hits.txt:17:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/index/addr_hits.txt:82:_text/index/dff_index.csv:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9557:BPLCON0,($DFF100)
+_text/index/addr_hits.txt:92:_text/index/dff_index.csv:35:_text/index/dff_hits.txt,9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0,($DFF100)
+_text/index/addr_hits.txt:150:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/index/addr_hits.txt:163:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/index/addr_hits.txt:164:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/img/paula/MOS 8364r7 paula_schematic.txt:11:CCK# ~ o ADDR_DECODER ADKCONR %010 R udia, disk control register read
+_text/img/paula/MOS 8364r7 paula_schematic.txt:17:\ - “ INTENAR *@1C R P Interrupt enable bits read
+_text/img/paula/MOS 8364r7 paula_schematic.txt:27:fzis @0 @0 fneRe 4 2 e ;‘ g 3 iTBE IF@ TBE IE@-TBE = 4] 4] 4] I—I g g 1 b1 *%% Epitaph for a dead bird xxx INTENA een " e;;l-tlpbif;)a <
+_text/img/paula/MOS 8364r7 paula_schematic.txt:28:D2 PAD : ] HSL ~ Za — ] ‘ o 2 2 il o 0@ia < INTREQ @sc W P Interrupt request bits (clear or
+_text/img/paula/MOS 8364r7 paula_schematic.txt:30:FERT [ Bbste - D1lio o .y > once there uas a beautiful/mighty/majestic bird, ADKCON @sE W P Audia, disk, UART control
+_text/img/paula/MOS 8364r7 paula_schematic.txt:143:rowroads| ¥ asa ADKCONR#
+_text/img/paula/MOS 8364r7 paula_schematic.txt:171:' l’ ADKCONG.USE@UL 37 0o ™ Lo_omaL a J J J T - 1@n b=
+_text/img/paula/MOS 8364r7 paula_schematic.txt:174:o a o a o a o a . ADKCONA.USELU2 We haven't noticed during our dissection that it was his first chip design. o a — [ e ~
+_text/img/paula/MOS 8364r7 paula_schematic.txt:175:/ Diio &6C) ADKCONQ..7 . , = PHI2 PHI1
+_text/img/paula/MOS 8364r7 paula_schematic.txt:177:> Tz D2io ADKCON2.USE2V3 @ >o 3 c = = > Neg
+_text/img/paula/MOS 8364r7 paula_schematic.txt:181:™ T 03io ADKCON3.USE3UN o RES 5b) DMAL LD I b L/ ) Zud N ! >7u a—{o | e
+_text/img/paula/MOS 8364r7 paula_schematic.txt:184:™ o o o D4io ADKCON4.USE@PL 2 < = OMAL# a e}— ) B T 5 ‘ ~
+_text/img/paula/MOS 8364r7 paula_schematic.txt:187:" e | o ={ o5i0 ADKCONS.USE1P2 L oe_ | ™ DskiB . g L/
+_text/img/paula/MOS 8364r7 paula_schematic.txt:189:v t ] t ] t ] Dsio ADKCONG.USE2P3 § | :
+_text/img/paula/MOS 8364r7 paula_schematic.txt:192:™ Tis = < 07t ADKCON7.USE3PN = A PHI2  PHI1 DSKB_LD 2, .
+_text/img/paula/MOS 8364r7 paula_schematic.txt:198:(U ) o io 6ah) DMACON@..4,9 | 16H_Cout2 | Lom N D8io T o |3 S
+_text/img/paula/MOS 8364r7 paula_schematic.txt:206:N ) Q114 ola 0l P o £ 0 e ala ) DMACON@.AUDBEN & U- r DLSKURITE Déio | L 125 DSKL_CEN :
+_text/img/paula/MOS 8364r7 paula_schematic.txt:220:D2i0 DMACON2.AUD2EN — C _bieio | L4125 DSKNDL
+_text/img/paula/MOS 8364r7 paula_schematic.txt:223:I 5 ¢ 0a D3io DMACON3.AUDIEN |
+_text/img/paula/MOS 8364r7 paula_schematic.txt:229:> N T3 ) Q4#  GLENCEN ADKCONS.FAST Z doun 5 3 DKL ¢ x .
+_text/img/paula/MOS 8364r7 paula_schematic.txt:230:L ; ADKCONS.MSBSYNC counter 2 8 10p> b4 i~ 3
+_text/img/paula/MOS 8364r7 paula_schematic.txt:231:Ts \ Q1% @PERLD __ D8io | &e) ADKCONS..14 : § O A & z [ oHI g g
+_text/img/paula/MOS 8364r7 paula_schematic.txt:233:i ADKCON4@.MORDSYNC £ -
+_text/img/paula/MOS 8364r7 paula_schematic.txt:236:L/ Ditio ADKCON41.UARTBRK L/ i = ( _) \ D14ia latch WRITE | |, = 2PHI2  2PHI4 105>
+_text/img/paula/MOS 8364r7 paula_schematic.txt:238:L/ D12ia ADKCONA2.MFMPREC = o e f T 8l . 100>
+_text/img/paula/MOS 8364r7 paula_schematic.txt:240:D13i0 ADKCON13.PRECOMPG : I~ I o ¢ Z 4l 3 DKML
+_text/img/paula/MOS 8364r7 paula_schematic.txt:242:D14i0 ADKCON14.PRECOMPL DMACONS.DMAEN D e H g = g 1aqy  PHI2 PHIL o A\ ola ola DKRCLR1 & L/ 7}
+_text/img/paula/MOS 8364r7 paula_schematic.txt:245:ADKCON1@.WORDSYNC A - D18io0 latch . 0 a ol £ 8 . . = [ {>o
+_text/img/paula/MOS 8364r7 paula_schematic.txt:249:ADKCON44.UARTBRK g 0ga 0 0 oa o = L < DKRLDL
+_text/img/paula/MOS 8364r7 paula_schematic.txt:263:@PERMAD )CHQ g )CHQ PHI2  PHI1 al o x g DKAD.NCKR DMACON4.DSKEN T |
+_text/img/paula/MOS 8364r7 paula_schematic.txt:432:] fla nle . ¢ | LONG ADKCONS.MSBSYNC D15io ‘ FOC4E DKRG ™N
+_text/img/paula/MOS 8364r7 paula_schematic.txt:443:D4io —-° a ) INTREQ 3 3 . =4 - @ D@ ™~N a
+_text/img/paula/MOS 8364r7 paula_schematic.txt:448:DSio ,Eu"‘ 4l>% 2 ‘ ~ - . ADKCONG — e T . 2 aEs él = I . X
+_text/img/paula/MOS 8364r7 paula_schematic.txt:450:c a o o o o H‘F ADKCON4 fla OURL 5 o B .
+_text/img/paula/MOS 8364r7 paula_schematic.txt:460:S S 8 P o 2 2 2 S < < RX_BRG_Cout AX_START ADKCONS.FAST
+_text/img/paula/MOS 8364r7 paula_schematic.txt:491:) 4 z 2 B % 53 8 3 S GBGULY o 3 9 ADKCONA 2.MF MPREC ) ™
+_text/img/paula/MOS 8364r7 paula_schematic.txt:493:N ADACEL ] 5] S © © ® « S 4 ADKCON42.MFMPREC —dex v |—
+_text/img/paula/MOS 8364r7 paula_schematic.txt:495:a - % ADKCON3.PRECOMP@ ADKCON13.PRECOMP@ = - falling edge 1 ™ ‘ ‘
+_text/img/paula/MOS 8364r7 paula_schematic.txt:497:io § 3 ADKCON14.PRECOMPL ADKCON14.PRECOMPL | L/ DKOL# € € DKWD DKWD#
+_text/pdf/US5103499.pdf.txt:931:COLOR0 and COLOR1. Additional color choices for                 a raster display. When using normal resolution, the 12
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:4042:        Agnus is configured to accept extemal syncs, by setting the ERSY bit in the BPLCONO
+_text/pdf/agnus/AGNUS.pdf.txt:1196:       BPLCON0 h                  Bit plane control register (miscellaneous bits)
+_text/pdf/agnus/AGNUS.pdf.txt:1200:       BIT#             BPLCONO
+_text/pdf/agnus/AGNUS.pdf.txt:1227:       UHRES = ultrahi res enables the UHRES pointers (for 1K x 1K) (also needs bits in DMACON)
+_text/pdf/agnus/AGNUS.pdf.txt:1261:           COPJMP1                    Copper restart at first location
+_text/pdf/agnus/AGNUS.pdf.txt:1262:           COPJMP2                    Copper restart at second location
+_text/pdf/agnus/AGNUS.pdf.txt:1269:           COP1LCH h                  Copper first location register (high 5 bits)
+_text/pdf/agnus/AGNUS.pdf.txt:1270:           COP1LCL                    Copper first location register (low 15 bits
+_text/pdf/agnus/AGNUS.pdf.txt:1346:       There are two indirect jump registers COP1LC and COP2LC. These are 20 bit pointer registers whose contents are used
+_text/pdf/agnus/AGNUS.pdf.txt:1348:       addresses COPJMP1 or COPJMP2 are written. In addition COP1LC is automatically used at the beginning of each verti-
+_text/pdf/agnus/AGNUS.pdf.txt:1355:       DIWSTRT                    Display window start (upper left vertical-horizontal positon)
+_text/pdf/agnus/AGNUS.pdf.txt:1356:       DIWSTOP                    Display window stop (lower right vertical-horizontal position)
+_text/pdf/agnus/AGNUS.pdf.txt:1363:       DIWSTOP is vertically restricted to the lower 1/2 of the display (V8=/=V7), and horizontally restricted to the right 1/4
+_text/pdf/agnus/AGNUS.pdf.txt:1366:       DIWSTRT is vertically restricted to the upper 2/3 of the display (V8=0), and horizontally restricted to the left 3/4 of the
+_text/pdf/agnus/AGNUS.pdf.txt:1373:       (DIWSTRT, STOP description holds. If this register is written last in a sequence of setting the display widow, it sets di-
+_text/pdf/agnus/AGNUS.pdf.txt:1382:       DDFSTRT                    Display data fetch start (horiz.position)
+_text/pdf/agnus/AGNUS.pdf.txt:1383:       DDFSTOP                    Display data fetch stop (horiz.position)
+_text/pdf/agnus/AGNUS.pdf.txt:1406:           DDFSTRT      (left edge of display data fetch)
+_text/pdf/agnus/AGNUS.pdf.txt:1413:           DDFSTOP          (right edge of display data)
+_text/pdf/agnus/AGNUS.pdf.txt:1421:           DMACON                    DMA control write (clear or set)
+_text/pdf/agnus/AGNUS.pdf.txt:1422:           DMACONR                   DMA control read (and blitter status)
+_text/pdf/agnus/AGNUS.pdf.txt:1541:                                     LOF long frame (auto toggle control bit in BPLCON0)
+_text/pdf/US4874164.pdf.txt:919: reserved for the background color of the screen. The color contained in the COLOR0 register.
+_text/pdf/US4874164.pdf.txt:931:COLORO and COLOR1. Additional color choices for                a raster display. When using normal resolution, the 12
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:48:4.)   RDRAM bit moved to BPLCON2 from BPLCON3 (may have already
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:104:       BPLCON3, BPLCON4, CLXCON2, DIWHIGH, FMODE.
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:189:BPLCON0 100     W       Bitplane control reg. (misc. bits)
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:190:BPLCON1 102     W       Bitplane control reg. (horiz scroll)
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:191:BPLCON2 104     W       Bitplane control reg. (video priority)
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:192:BPLCON3 106     W       Bitplane control reg. (new features)
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:193:BPLCON4 l0C     W       Bitplane control reg. (mask bits)
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:196: BIT#    BPLCON0    BPLCON1   BPLCON2    BPLCON3       BPLCON4
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:231:         ECSENA= When low(default), the following bits in BPLCON3
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:235:        BPLCON3, however there effects are inhibited until
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:404:T of COLOROC thru COLOR31 sets ZD pin HI when color is selected
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:409:                  ranges. DIWSTART/DIWSTOP set bit#13, while bits
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:412:                     DIWSTART and DIWSTOP then these horrizontal bit
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:421:DIWSTOP 090          W           Display Window Stop horiz. bits
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:422:DIWSTRT 08E          W           Display Window Start horiz. bits
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:670:                            new for ECS or LISA are cleared: BPLCON3,
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:671:                            BPLCON4,FMODE, CLXCON2,DIWHIGH.
+_text/pdf/lisa/391227_Lisa_specification.pdf.txt:679:                            BPLCON3 is set. For proper operation, ALICE
+_text/pdf/denise/refs/Denise_specification.pdf.txt:148:  BPLCON0          100       W     Bit plane control reg.
+_text/pdf/denise/refs/Denise_specification.pdf.txt:151:  BPLCON1          102       W     Bit plane control reg.
+_text/pdf/denise/refs/Denise_specification.pdf.txt:154:  BPLCON2          104       W     Bit plane control reg.
+_text/pdf/denise/refs/Denise_specification.pdf.txt:161:  BPLCON3          106       W     Bit plane control reg.
+_text/pdf/denise/refs/Denise_specification.pdf.txt:163:    BIT#     BPLCON0    BPLCON1    BPLCON2     BPLCON3
+_text/pdf/denise/refs/Denise_specification.pdf.txt:200:    ENBPLCN3= When set enables all the new features in BPLCON3;
+_text/pdf/denise/refs/Denise_specification.pdf.txt:327:  T1 of COLOR00 thru COLOR31 sets ZD pin HI when color is selected
+_text/pdf/denise/refs/Denise_specification.pdf.txt:341:            DIWSTART/DIWSTOP supply all bits required for start &
+_text/pdf/denise/refs/Denise_specification.pdf.txt:343:            or DIWSTOP then it provides additional horizontal bits:
+_text/pdf/denise/refs/Denise_specification.pdf.txt:353:DIWSTOP 090         W     Display Window Stop horiz. bits
+_text/pdf/denise/refs/Denise_specification.pdf.txt:354:DIWSTRT 08E         W     Display Window Start horiz. bits
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:384:Table 3-9 DIWSTRT AND DIWSTOP Summary.............................53
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:414:Table 7-1 Bits in BPLCON2........................................204
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:427:Table 8-8 ADKCON and ADKCONR Register............................243
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:428:Table 8-9 SERDATR / ADKCON Registers.............................252
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:759:in the include files. For example, the color registers in the hardware list (COLOR00,
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:760:COLOR01, etc.) would be referenced from the "color" label defined in "hardware/custom.i"
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1171:        COP1LCH High 3 bits of first Copper list address.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1172:        COP1LCL Low 16 bits of first Copper list address.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1185:In the case of the Copper location registers, you write the address to COP1LCH. In the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1186:following text, for simplicity, these addresses are referred to as COP1LC or COP2LC.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1201:At the start of each vertical blanking interval, COP1LC is automatically used to start the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1204:contained in COP1LC.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1211:addresses COPJMP2 strobes this indirect address into the program counter.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1215:      COPJMP1 Restart Copper from address contained in COP1LC.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1216:      COPJMP2 Restart Copper from address contained in COP2LC.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1341:            COLOR00       white
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1342:            COLOR01       red
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1343:            COLOR02       green
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1344:            COLOR03       blue
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1350:            COLOR00       black
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1351:            COLOR01       yellow
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1352:            COLOR02       cyan
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1353:            COLOR03       magenta
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1395:     DC.W    COLOR00,$0FFF      ;Move white into register $180 (COLOR00
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1396:     DC.W    COLOR01,$0F00      ;Move red into register $182 (COLOR01)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1397:     DC.W    COLOR02,$00F0      ;Move green into register $189 (COLOR02)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1398:     DC.W    COLOR03,$000F      ;Move blue into register $186 (COLOR03)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1402:     DC.W    BPLCON0,$2200      ;2 lores planes, color on
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1410:     DC.W    COLOR00,$0000      ;Move black into register $0180 (COLOR00)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1411:     DC.W    COLOR01,$0FF0      ;Move yellow into register $0182 (COLOR01)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1412:     DC.W    COLOR02,$00FF      ;Move cyan into register $0184 (COLOR02)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1413:     DC.W    COLOR03,$0F0F      :Move magenta into register $0186 (COLOR03)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1431:(COP1LC or COP2LC) and write to its strobe address before Copper DMA is tuned on. This
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1432:ensures a known start address and known state. Usually, COP1LC is used because this
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1448:     MOVE.L a0,COP1LC(a1)       ; Write whole longword address
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1449:     MOVE.W COPJMP1(a1),d0      ; Causes copper to load PC from COP1LC
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1453:     MOVE.W #(DMAF SETCLR!DMAF_COPPER!DMAF_RASTER!DMAF_MASTER),DMACON(a1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1456:Now, if the contents of COP1LC are not changed, every time vertical blanking occurs the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1471:or placing data. The register called DMACON controls all of the DMA channels. Bit7,
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1531:COP1LC registers must be repointed to the beginning of the appropriate Copper list. The
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1562:In the following example, the Copper lists have been made to loop. The COP1LC and
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1580:writing to the COPJMP1 register. This causes the Copper to jump to the address that was
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1581:initialized in COP1LC.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1589:to the COPJMP2 register. The list is put into an infinite wait when VP >= 255 so that it will
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1590:end before the vertical blank. At the end of the vertical blanking period COP1LC is written
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1594:The COP1LC register is written at the end of the vertical blanking period by a graphics
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1596:server is intact, COP1LC will be correctly strobed at the end of each vertical blank.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1601:; It is assumed that COPPERL1 is loaded into COP1LC and
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1606:     DC.W    INTREQ,$8010    ; Set the copper interrupt bit
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1613:      DC.W     COPJMP1,$0          ; Force a jump to COP1LC
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1617:     DC.W      INTREQ,$8010        ; Set the copper interrupt bit...
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1629:     DC.W      COPJMP2,$0         ; Force a jump to COP2LC
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1690:the COP1LC location register to point to the second list. Then, during the vertical blanking
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1691:interval, COP1LC will be automatically reset to point to the original list.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1714:INTREQ register by various devices. To interrupt the 68000, use the Copper MOVE
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:1715:instruction to store a 1 into the following bits of INTREQ:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2105:        COLOR00       12 bits     User-defined color for The
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2108:        COLOR01       12 bits     User-defined color number 1
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2112:        COLOR02       12 bits     User-defined color number 2.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2118:        COLOR31       12 bits     User-defined color number 31.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2120:COLOR00 is always reserved for the background color. The background color shows in any
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2161:    MOVE.W #$FFF,COLOR00(a0)             ; Load white into color register 0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2162:    MOVE.W #$6FE,COLOR01(a0)             ; Load sky blue into color register 1
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2179:You select the number of bit-planes by writing the number into the register BPLCON0 (for
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2204:The bits in the BPLCON0 register cannot be set independently. To set any one bit, you
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2209:    MOVE.W #$2200,BPLCON0+CUSTOM ; Write to it
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2211:Because register BPLCON0 is used for setting other characteristics of the display and the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2240:To set horizontal resolution mode, you write to bit 15, HIRES, in register BPLCON0:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2311:To set interlaced or non-interlaced mode, you write to bit 2, LACE, in register BPLCON0:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2316:As explained above in "Setting the Number of Bit-Planes," bits in BPLCON0 are not
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2321:    MOVE.W #$A204,BPLCON0+CUSTOM ; Write to it
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2324:register BPLCON0:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2479:background color (COLOR00) by writing all "0"s into its memory area. The bit-plane starts
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2599:The register DIWSTRT (for "Display Window Start") controls the display window starting
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2602:example sets DIWSTRT for a basic playfield. You write $2C for VSTART and $81 for
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2606:    MOVE.W #$2C81,DIWSTRT(a0)            ; Display window start register...
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2614:The register DIWSTOP (for Display Window Stop) controls the display window stopping
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2628:  The normal NTSC DIWSTRT is ($2C81).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2629:  The normal NTSC DIWSTOP is ($F4C1).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2631:  The normal PAL DIWSTRT is ($2C81).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2632:  The normal PAL DIWSTOP is ($2CC1).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2638:The following example sets DIWSTOP for a basic playfield to $F4 for the vertical position
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2642:    MOVE.W #$F4C1,DIWSTOP(a0)            ; Display window stop register...
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2645:       Table 3-9: DIWSTRT AND DIWSTOP Summary.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2649:    DIWSTRT:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2653:    DIWSTOP:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2672:  The normal low-resolution DDFSTRT is ($0038).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2673:  The normal high-resolution DDFSTRT is ($003C).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2693:  DDFSTRT = DDFSTOP-(8*(word count-1))for low resolution
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2695:  DDFSTRT = DDFSTOP-(4*(word count-2))for high resolution
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2697:The normal low-resolution DDFSTOP is ($00D0). The normal high-resolution DDFSTOP is
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2704:    MOVE.W #$0038,DDFSTRT(a0)            ; Write to DDFSTRT
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2705:    MOVE.W #$00D0,DDFSTOP(a0)            ; Write to DDFSTOP
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2722:data-fetch register, DDFSTOP) the modulo is added to the bit-plane pointers, adjusting
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2730:Screen data fetch stops (DDFSTOP) for                                    |
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2800:DMACON (for DMA control) register. See Chapter 7, "System Control Hardware," for
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2810:The stock A1000 has a color composite output and requires bit 9 set in BPLCON0 to create
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2860:     * Bits 12-14 in BPLCON0 - number of bit-planes (BPU2 - BPU0).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2875:     * Clear bit 15 in register BPLCON0 (HIRES).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2881:     * Set bit 15 in register BPLCON0 (HIRES).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2889:     * Set bit 2 in register BPLCON0 (LACE).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2895:     * Clear bit 2 in BPLCON0 (LACE).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2902:    o Write start position of display window in DIWSTRT:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2908:    o Write stop position of display window in DIWSTOP:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2918:4. Define Data Fetch. Set registers DDFSTRT and DDFSTOP:
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2920:    o For DDFSTRT, use the horizontal position as shown in "Setting the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2923:    o For DDFSTOP, use the horizontal position as shown in "Setting the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2931:7. Enable Color Display. For the A1000: set bit 9 in BPLCON0 to enable the color display
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2946:    MOVE.W #$1200,BPLCON0(a0)              ; One bit-plane, enable composite color
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2947:    MOVE.W #0,BPLCON1(a0)                  ; Set horizontal scroll value to 0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2949:    MOVE.W #$0038,DDFSTRT(a0)              ; Set data-fetch start to $38
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2950:    MOVE.W #$00D0,DDFSTOP(a0)              ; Set data-fetch stop to $D0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2951:    MOVE.W #$2C81,DIWSTRT(a0)              ; Set DIWSTRT to $2C81
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2952:    MOVE.W #$F4C1,DIWSTOP(a0)              ; Set DIWSTOP to $F4Cl
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2953:    MOVE.W #$0F00,COLOR00(a0)              ; Set background color to red
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2954:    MOVE.W #$0FF0,COLOR01(a0)              ; Set color register 1 to yellow
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2982:    MOVE.L #$20000,COP1LCH(a0)      ; Write to Copper location register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2983:    MOVE.W COPJMP1(a0),d0           ; Force copper to $20000
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2987:    MOVE.W #(DMAF_SETCLR!DMAF_COPPER!DMAF_RASTER!DMAF_MASTER),DMACON(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3002:      MOVE.W #$9204,BPLCON0(a0)          ; Hires, one bit-plane, interlaced
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3003:      MOVE.W #0,BPLCON1(a0)              ; Horizontal scroll value 0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3006:      MOVE.W #$003C,DDFSTRT(a0)          ; Set data-fetch start for hires
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3007:      MOVE.W #$00D4,DDFSTOP(a0)          ; Set data-fetch stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3008:      MOVE.W #$2C81,DIWSTRT(a0)          ; Set display window start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3009:      MOVE.W #$F4C1,DIWSTOP(a0)          ; Set display window stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3013:    MOVE.W #$000F,COLOR00(a0)            ; Background color = blue
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3014:    MOVE.W #$0FFF,COLOR01(a0)            ; Foreground color = white
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3039:   MOVE.W #(DMAF_SETCLR!DMAF_RASTER!DMAF_MASTER),DMACON(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3052:    MOVE.W INTREQR(a0),d0           ; Read interrupt requests
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3055:    MOVE.W #$0020,INTREQ(a0)        ; Reset vertical interrupt
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3179:           001             COLOR1
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3180:           010             COLOR2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3181:           011             COLOR3
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3182:           100             COLOR4
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3184:           110             COLOR6
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3185:           111             COLOR7
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3200:           001             COLOR09
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3201:           010             COLOR10
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3202:           011             COLOR11
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3203:           100             COLOR12
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3204:           101             COLOR13
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3205:           110             COLOR14
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3206:           111             COLOR15
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3225:            01              COLOR1
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3226:            10              COLOR2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3227:            11              COLOR3
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3235:            01              COLOR09
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3236:            10              COLOR10
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3237:            11              COLOR11
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3242:BPLCON2 is used to control priority. When PF2PRI = 1, playfield 2 has priority over
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3273:Writing a 1 to bit 10 (called DBLPF) of the bit-plane control register BPLCON0 selects dual-
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3296:o Defining priority. If you want playfield 2 to have priority, set bit 6 (PF2PRI) in BPLCON2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3299:o Activating dual-playfield mode. Set bit 10 (DBLPF) in BPLCON0 to 1.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3360:Screen data fetch stops (DDFSTOP) for                           |
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3438:upper left-hand corner of the display window. One register, DIWSTRT, holds both the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3484:7 and the value for VSTART into bits 8 through 15 of DIWSTRT.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3492:the lower right-hand corner of the display window. One register, DIWSTOP, contains both
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3534:into bits 8 through 15 of DIWSTOP.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3556:to DDFSTOP of ($D8) and a leftmost limit to DDFSTRT of ($18). This gives a maximum of
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3573:       DDFSTRT (standard)        $0038             $003C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3574:       DDFSTOP (standard)        $00D0             $00d4
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3576:       DDFSTRT (hw limits)       $0018             $0018
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3577:       DDFSTOP (hw limits)       $00D8             $00D8
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3664:desired, then the data fetch must start one word sooner (DDFSTRT = $0030).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3665:Incidentally, is will disable sprite 7. DDFSTOP remains unchanged. Remember that the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3730:The amount of delay in horizontal scrolling is controlled by bits 7-0 in BPLCON1. You set
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3740:    MOVE.W #$77,BPLCON1+CUSTOM
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3756:o For horizontal scrolling, specify the delay. Set bits 7-0 in BPLCON1 for 0 to 15 bits of
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3817:which is COLOR0, the color of the background. You treat the entire screen as a
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3820:Bit 11 of register BPLCON0 selects hold-and-modify mode. The following bits in BPLCON0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3839:    MOVE.W #$6A00,BPLCON0(a0)        ; Six bit-planes, hold-and-modify mode
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3840:    MOVE.W #0,BPLCON1(a0)            ; Horizontal scroll = 0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3843:    MOVE.W #$0038,DDFSTRT(a0)        ; Set data-fetch start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3844:    MOVE.W #$00D0,DDFSTOP(a0)        ; Set data-fetch stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3845:    MOVE.W #$2C81,DIWSTRT(a0)        ; Set display window start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3846:    MOVE.W #$F4C1,DIWSTOP(a0)        ; Set display window stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3852:    LEA    CUSTOM+COLOR00,a1         ; Point al at first color register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3897:    MOVE.L #$20000,COP1LCH(a0)      ; Load Copper jump register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3898:    MOVE.W COPJMP1(a0),d0           ; Force load into Copper P.C.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3902:    MOVE.W #$8380,DMACON(a0)        ; Enable bit-plane and Copper DMA
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3945:BPLCON0 - Bit Plane Control
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4002:BPLCON1 - Bit-plane Control
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4016:BPLCON2 - Bit-plane Control
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4027:DDFSTRT - Data-fetch Start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4038:DDFSTOP - Data-fetch Stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4054:DIWSTRT - Display Window Start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4064:DIWSTOP - Display Window Stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4189:18. This mode is in effect only if bit 10 of BPLCON0 = 1.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4330:(defined by the values in DDFSTRT, DDFSTOP, DIWSTRT, DIWSTOP, etc.). See the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4823:   MOVE.W #$1200,BPLCON0(a0)        ; 1 bit-plane color is on
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4825:   MOVE.W #$0000,BPLCON1(a0)        ; Horizontal scroll value = 0
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4826:   MOVE.W #$0024,BPLCON2(a0)        ; Sprites have priority over playfields
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4827:   MOVE.W #$0038,DDFSTRT(a0)        ; Set data-fetch alert
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4828:   MOVE.W #$00D0,DDFSTOP(a0)        ; Set data-fetch stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4832:   MOVE.W #$2C81,DIWSTRT(a0)           ; Set display window start
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4835:   MOVE.W #$F4C1,DIWSTOP(a0)           ; Set display window stop
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4841:   MOVE.W #$0008,COLOR00(a0)           ; Background color = dark blue
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4842:   MOVE.W #$0000,COLOR01(a0)           ; Foreground color = black
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4843:   MOVE.W #$0FF0,COLOR17(a0)           ; Color 17 = yellow
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4844:   MOVE.W #$00FF,COLOR18(a0)           ; Color 18 = cyan
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4878:   MOVE.L #$20000,COP1LC(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4890:   MOVE.W d0,COPJMP1(a0)            ; Force load into Copper
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4892:    MOVE.W #$83A0,DMACON(a0)        ; Bit-plane, Copper, and sprite DMA
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4991:;   MOVE.W INTREQR(a0),d6    ; Read interrupt request word
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4994:;   MOVE.W #$0020,INTREQ(a0) ; Vertical bit is on, so reset it
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:5166:    MOVE.W #$0F00,COLOR17(a0)              ; Color 17 red
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:5167:    MOVE.W #$0FF0,COLOR18(a0)              ; Color 18 yellow
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6227:DMACON must be set. When both DMAEN and AUDxEN are set, the DMA will start for
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6236:                            DMACON REGISTER
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6241:                                    sets any bit in DMACONW for which
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6261:              MOVE.W #(DMAF_SETCLR!DMAF_AUD0!DMAF_MASTER),DMACON(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6276:      MOVE.W #(DMAF_AUD0),DMACON(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6340:       MOVE.W #(DMAF_SETCLR!DMAF_AUD0!DMAF_MASTER),DMACON(a0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6447:attach bits in the ADKCON register control how the data from an audio channel is
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:6519:                                ADKCON REGISTER
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:7114:AUDxON      DMA on "x" indicates channel number (signal from DMACON).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:7955:DMACONR. This flag is set when a blit is in progress.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:7970:    btst.b #DMAB_BLTDONE-8,DMACONR(a1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:7971:    btst.b #DMAB_BLTDONE-8,DMACONR(a1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8023:from bit DMAF_BLTNZERO of the DMACONR register.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8443:bit is called DMAF BLITHOG and is in register DMACON.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8530:        btst.b #DMAB_BLTDONE-8,DMACONR(a1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8532:        btst.b #DMAB_BLTDONE-8,DMACONR(a1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8681:        btst    #DMAB_BLTDONE-8,DMACONR(al) ; safety check
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8683:        btst    #DMAB_BLTDONE-8,DMACONR(a1) ; wait for blitter
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8741:        lea     DMACONR(a2),a3   ; get the address of dmaconr
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8886:using the bits in BPLCON2 (for "bit-plane control register number 2") as shown in Table 7-
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8889:      Table 7-1: Bits in BPLCON2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:8936:appears in front of the other on the screen. Here is a sample of possible BPLCON2 register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9185:INTENA
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9186:  Interrupt enable (mask) - write only. Sets or clears specific bits of INTENA.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9188:INTENAR
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9189:  Interrupt enable (mask) read - read only. Reads contents of INTENA.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9198:INTREQ
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9263:where the display actually starts by using the DIWSTRT (display window start) register to
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9265:information on DIWSTRT.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9270:defined by using the DIWSTOP register).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9371:  DMACONR - Direct Memory Access Control - read-only.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9373:  DMACON - Direct Memory Access Control - write-only.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9981:To enable the light pen input, write a 1 into bit 3 of BPLCON0. Once the light pen input is
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10251:1. Enable disk DMA in the DMACON register (See Chapter 7 for more information)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10306:                            DMACON.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10320:ADKCON AND ADKCONR - AUDIO AND DISK CONTROL REGISTER
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10321:ADKCON is the write-only address and ADKCONR is the read-only address for this register.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10331:Table 8-8: ADKCON and ADKCONR Register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10387:reading disks. If the WORDSYNC bit is enabled in ADKCON, no data is transferred until a
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10393:In addition, the DSKSYNC bit in INTREQ is set when the input stream matches the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10394:DSKSYNC register. The DSKSYNC bit in INTREQ is independent of the WORDSYNC enable.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10399:o DSKSYNC (level 5, INTREQ bit 12) - input stream matches the DSKSYNC register.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10401:o DSKBLK (level 1, INTREQ bit l) - disk DMA has completed.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10641:Table 8-9: SERDATR / ADKCON Registers
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10653:                     INTREQ.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10660:                     INTF_RBF bit in INTREQ to prevent an overrun.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10699:ADKCON
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10833:For example, for the 68000 to write to ADKCON (address = $09E), the address would be
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10862:ADKCON      09E       W     P             Audio, disk, control write
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10863:ADKCONR     010       R     P             Audio, disk, control read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11172:BPLCON0 100 W A D Bit plane control register (misc.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11174:BPLCON1 102 W D   Bit plane control register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11176:BPLCON2 104 W D   Bit Plane control register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11182:BIT#    BPLCON0   BPLCON1    BPLCON2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11326:COP1LCH    080 W A          Copper first location register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11328:COP1LCL    082 W A          Copper first location register
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11433:There are two indirect jump registers, COP1LC and COP2LC. These are 18-
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11436:counter whenever strobe addresses COPJMP1 or COPJMP2 are written. In
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11437:addition, COP1LC is automatically used at the beginning of each vertical
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11444:COPJMP1 088 5 A      Copper restart at first location
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11445:COPJMP2 08A 5 A      Copper restart at second location
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11456:DDFSTOP 094 W A      Display data fetch stop (horiz. position)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11458:DDFSTRT 092 W A      Display data fetch start (horiz. position)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11479:DDFSTRT (left edge of display data fetch)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11488:DDFSTOP (right edge of display data fetch)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11496:DIWSTOP 090 W A       Display window stop (lower right
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11499:DIWSTRT 08E W A       Display window start (upper left
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11510:DIWSTRT is vertically restricted to the upper 2/3
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11514:DIWSTOP is vertically restricted to the lower 1/2
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11517:DMACON     096 W A D P DMA control write (clear or set)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11518:DMACONR    002 R A P DMA control (and blitter status) read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11562:                 ANDed with Bit 09 (DMAEN) in DMACON
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11610:                See ADKCON bit 10.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11616:INTENA     09A W P Interrupt enable bits (clear or set bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11617:INTENAR    01C R P Interrupt enable bits (read)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11648:INTREQ      09C W       P Interrupt request bits (clear or set)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11649:INTREQR     01E R       P Interrupt request bits (read)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11810:                     Reset by resetting bit 11 of INTREQ.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:11941:                  LOF=Long frame (auto toggle control bit in BPLCON0)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12014:DMACONR   *002 R A     P DMA control (and blitter status) read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12021:ADKCONR   *010 R      P Audio, disk control register read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12027:INTENAR   *01C R      P Interrupt enable bits read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12028:INTREQR   *01E R      P Interrupt request bits read
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12077:COP1LCH + 080 W A        Coprocessor first location register (high 3 bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12078:COP1LCL + 082 W A        Coprocessor first location register (low 15 bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12083:COPJMP1     088 S A      Coprocessor restart at first location
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12084:COPJMP2     08A S A      Coprocessor restart at second location
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12086:DIWSTRT     08E W A      Display window start (upper left vert-horiz
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12088:DIWSTOP     090 W A      Display window stop (lower right vert.-horiz.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12090:DDFSTRT     092 W A      Display bit plane data fetch start (horiz.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12092:DDFSTOP     094 W A      Display bit plane data fetch stop (horiz.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12094:DMACON      096 W A D P DMA control write (clear or set)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12096:INTENA      09A W     P Interrupt enable bits (clear or set bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12097:INTREQ      09C W     P Interrupt request bits (clear or set bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12098:ADKCON      09E W     P Audio, disk, UART control
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12151:BPLCON0   100 W A D       Bit plane control register (misc. control bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12152:BPLCON1   102 W       D   Bit plane control reg. (scroll value PF1, PF2)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12153:BPLCON2   104 W       D   Bit plane control reg. (priority control)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12225:COLOR00    180 W   D   Color Table 00
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12226:COLOR01    182 W   D   Color Table 01
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12227:COLOR02    184 W   D   Color Table 02
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12228:COLOR03    186 W   D   Color Table 03
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12229:COLOR04    188 W   D   Color Table 04
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12230:COLOR05    18A W   D   Color Table 05
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12231:COLOR06    18C W   D   Color Table 06
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12232:COLOR07    18E W   D   Color Table 07
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12233:COLOR08    190 W   D   Color Table 08
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12234:COLOR09    192 W   D   Color Table 09
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12235:COLOR10    194 W   D   Color Table 10
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12237:COLOR12    198 W   D   Color Table 12
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12238:COLOR13    19A W   D   Color Table 13
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12239:COLOR14    19C W   D   Color Table 14
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12240:COLOR15    19E W   D   Color Table 15
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12241:COLOR16    1A0 W   D   Color Table 16
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12242:COLOR17    1A2 W   D   Color Table 17
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12243:COLOR18    1A4 W   D   Color Table 18
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12245:COLOR20    1A8 W   D   Color Table 20
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12246:COLOR21    1AC W   D   Color Table 21
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12247:COLOR22    1AC W   D   Color Table 22
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12248:COLOR23    1AE W   D   Color Table 23
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12249:COLOR24    1B0 W   D   Color Table 24
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12250:COLOR25    1B2 W   D   Color Table 25
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12251:COLOR26    1B4 W   D   Color Table 26
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12252:COLOR2?    1B6 W   D   Color Table 27
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12253:COLOR28    1B8 W   D   Color Table 28
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12254:COLOR29    1BA W   D   Color Table 29
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12255:COLOR30    1BC W   D   Color Table 30
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:12256:COLOR31    1BE W   D   Color Table 31
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13505:|                                 |          | BPLCON0 write only
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15253:DMACONR equ      dmaconr         ; Just capitalization .....
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15259:ADKCONR equ      adkconr         ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15264:INTENAR equ      intenar         ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15265:INTREQR equ      intreqr         ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15277:DIWSTRT         equ     diwatrt      ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15278:DIWSTOP         equ     diwatop      ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15279:DDFSTRT         equ     ddfatrt      ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15280:DDFSTOP         equ     ddfatop      ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15281:DMACON          equ     dmacon       ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15282:INTENA          equ     intena       ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15283:INTREQ          equ     intreq       ; "         "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15326:COPJMP1         equ     copjmp1      ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15327:COPJMP2         equ     copjmp2      ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15328:COP1LC          equ     cop1lc       ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15329:COP1LCH         equ     cop1lc
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15330:COP1LCL         equ     cop1lc+$02
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15337:ADKCON         equ     adkcon       ; Just capitalization
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15392:BPLCON0        equ     bplcon0      ; Juat capitalization
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15393:BPLCON1        equ     bplcon1      ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15394:BPLCON2        equ     bplcon2      ; "          "
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15475:COLOR00         equ    color+$00
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15476:COLOR01         equ    color+$02
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15477:COLOR02         equ    color+$04
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15478:COLOR03         equ    color+$06
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15479:COLOR04         equ    color+$08
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15480:COLOR05         equ    color+$0A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15481:COLOR06         equ    color+$0C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15482:COLOR07         equ    color+$0E
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15483:COLOR08         equ    color+$10
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15484:COLOR09         equ    color+$12
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15485:COLOR10         equ    color+$14
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15486:COLOR11         equ    color+$16
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15487:COLOR12         equ    color+$18
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15488:COLOR13         equ    color+$1A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15489:COLOR14         equ    color+$1C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15490:COLOR15         equ    color+$1E
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15491:COLOR16         equ    color+$20
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15492:COLOR17         equ    color+$22
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15493:COLOR18         equ    color+$24
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15494:COLOR19         equ    color+$26
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15495:COLOR20         equ    color+$28
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15496:COLOR21         equ    color+$2A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15497:COLOR22         equ    color+$2C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15498:COLOR23         equ    color+$2E
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15499:COLOR24         equ    color+$30
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15500:COLOR25         equ    color+$32
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15501:COLOR26         equ    color+$34
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15502:COLOR27         equ    color+$36
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15503:COLOR28         equ    color+$38
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15504:COLOR29         equ    color+$3A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15505:COLOR30         equ    color+$3C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15506:COLOR31         equ    color+$3E

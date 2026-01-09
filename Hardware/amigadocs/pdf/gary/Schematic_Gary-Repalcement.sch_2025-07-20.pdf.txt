@@ -1,0 +1,196 @@
+                     1                                                                             2                                                          3                                              4                                        5
+
+
+
+                                                                                                                                                                               +3V3                                                                                                 +3V3
+
+                                                                                                                                                                                  C2                                                                                                    C5
+
+                                                                                                                                                                                  100nF                                                                                                 100nF
+
+A                                                                                                                                                                                                                                     U1                                                                     A
+                                                                                                                                                                               GND                                                                                                   GND
+                                                                                                                                                                                                                                      XC9572XL-5VQG64C
+                                                                                                                                                                                                !EXRAM            1                                          64   XRDY
+                                                                                                                                                                                                                    I/O                             I/O/GSR
+                                                                                                                                                                                                   A17            2                                          63   OVL
+                                                                                                                                                                                                                    I/O/GTS2                             I/O
+                                                                                                                                                                                                  +3V3            3                                          62   !OVR
+                                                                                                                                                                                                                    VCCINT3.3V                           I/O
+                                                                                                                                   +5V                                                             A18            4                                          61   CCK
+                                                                                                                                                                                                                    I/O                                  I/O
+                                                                                                                                                                                                   A19            5                                          60   CCKQ
+                                                                                                                                                                                                                    I/O/GTS1                             I/O
+                                                                                                                                                                                                                  6                                          59
+
+
+
+
+                                                                                                              17
+
+
+                                                                                                                    48
+                                                                                                                                                                                                   A20                                                            !CDAC
+
+
+
+
+                                                                                                       6
+                                                                                                                             VCC
+                                                                                                                                                                                                                    I/O                                  I/O
+                                                      IC3.3                                                                                                       +3V3                             A21            7                                          58   !LATCH
+                                                                                                                                                                                                                    I/O                                  I/O
+    !KBRESET     5                                                                                                                                                                                 A22            8                                          57   !CLOCKWR
+                          !KBRESET                                                                                                               IN     OUT                                                         I/O                                  I/O
+                                                                                   47   MTRX               IC3.2                         C1                            C6                                         9                                          56   !CLOCKRD
+                                                                  MTRX                                                                                                                                              I/O                                  I/O
+        !MTR     7                                                                                                                                    ADJ                                                        10                                          55   +3V3
+                          !MTR                                                                                                                                                                                      I/O                      VCCIO2.5V/3.3V
+         !SEL   16                                                                 46   MTRON                                            100nF              IC1       1uF                                        11                                          54   GND
+                          !SEL                                MTRON                                                                                                                                                 I/O                                 GND
+                                                                                                                                                                                                                 12                                          53   TDO
+
+
+
+
+                                                                                                       1
+
+
+                                                                                                              24
+
+
+                                                                                                                    40
+                                                                                                                                                            LD117AS33TR
+                                                      GARY
+                                                                                                                             GND
+                                                                                                                                                                                                                    I/O                                 TDO
+      !DKWD      9                                                                                                                                                                                               13                                          52   !BLISS
+                          !DKWD                                                                                                                                                                                     I/O                                  I/O
+      !DKWE      8                                                                 45   !DKWDB                                                GND                                                    GND         14                                          51   !REGEN
+                          DKWE                                DKWDB                                                                                                                                                 GND                                  I/O
+                                                                                   44   !DKWEB                                                                                                        A23        15                                          50   GND
+                                                              DKWEB                                                                                                                                                 I/O/GCK1                             I/O
+                                                                                                                                                                                                  !RESET         16                                          49   !SEL
+                                                                                                                                                                                                                    I/O/GCK2                             I/O
+                      Floppy functions                                                                                                                                                             !HALT         17                                          48   GND
+                                                                                                                                                                                                                    I/O/GCK3                             I/O
+                                                                                                                                                                                                 !DTACK          18                                          47
+B                                                                                                                                                                                                                   I/O                                  I/O                                                 B
+                                                                                                                                                                                                !DKWEB           19                                          46   !BLIT
+                                                                                                                                                                                                                    I/O                                  I/O
+        !OEB     4                                                                                                                                                                             !DKWDB            20                                          45   !BGACK
+                          !OEB                                                                                                                                                                                      I/O                                  I/O
+         !OEL    3                            IC3.1                                                                                                                                                  GND         21                                          44   !AS
+                          !OEL                                                                                                                                                                                      GND                                  I/O
+      !LATCH    25                                                                                                                                                                               MTRON           22                                          43   !RAMEN
+                          !LATCH                                                                                                                                                                                    I/O                                  I/O
+                                                                                                                                                                                                    MTRX         23                                          42   !ROMEN
+                                                                                                                                                                                                                    I/O                                  I/O
+         A23    39                                                                                                                                                                                   !VPA        24                                          41   GND
+                          A23                                                                                                                                                                                       I/O                                 GND
+         A22    38                                                                                                                                                                                   !OEL        25                                          40   !OEB
+                          A22                                                                                                                                                                                       I/O                                  I/O
+         A21    37                                                                                                             +3V3                                                                 +3V3         26                                          39   GND
+                          A21                                                                                                                                                                                       VCCIO2.5V/3.3V                       I/O
+         A20    36                                                                                                                                                                            !KBRESET           27                                          38   !MTR
+                          A20                                                                                                                                                                                       I/O                                  I/O
+         A19    35                                                                                                                                                                                     TDI       28                                          37   +3V3
+                          A19                                                                                                                                                                                       TDI                         VCCINT3.3V
+         A18    34                                                                                                                                                                                    TMS        29                                          36   !DKWE
+                          A18                                                                                                            POWA                                                                       TMS                                  I/O
+         A17    33
+                                              GARY
+                                                                                                                                                                                                      TCK        30                                          35   GND
+                          A17                                                                                                            LED-0603_R                                                                 TCK                                  I/O
+                                                                                   32   !EXRAM                                                                                                    !DKWD          31                                          34   !RW
+                                                              !EXRAM                                                                                                                                                I/O                                  I/O
+        !VPA     2                                                                                                                                                                                   !LDS        32                                          33   !UDS
+                          !VPA                                                                                                                                                                                      I/O                                  I/O
+        !LDS    10
+                          !LDS                                                                                                         R5
+       !UDS     11
+                          !UDS                                                                                                         150R
+         !RW    12                                                                 30   OVL                                                                                            +3V3                                                                                  +3V3
+                          R/!W!                                     OVL
+          !AS   13                                                                 29   !OVR
+                          !AS                                       !OVR
+     !DTACK     43                                                                 31   XRDY                                       GND                                                    C3                                                                                    C4
+                          !DTACK                                  XRDY
+C    !BGACK     14
+                          !BGACK                              !ROMEN
+                                                                                   21   !ROMEN                                                                                                                                                                                                               C
+                                                                                                                                                                                          100nF                                                                                 100nF
+       !HALT    42                                                                 22   !CLOCKRD
+                          !HALT                             !CLOCKRD
+      !RESET    41                                                                 23   !CLOCKWR                                                                                       GND                                                                                   GND
+                          !RESET                            !CLOCKWR
+                               !REAGEN
+                      !RAMEN
+
+
+
+
+                                           !BLISS
+
+
+
+
+                                                                           !CDAC
+                                                                    CCKQ
+                                                    !BLIT
+
+
+                                                              CCK
+
+
+
+
+                                                                                                       +5V         JTAG                       GND
+                                                                                                                         1         2
+                                                                                                           TMS           3         4       TDI
+                     20
+                          18
+
+
+                                         19
+                                               15
+
+
+                                                             28
+                                                                  27
+                                                                       26
+
+
+
+
+                                                                                                           TCK           5         6       TDO
+                     !RAMEN
+                     !REGEN
+
+                                         !BLISS
+                                           !BLIT
+
+                                                               CCK
+                                                              CCKQ
+                                                             !CDAC
+
+
+
+
+                                                                                                                                                                  R1     TMS
+                                                                                                                                                              4k7
+                                                                                                                                                                  R2     TDI
+                                                                                                                                                              4k7
+                                                                                                                                                                  R3     TDO
+                                                                                                                                                              4k7
+                                                                                                                                                                  R4     TCK
+D                                                                                                                                                             4k7                                                                                                                                            D
+
+                                                                                                                                                      GND
+                                                                                                                                                                                                             TITLE:
+                                                                                                                                                                                                                           Amiga "GARY" Replacement (DIP Inline)                                REV: 1.0
+
+                                                                                                                                                                                                                                     Company: The Buffee Project                                Sheet: 1/1
+                                                                                                                                                                                                                                     Date:    2022-04-22          Drawn By: Renee Cousins
+                     1                                                                             2                                                          3                                              4                                        5
+

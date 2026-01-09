@@ -1,0 +1,244 @@
+                        1                                          2                                             3                               4                                                        5
+
+
+
+
+                                                                                                                                                                                                 RAMEN
+                                                                                                                                                                                                 REGEN
+                                                                                                                                                                                                 BLISS
+                                                                                                                                                                                                 BLIT
+                                   JTAG1
+                                   JTAG-PROG-CONN                                                                          TDO    DRD4
+                                                                                                                            TDI   DRD5
+                                                                                                                           TCK    DRD6
+             +3.3VDC        1                     2 TMS                                                                    TMS    DRD7
+
+
+
+
+                                                                                                                                                                                                         6k8
+                                                                                                                                                                                                         6k8
+                              VCC            TMS                                                                                                                                                R66            R65
+                 GND        3                     4 TCK
+                              GND            TCK
+                 GND        5                     6 TDO
+A                             GND            TDO                                                          U1                                                                                                                                                                   A
+
+
+
+
+                                                                                                                                                                                                   6k8
+
+
+                                                                                                                                                                                                               6k8
+                            7                     8 TDI                                                   LCMXO2-2000HC-4TG100I                                                            R64                       R63
+                              KEY             TDI                                                                                                                                                                            Agnus_Agnus_8375_socket
+                GND         9                     10
+                              GNDDetect    RESET                                       RESET     1                 100 +3.3VDC
+                                                                                        INTR       PL2A        VCC
+                                                                                                 2                 99 DRD0
+
+
+
+
+                                                                                                                                                                                                   25
+                                                                                                                                                                                                   23
+                                                                                                                                                                                                   19
+                                                                                                                                                                                                   20
+                                                                                        DMAL       PL2B       PT9A                                                                 U2
+                                                               +3.3VDC                           3                 98 DRD1                           A20 R2
+                                                                                                   PL3A       PT9B
+                                                                                       BLISS                       97 DRD2
+
+
+
+
+                                                                                                                                                                                                    RAMEN
+                                                                                                                                                                                                    REGEN
+                                                                                                                                                                                                    BLISS
+                                                                                                                                                                                                     BLIT
+                                                                                                                                                                              35
+                                                                                                 4                                                   A19     6k8                   A20
+                                                                                    +3.3VDC        PL3B      PT11A                                                        R3 59
+                                                                                                 5                 96 DRD3                           A18 R5         6k8            A19                                            WE    21
+                                                                                         GND       VCCIO5    PT11B
+                                                                             C7                  6                 95 TDO           +3.3VDC          A17     6k8              77   A18                                          RAS0    57
+                                                                                         BLIT      GND       PT12C                                                        R4 76
+                                                                             0.1u                7                 94 TDI                            A16 R7         6k8            A17                                          RAS1    56
+                                                                                                   PL4A      PT12D
+                                                                                          RW     8                 93 +3.3VDC                        A15     6k8              75   A16                                          DRA9    55
+                U3                                                 GND                             PL4B     VCCIO0                                                        R6 74
+                                                                                      REGEN      9                 92 GND                C6          A14 R9         6k8            A15                                          CASU    54
+                IS66WVS4M8BLL-104NLI                                                  RAMEN        PL5A        GND
+                                                                                                10                 91 TCK                0.1u
+                                                                                                                                                     A13     6k8              73   A14                                          CASL    53
+    DAT_EN                                         +3.3VDC                          +3.3VDC        PL5B      PT16C                                                        R8 72
+               1                             8                                                  11                 90 TMS                            A12 R11        6k8            A13                                                  50
+      DAT1       CE#                     VCC       DAT3                                            VCCIO4    PT16D                  GND
+                                                                                           AS                      89 GND                                                     71                                                DRA8
+               2                             7                                                  12                                                   A11     6k8                   A12                                                  49
+      DAT2       SO/SIO1                SIO3       DAT_CLK                              RGA8       PL7C         NC                                                        R10 70
+                                                                                                                   88 DRD8
+                                                                                                                                                                                                                                DRA7
+               3                             6                                                  13                                                   A10 R13        6k8            A11                                                  48
+       GND       SIO2                   SCLK       DAT0                                 RGA7       PL7D      PT17A
+                                                                                                                   87 DRD9                                                    69                                                DRA6
+               4                             5                                                  14                                                    A9     6k8                   A10                                                  47
+                 VSS                 SI/SIO0                                            RGA6       PL9A      PT17B                                                        R12 68
+                                                                                                                   86 DRD10
+                                                                                                                                                                                                                                DRA5
+                                                                                                15                                                    A8 R15        6k8            A9                                                   46
+                                                                                        RGA5       PL9B      PT18C
+                                                                                                                   85 DRD11                                                   67                                                DRA4
+                U4                                                                              16                                                    A7     6k8                   A8                                                   45
+                                                                                        RGA4       PL10A     PT18D                                                        R14 66
+                                                                                                                   84 DRD12
+                                                                                                                                                                                                                                DRA3
+                IS66WVS4M8BLL-104NLI                                                            17                                                    A6 R17        6k8            A7                                                   44
+                                                                                        RGA3       PL10B     PT19A
+                                                                                                                   83 DRD13                                                   65                                                DRA2
+B   DAT_EN                                         +3.3VDC                                      18                                                    A5     6k8                   A6                                                   43                                     B
+               1                             8                                          RGA2       PL11A     PT19B                                                        R16 64
+                                                                                                                   82 DRD14
+                                                                                                                                                                                                                                DRA1
+      DAT5       CE#                     VCC       DAT7                                         19                                  +3.3VDC           A4 R19        6k8            A5                                                   42
+               2                             7                                       CLK28M        PL11B     PT20C
+                                                                                                                   81 DRD15                                                   63                                                DRA0
+      DAT6       SO/SIO1                SIO3       DAT_CLK     +3.3VDC                          20                                                    A3     6k8                   A4                                                                                RGA8
+               3                             6                                                     PL12A     PT20D                                                        R18 62                                                             R43
+       GND       SIO2                   SCLK       DAT4
+                                                                                        RGA1    21                 80 +3.3VDC                         A2 R21        6k8            A3                                           RGA8    26         6k8               RGA7
+               4                             5                                           GND       PL12B    VCCIO0                                                                                                                                             R42
+                 VSS                 SI/SIO0                                                    22                 79 GND                C5           A1     6k8              61   A2                                           RGA7    27               6k8         RGA6
+                                                                                    +3.3VDC        GND         GND                                                        R20 60                                                        28   R45
+                                                                             C8                 23                 78                    0.1u                       6k8            A1                                           RGA6               6k8               RGA5
+                                                                                        CDAC       VCCIO3    PT22A                              DRD15 R23                                                                               29                     R44
+                                                                             0.1u               24                 77                                                         83                                                RGA5                     6k8         RGA4
+                                                                                          A20      PL14A     PT24C                  GND         DRD14     6k8
+                                                                                                                                                                          R22 84 DRD15                                                  30   R47
+                                                                                                25                 76                                                                                                           RGA4               6k8               RGA3
+                                                                   GND              +3.3VDC        PL14B     PT24D                                                  6k8                                                                                        R46
+                                                                                                                   75 HSYNC                     DRD13 R25                          DRD14                                                31
+                                                                                                26                                  +3.3VDC                                  1                                                  RGA3                     6k8         RGA2
+                                                                                      CLK7M        VCCIO2     PR1A                                        6k8                                                                                R49
+                                                                                                                   74 CSYNC                     DRD12                              DRD13                                                32
+                                                                                                27                                                                        R24 2                                                 RGA2               6k8               RGA1
+                                                               +3.3VDC                  CCKQ       PB5A       PR1B                                                  6k8                                                                                        R48
+                                                                                                                   73 +3.3VDC                   DRD11 R27                          DRD12                                                33
+                                                                                                28                                                                           3                                                  RGA1                     6k8
+                                                                                         CCK       PB5B     VCCIO1                                        6k8
+                                                                                                                   72 GND                       DRD10                              DRD11
+                                                                                                29                                       C4                               R26 4                                                                                      CLK14M
+                                                                                     CLK14M        PB6A        GND                                                  6k8                                                                      R51
+                                                                                                                   71 VSYNC                      DRD9 R29                          DRD10                                                40
+                                                                                                30                                       0.1u                                5                                                   14M               6k8               CCK
+                                                                             C10                   PB6B       PR3A                                        6k8                                                                                                  R50
+                                                                                        DAT4                       70 LPEN                       DRD8                              DRD9                                                 39
+                                                                                                31                                                                        R28 6                                                  CCK                     6k8         CCKQ
+                                                                             0.1u
+                                                                                        DAT7       PB8A       PR3B                  GND          DRD7 R31           6k8                                                                      R53
+                                                                                                                   69 A18
+                                                                                                                                                                                   DRD8                                                 38
+                                                                                                32                                                                           7                                                  CCKQ               6k8               CLK7M
+                                                                                         GND       PB8B       PR4A                               DRD6     6k8                                                                                                  R52
+                                                                                                                   68 A17
+                                                                                                                                                                                   DRD7                                                 37
+                                                                   GND                          33                                                                        R30 8                                                   7M                     6k8
+                                                                                        DAT6       GND        PR4B                               DRD5 R33           6k8
+                                                                                                                   67 A16
+                                                                                                                                                                                   DRD6
+                                                                                                34                                                                           9                                                                                       LPEN
+                                                                                        DAT5       PB11A      PR5A                               DRD4     6k8                                                                                R55
+                       JP1                                                                                         66 A15
+                                                                                                                                                                                   DRD5                                                 78
+                                                                                                35                                                                        R32 10                                               LPEN                6k8               VSYNC
+                       0603_SOLDERBRIDGE_NO                                         DAT_CLK        PB11B      PR5B                               DRD3 R35           6k8                                                                                        R54
+                                                                                                                   65 A14
+                                                                                                                                                                                   DRD4                                                 79
+                             JP1                                                                36                                                                           11                                               VSYNC                      6k8         CSYNC
+                                                                                        DAT2       PB12A      PR6A                               DRD2     6k8                                                                                R57
+                                                                                                                   64 A13
+                                                                                                                                                                                   DRD3                                                 80
+                                                                                                37                                                                        R34 12                                              CSYNC                6k8               HSYNC
+              GND                                                                       DAT1       PB12B      PR6B                               DRD1 R37           6k8                                                                                        R56
+                                                                                                                   63 A12
+                                                                                                                                                                                   DRD2                                                 81
+C                                                                                               38                                                                           13                                               HSYNC                      6k8                   C
+                                                                                     DAT_EN        PB16A      PR7A                               DRD0     6k8                                                                                                        GND
+                                                                                                                   62 A11
+                                                                                                                                                                                   DRD1
+                       JP2                                                                      39                                                                        R36 14
+                                                                                        DAT0       PB16B      PR7B                                                  6k8                                                             GND 41
+                                                                                                                   61 A10
+                                                                                                                                                                                   DRD0
+                       0603_SOLDERBRIDGE_NO                                                     40
+                             JP2                                                        DAT3       PB18A      PR9A                                                                                                                                                   +5.0VDC
+                                                                                                41                 60 A9                          LDS R39
+                                                                                          LDS      PB18B     PR10A                                                                                                              VCC 15
+              GND                                                                               42                 59 A8                          UDS     6k8               51     LDS                                                                               RESET
+                                                               +3.3VDC                    JP2      PB21A     PR10B                                                      R38 52                                                               R59
+                                                                                                43                 58 A7            +3.3VDC        RW R41           6k8            UDS                                        RESET 16             6k8               INTR
+                                                                                         GND       PB21B     PR11A                                                                                                                                             R58
+                                                                                                44                 57 A6                            AS    6k8               22     R/W                                         INTR 17                   6k8         DMAL
+                                                                                                   GND       PR11B                                                      R40 24                                                               R61
+                                                                                         UDS    45                 56 GND                                           6k8            AS                                          DMAL 18             6k8
+                                                                             C9     +3.3VDC        PB22A       GND
+                                                                                                46                 55 +3.3VDC            C3
+
+
+
+
+                                                                                                                                                                                              36 CDAC
+                                                                             0.1u                  VCCIO2 VCCIO1
+
+
+
+
+                                                                                                                                                                                              34 28M
+
+
+
+
+                                                                                                                                                                                                                           58 GND
+                                                                                                                                                                                                                           82 GND
+                                                                                          JP1   47                 54 A5                 0.1u
+                                                                                          A19      PB22B     PR12A
+                                                                   GND                          48                 53 A4
+                                                                                           A1      PB25A     PR12B                  GND
+                                                                                                49                 52 A3
+                                                                                    +3.3VDC        PB25B     PR14A
+                                                                                                50                 51 A2                                                                                                        GND
+                                                                                                   VCC       PR14B
+
+
+
+
+                                                                                                                                                                                              6k8
+                                                                                                                                                                                              6k8
+                                                                                                                                                                                        R62             R60
+
+
+
+
+                                                                                                                                                                                               CLK28M
+                                                                                                                                                                                                 CDAC
+                                 U5
+                                 AP2125N-3.3TRG1             +3.3VDC
+         +5.0VDC       3                     +3.3VDC
+D                           IN      OUT 2                                                                                                                                                                                                                                      D
+                                                                         POWA1
+               C1
+                                 GND             C2
+                                                                         LED-0603_R
+               1u                                1u                                                                                              TITLE:
+                                 1
+
+
+
+
+                                     GND                               R1                                                                                          ReAgnus                                                                                      REV: 0.4
+                                                                       220
+                                                                       GND                                                                                                   Company: the Buffee Project                                                       Sheet: 1/1
+                                                                                                                                                                             Date:         2022-05-07                          Drawn By: Renee
+                        1                                          2                                             3                               4                                                        5
+

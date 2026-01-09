@@ -1,0 +1,11 @@
+FIG. /0.
+
+333
+[
+BIT PLANE BUS (6)
+
+D
+
+BPC. RES.
+ENABLE
+

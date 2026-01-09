@@ -1,0 +1,51 @@
+Register Name,Address,Hex Address,Chip,Family,Width,Bits,Function,Access Type,Notes
+AUD0LCH,$DFF0A0,$DFF0A0,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,19-4,Audio channel 0 location high,W,Pointer to audio data (upper 16 bits)
+AUD0LCL,$DFF0A2,$DFF0A2,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 0 location low,W,Pointer to audio data (lower 16 bits)
+AUD0LEN,$DFF0A4,$DFF0A4,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,13-0,Audio channel 0 length,W,Number of words to play (0-16383)
+AUD0PER,$DFF0A6,$DFF0A6,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 0 period,W,Sample period (frequency control)
+AUD0VOL,$DFF0A8,$DFF0A8,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,5-0,Audio channel 0 volume,W,Volume level (0-64)
+AUD0DAT,$DFF0AA,$DFF0AA,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 0 data,W,Audio data word
+AUD1LCH,$DFF0B0,$DFF0B0,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,19-4,Audio channel 1 location high,W,Pointer to audio data (upper 16 bits)
+AUD1LCL,$DFF0B2,$DFF0B2,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 1 location low,W,Pointer to audio data (lower 16 bits)
+AUD1LEN,$DFF0B4,$DFF0B4,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,13-0,Audio channel 1 length,W,Number of words to play (0-16383)
+AUD1PER,$DFF0B6,$DFF0B6,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 1 period,W,Sample period (frequency control)
+AUD1VOL,$DFF0B8,$DFF0B8,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,5-0,Audio channel 1 volume,W,Volume level (0-64)
+AUD1DAT,$DFF0BA,$DFF0BA,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 1 data,W,Audio data word
+AUD2LCH,$DFF0C0,$DFF0C0,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,19-4,Audio channel 2 location high,W,Pointer to audio data (upper 16 bits)
+AUD2LCL,$DFF0C2,$DFF0C2,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 2 location low,W,Pointer to audio data (lower 16 bits)
+AUD2LEN,$DFF0C4,$DFF0C4,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,13-0,Audio channel 2 length,W,Number of words to play (0-16383)
+AUD2PER,$DFF0C6,$DFF0C6,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 2 period,W,Sample period (frequency control)
+AUD2VOL,$DFF0C8,$DFF0C8,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,5-0,Audio channel 2 volume,W,Volume level (0-64)
+AUD2DAT,$DFF0CA,$DFF0CA,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 2 data,W,Audio data word
+AUD3LCH,$DFF0D0,$DFF0D0,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,19-4,Audio channel 3 location high,W,Pointer to audio data (upper 16 bits)
+AUD3LCL,$DFF0D2,$DFF0D2,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 3 location low,W,Pointer to audio data (lower 16 bits)
+AUD3LEN,$DFF0D4,$DFF0D4,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,13-0,Audio channel 3 length,W,Number of words to play (0-16383)
+AUD3PER,$DFF0D6,$DFF0D6,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 3 period,W,Sample period (frequency control)
+AUD3VOL,$DFF0D8,$DFF0D8,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,5-0,Audio channel 3 volume,W,Volume level (0-64)
+AUD3DAT,$DFF0DA,$DFF0DA,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio channel 3 data,W,Audio data word
+DSKDATR,$DFF008,$DFF008,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Disk data early read,R,Early read (dummy address)
+DSKBYTR,$DFF01A,$DFF01A,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Disk byte and status read,R,Read disk data and status
+DSKPTH,$DFF020,$DFF020,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,19-4,Disk pointer high,W,Disk DMA pointer (upper 16 bits)
+DSKPTL,$DFF022,$DFF022,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Disk pointer low,W,Disk DMA pointer (lower 16 bits)
+DSKLEN,$DFF024,$DFF024,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,13-0,Disk length,W,Disk transfer length (0-16383 words)
+DSKDAT,$DFF026,$DFF026,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Disk DMA data,W,Write data to disk
+DSKSYNC,$DFF07E,$DFF07E,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Disk sync register,W,Sync pattern for disk reads
+SERDATR,$DFF018,$DFF018,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Serial port data read,R,Read serial data and status
+SERDAT,$DFF030,$DFF030,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Serial port data write,W,Write serial data and stop bits
+SERPER,$DFF032,$DFF032,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Serial port period,W,Serial period and control
+POT0DAT,$DFF012,$DFF012,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Pot counter pair 0 data,R,Read pot counter pair 0 (vert/horiz)
+POT1DAT,$DFF014,$DFF014,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Pot counter pair 1 data,R,Read pot counter pair 1 (vert/horiz)
+POTGOR,$DFF016,$DFF016,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Pot pin data read,R,Read pot pin data
+POTGO,$DFF034,$DFF034,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Pot port data write,W,Write pot port data/start
+INTENAR,$DFF01C,$DFF01C,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Interrupt enable read,R,Read interrupt enable bits
+INTREQR,$DFF01E,$DFF01E,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Interrupt request read,R,Read interrupt request bits
+INTENA,$DFF09A,$DFF09A,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Interrupt enable write,W,Write interrupt enable bits
+INTREQ,$DFF09C,$DFF09C,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Interrupt request write,W,Write interrupt request bits
+ADKCONR,$DFF010,$DFF010,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio/disk control read,R,Read audio/disk control
+ADKCON,$DFF09E,$DFF09E,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Audio/disk control write,W,Write audio/disk control
+JOY0DAT,$DFF00A,$DFF00A,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Joystick/mouse 0 data,R,Read joystick/mouse 0 (vert/horiz)
+JOY1DAT,$DFF00C,$DFF00C,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Joystick/mouse 1 data,R,Read joystick/mouse 1 (vert/horiz)
+CLXDAT,$DFF00E,$DFF00E,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Collision data,R,Read/clear collision data
+CLXCON,$DFF098,$DFF098,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,Collision control,W,Write collision control
+DMACONR,$DFF002,$DFF002,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,DMA control read,R,Read DMA control / blitter status
+DMACON,$DFF096,$DFF096,PAULA,OCS/ECS/A500/A600/A1200/A2000/A3000/A4000,16,15-0,DMA control write,W,Write DMA control (set/clear)

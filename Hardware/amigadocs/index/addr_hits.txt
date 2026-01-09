@@ -1,0 +1,186 @@
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:406:           $80000000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:414:                           Expansion                             Zorro ü   I/O ~   $00680000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:420:                                                                                   $00880000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:431:           $10000000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:436:           $08000000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:438:                         Motherboard                                               $00200000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:440:           $01000000                                              Memory
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:441:           $00000000                                                               $00000000
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:577:Memory space is the Standard 8 megabyte space from $00200000-S009FFFFF. The I/O address
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:578:space is mapped at $00E80000-$00EFFFFF, and a new 1.5 megabyte section (previously
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:1753:      space starting at either $00E80000 or $FF000000 if its /CFGINn signal is asserted. All
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:2471:3C is always 0, which means in hardware, the upper nybbles of locations $00E8003C and
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:2472:S00E8003E, or $FF00003C and SFF00013C, both retum all l ’s.
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:2912:fixed in the address ränge from $08000000 to $o f f f f f f f . The Local Bus Slot Controller, the Fat
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:2918:The Amiga OS expects anything mapped starting at $08000000 to be memory, and in fact, the
+_text/pdf/Commodore_A4000-A3000_Hardware_Developer_Notes_v1.11_ocr.pdf.txt:2922:least 512K above the $08000000 base, and the OS will ignore them.
+_text/pdf/Zorro3_specifications.pdf.txt:348:                $80000000
+_text/pdf/Zorro3_specifications.pdf.txt:353:                                                                                           $01000000
+_text/pdf/Zorro3_specifications.pdf.txt:355:                                                                                           $00F00000
+_text/pdf/Zorro3_specifications.pdf.txt:357:                                                                                           $00E80000
+_text/pdf/Zorro3_specifications.pdf.txt:362:                                                                                           $00B80000
+_text/pdf/Zorro3_specifications.pdf.txt:365:                                                                                           $00A00000
+_text/pdf/Zorro3_specifications.pdf.txt:373:                $10000000
+_text/pdf/Zorro3_specifications.pdf.txt:377:                $08000000
+_text/pdf/Zorro3_specifications.pdf.txt:379:                               Motherboard                                                 $00200000
+_text/pdf/Zorro3_specifications.pdf.txt:381:                $01000000                                                  Memory
+_text/pdf/Zorro3_specifications.pdf.txt:382:                $00000000                                                                  $00000000
+_text/pdf/Zorro3_specifications.pdf.txt:504:      space is the standard 8 megabyte space from $00200000-$009FFFFF. The I/O address space is
+_text/pdf/Zorro3_specifications.pdf.txt:505:      mapped at $00E80000-$00EFFFFF, and a new 1.5 megabyte section (previously reserved for
+_text/pdf/Zorro3_specifications.pdf.txt:506:      motherboard devices) from $00A00000-$00B7FFFF. Zorro II cycles are not generated for
+_text/pdf/Zorro3_specifications.pdf.txt:839:process, an unconfigured Zorro PIC responds to the 64K address space starting at $00E80000 if
+_text/pdf/Zorro3_specifications.pdf.txt:1575:      $00E80000 or $FF000000 if its /CFGINN signal is asserted. All unconfigured PICs start up with
+_text/pdf/Zorro3_specifications.pdf.txt:2312:         $00E80000                                               $FF000000
+_text/pdf/Zorro3_specifications.pdf.txt:2321:         $00E80002             a) Zorro II Style Mapping         $FF000100       b) Zorro III Style Mapping
+_text/pdf/Zorro3_specifications.pdf.txt:2331:      always 0, which means in hardware, the upper nybbles of locations $00E8003C and $00E8003E,
+_text/pdf/Zorro3_specifications.pdf.txt:2332:      or $FF00003C and $FF00013C, both return all 1’s.
+_text/index/bf_hits.txt:1:_text/pdf/gayle/Gayle_Specifications.pdf.txt:142:  negates on the first write to CIA1 (address range of $BFDOOO to $BFDFFF.
+_text/index/bf_hits.txt:2:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9552:CIAAPRA   ($BFE001) Input and output for pin 6 (port 1 and 2 fire buttons)
+_text/index/bf_hits.txt:3:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9684:o The left button on the Amiga mouse is connected to, CIAAPRA ($BFE001). The button
+_text/index/bf_hits.txt:4:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9773:The fire buttons for ports 0 and 1 are connected to bits 6 and 7 of CIAAPRA ($BFE001). A
+_text/index/bf_hits.txt:5:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10072:The joystick fire buttons can also be configured as outputs. CIAADDRA ($BFE201) contains
+_text/index/bf_hits.txt:6:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10073:a mask that corresponds one-to-one with the data read register, CIAAPRA ($BFE001).
+_text/index/bf_hits.txt:7:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10100:    CIAAPRA ($BFE001) four input bits for disk sensing
+_text/index/bf_hits.txt:8:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10101:    CIABPRB ($BFD100) eight output bits for disk selection,
+_text/index/bf_hits.txt:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10125:are input bits in CIAAPRA ($BFE001). Bits labelled "PB" are output bits located in CIAAPRB
+_text/index/bf_hits.txt:10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10126:($BFD100). More information on how the 8520 chips operate can be found in Appendix F.
+_text/index/bf_hits.txt:11:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10205:FLAG   DSKINDEX*   Disk index pulse ($BFDD00, bit 4). Can be used to
+_text/index/bf_hits.txt:12:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13480:    |    | 1\ | 0\ |                                               |$BFE001
+_text/index/bf_hits.txt:13:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13489:                                                                    $BFE201
+_text/index/dff_hits.txt:1:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:423:Table 8-4 POTGO ($DFF034) and POTINP ($DFF016) Registers.........234
+_text/index/dff_hits.txt:2:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:425:Table 8-6 DSKLEN Register ($DFF024)..............................240
+_text/index/dff_hits.txt:3:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9550:JOY0DAT   ($DFF00A) Counter for digital (mouse) input (port 1)
+_text/index/dff_hits.txt:4:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9551:JOY1DAT   ($DFF00C) Counter for digital (mouse) input (port 2)
+_text/index/dff_hits.txt:5:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9553:POT0DAT   ($DFF012) Counter for proportional input (port 1)
+_text/index/dff_hits.txt:6:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9554:POT1DAT   ($DFF014) Counter for proportional input (port 2)
+_text/index/dff_hits.txt:7:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9555:POTGO     ($DFF034) Write proportional pin values and start counters
+_text/index/dff_hits.txt:8:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9556:POTGOR    ($DFF016) Read proportional pin values
+_text/index/dff_hits.txt:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/index/dff_hits.txt:10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9558:VPOSR     ($DFF004) Read light pen position (high order bits)
+_text/index/dff_hits.txt:11:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9559:VHPOSR    ($DFF006) Read light pen position (low order bits)
+_text/index/dff_hits.txt:12:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10024:lines built into the POTGO register (address $DFF034) can redefine the functions of some
+_text/index/dff_hits.txt:13:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10027:Table 8-4 is the POTGO register bit description. POTGO ($DFF034) is the write-only
+_text/index/dff_hits.txt:14:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10028:address for the pot control register. POTINP ($DFF016) is the read-only address for the
+_text/index/dff_hits.txt:15:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10032:Table 8-4: POTGO ($DFF034) and POTINP ($DFF016) Registers
+_text/index/dff_hits.txt:16:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/index/dff_hits.txt:17:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/index/dff_hits.txt:18:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10105:    DSKPTH ($DFF020) DMA pointer (32 bits)
+_text/index/dff_hits.txt:19:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10106:    DSKLEN ($DFF024) length of DMA
+_text/index/dff_hits.txt:20:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10108:    DSKSYNC ($DFF07E) Disk sync finder; holds a match word
+_text/index/dff_hits.txt:21:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10227:value must be written as a single long word to the DSKPTH register ($DFF020).
+_text/index/dff_hits.txt:22:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10233:          Table 8-6: DSKLEN Register ($DFF024)
+_text/index/dff_hits.txt:23:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10356:                    address ($DFF07E). This capability is highly
+_text/index/dff_hits.txt:24:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10831:68000 address = (chip address) + $DFF000
+_text/index/dff_hits.txt:25:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10834:$DFF09E. No other access address is valid. Unused registers must not be accessed
+_text/index/dff_hits.txt:26:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15249:CUSTOM          equ $DFF000
+_text/index/dff_index.csv:3:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9550:JOY0DAT,($DFF00A)
+_text/index/dff_index.csv:4:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9551:JOY1DAT,($DFF00C)
+_text/index/dff_index.csv:5:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9553:POT0DAT,($DFF012)
+_text/index/dff_index.csv:6:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9554:POT1DAT,($DFF014)
+_text/index/dff_index.csv:7:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9555:POTGO,($DFF034)
+_text/index/dff_index.csv:8:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9556:POTGOR,($DFF016)
+_text/index/dff_index.csv:9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9557:BPLCON0,($DFF100)
+_text/index/dff_index.csv:10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9558:VPOSR,($DFF004)
+_text/index/dff_index.csv:11:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9559:VHPOSR,($DFF006)
+_text/index/dff_index.csv:25:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,10834:$DFF09E.,No
+_text/index/dff_index.csv:29:_text/index/dff_hits.txt,3:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9550:JOY0DAT,($DFF00A)
+_text/index/dff_index.csv:30:_text/index/dff_hits.txt,4:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9551:JOY1DAT,($DFF00C)
+_text/index/dff_index.csv:31:_text/index/dff_hits.txt,5:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9553:POT0DAT,($DFF012)
+_text/index/dff_index.csv:32:_text/index/dff_hits.txt,6:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9554:POT1DAT,($DFF014)
+_text/index/dff_index.csv:33:_text/index/dff_hits.txt,7:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9555:POTGO,($DFF034)
+_text/index/dff_index.csv:34:_text/index/dff_hits.txt,8:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9556:POTGOR,($DFF016)
+_text/index/dff_index.csv:35:_text/index/dff_hits.txt,9:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0,($DFF100)
+_text/index/dff_index.csv:36:_text/index/dff_hits.txt,10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9558:VPOSR,($DFF004)
+_text/index/dff_index.csv:37:_text/index/dff_hits.txt,11:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9559:VHPOSR,($DFF006)
+_text/index/dff_index.csv:51:_text/index/dff_hits.txt,25:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10834:$DFF09E.,No
+_text/index/bf_index.csv:2:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,9552:CIAAPRA,($BFE001)
+_text/index/bf_index.csv:10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,10126:($BFD100).,More
+_text/index/bf_index.csv:13:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt,13489:,$BFE201
+_text/index/bf_index.csv:15:_text/index/bf_hits.txt,2:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9552:CIAAPRA,($BFE001)
+_text/index/bf_index.csv:23:_text/index/bf_hits.txt,10:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10126:($BFD100).,More
+_text/index/bf_index.csv:26:_text/index/bf_hits.txt,13:_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13489:,$BFE201
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:140:  $0000000 to $OlFFFFF when the internal overlay signal (OVL) is high (this allows the RESET
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:142:  negates on the first write to CIA1 (address range of $BFDOOO to $BFDFFF.
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:172:   Chip RAM cycles are generated during accesses to locations $0000000 to $0200000. When the
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:418:            $A00000 -$A7FFFF           Flash ROM                                 zorro II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:419:            $A80000 -$B7FFFF           Workbench ROM                             zorro II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:420:            $BSOOOO -$BEFFFF           Reserved for CDTV                         ZOITO II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:422:            $DDOOOO-$DDFFFF            Reserved for DMA contr                    ZOITO II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:423:            $EOOOOO -$E7FFFF           System ROM                                zorro II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:424:            $FSOOOO -$FFFFFF           System      ROM     .                     zorro II
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:444:   These cycles are active during accesses of address $4000’00 to $8FFFFF while a credit card is
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:445:   inserted. Accesses from $400000 to $7FFFFF are to the credit card main memory. Accesses
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:446:   from $8000000 to $8FFFFF are to credit card attribute memory. Both types of cycles are
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:474:   Credit card I/O cycles occur during accesses to $900000 to $9FFFFF while a credit card is
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:522:   A spare chip select is provided. It is asserted on any access to locations $DSOOOO to $D8FFFFF.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:423:Table 8-4 POTGO ($DFF034) and POTINP ($DFF016) Registers.........234
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:425:Table 8-6 DSKLEN Register ($DFF024)..............................240
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:790:Do not jump into ROM. Beware of any example code that calls routines in the $F80000 to
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:791:$FFFFFF range. These are ROM addresses and the ROM routines WILL move with every OS
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2489:code is identical to the last example, except the bit-plane is filled with $FF00FF00 instead
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2494:LOOP:      MOVE.L #$FF00FF00,(a0)+ ; Write out $FF00FF00
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2956:; Fill bit-plane with $FF00FF00 to produce stripes
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2959:    MOVE.L #$FF00FF00,d0            ; We will write $FF00FF00 long words
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:2977:    CMPI.L #$FFFFFFFE,(a2)+         ; Check for last longword of Copper list
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3028:      CMPI.L #$FFFFFFFF,(a2)             ; End of char list?
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3067:    DC.L   $18FC3DF0,$3C6666D8,$3C66C0CC,$667CC0CC
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3068:    DC.L   $7E66C0CC,$C36666D8,$C3FC3DF0,$00000000
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3069:    DC.L   $FFFFFFFF
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3875:    MOVE.L #$55555555,(a1)+         ; Fill bit-plane 1 with $55555555
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3876:    MOVE.L #$33333333,(a2)+         ; Fill bit-plane 2 with $33333333
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3877:    MOVE.L #$0F0F0F0F,(a3)+         ; Fill bit-plane 3 with $0F0F0F0F
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3878:    MOVE.L #$00FF00FF,(a4)+         ; Fill bit-plane 4 with $00FF00FF
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3879:    MOVE.L #$CF3CF3CF,(a5)+         ; Fill bit-plane 5 with $CF3CF3CF
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3880:    MOVE.L #$3CF3CF3C,(a6)+         ; Fill bit-plane 6 with $3CF3CF3C
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:3892:    CMPI.L #$FFFFFFFE,(a2)+         ; Check for end of Copper list
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4854:   CMP.L #$FFFFFFFE,(a2)+              ; Check for end of list
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4864:   CMP.L #$00000000,(a2)+           ; Check for end of sprite
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4872:   MOVE.L #$00000000,$30000         ; Write it
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4880:; Fill bit-plane with $FFFFFFFF.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:4885:   MOVE.L #$FFFFFFFF,(al)+          ; Move a long word of $FFFFFFFF
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9440:additional copy of the system ROM responds starting at memory location $00000000. The
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9451:and AUTOCONFIGTM cards disappear, and the ROM image appears at location $00000000.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9550:JOY0DAT   ($DFF00A) Counter for digital (mouse) input (port 1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9551:JOY1DAT   ($DFF00C) Counter for digital (mouse) input (port 2)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9552:CIAAPRA   ($BFE001) Input and output for pin 6 (port 1 and 2 fire buttons)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9553:POT0DAT   ($DFF012) Counter for proportional input (port 1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9554:POT1DAT   ($DFF014) Counter for proportional input (port 2)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9555:POTGO     ($DFF034) Write proportional pin values and start counters
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9556:POTGOR    ($DFF016) Read proportional pin values
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9558:VPOSR     ($DFF004) Read light pen position (high order bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9559:VHPOSR    ($DFF006) Read light pen position (low order bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9684:o The left button on the Amiga mouse is connected to, CIAAPRA ($BFE001). The button
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9773:The fire buttons for ports 0 and 1 are connected to bits 6 and 7 of CIAAPRA ($BFE001). A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10024:lines built into the POTGO register (address $DFF034) can redefine the functions of some
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10027:Table 8-4 is the POTGO register bit description. POTGO ($DFF034) is the write-only
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10028:address for the pot control register. POTINP ($DFF016) is the read-only address for the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10032:Table 8-4: POTGO ($DFF034) and POTINP ($DFF016) Registers
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10072:The joystick fire buttons can also be configured as outputs. CIAADDRA ($BFE201) contains
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10073:a mask that corresponds one-to-one with the data read register, CIAAPRA ($BFE001).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10100:    CIAAPRA ($BFE001) four input bits for disk sensing
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10101:    CIABPRB ($BFD100) eight output bits for disk selection,
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10105:    DSKPTH ($DFF020) DMA pointer (32 bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10106:    DSKLEN ($DFF024) length of DMA
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10108:    DSKSYNC ($DFF07E) Disk sync finder; holds a match word
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10125:are input bits in CIAAPRA ($BFE001). Bits labelled "PB" are output bits located in CIAAPRB
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10126:($BFD100). More information on how the 8520 chips operate can be found in Appendix F.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10205:FLAG   DSKINDEX*   Disk index pulse ($BFDD00, bit 4). Can be used to
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10227:value must be written as a single long word to the DSKPTH register ($DFF020).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10233:          Table 8-6: DSKLEN Register ($DFF024)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10356:                    address ($DFF07E). This capability is highly
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10831:68000 address = (chip address) + $DFF000
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10834:$DFF09E. No other access address is valid. Unused registers must not be accessed
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13480:    |    | 1\ | 0\ |                                               |$BFE001
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13489:                                                                    $BFE201
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14297:jumpers. Upon reset, each board appeals in turn at $E80000. with readable identification
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14308:to appear at $E80000. To make certain types of boards less expensive, an expansion
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14357:$200000.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14376:Your board should now respond at the normal $E80000 address. Your view of the board is
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14405:o All addresses are shown here as offsets from the base address $E80000 where boards
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14406:appear at configuration time, so offset $02 is at $E80002, offset $04 at $E80004, etc.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:14416:        Nibble at $E80000    Nibble at $E80002
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15242:COPPER_HALT equ $FFFFFFFE
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15249:CUSTOM          equ $DFF000

@@ -1,0 +1,514 @@
+& pur & 4
+= 2 #* Y a S a Sa za
+] % a 2a 2a 2a ag agfl |ag 58
+T a v a [ Zz & =z & =z &
+88 88 @ a Za Za Za
+http://amigadev.elouar.com/read/ADCD_2.1/Harduare_Manual_guide/node@@6@.html
+4a) INT2 § g e NAME ADD R/W CHIP  FUNCTION
+p : — s '] | |wee_ aDD R/ CHIP  FUNCTIN
+ADOR_DECQDER ~ a et DSKDATR & %@@8 ER P Disk data early read (dummy address)
+ﬂ =2 p AUtio, disk control regist d
+CCK# ~ o ADDR_DECODER ADKCONR %010 R udia, disk control register read
+CCK# DBW# priz - pAn y PHtz il a < £ F4 ¢ g POTEDAT ¥812 R PCE ) Pot counter pair @ data Cverthariz)
+‘ ‘ ) - e & = & < - % S PAT1DAT %@14 R PCE Y Pot counter pair 1 data Cvert,horizd
+a = RES ~ PHI2 PHI1 = PHI2 PHIL & o - e a S @ POTGOR %016 R P Pot port data read (formerly POTINP
+A c c = = = = PHI4 a £ 2 2 5 [ SERDATR *218 R p Serial part data and status read
+74125 00 0 iVERTB - - = = a a o o a ‘ DSKBYTR *@1A R P Disk data byte and status read
+\ - “ INTENAR *@1C R P Interrupt enable bits read
+WDQ—W” °4I>Q—I: nai e 0 e )—,7 o o o = RESI# INTREGR %1l R P Interrupt request bits read
+= PHIL = s A = DSKLEN %024 U D Disk length
+= =z 0 {>0 PHIZ - DSKDAT & %226 U P Disk DMA data urite ) )
+08 PAD ™~ ; l < SERDAT %230 W P Serial port data and stop bits urite
+STREQU L T T 5 D15io 4e) interrupt register control SERPER %032 U P Serial port period and cantral
+2> ba 74125 sTR < = 8) POT = POTGO %234 W P Pot port data urite aqd start s
+Diio STRHOR 7)7 e3 = = F3 PHI2 PHI1 o DSKSYNC “@7E U P Disk sync pattern register for disk read
+01 PAD 0 ] Daio x o ! = * hud OMACON 296 W  ADP OMA contral urite (clear ar set)
+; ¢ ¢ } Y 5@ [ ) . u P Int t enable bits (clear or
+fzis @0 @0 fneRe 4 2 e ;‘ g 3 iTBE IF@ TBE IE@-TBE = 4] 4] 4] I—I g g 1 b1 *%% Epitaph for a dead bird xxx INTENA een " e;;l-tlpbif;)a <
+D2 PAD : ] HSL ~ Za — ] ‘ o 2 2 il o 0@ia < INTREQ @sc W P Interrupt request bits (clear or
+03i http://amigadev.elouar.cam/read/ADCD_2.1/Harduare_Manual_guide/node@@sd.html ) @ 9 e a UWhen I was young, . . L , set bits)
+FERT [ Bbste - D1lio o .y > once there uas a beautiful/mighty/majestic bird, ADKCON @sE W P Audia, disk, UART control
+2 1p1 = C C M — aluays steady and faithful, : a1 "
+e — : | ) : AUDBLEN aA4 W P Audio channel engtl
+D4io " - " - " * - + 5% __10SKBLK | IFl.DSKBLK IEl-DSKBI—K J Deio 0 a 0 a \ 2 54125 > uho aluays had carried me to uhere I wanted/needed to go. AUD@PER 246 ﬂ E( £ ﬁ;dé? Ch;””ellae Pe"lmd
+04 PAD =zl =z =z =z 3 D I - = g z ) Dgio D2io AUDBUOL 2n8 udia channe valume
+) [ =1 - % al 2 2 gl g gl 2l %l T < = g g & & o~ = £ gl Z2| al ¢ g £ 2 g =z Z T gg' 2PHIL 02i0 7} )7 PAT_CNT@ 0| al= '\(\ < S Many years had passed by. . AUDADAT & 2An U p Audic channel @ data
+Dsio 2 28 g 8 2 2 OB G & 5 8 2 ] 8 Z S 2 = a =z 8 8 S g & 4 ¥ 5 9 & 4 s 8 o S o5 HSL aEs L1 7eias » fAnd the dead stuffed bird nou sits on my desk. anc
+05 PAD k3 S 8 ¢ £ < al 8 g8l = 8 alal al a g ¢ & al al al 3| £ & v x| 2| | @ =ox Bl 5| = ¥ ¥ S E 5 = ) o—! [ C 03i0
+Z S a 3 3 3 3 3 3| 3 3 3 3 L 3 3 3 3| ol o 7] = Ll @ = [} o @ = o o @ o & CCK# iSOFT IF2 SOFT IE2 SOFT a 4 S QAE
+D&ia a z 2 5 Z < < < < < < | < < < < zZ %) < < < €| al a a = (2= = o a =] = a a =] =] g, 3 [= a R - . 1N = 8g) POT counter cantrol o a o af- 2 '\( 2 AUDLLEN 284 U p Audio channel 1 length
+06 PAD — G = @ o ——CCK# ™ ola > 04io > @ “» , , AUD1PER aBs W P Audic channel 1 period
+f i /\/\ /\/\/\/\/\ o u= 5 Tl 03io L/ Y [ H o o] . But enough of that sentmentality, & . . again AUDLUOL @88 U P Audio channel 1 volume
+D7io A ug U wl o o P2 P8 ; 5 o o nou to dip the dead bird's beal ¢ s AUDLDAT & ©BA W P fAudic channel 1 data
+b == Az POT_CNT1 Dilia . < d aore schematics with Eagle &.4...
+e J g 8z a = = z z z o o 2 IF3.PORTS IE3.PORTS POT_CNT3 POT_CNT3 = 3 0z _D8le <« >—| . ® for drauing some n 5 e
+. I} a5 = = = = = = = | . . . . :
+D8ia a & @ [t} T PR \. S S o ‘ al o~ = ...l still lack the time for migrating to KiCad. : h
+a z Z i s D2io0 ; = 5 AUD2LEN ac+ W P Audio channel 2 lengt
+0s_pap PHIZ g‘ = =l 4bd INT_2 +ot Saiul J / LD_DrAL —( POT_CNT2 ZI ZI 2 M>4| g s < a El RT3 PHIZ - PHIL g AUD2PER acs U 2] ﬁudéo channel 2 period
+osio 2 > PHize | 2 icapeR IF4.COPER IE4.COPER paT_cnTa == & 3o > - 555 5 AlDsar . oca U b Audio channel 2 data”
+03 PAD = . “ = @ D7ia a a alalala u
+Dieio o 4 . 1PS J—— . PHI2 PHIL : ‘ H\H 8 @ S ggg
+D10 PAD EE— A z T r DSio . PQT_CNT4 = Do = T AUDALEN @0t W P Audio channel 3 length
+‘ : | ) g AUD3PER ans U p Audic channel 3 periad
+fitle ¢ I el - e IF5.VERTB IES.VERTB / POT_CNT@ POT_CNTS = D5i0 . 74125 [ » AUD3VAL 8 W P fudio chamnel 3 wolune
+D1t PAd %1% = s B D8io /7 _ _ _ _ 3 AUD3DAT & @OA W P fAudic channel 3 data
+‘ ™ q Déio J 8f) POT counter S @ @ @ @ 2
+| 0120 PHio = cin@ BOT_CNTS g Dsio ~ N a |0 a |0 ’& ? 2 T T o
+D12 PAD e INT_3 IF6.BLIT IE6.BLIT \HSL = a | ‘1 e o [ a |0 a |0} P
+10 .
+013 PAD I coks 1 gl 3 c POT_CNT? 8 | o7io 2 @ [
+. 1b) clock generator 7 i —logqa ola o|a nga paTAX
+E— D1+io N N VYN VTV N 07i0 4l>o% =l = I © \f — ‘ ) POT@X_HI o<} Patex | rakOn
+DISKWRITE, < T £ , 74125
+E = i . actlally one 74125 na
+015 PAD g g e {>o cek N R e ? pe ifuba IF7.AUDG IEZ.AUDG J 5 & plus a 2:1| MUX = POTBX_IN# [ I .
+a a . u
+< o % —e oM & Dsio POT_CNTL 0Tax_Lo
+= ? _
+2 e L g 1 - i POT_CNTO é [NZf2E Daia 2 FaTer \
+\ [ 3 ] L L L g T S LN IF8.AUD1 IE8.AUDL T cini# - . b 2 +
+a PHI2 < 74125 0r@
+u I P e . P4 —l>o% | HsL . ™
+RGASIN a T D9io — = 2 ‘ 1
+a K 2 ™
+a PHI2 _ PHI1 [ [ I I a ; | J ] ola ola }
+g 3 : A _ inuo2 | IFS.AUD2 IES.AUD2 L]y A 0 L Disio POTaY_HI
+1 pe RGAZin 2 ‘ ”
+5 N I A ) . e N Y A AN I Rssosnwry (N I N I p BN
+° 8 , zehiz | [ D18io 1P2 T TE POT_CNT1 PO | Ddio D11io POTaY_IN# PaTay ¢ 11 4exonm
+; Rensin 1 £ £ POTAY_LO PAD
+PHIL b a 2PHIL [T T T T T T ¢ J_'{:‘;l __ iAU03 | IF10.AUD3 IE10.AUD3 PAT_CNT2 POT_CNT2 g g g D1@io = I 470F
+oy 3 RGAGIN [ K | gl g g PATLX_HI
+a3 3 ~ PHIZA | [ ] [ [ ] [ T PAT_CNTA PAT_CNT3 = = & D1tio D12i0 =
+3 ola 0 a RGA+in e ] > ; POTLX_IN# POTLX
+. D11 N b L ) o pPOTAX
+[ReAL PAO } 0l RGALin Eé 2 HSL PHI1@ [] [ [ I }_X & 1 | paT_CeNT4 PaT_CNTA S 1210 013i0 i o0 T 11 47aconm
+o3 Irent o> < DBR# RGA3iN N _ iRBF | IF11.RBF IE11.RBF L 1P1 ‘ 5 — - I o
+g 8 .
+° . &2 = , \ POT_CNTS POT_CNTS R | 013i0 o7y HI "
+RGA2in . ) RGAZiA D12i0 . L © Di4io |
+RGA2 PAD x 7¢ Ed n SYN 4d) interrupt priority } > 14i — v e oTLy
+. 5 9 a g iDSKSYN POT_CNTS POT_CNTS o | Ditio | ; PATLY_
+RGA3 PAD | RGASIA * 03 ° RGALiN T N RES 4\ T IF12'DSKSYN IE12'DSK | N bisio | 8c) POTLY CTRL 8c) POTLY CTRL PATAY LO PAD g T 470@kQhm
+o c= K @ < : - H
+c ol o ¢ ] { I CNT? (] D15i0
++ e | Rentin £ b g8 £/£8 8| |38/ 88 2|3| 5/£/ 8 5|5/ |3 £ 2/3/3 2 sl3/2/8/28|2||3/3/3|3|8|5/|8|§5 ¢ o o 1% T o
+58 x4 28 8|8 |83 22 8|88 |3 S| 8|88 |8|8 @ | & | @ | & | & | & @ | & | @ | & | & | & @ | & | @& | & | & | & | & | U g INT_6 IF13.EXTER IE13.EXTER } 1Ps B
+RGABIN go 2§ w bio
+RGAS PAD  — 22 38 _ v = = = = o - e o = o & v | ® Ly
+RGASI ¢ o o B8 =z =z £ a a8 a o o i T T T T < = 0 @ & i = a =z 4 = £ - 8 g 2 z 5 |9
+[ RGASIA S @ a 5 & & & 5 5 > a a a o o o a $ €€ 4 I 4 1 o P v S x w 9 2 x £ 3 = INT_2 a4i
+RORS_PAD g & 88 ¢ ¢ ¢ 588858 28588 E g 888§ g¢e S E & g g £ g2 e85 E % g s A S
+[= =} =} [=] [} Lt [} Lt [=] [} =1
+a \ .
+RGABIN ™ A ) 1
+RGAS PAD E— L/ L N
+OMARD , +~ < ¢ 4g) = £ ol|a
+Dio / \ a J 0 a 0|a a o 0 a 0|a
+/ \. ! 3 K] =] o -
+. INT 1 o S
+T E o ola E a 4g) ™ ADDR_DECODER ADDR_DECODER 0 0 t r 0 e r
+INT ohA Vam ma ~ T L/ = a— | \ C I '
++~
+pu B / \ P @ oo c C
+— '
+- ADDR_DECODER e M =] 1643 bio I
+L / \ ' L T4 ol e -
+I
+74125
+ADDR_DECODER , N CTRL | 1F13 INTR#
+CTRL o
+% § % % 4e) interrupt register control D15i0
+z|Z|T|e DSKL_CEN
+~N o =z = o) <+ 0 [ N |ar| < 74125
+& e o< S & & gz S 3 & e o< LaaE 8 g < & e o< 2 E G g 8 < 3| @ [
+73> Auoe cTRL 2388 Zg8 22 23| |9388 58 22 23| |4588 258 235 22||[2¢E iy .
+= : < a a a a8 @ @ D 3 A @
+4 g =z §358 £33z ¢~ $22% 53z ¢° 2222 S35 ¢ ' isKeL g
+3 s & S € T <Tc< 38 o = € € << & ¥ oo = € € < g8 g = S
+=z =z =z . ¥
+i w9 2 43 2 3 3 g 83 § & 8 10SKSYN @ 10e> 2PHI2  2PHIL
+=1 =1 s P al a a g o c ¢ 2 S ¢ T a
+= 4 — s < 8 X X g s 3 £ 4 a £ DKRD_CK ‘ ‘
+“ gy 5 g 3 3 € €8 € e == PHI2  PHIL
+T > [a% a [=] [=] [=] ] C
+2 8 8 3 g gl € 2 2 5 DKRD_CKR ¢ o
+< = o a o a
+g5 s 2 g gz 5 F = Ptz > N D 2 | .
+s 3 & s RES - DKRD.CKA 2 :
+—‘ PHIL - a DSKL_CEN ]
+Y . oa < T T DSKLEN
+. : DSK_BLD 0 o ala 0 o o ol DsKkBLD
+rowroads| ¥ asa ADKCONR#
+SEOTONSRI N as e | [, o0|a = fram L N/ a
+1L ) 8 rew 8 118 PHI2@ @ P
+PH @
+, 3 PHI2 RES2# PHI1 4 A DKRO_NCKR
+D15i0 < g =
+a7 art oo} 25t = @ o a
+o|a ¢ T a |
+U/ P o|a >1 i - 1@0> T}
+~ [ D@io C < < &
+AW b : . ) - o : : :
+N s ‘ q ( ) g @) cheat sheet 0| e Prtz Pt DSKSY1
+L/ as2 1 ™~ >I
+o a
+>H7 e L >7 g { L | N ‘ i ; : ; ‘ ; | R ; = DKRO_CKR ¢ é & 2 ¢ = < a 5 foete
+t < - o0 a o IT—¢ Q2 [= 5 a ] T H
+—i ™ Ti8 pat o 1ed> g z 8 s o g 8 azy owe| @
+PHI2 3 T
+()] L/ = () (J (7 priz £ eHi R E: . :7 g 8 g s = % 3 2 ] e
+= b =3 g & T a ¥ = rooroads| N
+™ 114 Q10 % )I C C t 4 logic >concept< only, a l\ C% T a a a a ] | m""’»» RES
+. P i it : e 33 c =] L
+C / o P . 3 . 1, ) ol a ditferent from ariginal circuitry Iz L g. 0eio § 0 o ole ola| 4133 & é 12 g \/ \/ \/ \/ . oseos
+H a i Doi =] 7
+\ T3 ™ 1U0LNAD C C C = PHIL - 2 Foca ole :S io A N\ 2 }
+C J 0 jaf—oa ojaf—o|e L/ https://uuu.gou1ube.com/uatch?v=quH2csr‘!R8Yp e Chin Decs - ‘ 3 . .
+- aula Chip Designer 0l o - ‘
+o (U (U (U INTERVIEW | Blenn Keller - Commodore Amiga p g L — Loms T - 8 3 Lo D ocs b1io 3
+' l’ ADKCONG.USE@UL 37 0o ™ Lo_omaL a J J J T - 1@n b=
+c c 1PERMOD . . . . MY I3
+™\ T10 ag# ¢ ¢ e ! Glenn Keller really did a nice job with Paula: o ) ) € [ L/ g & & o2 0240 ya
+o a o a o a o a . ADKCONA.USELU2 We haven't noticed during our dissection that it was his first chip design. o a — [ e ~
+/ Diio &6C) ADKCONQ..7 . , = PHI2 PHI1
+l ' U U Foca D3io Z
+> Tz D2io ADKCON2.USE2V3 @ >o 3 c = = > Neg
+— & ; 0 a o e FOC4 D+tio 3 =
+8 4' > F—{o oo a ™\ DskL_ENC L o S |— 9 f? 9 a
+I = a |
+™ T 03io ADKCON3.USE3UN o RES 5b) DMAL LD I b L/ ) Zud N ! >7u a—{o | e
+L/ PHI2 PHI1 - g r < A % FOCS D5i0 a Eg
+4 L < ———— — <
+™ o o o D4io ADKCON4.USE@PL 2 < = OMAL# a e}— ) B T 5 ‘ ~
+o ) T8 — ] < a [ Diio gL do oo jel—do|a P} FOCs Dsia 2 ~N
+. ¥ E
+" e | o ={ o5i0 ADKCONS.USE1P2 L oe_ | ™ DskiB . g L/
+- guuf ™ 122 a T DSKBLD L/ FDC7 D7io a
+v t ] t ] t ] Dsio ADKCONG.USE2P3 § | :
+— |
+-U Q oL3 ‘ DSKkoe < a DSKLEN
+™ Tis = < 07t ADKCON7.USE3PN = A PHI2  PHI1 DSKB_LD 2, .
+J )o . — b= from — } H Coutl a a ] \ o|a 0|a
+ru a 0 ‘ £ 10K) DSKWS1 < 7}
+a . | [
+PHI2 RES2# PHI1 | D2io 2 P a
+™ 12 (U (U (U D15i oLs ! ln DSK_BLD — 100> 74125 S el £ g
+(U ) o io 6ah) DMACON@..4,9 | 16H_Cout2 | Lom N D8io T o |3 S
+5 a9 RES oja x | GJ D3io L T @
+N 17 RES ——\ % a|a 3 4 oLs PHIL — | NG 74125 . 162> DKUE
+L/ / 3711 a 0la e o 3 3 & \ oje n)a | A D4io ! RS D3io < <
+& 5] o o = \ 5 / oL? DKRD_NCKR < — | L | 0 e o | DKWE# DKUE# DKWE
+™ 711 9 =1 T < Z Ddio — ] j = . i 24125 ) ™ PAD
+/ a < a a / ﬁ\ p a o % DSia \‘\ D1@ia 7
+c = —_
+N ) Q114 ola 0l P o £ 0 e ala ) DMACON@.AUDBEN & U- r DLSKURITE Déio | L 125 DSKL_CEN :
+D8ia T )—ﬂ a — [~ D11i
+L/ = | | A, io DSKL_ENC
+T16 :I.:T ( , \ GJ i =
+S = oLe D7ia R
+\ T18 M 3 [ 8 | / 10H_Cout3 — | \ .
+. J Q124 < & N : : S a nL18 f s Dsio i 188YNC N 012i0 iDSKBLK
+<+ @ —
+X T T | T PHI2  PHI1 } L5105 o 1 )7J
+< ) DL11 i I 3 )
+g o a o a . D9io . pa
+123 ) aLs D Diio | OMACONL.AUDLEN | — | DISKWRITE  [™R D13io oy LT S Jo a
+| i " 9
+DL12 10H_Cin® ; I a
+D2i0 DMACON2.AUD2EN — C _bieio | L4125 DSKNDL
+i) } | N . DISKWRITE
+\ Q3% QLENLD ) 0L13 Ditio RS Di4io DISKURITE
+I 5 ¢ 0a D3io DMACON3.AUDIEN |
+| — e | | L :
+] o a o|a OL14 I 10H_Cout@# . i 74125 DSKDAT 1aei pl_ﬁ
+@5 GPUMCEN - Dtia OMACON4.DSKEN ] | D _D12io | ‘
+) y oL ‘ D130 !
+[ L D15io J‘_ o N
+> N T3 ) Q4#  GLENCEN ADKCONS.FAST Z doun 5 3 DKL ¢ x .
+L ; ADKCONS.MSBSYNC counter 2 8 10p> b4 i~ 3
+Ts \ Q1% @PERLD __ D8io | &e) ADKCONS..14 : § O A & z [ oHI g g
+/ b c < =1 a
+i ADKCON4@.MORDSYNC £ -
+™ T28 PLA _ Di@io | a ™~ % nga o|a oa D@ - kg]‘
+D8ia —~ : <t
+L/ Ditio ADKCON41.UARTBRK L/ i = ( _) \ D14ia latch WRITE | |, = 2PHI2  2PHI4 105>
+™\ 124 Q2  @PERCNT — £ £ ¢ . )7.: a o TT
+L/ D12ia ADKCONA2.MFMPREC = o e f T 8l . 100>
+QSELAL - - ¢ . 2 o 5| =
+D13i0 ADKCON13.PRECOMPG : I~ I o ¢ Z 4l 3 DKML
+P a " k3 3. i N & ¥ x " F M \  DKRCU
+D14i0 ADKCON14.PRECOMPL DMACONS.DMAEN D e H g = g 1aqy  PHI2 PHIL o A\ ola ola DKRCLR1 & L/ 7}
+e 2 7 5F g LT D L
+; & DKM2 &
+ADKCON1@.WORDSYNC A - D18io0 latch . 0 a ol £ 8 . . = [ {>o
+< a
+74128 CTRL - a3 3 Ll TT o] = 0 o o a 1
+e/ \. = Nt/ c = £ ):F DKM3 108y
+ADKCON44.UARTBRK g 0ga 0 0 oa o = L < DKRLDL
+T ‘ - DKM4
+K] ‘ o aQ o aQ )
+‘ [ DKRSETL DKMS
+& Dio /T —a Dio o T TiaH—CQU‘G PHI2 OKME } ™  Dkrcy
+Dia Do ‘ )D FASTLL {>% DKRCI LV
+c
+RES PHI2 PHIL part of 10ed RES —Ja o —l>%
+106
+AUDBPER ;; L
+9 i ADDR_DECODER - ADDR_DECAODER dlo|o|s|w|v 2PHI2 2PHI1
+e 9 <] 11 2PHI2  2PHIL SIS EI22
+2 = = 9k> UART contra DONE N MM
+T OMACONA.OSKE! EEEEEE T
+@PERMAD )CHQ g )CHQ PHI2  PHI1 al o x g DKAD.NCKR DMACON4.DSKEN T |
+] S = S 2 2 & @ = T okMe Lsls | C
+S Z % & 9k UART contral 1 % >Q ™ Tx_HoLp e ?% 4 DSKBLD B | ik |
+& 4 ¢ RES 1) UART = L/ 4 B pa DSKDATR# \ Lsls g ‘ A
+? 3 - @PER_Cing@ Sy 5 >QJ ~ T )D TXD# {>Q OHARD < D | TTT |
+. L u o a o|a o|a Q I s|s
+D@ia 0 s 0 e ola ola {>Q \/ & TX_SHIFT % DKRD_CKR B Loy | C
+< < o |
+i 0 ( —x l——( 9 | I
+= @ DSKSYNC z Lsls |y
+q Y
+aMana 2 - doun o ~| 9 a PHI2 PHI1 PHI2 PHI1 o D T | ﬁ
+counter Zl 2 PHI2 2| \ DSKB_LD = =2 } | sls 4 f
+- L2} a
+8I 8I TX_BRG_IS@ TX_BRG_I5@ ‘ x 100 L/ D8io 100> Foca E«' g g < B ik | C
+< ol o o~ — m DSKaLD — | x| & s|R ‘
+3 5| 5 TX_BRG_LD 3 a = c Ll g o 5 L L Focs 2 g g Ly A
+S = = pur | =] TX_NULL £ a a a © o a
+« | —A0 @ = a | a a =
+1 i GPER_Cint# & e o o RES NI = S a | oo a 8 Le 2
+c c 7 & & 2 @ & PHI2  PHIL L = S c € € 3 ¢ DSKRU Diia - - - * D
+Diio o a o e n|a n|a 2 3] o PHI2 PHIL - 5 5 5 T IL —losa o0 a nsa oa oa o|afTJo @ )o n|a FocL A A
+z i 5 % - . T ] LD_DMAL e Tl = . < s 1.0, N e} o a ) —
+g ; § aMODL —~ - doun © Y © BRGE p Daio atc = %‘ % \ / ) DSKDR# A o | % 0 @ ala o|al4 a oLl /
+counter own #* L‘ a a o a ] —
+% g g g T <:|<;n,mt % ] counter < - /J\ c = latch FDC2 b’ © BN
+caunter - =
+=] = a <o ~
+>3 PHIZ  PHIL 1 o 1 @ T T 2 9a) °<} ? ‘o a Foc1e ‘[
+1 (=3 c 0 i a
+g _ D2io | . = x e 3 ) latch |, ala ala 9i) RX serial data AX0 pad P ala ala é
+Dai ! v o a ol|a o|a ]
+aMaD2 |1 e oa - S—{° oo oo x T ‘ & o < < RXD FDC3
+| - , a D2i
+B 0 ) 03 \ @ & ) U = = FOC11 C
+& - OLEN_Cin@ io T @ > © = | | LT
+: - = D3io =
+D@io {>Q \/ 8MOD3 T T T T Y & ——ata | @
+o aQ o aQ o aQ o aQ m I
+| |
+| Pl =]
+g Dtio ‘ r & Diio ‘ LO<} 3 D4io \ \ Foc4 B . \/
+q o — — = -
+A — I I | |
+gga:ter \Tu‘ \Oj aMan4 D2ia ! ‘ q\ DSia I f mdEr Foci2 ﬁ\ q\ 7 .a
+< — c —
+3 | | | £ up | | 2 7]
+S . T . T T g o |l . T T T 3 c ¢
+g _ 0si | i , Do | a 1 counter s Dsio Focs | o] PR P I I A S 1o a = N o e —
+5 anMans z S | } 6 : z } } FOC13 I = = o foa /
+@ ) 3 D4io u oRa ola ola £ 074 N U ala
+. o (& a 10 (. bz 1
+@ N ALEN_Cind# o o : 4 ( A o — | K I — =19 | [ W g o \/ = g T 5
+. 2 ¢ g = Dsia & c % . 1 \ 1 O 1 2 0 R X =
+Diia 0 a ola ola g i — . c o c @ DSio D8io — T e - ~ a m
+o aQ £ Ll et
+| a a ola —_— o9 | = 10t —
+c S = aMODs |1 Diio 0la g 0 oa 0a 0a 9, F o a 0 % | | ] | z o U
+g ° © = T = = ‘ = . i \ © | o | FOCé g o c 3
+T } - @ - _a _Déio | T _ D%ia | o ~ g G e i - . o E g
+- daun 2 D7io E2 & > o | | ] | | Lo |a Focit g £ : & 9 a v 0 u
+counter T —— T \f T D7ia ‘ ‘ D10io ‘ 'é" ‘ A 2 g 2 3 é é ¢ 1a0 L o A v
+L _ Di@io | o 0
+| | i | o | & T & & a
+| o~
+, \ - g Dsio ‘ ‘ < Ditio ‘ U ‘ = Foc? gl 2
+. I D8io 3 — € — gl ¢ DKRTOG
+—D2io | — | | L Gl | | FDCLE gl 8 DKREN RES22#
+| 8MOD8 DSio 2 D12io0 o |a
+) : _ DKHOLD
+D3ie | D2ia | | ? | ‘ £
+| D3io ! | | | D1dia ‘ Sl losa alallala {>Q D13i0 ‘ ‘ DKCNT
+D4io . — | £
+— aMana D3io . 1 \ - \ . 1 1 3 =
+| | | | I D11io D14io Q ! z
+i : ‘ ‘ ‘ ‘ : — % 2PHI2  2PHI4 o
+D5io ; \ D4io | | | | @ =
+L __ Didio | | | | | D12i0 ‘ ‘ D D15ia ‘ ‘ 2 o A ‘ ‘ 2
+) I i i I f = — 3 * 2| a < RES22#
+Déia LT MOD1@ LT ; | /2 = v} = Z ~
+—] 8 Delo | . } \ ‘ 3 g o gl g 10k < ¢ ¢ ¢ e e
+| | | | | D13io o ~ ¥ & al o Y nga o a o a
+) I . I i i I I ] A o X A ! 2PHIL  2PHI2 H s
+D7io D11io Déio | | a g =
+| | | D14 ‘ ‘ c e = % 3 o g 105>
+| | 10 5
+: | aMop11 . T T T =2 ] 0 al_ | v =
+__Dsio | | 07io : | | & i 0SK1B Los £ 3 £ 105
+| ) \ | | | | D15i0 I ) ‘ < g ¢
+D3io L D12io0 D8io [ I l — 9c) TX shift registel | | a a a 0 DKRCI = %
+| amMap12 | | | | - l l al—a
+‘ | DKRD_CKEN# a &
+Didio = 3 | D3io ‘ ‘ ‘ TX_W B DMALG N N 3 3
+2 | Di3io s ‘ | | | | ﬁ o b - o Jof—a o oKRDCKEN DSKNDU
+: S I —_— - T I
+Ditio > oODLS o D18i0 f a DKRD_CKR
+o | & | | | s < N % & g Z DKRDEC
+L | | I = = = T T C 3
+D12i a f . [ I | B . . 10p> a a a a s Z n
+_bicio | Di4io z f Diiio 9)) RX shift register contral DISKURITE I~ % % % ] FAST11 P P DKRING
+- | SO ] 4 | | | | i DSKDG 2 2 b b A
+. Z i i i \ ‘ c PHIZ. PHIZ DSKDE
+D13i0 o aMoD14 e - D12ia G
+« [ | | | | | | [ S il - Foce
+. a I . T I I I 2 [
+Di4io 2 | D18i0 ~ D13io ‘ ‘ 1 5 &
+: N | | ‘ : 3 3 T 18g ! ™ oLa 33
+. | [~
+_ Di5io | N rene Diio ‘ ‘ ‘ B baud . o o] o o Y / ) g 2
+9d) TX baudrate generatar | | ) audrate generator ‘ E 22
+QPUMCEN l l DSKL_CEN ) ala ala >OT 1 1 RES22#
+_ _ _ T
+c
+= 9e) LONG < o k4 L <
+J PHI2  PHI1 - DiGio 2| © [ *Tore ™ DSKOL@ Gl o ol ol o)Eda| o | ol 9o af—a | af—a | o}
+o aQ a —
+RX_BRG_Cout o L/ = - o 2PHI2  2PHI4
+- AxX 18I “ 9 2PHI2  2PHIL O 1ak> & 1av> )
+2 ; = a o a1 3 5 pu
+avate | |, T, - z| < oLs ) X - g \ alaolfala
+1U0LMOD cing .2 = “ RX@_0UT = ol & L DRio :Ii . b= \ )
+1PERMOD BN RES W = 3 o z L }
+a cia ass S < o a DSKOLA
+2 alalJo|a E ggx \ a8 SERDATRY & & 1 ) Foct 2
+£ AqgU0 TX_IS@ o [ /\ ﬁ\ D1io ——— @
+J __ Diio |
+[ ag e = | ol|a ola L
+~nc —
+< 9830 ™ )} 9i) RX serial data 1 . al ¢ g g ¢ | gl 4 02io f FOC2 = J—o e L
+L o 2 - L/ 54195 D@io Tl | o |0 o | o o g0 al 2| 3 a oL7 — =9 | T z > ala
+AUDBYQ GUOLHOLD T cleg ‘L NS D1dio I TN o ) \ FoC3 ¢ ) ool
+@UOLMAD = SEEL —~ | RX_BRG_Cout E— — 10 3| % D3io | FOC3 = c c
+PHI2 PHI1 _Go> ™ e = 9 DSKRU 0SKOL2 — ! P I I —
+z gl @ L/ Sc 74125 , X 2 D4io | Foc4 = € ¢
+pa 385> = 54 N Ditio ) ) o I DSKLD2 — .- Yo of—s o}
+i - 1\ ac2a < QL — 9h) RX |shift register a } Focs — \/ - 2
+Ll . o | o] _208H = doun counter ] ) 9ky UART contral 1 a8 L1 tie DSio | FOCS %
+DBio x| w RX_START xo oLz | 5 N
+b ° e N o e = g 3 UART control 1 ) | | Deio | roce < 10e> e)—o |0 o af_, OKRG a =
+g € L/ 2 . M Tsee @ 54 54105 02io oLs \ ] | 8 RES ] >7§ DKRSET
+2 H auaLL ] L/ & oo TeRE N D12i0 | | | g
+2 arana - Tl 2 ‘ ; \ \ oL3 D7io | FOC7 2 [
+< o Cini# * _ & LA D3ia ‘ N 1 NN
+~ < < a3 S5 | | ; f FoCcs T—a
+o = =] 582 74126 . . I D8io | Focs
+a >7§‘ = D1io = alal—Ja|a égg T8E N D13io D4io ‘ _——l | g a > T T o L >7
+& R INTREG | | , I )
+5 L Focs
+1MOD@ aMoo4 . e 0sio i | s D9io | Focs
+g Saa® 74126 2 | |
+5 o EX RES PHI2  PHIL RBF NS Di4io | | 5 \ ™
+; - k ; Foci@ DKRDEC
+@ @ D2i0 s cols TX_DONE > ; \ ‘ = DISKURITE 186 D1Gio ——— L/ D )
+: Déio
+Doi T T 1 5 EREcpe L1 | ] | @
+io e |
+o |of—a |o o o 2Man2 < “Eot | : 18H_Cout3 \ ; | Focit c g g€
+2 5982 RES  PHI2 07io ‘ ‘ a >Q ™ Doskas _Dttlo | i . = ey —1o o ol OKR2 g 33
+; ~ he] a DSKLD2 o
+D3io 9352 | | ] J . T FOCL2 P 74238 DKRCLR
+4MOD1 < E{ w24 L D8io I I = L/ D12i0 | 252 i b j
+‘ aMaD3 doun counter i 3 = PHIL | rocts ER —
+__Diio | | o D13i0 | FOC13 ‘ C:
+; g auaL2 0lal—Ja|a ol RXE_IN o ™ DoskaH — | A
+AMOD2 D4io > a >Q / T FOCL4 [ ]
+: D14ia 62 Y6
+aMao4 i auoLa c , ; ; _Ditio | w8 v
+. D16io DSKALD | L
+02 a - TBE ) NS
+] fla nle . ¢ | LONG ADKCONS.MSBSYNC D15io ‘ FOC4E DKRG ™N
+DSia z 9 7) = —= 16e> ™ OKRINC
+AMOD3 g QuaL4 2| 4108 3 L/ )
+‘ oMans © T z g DSK_BLD _ 20HI2  2PHIL L/
+D3io = auaLS ~N % 0 a 3 - 5 18H_Cout2 ™ = -l 8 P 2 Foce A DKROL
+i < SERDAT = 9j) RX shift register| cantrol RX9_0UT a u@ 2l e ™ b~ ——
+D§
+1MOD4 = S L/ < 2% L/ 2 g & = s ¢ DKRD2
+| ol RES al a RES v}
+aMoDs N auaLs = — oG el o a o|a o|al—
+) a = DKRO_NCKR
+D4io —-° a ) INTREQ 3 3 . =4 - @ D@ ™~N a
+— @ 7d> AUDB UOL CTRL Ditio 0 e 0 a RBF QURUN DSio ) ) AN o o 83
+. = PHI4 PHI2 ola ola gh) RX |shift register o - 17 =
+g 1MODS PHI2 oH2 @PLMLD ‘ ‘ 1510 = = RXS_IN | ot Foce L/ 2 “ g
+- a a [= I a
+DSio ,Eu"‘ 4l>% 2 ‘ ~ - . ADKCONG — e T . 2 aEs él = I . X
+= & ! € N DKRCU
+c a o o o o H‘F ADKCON4 fla OURL 5 o B .
+z 1MODE P o ol @YRES s ¢ 9 ™N AX_OUERAUN a o % [ W/ 1ap
+k] — & PHI2  PHI1 0o a PHIL ) a Z . .
+Déio RX_HOLD | +~ 2 g
+) | al v c DKRCU
+<« 1MOD? ™ RX_LD | =) ] g 0o 0 oa 0 oa
+3 — D16io % 9
+: IS L [ X o g A DKRO_CK
+__D7io | ~ ] A0AC. S z L 9g> AX baudrate )74| >0— -/ s E{R PLA
+2 >7u [ ola = - - = 3 P B z g - generatar contral RES2# =
+S S 8 P o 2 2 2 S < < RX_BRG_Cout AX_START ADKCONS.FAST
+3 S ] N ] hal s N s & 8 % S IS 3 0 @ 0 a 9)) RX shift register contral
+o Rk 5y 0% 0% 0% 0& 08 E
+- [g) o L
+~ 12 2PHIL
+_ _ 24000 ol|a ol|a @DACcaH ) - - IS 1av> PHI2 PHI4 2PH
+2l 2l g ] N talling edge detector //scans for StartBit h
+D8io o | o ~ v N ~ 10 + T 9l UART cantral 2 L
+a |0 a |0 o g v S IN E 3 2 o 3
+ale ale aoACeL 5 & d _— g g
+7 = al & Lod> 2PHIL 2PHI2
+1MODS 5 inBF Lfojal—Ja|a ™
+BOACAH &
+i = Note: / 1@c> DKRD
+__DSio | 2AUDL a0ACLL © ~ ~ 0 A = After putting 8@@+ hours of uork « <
+pa 8 + ) N < N N & inta the Paula dissection, ising edae = \ =] T T T
+1MOD1@ @DAC2H = @ u I simply lack the capacity d edg \ ¢ a
+anAc2L a for interpreting the gloppy controller. 0la 0la [ [ [ [ / g
+D1Q@io 1_@nub2 | | — — N & X 2' . / a / latch DKRD#
+@DAC3H M Ml [ 8( 8[ &l Em 08 3 orry. 4 o
+1MOD11 | @DACsH B N 0 "' o il a After you figured out hou it uorks, g
+2aUD3 | @DAcaL = = o N please urite” some technical articles... N ¥ ¢ o ©
+Dilio ~ ote: s 5
+_ Ditio | & oACAH N a8 3 UART has no RX Bit counter and no TX Bit counter. | ] ) Z,4 T
+"‘ ——— — £ a Y . (o 2 ol
+1MOD42 ahUD+ T A0ACAL 288, . U Control logic checks if the TX shift register is empty | rising edge | Tl o4 3 iy
+@ @ o £ o tect th d of a transmission.
+D12i0 2 § 2 g S S $2eq¢e @ for detecting the en ‘ 74238 &
+2 | 80ACSH ~ & @ N o 0 . ] SE'&‘E T Cantrol logic checks if the Startbit is in the LSB \ P
+& 1MOD13 2AUDS ] a0ACEL [ 2 [ e [ g Iz . [ » » WP LEDE o g of the RX shift register for detecting the end L/ B \;A‘ ala ola
+« F——— 2 2 o o « & &N =1 a Y | 3 of an ingoing frame.
+) 4 z 2 B % 53 8 3 S GBGULY o 3 9 ADKCONA 2.MF MPREC ) ™
+_Dadio | g 5 @0ACEH g L 5 L g 4 5 + 5 - 5 5 afediy g 2 e < < L/
+N ADACEL ] 5] S © © ® « S 4 ADKCON42.MFMPREC —dex v |—
+Y 1MOD14 gAuDS — g 74238 o a 0@ 2PHI2  2PHIL e 1@b> DKWO
+a - % ADKCON3.PRECOMP@ ADKCON13.PRECOMP@ = - falling edge 1 ™ ‘ ‘
+D141 Q R
+io § 3 ADKCON14.PRECOMPL ADKCON14.PRECOMPL | L/ DKOL# € € DKWD DKWD#
+— o aQ
+< 1MOD45 £ P = L PAD
+~ —— — C —] G2/ Yé b—
+a aAuD? 6B Vo |—
+D15io0 N 2 o a ., 1
+=} a a [23 a a
+an e F g g S g g S g 5
+-~ o~ < o~ ] < ] <
+BMOD=GND )J )J
+
+[=}= [=}=
+X € X €
+| x4 & a —a
+[=l=]
+S < S <
+T a T a
+

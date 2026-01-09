@@ -1,0 +1,26 @@
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:423:Table 8-4 POTGO ($DFF034) and POTINP ($DFF016) Registers.........234
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:425:Table 8-6 DSKLEN Register ($DFF024)..............................240
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9550:JOY0DAT   ($DFF00A) Counter for digital (mouse) input (port 1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9551:JOY1DAT   ($DFF00C) Counter for digital (mouse) input (port 2)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9553:POT0DAT   ($DFF012) Counter for proportional input (port 1)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9554:POT1DAT   ($DFF014) Counter for proportional input (port 2)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9555:POTGO     ($DFF034) Write proportional pin values and start counters
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9556:POTGOR    ($DFF016) Read proportional pin values
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9557:BPLCON0   ($DFF100) Bit 3 enables the light pen latch
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9558:VPOSR     ($DFF004) Read light pen position (high order bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9559:VHPOSR    ($DFF006) Read light pen position (low order bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10024:lines built into the POTGO register (address $DFF034) can redefine the functions of some
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10027:Table 8-4 is the POTGO register bit description. POTGO ($DFF034) is the write-only
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10028:address for the pot control register. POTINP ($DFF016) is the read-only address for the
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10032:Table 8-4: POTGO ($DFF034) and POTINP ($DFF016) Registers
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10103:    ADKCON ($DFF09E) control bits (write only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10104:    ADKCONR ($DFF010) control bits (read only register)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10105:    DSKPTH ($DFF020) DMA pointer (32 bits)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10106:    DSKLEN ($DFF024) length of DMA
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10108:    DSKSYNC ($DFF07E) Disk sync finder; holds a match word
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10227:value must be written as a single long word to the DSKPTH register ($DFF020).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10233:          Table 8-6: DSKLEN Register ($DFF024)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10356:                    address ($DFF07E). This capability is highly
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10831:68000 address = (chip address) + $DFF000
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10834:$DFF09E. No other access address is valid. Unused registers must not be accessed
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:15249:CUSTOM          equ $DFF000

@@ -1,0 +1,701 @@
+                                           ’ Specification
+                                               GAYLE
+                                     Gate array for A30O/A500+
+                                                                                 0 /N APoo
+                                                                               /w-
+1 .O DESCRIPTION
+
+GAYLE is a gate array IC used in the A’300 and related systems. It is packaged in an 84 pin plastic leaded
+chip carrier (PLCC) whose pinout is shown below. GAYLE is capable of operating a 68000 based Amiga
+computer with theECS chipset, and a processor clock speed of 7.16 Mhz. GAYLE provides the following
+functions:
+
+                         - Address decoding and timing for system ROM
+                         - Address decoding and timing for optional flash ROM
+                         - Address decoding and timing for chip RAM
+                         - Address decoding and timing for chip registers
+                         - Address decoding and timing for 8520’s (CIA’s)
+                         - Address decoding and timing for real time clock (RTC)
+                         - Address decoding and timing for Credit card connector
+                         - Address decoding and timing for IDE hard disk drive
+                         - Address decoding and timing for COM200020 ArcNet chip
+                         - Generation of ECLK clock signal
+                         - Data buffer control
+                         - System RESET logic
+                         - Floppy glue
+
+
+
+
+[ Insert pinout here )
+
+
+
+
+1.1 CONFIGURATION
+The device shall be configured as a standard 54 pin plastic leaded chip carrier with external dimensions as
+shown in Figure XX-x. Refer to figure x-x for connection diagram.
+
+
+1.2 SOURCES
+Refer to Approved Vendor List.
+   1.3 PIN DESCRIPTIONS
+
+
+
+   1       OUT        PE12           Program Voltage 12V Enable
+   2       OUT        PE5            Program Voltage 5V Enable
+   3       PWR        Gndl           Ground
+   4       TS         NOISE          Digital Audio
+   5       OUT        CC-RESET       Memory Card Reset
+   6       OUT        -CC-ENA        Memory Card Enable
+   7       OUT        -CC-REG        Memory Card “Register” Space
+   8       OUT        -CC-CEL        Memory Card Chip Enable Low byte
+   9       OUT        -CC-CEU        Memory Card Chip Enable High byte
+   10      OUT        E              CIA Phi 2
+   11      OUT        FLASH          Flash Memory Chip Enable
+   12      IN         -mEJRQ         IDE Drive Interrupt Request
+   13      OUT        -DLCS(l)       IDE Drive Chip Select 1
+   14      OUT        DE-CW          IDE Drive Chip Select 2
+   15      OUT        -SPARE-CS      Spare Chip Select
+   16      OUT        -INET-CS       Network Controller Chip Select
+   17      OUT        -RTC-CS        Real Time Clock Chip Select
+   18      OUT        -1OWR          I/O Write Strobe
+   19      OUT        -IORD          I/O Read Strobe
+   20      PWR        vcc 1          +5v
+   21      OUT        -ROMEN         ROM Chip Enable
+   22      IN         C14M           14 MHz C1ock In (master)
+   23      IN         CCK            CCK Clock IN (sync)
+   24      PWR        GIld.2         Ground
+   25      IN         XRDY           Expansion Bus Wait
+   26      IN         -0VR           Expansion Bus Decode Override
+   27      OC         -0EL           Chip->68000 Bus Buffer Enable
+   28      o c        -0EB           68000->Chip Bus Buffer Enable
+   29      IN         -DBR           Agnus Chip Data Bus Required
+   30      OUT        -BLS           Agnus Chip Blitter Slowdown
+   31      OUT        REGEN          Agnus Chip Register Enable
+   32      OUT        -RAMEN         Agnus Chip RAM Enable
+   33      IN         -AS            68000 Address Strobe
+   34      IN         -UDS           68000 Upper Data Strobe
+   35      IN         -LDS           68000 Lower Data Strobe
+   36      IN         R-W            68000 Read/Write
+   37      TS         -DTACK         68000 Data Transfer Acknowledge
+   38      IN         -BGACK         68000 Bus Grand Acknowledge
+   39      oc         -HJJ-          68000 Halt
+   40      o c        -RST           68000 Reset
+   41      IN         A12            68000 Address Bit 12
+   42      IN         Al3            68000 Address Bit 13
+   43      IN         A14            68000 Address Bit 14
+   44      IN         A15            68000 Address Bit 15
+   45      PWR        Gnd3           Ground
+   46      IN         A16            68000 Address Bit 16
+   47      IN         A17            68000 Address Bit 17
+   48      IN         Al8            68000 Address Bit 18
+   49      IN         A19            68000 Address Bit 19
+   50      IN         A20            68000 Address Bit 20
+GAYLE Specification               July 10, 1991                          Page 2 of 17
+   51       IN        A21              68000 Address Bit 21
+   52       IN        A22              68000 Address Bit 22
+   53       IN        A23              68000 Address Bit 23
+   54       IO        D7             68000 Data Bit 7
+   55       IO        D6             68000 Data Bit 6
+   56      IO         D5             68000*Data Bit 5
+   57      IO         D4             68000 Data Bit 4
+   58      IO         D3             68000 Data Bit 3
+   59      IO         D2             68000 Data Bit 2
+   60      IO         Dl             68000 Data Bit 1
+   61      IO         DO             68000 Data Bit 0
+   62      PWR        vcc2           +5v
+   63      IN         KBRESET        Keyboard Reset In
+   64      OUT        DKWEB          Floppy Write Enable Out
+   65      OUT        DKWDB          Floppy Write Data Out
+   66      PWR        Gnd4           Ground
+   67      OUT        MTRON          Floppy Motor On Out
+   68      OUT        MTRX           Floppy Motor Out
+   69      IN         D K W E        Floppy Write Enable In
+   70      IN         -DKW-D         Floppy Write Data In
+   71      IN         MTR            Floppy Motor In
+   72      IN         -SEL           Floppy Select In
+   73      OUT        -ODD-CIA       CIA Odd Chip Select
+   74      OUT        -EVEN-CIA      CIA Even Chip Select
+   75      IN         -CCCW)         Memory. Card Card Detect 1
+   76      IN         _Cccw2)        Memory Card Card Detect 2
+   77      IN         -CCBWl)        Memory Card Battery Voltage Detect 1
+   78      IN         -CC_BVD(2)     Memory Card Battery Voltage Detect 2
+   79      IN         cc-WP          iMemory Card Write Protect
+   80      IN         -CC-BUSY-IREQ LMemory Card Busy/Interrupt Request
+   81      IN         -WAIT          Memory Card Wait
+   82      OC         -BERR          Bus Error Interrupt Request
+   83      oc         -INT6         High Priority Interrupt Request
+   84      oc         -1NT2          Low Priority Interrupt Request
+
+
+
+
+GAYLE Specification                   Juiy 10, 1991                         Page 3 of 17
+  2.0 SYSTEM ROM
+
+  The onboard ROMs are selected in the address range from $OASOOOO to $OB7FFFF, $OEOOOOO to
+  $OE7FFFF, and $OFSOOOO to $OFFFFFF. The ROMs are also selected in the range from
+  $0000000 to $OlFFFFF when the internal overlay signal (OVL) is high (this allows the RESET
+  vectors to be contained in the ROMs). The internal OVL signal becomes asserted at reset, and
+  negates on the first write to CIA1 (address range of $BFDOOO to $BFDFFF.
+
+  2.1 ROM Timing
+
+  ROM timing is shown below:
+
+
+                                        ROM Timing
+
+
+
+
+       -ROM                             JOH is a pure~address &code
+                                   I
+                                                     :   :
+
+
+
+
+   3.0 FLASH ROM
+
+  There is provision for an optional flash ROM device. The intent is that this is a possible
+  replacement for a floppy disk drive in an extremely low end variant of the A300. The enable for
+  the flash rom is called -FLASH-CE, and is active in the address range from $OAOOOOO to
+  $OA7FFFF. This output is enabled when the proper data strobe is asserted, and the address is in
+  range. Generation of -DTACK is identical to that for system ROa accesses.
+
+
+   3.0 CHIP RAM
+
+   Chip RAM cycles are generated during accesses to locations $0000000 to $0200000. When the
+   internal OVL signal is asserted, ROM appears in this space instead of chip RAlM (see section on
+   ROM for further information on OVL).
+
+   3.1 Chip RAM Timing
+
+   Timing for chip RAM cycles is given in the timing section of the Chip Register discussion
+   (section 4.1). All timings given are equally valid for either chip registers or chip RAM.
+
+
+
+
+GAYLE Specification                           July 10, 1991                            Page 4 of 17
+   4.0 CHIP REGISTERS
+
+   The chip registers are selected in the range from $ODFFOOO to $ODFFlFF. Chip registers show
+   up in user and supervisor data space.
+
+   4.1 Chip RAM and Register Timing
+
+   Timing is given on the following page. Note that timimng for chip RAM accesses is identical. A
+   wait state is inserted when the access is from a DMA device.
+
+                           Chip RAM and Register Timing
+
+
+
+
+   5.0 CIA’
+
+   The 8520 CIA’s are selected in the address range from $OBFOOOO to $OBFFFFF. ODD-CIA
+   responds to addresses in this range in which address line 12 is low, with data appearing at odd
+   addresses. The standard location to use in accesssing ODD-CIA is from $OBFEOOO to
+   $OBFEFFF. EVEN-CIA responds to addresses from $OBFOOOO to $OBFFFFF in which address
+   line 13 is low, with data appearing at even addresses. The standard location to use for accessing
+   this CIA is from $OBFDOOO to $OBFDFFF.
+GAYLE Specification                           July 10, 1991                             Page 5 of 17
+                                                               - --
+
+
+
+
+   5.1 CIA timing
+
+  GAYLE provides synchronization of the processor to CIA accesses as well as generation of the E
+  clock signal. Timing is shown below:
+
+
+                                             CIA Timing
+                                        :ks before E CLK goes high, or you bait till next tin! mound
+
+
+
+
+                                    E CLK is lou foe E clocks . . .        then h igh for 4
+
+
+
+                    Ass& 2 clocks before E CLK goes high
+
+
+
+                                       i JXACK ass&cd 2.5 clocks   after E CLK h iih
+
+
+
+   6.0 REAL-TIME CLOCK
+
+   The real-time clock (RTC) is selected in the address range from $ODCOOOO to $ODCFFF. The
+   RTC appears in both user and supervisor spaces.
+
+   6.1 RTC Timing
+
+   The real-time clock timing is based on the Ricoh RP5COl real-time clock chip. GAYLE’s timing
+   to the RTC is shown below:
+
+
+
+
+GAYLE Specification                               July 10, 1991                                        Page 6 of 17
+                                 Real Time Clock Timing
+
+
+
+
+        -WAIT
+
+
+
+
+   7.0 IDE HARD DRIVE
+
+   The IDE (AT) hard drive requires two mutually exclusive chip selects. Please see the chart
+   below for address range in which each is active. The -1OW and -1OR signals have timing that is
+   valid for IDE hard drives during these cycles.
+
+   Data register accesses CZ.P be performed faster than control register accesses. Accesses to the
+   control registers are 1;dlled “8 bit accesses” while those to the data register are called “16 bit
+   accesses”. Show: oelow is a table that gives the chip select and access speed versus address
+   range.
+
+       4u+       Al3 Al2               Address Range            Chip Select Speed
+        b        0    0            $ODAOOOO to SODAOFFF           -cs 1      8 bit
+         0       0    1            $ODAlOOO to $ODAiFFF           -cs2       8 bit
+         0       1    0            $ODA2000 to $ODA2FFF           -cs 1      16 bit
+         0       1    1            $ODA3000 to $ODA3FFF           -cs2       16 bit
+         1       0    X            $ODA4000 to $ODASFFF            None       8 bit
+         1       1    X            $ODA6000 to $ODA7FFF            None      16 bit
+
+   7.1 IDE Timing
+
+   IDE timing is shown below:
+
+GAYLE Specification                           July 10, 1991                              Page 7 of 17
+      ,       -
+
+
+
+     -7.
+      I
+          c
+,’
+              \
+
+
+//
+
+
+
+
+                  7.3 IDE Register Map
+
+                  The disk drive address lines DAO, DAl, and DA2 are expected to be connected to processor
+                  address lines A2, A3, and A4 respectively. When connected in this fashion, the following
+                  memory map results:
+
+                      Addr on A lOOO+      Addr on AT     Valid Data     Read Function     Write Function
+                        $ODAOO18             3F6            8 bits       Alternate Status ‘Device Control
+                        $ODAOOlC             3F7            8 bits       Drive address     Not used
+                        $ODA1004‘             IF1           8 bits       Error Register    Features
+                        $ODAl008              lF2           8 bits       Sector Count      Sector Count
+                        $ODAlOOC              lF3           8 bits       Sector Number Sector Number
+                        $ODAlOlO              lF4           8 bits       Cylinder Low      Cylinder Low
+                        $ODA1014              lF5           8 bits       Cylinder High     Cylinder High
+                        $ODA1018              lF6           8 bits       Drive/Head        Drive/Head
+                        $ODAlOlC              lF7           8 bits       Status            Command
+                        $ODA2000              1FO          16 bits       Data              Data
+
+                  8.0 ARCNET
+
+                  A chip select is provided for an SMC COM20020 ARCNET chip. The COM20020 interfaces
+                  directly to the processor for all other signals.
+
+
+              GAYLE Specification                        July 10, 1991                            Page 8 of 17
+   8.1 ArcNet Timing
+
+   Timing for the SMC COM20020 is shown below:
+
+
+                                      ArcNet Timing
+
+
+
+
+   {Insert timing diagram here}
+
+
+
+
+   10.0 SYSTEM RESET LOGIC
+
+   The -KBRESET input drives the open collector outputs RESET an d -HALT low. No matter
+   how short the pulse, GAYLE stretches the RESET and -HALT outputs to at least 560ns. When
+   -RESETis driven low (either by GAYLE or externally), all internal states in GAYLE are reset,
+   including the registers, which are all set to ‘0’.
+
+
+   11.0 SYSTEM CLOCKS
+
+   The system clocks expected by ANIMAL are shown below. Note that C3 is generated internally.
+
+
+GAYLE Specification                         July lo,1991                            Page 9 of 17
+                                         t            -   -
+
+
+
+
+                                               Clocks
+
+
+
+
+   12.0 FLOPPY GLUE
+
+   The floppy signals MTRON, MTRX, DKWDB, and DKWEB are generated by GAYLE. All of
+   these signals are open collector outputs.
+
+   MTRON is the signal that tells the floppy motor to turn on. It is the -MTR input latched by the
+   -SEL input. MTRON is guaranteed negated when RESET is asserted.
+
+   MTRX is the signal that tells the floppy motor to do what, George? It follows the _ MTR input
+   except during reset when it is guaranteed negated.
+
+   DKWDB is a buffered version of the -DKWD signal.
+
+   DKWEB follows DKWE, except it is negated during reset.
+
+
+   13.0 BUFFER CONTROL
+
+   SHould this be folded in with other sections, or is there something special to say, George?
+
+
+   14.0 DTACK GENERATION
+
+   Automatic generation of the 68000 cycle termination signal, DTACK, is provided. GAYLE
+   decodes addresses to determine timing for the DTACK signal. Timing for DTACK is given in
+   many of the individual sections of this specification, but for any address ranges not covered in
+   other sections (such as expansion space), DTACK works as follows:
+
+         1. If -0VR or XRDY are not asserted, DTACK is generated at the beginning of S4,
+   guaranteeing a 4 clock cycle.
+        2. When -0VR is asserted, the -DTACK output is tristated, allowing the device that
+   asserted -0VR to generate its own -DTACK.
+        3. If XRDY is asserted in time, generation of -DTACK is held off until XRDY is negated.
+
+   14.1 DTACK Timing
+
+   Timing for DTACK is shown below:
+GAYLE Specification                            July 10, 1991                              Page 10 of 17
+                                      DTACK Timing
+
+
+
+
+   15.0 OVR AND XRDY SIGNALS
+
+   In addition to its function in overriding the generation of -DTACK, the -0VR signal can
+   override address decoding in GAYLE. Thus it can be used to allow external devices to reside in
+   address ranges that are normally reserved for motherboard devices, such as the credit card
+   interface. Use of -0VR for this use basically requires that -0VR is asserted earlier than -AS.
+   Address ranges where this is effective are shown below:
+
+            Address range              Normal cvcle tvDe                 Cycle type with OVR
+            $A00000 -$A7FFFF           Flash ROM                                 zorro II
+            $A80000 -$B7FFFF           Workbench ROM                             zorro II
+            $BSOOOO -$BEFFFF           Reserved for CDTV                         ZOITO II
+            $DBOOOO -$DBOOOO           External IDE drive                        Zorro II
+            $DDOOOO-$DDFFFF            Reserved for DMA contr                    ZOITO II
+            $EOOOOO -$E7FFFF           System ROM                                zorro II
+            $FSOOOO -$FFFFFF           System      ROM     .                     zorro II
+   Any address ranges where -0VR is legal, use of the XRDY signal to extend the cycle is also
+   legal. Other address ranges ignore the XRDY signal.
+
+
+
+   16.0 CREDIT CARD INTERFACE
+
+   GAYLE includes a complete interface to the industry standard PCMCIA cartridge. Limited
+   support of hot insertion and removal is included. GAYLE supports three different kinds of credit
+   card cycles:
+
+            - Credit card memory cycles
+            - Credit card attribute memory cycles
+            - Credit card I/O cycles
+
+
+GAYLE Specification                          July 10, 1991                             Page 11 of 17
+    16.1 Credit card memory cycles
+
+   These cycles are active during accesses of address $4000’00 to $8FFFFF while a credit card is
+   inserted. Accesses from $400000 to $7FFFFF are to the credit card main memory. Accesses
+   from $8000000 to $8FFFFF are to credit card attribute memory. Both types of cycles are
+   identical, except credit card attribute cycles assert -CC-REG and -CC-ENA, while main
+   memory cycles just assert -CC-EINA. This represents 4 MB of directly accessable main memory
+   address space. The full 64MB of defined address space may be reached using the page registers
+   in GAYLE. Currently GAYLE does not actually support
+                                                     -^   these, but future versions may very well
+   do so.
+
+   16.2 Credit card memory cycle timing
+
+                                Credit Card Memory Cycle Timing
+                                 33 Sl s2 53 54 5.5 $6 ST
+        31                                          78
+
+
+        -as
+
+
+        ,UDS-LDS ( WT? i te >
+                                                                     :
+        ,CC,ENA/-REG is         Ch ip ielect.; are based purely: on address deco&
+                                                    :          and:JS
+
+
+
+
+   16.3 Credit card I/O cycles
+
+   Credit card I/O cycles occur during accesses to $900000 to $9FFFFF while a credit card is
+   inserted.
+
+   16.4 Credit card I/O timing
+
+   Timing for credit card I/O cycles is shown below:
+
+
+
+
+GAYLE Specification                                      July 10, 1991                Page 12 of 17
+                             Credit Card I/O Cycle Timing
+
+
+
+
+     ,UDS/,LDS   (write>
+
+
+
+     ,cc,REG                          C h ip select is bused PM& ly on dress &code and JIS
+
+
+     ,IOR
+
+
+
+
+                                  L OHS&- t:!
+                                           ,er cl t kg Inning or 3rd mit stute           TFICK nequted
+     JTACK                      or when JUAIT is h Iqh, wh ichew is luter             H F;pe n JSS neg&s
+
+
+
+     -WAIT
+                                                                     i
+
+
+
+
+   17.0 Test Mode
+
+   If -0VR is asserted at the rising edge of -KBRESET, a test mode is entered in which the E clock
+   state counters reset to a known condition.
+
+
+   18.0 SPARE chip select
+
+   A spare chip select is provided. It is asserted on any access to locations $DSOOOO to $D8FFFFF.
+   Timing is similar to the ARCNET chip select.
+
+
+   19.0 GAYLE Registers
+
+   Four registers are included that facilitate support of the cartridge slot and IDE interrupt
+   management. All registers are set to zero at reset time. These registers are shown on the
+   following two pages:
+
+
+
+
+GAYLE Specification                              July 10, 1991                                       Page 13 of 17
+   Address SDA8000
+       1s          Rit 14          Flit 17       Rit 17          Rit 11         Rit II)        Rit 9            Rit 8
+
+   IDE int         CC det          BVD2/DA       BVDl/SC         WR enable      BSYJRQ         Dig Aud          c c
+   StatUS          status          status        status          status         status         enable           disable
+
+
+   Bit 8:          Allows the software to disable the credit card interface altogether. Writing a value of ‘1’ disables
+                   the credit card interface, ‘0’ allows it to become enabled (having no credit card installed also
+                   disables the interface. Disabling the credit card interface includes disabling address decoding for
+                   the credit card areas, makes the credit card inputs appear to be in the inactive state, and inhibits
+                   status change interrupts.
+   Bit 9:          Enable for the credit card digital audio output. Writing a ’ 1’ enables connecting the credit card
+                   digital audio to the amiga audio and disables the BVD2 input to the interrupt request logic.
+   Bits 10-15:     Each represent an external line. Reading any of these allows the software to determine the current
+                   state of the specified line. Writing a value of 1 to any of these bits allows the software to force
+                   GAYLE to behave as if the specified line is asserted (including returning a ‘1’ when this register is
+                   read). If the credit card is not inserted, or if the CC disable bit is asserted, the credit card lines will
+   all appear to be negated, although any lines that the software has written a ‘1’ to will still read          back as a
+   ’ 1’. The external lines are as follows:
+                   IDE int         Interrupt output of the IDE drive; this bit is high whenever the IDE drive is
+                                   generating an interrupt
+                   CC det          Credit card detect: this bit is high whenever a credit card is present
+                   BVD2/DA         Battery voltage detect 2 / Digital audio
+                   BVDl/SC         Battery voltage detect 1 / Credit card (internal) status change
+                   WR enable       Write enable; this bit is high when the credit card is write enabled. When low writes
+                                   are inhibited.
+                   BSY/IRQ         Credit card busy/Interrupt request
+
+   Address SDA9000
+       15          Rit 14          Rit I’?        Rit I’?        Rit 11         Rit 10          Rit 9           Rit 8
+
+   IDE int         CC det          BVD2/DA        BVDliSC        WR prot        BSYIIRQ         Reset on CC     Berr on access
+   change          change          change         change         change         change          status change   after stat change
+
+
+   Bit 8:          Allows the software to tell GAYLE to generate a reset whenever the credit card detect status line
+                   has changed (i.e. the credit card has been inserted/removed).
+   Bit 9:          Causes a bus error to be generated on any access to the credit card area after the credit card detect
+                   status line has changed.
+   Bits 10-15:     Are the same signals as at address SDA8000, but the register at SDAAOOO tells you when any of
+                   these bits has changed value. The bit remains high (and the interrupt line remains active) until a ‘0’
+                   is written to that bit. Writing a ‘1’ will cause a bit to be unchanged.
+
+
+
+
+GAYLE Specification                                         July 10, 1991                                         Page 14 of 17
+   Address $DAAOOO
+       15        Flit 14        Rit 13         Rit 13           Rit 11       Rit 10        Rit 9          Rit 8          t
+
+   IDE int       CC det         BVDUDA        BVDl/SC          WRenable      BSYKRQ        BVDIDAISC      BSY/IRQ int
+   int2 enable   int6 enable    int enable    int enable       in2 enable    int enable    int level      level
+
+
+   Bit 8:        Sets the interrupt level that is generated when the BSY/IRQ (bit 10) status line changes state, a ‘1’
+                 indicates in6t should be generated, a ‘0’ indicates int2,
+   Bit 9:        Similar to bit 8, except it is for the BVD (bits 12 and 13) inputs.
+   Bit 10:       Enables interrupt on status change of the BSY/IRQ line of the credit card interface. The interrupt
+                 level that is generated is programmed by bit 8.
+   Bit 11:       Enables generation of an int2 on status change of the write enable line of the credit card interface.
+   Bit 12:       Enables interrupt on status change of the BVDl/SC line of the credit card interface. The interrupt
+                 level that is generated is programmed by bit 9.
+   Bit 13:       Enables interrupt on status change of the BVD2/DA line of the credit card interface. The interrupt
+                 level that is generated is programmed by bit 9.
+   Bit 14:       Enables generation of an int6 on status change of the credit card detect lines of the credit card
+                 interface.
+   Bit 15:       Enables generation of an int3 on status change of the interrupt line of the IDE interface.
+
+
+   Address SDABOOO
+       15        Rit 14         Rit 13         Rit 12               11       Rit 10        Rit 9          Rit 8
+
+   Page reg 25   Page reg 24    Page reg 23   Page reg 22       Slow mem     Delay write   Program 12v    Program 5V
+
+
+
+   Bit 8:        Enables the programmable 5 volt output. Setting both bit 8 and bit 9 together asserts the credit
+                 card reset signal. Note: Credit card not inserted or disabled forces the programmable 5 volt
+                 output to zero.
+   Bit 9:        Enabies the programmable 12 volt output. Setting both bit 8 and bit 9 together asserts the credit
+                 card reset signal. Note: Credit card not inserted or disabled forces the programmable 12 volt
+                 output to zero.
+
+   Bit 10:       Enables a mode where the credit card WAIT signal is looked at during writes (it is always looked at
+                 during reads). In a 68000 this necessitates insterting a wait state. When set to zero, zero wait state
+                 cycles are run.
+   Bit 11:       Enables 1.2 us memory cycles (instead of the normal 560ns).
+   Bits 12 -15: Are for the currently unimplemented credit card page registers. You can tell they are
+                unimplemented because they do not read back what is written.
+
+
+
+
+GAYLE Specification                                        July 10, 1991                                      Page 15 of 17
+   17.0 MEMORY MAP
+
+       0000000 to OlFFFFF    2MB      Chip RAM (or system ROM in overlay)
+
+       0200000 to 03FFFFF    2MB      Zorro II expansion space
+
+       0400000 to 07FFFFF    4MB      Credit Card memory if CC present (211 otherwise)
+
+       0800000 to OWFFFF     1MB      Credit Card attributes if CC present (211 otherwise)
+
+       0900000 to 09FFFFF    1MB      Credit Card I/O if CC present (211 otherwise)
+
+       OAOOOOO to OA7FFFF    512 KB   Flash ROM
+
+       OA80000 to OB7FFFF    1 1MB    System ROM selected (optional workbench ROM)
+       OBSOOOO to OBEFFFF    448 KB   Not used (Reserved for CDTV)
+
+       OBFOOOO to OBFFFFF    64 KB    CIA’s (See section on CIA’s for more detail)
+       OCOOOOO to OD7FFFF    1.5 MB   COO000 Memory
+       OD80000 to OD8FFFF    64 KB    SPARE chip select
+
+       OD90000 to OD9FFFF    64 KB    ARCNET chip select
+       ODAOOOO to ODA3FFF    16KB     IDE drive (see section on IDE for register map)
+       ODA4000to ODALCFFFF   16 KB    IDE reserved
+
+       ODA8000to ODAFFFF     32 KB    Credit Card & IDE configuration registers
+       ODBOOOO to ODBFFFF    64 KB    Not used (Reserved for external IDE)
+
+       ODCOOOO to ODCFFFF    64 KB    Real time clock
+
+       ODD0000 to ODDFFFF    64 KB    RESERVED for DMA controller
+       ODE0000 to ODEFFFF    64 KB    Not Used
+
+       ODFOOOO to ODFFFFF    64 KB    Chip registers (shadowed 8 times)
+       OE00000 to OE7FFFF    512 KB   System ROM (1st half if 1MB ROM)
+       OE80000 to OEFFFFF    512 KB   Configuration and I/O card space
+       OF00000 to OF7FFFF    512 KB   Cartridge space
+       OF80000 to OFFFFFF    512 KB   System ROM (2nd half if 1MB ROM)
+
+
+
+
+GAYLE Specification                   July 10, 1991                               Page 16 of 17
+   18.0 PHYSICAL REQUIREMENTS
+
+   18.1 Marking
+
+   Devices shall be marked with Commodore part number plus a copyright notice as follows:
+     1990 CBM.
+
+   18.2 Packaging
+
+   The interconnected circuitry shall be contained in a standard 84-pin plastic leaded chip carrier
+   with exterminal dimensions shown in Figure XX-X.
+
+
+   19.0 PROCESS QUALIFICATION TESTS
+
+   Integrated circuitrs supplied to the requirements of this specification shall meet the requiremtnes
+   of Engineering Policy No. 1.02.008, whatever that is. Supporting doucmentation shall be
+   supplied by vendor upon request.
+
+   19.1 Environmental test conditions
+
+   Devices shall comply with blah blah blah
+
+
+
+
+GAYLE Specification                            July 10, 1991                              Page 17 of 17
+

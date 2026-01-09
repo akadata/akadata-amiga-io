@@ -1,0 +1,367 @@
+       1                                           2                          3                                        4                                    5                                     6                                    7                                         8
+
+
+
+                                                                                                                                                                       U4
+                                                                                                                                                                       SN74CBTD3306PWRG4
+                                                                                                                                                                1          8     +5.0VDC                                                    3.3V Only         U7
+                                                                                                                                                                  1OE# VDD                                                                                    ICE40HX8K-CB132
+                                                                                                                                           XCLKEN_CDAC_7M       2          7     GND
+                                                                                                                                                                  1A  2OE#                                                  DAT0     B1                                          K1     +3.3VDC
+                                                                                                                                                 UDS_CASL       3          6     UDS_CASL_3V3                                           IOL_2A                           VCCIO_3
+                                                                                                                                                                  1B    2B                                                  DAT2     C1                                          J6     +3.3VDC
+A                                                                                                                                                       GND     4          5     XCLKEN_CDAC_7M_3V3                                     IOL_2B                           VCCIO_3                                     A
+                                                                                                                                                                  GND   2A                                               DAT_CLK     C3                                          E3     +3.3VDC
+                                                                                                                                                                                                                                        IOL_4A                           VCCIO_3
+                                                                                                                                                                                                                            DAT3     D3                                          M5     +3.3VDC
+                                                                                                                                                                                                                                        IOL_4B                           VCCIO_2
+                                                                                                                                                                                                                            DAT1     D1                                          J9     +3.3VDC
+                                                                                                                                                                                                                                        IOL_5A                           VCCIO_2
+                                                                                                                                                                                                                             JP2     E1                                          H14    +3.3VDC
+                                                                                                                                                                       +5.0VDC                                                          IOL_5B                           VCCIO_1
+                                                                                                                                                                                                                             JP1     D4                                          F9     +3.3VDC
+                                                                                                                                                                                                                                        IOL_8A                           VCCIO_1
+                                                                                                                                                                                                                          DAT_EN     E4                                          F6     +3.3VDC
+                                                                                                                                                                                                                                        IOL_8B                           VCCIO_0
+                                                                                                                                                                        C10                                                HSYNC     F4                                          A8     +3.3VDC
+                                                                                                                                                                                                                                        IOL_9A                           VCCIO_0
+                                                                                                                                                                        0.22uF                                             CSYNC     F3                                          J7     +1.2VDC
+                                                                                                                                                                                                                                        IOL_9B                               VCC
+                                                                                                                                                                                                                           VSYNC     H4                                          J4     +1.2VDC
+                                                                                                                                                                 GND                                                                    IOL_10A                              VCC
+                                                                                                                                                                                                                            INTR     G4                                          H9     +1.2VDC
+                                                                                                                                                                                                                                        IOL_10B                              VCC
+                                                                                                                                                                                                                            BLIT     J3                                          G6     +1.2VDC
+
+
+
+
+                                                                                                  DRD10
+                                                                                                  DRD11
+                                                                                                  DRD12
+                                                                                                  DRD13
+                                                                                                  DRD14
+                                                                                                  DRD15
+
+                                                                                                  HSYNC
+                                                                                                  CSYNC
+                                                                                                  VSYNC
+                                                                                                                                                                                                                                        IOL_12A                              VCC
+
+
+
+
+                                                                                                  DRD3
+                                                                                                  DRD4
+                                                                                                  DRD5
+                                                                                                  DRD6
+                                                                                                  DRD7
+                                                                                                  DRD8
+                                                                                                  DRD9
+
+
+
+
+                                                                                                  LPEN
+                                                                                                                                                                                                                              WE     J1                                          F8     +1.2VDC
+                                                                                                                                                                                                                                        IOL_12B                              VCC
+
+
+
+
+                                                                                                  GND
+
+
+
+                                                                                                  A18
+                                                                                                  A17
+                                                                                                  A16
+                             PRG
+                                                                                                                                                                                                                         CCK_14M     G3                                          P6     GND
+                             HDR-IDC-2.54-2X3P                                                                                                                                                                                          IOL_13A                             GND
+                                                                                                                                                                                                                        CCKQ_CCK     G1                                          L3     GND
+            +5.0VDC
+                         1      2
+                                        ICE_MOSI                                                                                                                                                                                        IOL_13B_GBIN7                       GND
+                                                                                                                                                                                                                         7M_CCKQ     H1                                          J8     GND
+
+
+
+
+                                                                                                         11
+                                                                                                         10
+
+
+
+
+                                                                                                    RD14 84
+                                                                                                    RD15 83
+                                                                                                     GND 82
+                                                                                                   HSYNC 81
+                                                                                                   CSYNC 80
+                                                                                                   VSYNC 79
+                                                                                                    LPEN 78
+                                                                                                     A18 77
+                                                                                                     A17 76
+                                                                                                     A16 75
+           ICE_MISO
+                         3      4
+                                        ICE_SCK                                                                                                                                                                                         IOL_14A_GBIN6                       GND
+
+
+
+
+                                                                                                         9
+                                                                                                         8
+                                                                                                         7
+                                                                                                         6
+                                                                                                         5
+                                                                                                         4
+                                                                                                         3
+                                                                                                         2
+                                                                                                         1
+                                                                                                                                                                                                                         CDAC_7M     H3                                          J14    GND
+                GND                     ICE_SS                                                                                                                                                                                          IOL_14B                             GND
+
+
+
+
+                                                                                                     RD3
+                                                                                                     RD4
+                                                                                                     RD5
+                                                                                                     RD6
+                                                                                                     RD7
+                                                                                                     RD8
+                                                                                                     RD9
+                                                                                                    RD10
+                                                                                                    RD11
+                                                                                                    RD12
+                                                                                                    RD13
+                         5      6                                                                                                                                                                                                    K3                                          A1     DMAL
+                                                                                                                                                                                                                                        IOL_18A                          IOT_225
+                                                                                                                                                                                                                            RAS0     K4                                          H8     GND
+                                                                                                                                                                                                                                        IOL_18B                             GND
+                                                                                                                                                                                                                   CASL_CASU_CAS     L1                                          H7     GND
+                                                                                                                                                                                                                                        IOL_23A                             GND
+B
+                                                                                                                                                                                                                   TEST_NTSC_GND     M1                                          H6     GND
+                                                                                                                                                                                                                                                                                                                     B
+                                                                                                                                                                                                                                        IOL_23B                             GND
+                                                                                                                                                                                                                    UDS_CASL_3V3     N1                                          G9     GND
+                                                                                                                                                                                                                                        IOL_25A                             GND
+                                                                             DRD2   12                                                          A15 74      A15                                              XCLKEN_CDAC_7M_3V3      P1                                          A2     GND_DRA0
+                                                                                       RD2                                                                                                                                              IOL_25B                          IOT_223
+                                                                             DRD1   13                                                          A14 73      A14                                                            RAMEN     P2                                          G8     GND
+                                                                                       RD1                                                                                                                                              IOB_56                              GND
+                U3                                                           DRD0   14                                                          A13 72      A13                                                             RGA7     P3                                          A3     BLISS
+                                                                                       RD0                                                                                                                                              IOB_59                           IOT_222
+                IS66WVS4M8BLL-104NLI                                      +5.0VDC   15                                                          A12 71      A12                                                             RGA8     M4                                          G7     GND
+                                                                                       VCC                                                                                                                                              IOB_63                              GND
+                                                              +3.0VDC       RESET   16                                                          A11 70      A11                                                            AS_NC     M3                                          C4     RESET
+    DAT_EN     1                        8     +3.0VDC                                  /RESET                                                                                                                                           IOB_64                           IOT_221
+                 CE#                VCC                                      INTR   17                                                          A10 69      A10                                                            REGEN     L5                                          F7     GND
+      DAT1     2                        7     DAT3                                     /INTR                                                                                                                                            IOB_71                              GND
+                 SO/SIO1           SIO3                                      DMAL   18                                                           A9 68      A9                                                       LDS_UDS_VCC     L4                                          A4     DRD0
+      DAT2     3                        6     DAT_CLK          C8                      DMAL                                                                                                                                             IOB_72                           IOT_219
+                 SIO2              SCLK                                     BLISS   19                                                           A8 67      A8                                                              RGA6     P4                                          F1     GND
+       GND     4                        5     DAT0             0.22uF                  /BLISS                                                                                                                                           IOB_73                              GND
+                 VSS            SI/SIO0                                      BLIT   20                                                           A7 66      A7                                                              RGA4     P5                                          A9     GND
+                                                                                       /DBR                                                                                                                                             IOB_74                              GND
+                                                        GND                    WE   21                                                           A6 65      A6                                                              RGA5     M6                                          C5     DRD1
+                                                                                       /WE                                                                                                                                              IOB_77                           IOT_212
+                                                                              PRW   22 PRW                      AGNUS 837X                       A5 64      A5                                                               PRW     L6                                          D5     DRA0_1
+                                                                                                                                                                                                                                        IOB_78                           IOT_211
+                                                                            REGEN   23 /REGEN                   UNIVERSAL                           63      A4                                                              RGA3     M7                                          A5     DRD2
+                                                                                                                                                 A4                                                                                     IOB_79                           IOT_208
+                                                                            AS_NC   24 /AS_NC                                                       62      A3                                                            CLK28M     P7                                          D6     DRD7
+                                                                                                                                                 A3                                                                                     IOB_81_GBIN5                     IOT_207
+                                                                            RAMEN   25 /RAMEN                                                       61      A2                                                              RGA1     P8                                          C6     DRD3
+                                                                                                                                                 A2                                                                                     IOB_82_GBIN4                     IOT_206
+                                                                             RGA8   26 RGA8                                                         60      A1                                                            GNDPLL     L7                                          D7     DRD8
+                                                                                                       Pins are 3.3V safe (outputs)              A1                                                                                     GNDPLL0                          IOT_202
+                                                                             RGA7   27 RGA7                                                         59      A19                                                           VCCPLL     M8                                          C7     DRD5
+                                                                                                       Pins require 5.0V tolerance              A19                                                                                     VCCPLL0                          IOT_200
+                                                                             RGA6   28 RGA6                                                         58      GND                                                    CASU_DRA9_GND     L8                                          A6     DRD4
+                                                                                                       Pins overlap with power (WARNING)        GND                                                                                     IOB_87                     IOT_198_GBIN0
+                                                                             RGA5   29 RGA5                                                         57      RAS0                                                       RAS1_DRA9     P9                                          A7     DRD6
+                                                                                                                                               RAS0                                                                                     IOB_89                     IOT_197_GBIN1
+C                          U6                                                RGA4   30 RGA4                                                         56      RAS1_DRA9                                                   DRA8_LDS     M9                                          D8     GNDPLL                       C
+                                                                                                                                          RAS1_DRA9                                                                                     IOB_91                           GNDPLL1
+                           W25X40CLSNIG                                      RGA3   31 RGA3                                                         55      CASU_DRA9_GND                                                 DRA7_8     L9                                          C8     VCCPLL
+                                                              +3.3VDC                                                                                                                                                                   IOB_103_CBSEL0                   VCCPLL1
+
+
+
+
+                                                                                                   36 XCLKEN_CDAC_7M
+                                                                                                                                      CASU_DRA9_GND
+                                                                             RGA2                                                                           CASL_CASU_CAS                                                           P10                                          C9     DRD14
+
+
+
+
+                                                                                                   41 TEST_NTSC_GND
+                                                                                    32 RGA2                                                         54                                                                    DRA6_7
+      ICE_SS    1                   8    +3.3VDC                                                                                      CASL_CASU_CAS                                                             R10                     IOB_104_CBSEL1                   IOT_190
+                  CS#          VCC                                                                                                                                                                                         CDONE    M10                                          D9     DRD10
+
+
+
+
+                                                                                                      LDS_UDS_VCC
+    ICE_MOSI    2                   7                                                                                                                                                                           10K                     CDONE                            IOT_188
+                  DO         HOLD#                             C5                                                                                                                                      +3.3VDC          CRESET_B    L10                                          C10    DRD13
+     +3.3VDC    3                   6       ICE_SCK                                                                                                                                                                                     CRESET_B                         IOT_186
+
+
+
+
+                                                                                                      DRA8_LDS
+
+                                                                                                      UDS_CASL
+                                                                                                   35 A20_XCLK
+
+
+
+                                                                                                   39 CCKQ_CCK
+
+
+                                                                                                   42 GND_DRA0
+                  WP#          CLK                             0.22uF                                                                                                                                                   ICE_MISO    M11                                          A10    DRD15
+
+
+
+
+                                                                                                   37 CDAC_7M
+                                                                                                   38 7M_CCKQ
+
+                                                                                                   40 CCK_14M
+         GND    4                   5       ICE_MISO                                                                                                                                                             R12                    IOB_105_SDO                      IOT_181
+
+
+
+
+                                                                                                      DRA0_1
+                                                                                                      DRA1_2
+                                                                                                      DRA2_3
+                                                                                                      DRA3_4
+                                                                                                      DRA4_5
+                                                                                                      DRA5_6
+                                                                                                      DRA6_7
+                                                                                                      DRA7_8
+                  GND            DI                                                                                                                                                                                     ICE_MOSI    P11                                          A11    LPEN
+                                                        GND                                                                                                                                                      10K                    IOB_106_SDI                      IOT_179
+                                                                                                                                                                                                                                    P12                                          D11
+
+
+                                                                                                   33 RGA1
+                                                                                                                                                                                                                         ICE_SCK                                                        DRD9
+                                                                                                                                                                                                                                        IOB_107_SCK                      IOT_178
+
+
+
+                                                                                                   34 28M
+                                                                                                                                                                                                                          ICE_SS    P13                                          D10    DRA1_2
+                                                                                                                                                                                                                                        IOB_108_SS                       IOT_177
+                                                                                                                                                                                                                         +3.3VDC    L11                                          C11    LPEN
+                                                                                                                                                                                                                                        VCC_SPI                          IOT_174
+
+
+
+
+                                                                                                   43
+                                                                                                   44
+                                                                                                   45
+                                                                                                   46
+                                                                                                   47
+                                                                                                   48
+                                                                                                   49
+                                                                                                   50
+                                                                                                   51
+                                                                                                   52
+                                                                                                   53
+                                                                                                                                                                                                                 10K    A20_XCLK    M12                                          C12    DRD12
+                                                                                                                                                                                                                 R13                    IOR_109                          IOT_172
+                                                                                                                                                    U8                                                                    DRA5_6    P14                                          A12    DRA2_3
+                                                                                                                                                                                                                                        IOR_110                          IOT_170
+                                                                                                            RGA1
+                                                                                                          CLK28M
+                                                                                                        A20_XCLK
+                                                                                                  XCLKEN_CDAC_7M
+                                                                                                         CDAC_7M
+                                                                                                         7M_CCKQ
+                                                                                                        CCKQ_CCK
+                                                                                                         CCK_14M
+                                                                                                   TEST_NTSC_GND
+                                                                                                        GND_DRA0
+                                                                                                          DRA0_1
+                                                                                                          DRA1_2
+                                                                                                          DRA2_3
+                                                                                                          DRA3_4
+                                                                                                          DRA4_5
+                                                                                                          DRA5_6
+                                                                                                          DRA6_7
+                                                                                                          DRA7_8
+                                                                                                        DRA8_LDS
+                                                                                                     LDS_UDS_VCC
+                                                                                                        UDS_CASL
+                                                                                                                                                    AGNUS_UNIVERSAL                                                         RGA2    L12                                          A13
+                                                                                                                                                                                                                                        IOR_111                         VPP_FAST
+                                                                                                                                                                                                                          DRA4_5    N14                                          A14    +3.0VDC
+                                                                                                                                                                                                                                        IOR_112                          VPP_2V5
+                                                                                                                                                                                                                                    M14                                          B14    A17
+                                                                                                                                                                                                                                        NC                               IOR_161
+                                                                                                                                                                                                                             A19    L14                                          D12    A18
+                                                                                                                                                                                                                                        IOR_114                          IOR_160
+                                                                                                                                                                                                                              A1    K12                                          C14    A16
+                                                                                                                                                                                                                                        IOR_115                          IOR_154
+                                                                                                                                                                                                                          DRA3_4    K11                                          D14    A13
+                                                                                                                                                                                                                                        IOR_116                          IOR_152
+                                                                                                                                                                                                                              A2    K14                                          E14    A11
+                        JP1                                                                                                                                                                                                             IOR_117                          IOR_148
+                                                                                                                                                                                                                              A3    J12                                          E12    A12
+D                       0603_SOLDERBRIDGE_NO                                                                                                                                                                                            IOR_118                          IOR_147                                     D
+                                                                                                                                                                                                                              A5    J11                                          E11    A14
+                               JP1                                                                                                                                                                                                      IOR_119                          IOR_146
+                                                                                                                                                                                                                              A4    H12                                          F11    DRD11
+                 GND                                                                                                                                                                                                                    IOR_120                          IOR_144
+                                                                                                                                                                                                                              A6    H11                                          G14    A7
+                                                                                                                                                                                                                                        IOR_128                    IOR_141_GBIN2
+                        JP2                                                                                                                                                                                                   A8    G12                                          F14    A9
+                                                                                                                                                                                                                                        IOR_129                    IOR_140_GBIN3
+                        0603_SOLDERBRIDGE_NO                                                                                                                                                                                 A15    G11                                          F12    A10
+                               JP2                                                                                                                                                                                                      IOR_136                          IOR_137
+                 GND
+
+
+
+
+                                                                                                                                                                                                                                                    +3.3VDC                                   +1.2VDC
+                                                                                              D1
+                                                                                              MBR130                       +3.3VDC
+                                                                                  +3.3VDC               +3.0VDC                                                                                  C7     C9          C13    C15             C17       C18                    C6       C3        C4
+                                                                                                                                                                                                 0.22uF 0.22uF      0.22uF 0.22uF          0.22uF    0.22uF                 0.22uF   0.22uF    0.22uF
+                                                                                                                                     R4
+                                                                                                       C22                 CDONE     2K2                                                   GND                                                                        GND
+                                                U2                                                     1u
+E                                               AP7312-1233W6-7                                                                                                                                                                                                                                                      E
+                 +5.0VDC                  4             3       +5.0VDC                           GND
+                                            EN1    EN2                                                                                 LED1
+                                          5             2       GND
+                                            IN     GND                                                                                 LED-0603_R
+                 +1.2VDC                  6             1       +3.3VDC
+                                            OUT1 OUT2                                   R11                                          GND
+                                                                                        100
+                                                                            +3.3VDC                VCCPLL
+                       C16              C11              C12
+                        1u              1u                1u
+                                                                                        C21            C20
+                                                                GND                     10u            0.1u
+                                                                                                   GNDPLL         Note: GNDPLLx should not be
+                                                                                                                  connected to device ground                                                                                TITLE:
+                                                                                                                                                                                                                                        ReAgnus                                                         REV: 0.7
+
+                                                                                                                                                                                                                                                     Company: the Buffee Project                        Sheet: 1/1
+                                                                                                                                                                                                                                                     Date:    2022-05-07        Drawn By: Renee
+       1                                           2                          3                                        4                                    5                                     6                                    7                                         8
+

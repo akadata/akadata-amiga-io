@@ -1,0 +1,482 @@
+United States Patent (19)                                                       (11) Patent Number:                             4,777,621
+Miner et al.                                                                    (45) Date of Patent:                     Oct. 11, 1988
+(54 VIDEO GAME AND PERSONAL COMPUTER                                        Primary Examiner-Gareth D. Shaw
+                                                                            Assistant Examiner-John G. Mills
+ 75 Inventors: Jay G. Miner, Mountain View;                                 Attorney, Agent, or Firm-Finnegan, Henderson,
+               Joseph C. Decuir, Albany; Ronald H.                          Farabow, Garrett & Dunner
+               Nicholson, Sunnyvale, all of Calif.
+ 73 Assignee: Commodore-Amiga, Inc., Los Gatos,                             (57                ABSTRACT
+                       Calif.                                               A video game home computer is implemented in
+(21) Appl. No.: 756,910                                                     NMOS (n type metal oxide semiconductor) technology
+                                                                            with plural microprocessors. Centralized bus architec
+(22 Filed:      Jul. 19, 1985                                               ture and direct memory access (DMA) techniques are
+51) int. Cl." ................................................ G06F 9/00    employed. A video display generator provides color
+52 U.S. C. .................................................... 364/900     signal outputs to drive a commercial television receiver
+58 Field of Search ................ 364/200, 900; 340/703,                  display. This display generator receives inputs from
+                                                340/704, 700, 701           both microprocessors and obtains data directly from
+                                                                            memory. A bit map of display information is kept in
+56)                     References Cited                                    memory, wherein bits of information in memory image
+              U.S. PATENT DOCUMENTS                                         the precise screen display for each instance in time. A
+                                                                            bit map manipulator circuit performs, under micro
+      4,204,208 5/1980 McCarthy ........................... 364/900         processor direction, logic function manipulation of the
+      4,243,984 wi981 Ackley et al. ....................... 340/703         bit map data. Access between system components is
+      4,301,503 11/1981 Frederiksen ....              ..... 364/200
+      4,471,465 9/1984 Mayer et al. ........................ 364/900        accomplished via the bus architecture on a priority
+      4,53,390 4/1985 Walter et al. ....................... 364/900         queue basis. Chip count and chip area is minimized.
+      4,571,456 2/1986 Paulsen et al. ...................... 340/700
+      4,591,975 5/1986 Wade et al. ......................... 364/200                               6 Claims, 3 Drawing Sheets
+
+
+
+
+                                          (aaaaaaaa.
+                                            darevaar
+                                      yvaya
+                                       Fa
+                                       af
+
+
+
+
+                                                                           wavaria
+                                                                           awa
+                                                                           12 ar)         /
+                                                                                              a
+                                                                                            fa
+                                                                                          was 2.
+
+                                                                                     s?               -   azafri
+                                                                                                   eavywe
+                                                                            wa                    a date
+                                                                             as a             a     cafe
+
+                                                                              aara aeraeroarr)
+                                                     4,777,621
+                            1.                                                         2
+                                                                Sukonick, U.S. Pat. No. 4,070,710, likewise, shows a
+   VIDEO GAME AND PERSONAL COMPUTER                          two processor system. Sukonick has added a display
+                                                             system 16 to his programmed host computer 10. This
+       BACKGROUND OF THE INVENTION                           video display system 16 contains an Intel Corporation
+   This invention relates to the field of microprocessor 5 228088 microprocessor 76 within the micro control unit
+powered computers for video games and personal com               of the video display system.
+puting. The invention further relates to MOS (metal provided this
+                                                                Along        line Burson, U.S. Pat. No. 4, 180,805, has
+                                                                        a video display circuit which incorporates a
+oxide semiconductor) technology, where circuit imple general purpose
+ mentation is provided with chip area, i.e. chip size as a crocomputer, as microprocessor       15, the TMS 1100 mi
+                                                                                 shown in U.S. Pat. No. 3,988,604. A
+consideration. The invention also relates to a television 10 character   memory is provided separate from a display
+digital display systems where one video bit of informa memory. A
+tion is stored in memory for every element location of crocomputer display           image is developed by the mi
+                                                                            and stored in the display memory where
+the picture (pixel), i.e. bit mapping.
+   Bit mapping, while space and time implementation 1 each display            memory word is partitioned into two
+consuming, is a straight forward and an accurate 5 bytes,           with the first of which being a character memory
+method for video display generation. Complex displays addressa and         the second of which being a subaddress to
+provided by video games and personal computers re locate              character-word within a set of character words
+                                                             in memory. Each character memory word is likewise
+quire overlay presentations of movable and/or changa partitioned          into two bytes with the first byte determin
+ble information and of fixed information; and of colli- 2O ing    color and the second byte selecting a particular
+sions between movable objects. Bit map implementation character         from a prestored set.
+has been the focus of various prior circuits.                  The   use  of a second general purpose commercially
+   Prior video game circuits have provided a complex available microcomputer
+display format to a television receiver display unit (a mation, while increasingtothe      process video display infor
+                                                                                              system speed, also in
+cathode ray tube), which display unit generates the 25 creases the cost of manufacture for        the system. Further,
+presentation with a plurality of horizontal scans or ras it necessitates off-chip wire connections       as each com
+ter lines. A video game circuit which is capable of dis mercial circuit comes as a separate dual-in-line
+playing fixed objects as background as well as, moving (DIP). In LSI (large scale integration) circuitpackage   design
+objects is shown by Rosenthal, U.S. Pat. No. 4,053,740.     this increases total system size, increases backplane and
+  Rosenthal has built a special purpose digital computer 30 circuit
+to generate video game information from a plurality of pickup card        costs and increases the likelihood of noise
+                                                                     often necessitating additional filtering and in
+ selected, on a mutually exclusive basis, software defined creased signal levels, which usually leads to more
+programs. Operator commands are received and pro power              consumption.
+cessed. Rosenthal's special purpose computer is sepa           Others have taken a divergent and different ap
+rated into an independent computational section and an 35 proach, such as using a display generator circuit de
+independent display section.
+    Dash et al., U.S. Pat. No. 4,034,983, show a video signed       as a raster scan line buffer structure. In such an
+                                                            approach, a general microprocessor can be used to
+game circuit which receives operator commands from address display object storage random access memory
+joysticks (pots) and which generates and stores bit map (RAM). The circuitry divides the display into moving
+information bearing a time-phase relationship to a tele- 40 objects (sprites) and into stationary playfield objects.
+vision receiver raster-scan beam, which television re         One specific design is shown by Hogan et al, U.S. Pat.
+ceiver is being driven by the Dash circuit. Dash utilizes No. 3,996,585, where a display generator is imple
+an analog mapping circuit connected to joy stick ports mented with a plurality of buffer registers. He uses this
+(pot ports), and a digital mapping circuit, to reset the display generator to process bit map information ob
+television receiver raster-scan beam at appropriate 45 tained from random access memory (RAM). A pattern
+times and to control display intensity thereby producing generator is used to decode order data for each rastor
+the game video display components.                          scan line. Decoded rastor line data is stored in a buffer
+   Personal computers, such as the Apple Computer, register for display. The pattern generator also decodes
+have utilized a main microprocessor to perform compu control data to determine collisions. The decoded colli
+tational operations and to process (retrieve) video dis- 50 sion control data is stored in a buffer register. Hogan's
+play information to generate similar type displays as circuit is intended to relieve the system microprocessor
+Dash to a television receiver.                              from simple video display data retrieval and manipula
+   The Apple Computer has incorporated a general tion.
+purpose microprocessor, the MOS Technology Inc.,              The Hogan circuitry is a departure from the two
+Model 6502, to perform both computational operations 55 microprocessor approach of Sukonick; and a departure
+and video display information retrieval. Such a single from the general purpose microprocessor driven dis
+microprocessor driven system has speed limitations, as play generators of Burson and Stubben et al. Hogan
+most microprocessors, including the 6502 have signifi provides a special purpose circuit which can be imple
+cant processing dead time used for refreshing registers mented in LSI circuitry. It eliminates the cost of the
+and reseting and initializing operations. As a result, 60 second general purpose microprocessor and the card or
+information processing in such systems can be slow.         board connection wiring thereto. Hogan's et al circuit,
+   One approach to increasing the speed of such a per however, does require more memory including a large
+sonal computer has been to utilize two processors. Cro number of temporary storage registers.
+menco Inc., has sold a personal computer containing           In keeping with the display generator circuit ap
+two processors; a Motorola Inc., 68000 and a 6502. In 65 proach of Hogan et al, others have built a decoder based
+this system, the first processor is dedicated to computa video display generators. Such a circuit would not uti
+tional operations and the second microprocessor is dedi lize a second general purpose microprocessor to drive a
+cated to video display information retrieval.               video generator, but may use display instruction de
+                                                      4,777,621                            4.
+                           3
+coder circuits to provide movable object and stationary               DESCRIPTION OF THE DRAWINGS
+playfield object information to the video display,
+thereby reducing the work on the only (general pur               The structure, operating features an advantage of the
+pose) microprocessor present without the use of a sec          present invention will become apparent from a reading
+ond microprocessor. Any of these circuits, as with connection  of the following detailed description of the invention in
+Hogan et al, require an increase in memory or storage                        with the accompanying drawings in which
+space which is satisfied by a large number of registers. likeFIG.   numerals refer to like elements and in which:
+                                                                        1 is a block diagram illustrating a prior art per
+Some video display generators have their circuitry di
+vided into a decoder(s), a RAMs) and a register(s) for 10 sonal      computer system in which a single general pur
+                                                               pose microprocessor was used to perform computation
+handling playfield fixed object data and into a decoder operations          and display functions;
+selectors and registers for handling moving object data.          FIG.  2 is a block diagram illustrating a prior art per
+   It is desirable to provide complex video presentations sonal computer         system in which a display instruction
+on a television receiver using less circuitry than these decoder circuit was          incorporated to relieve the single
+previous devices, and to provide faster processing cir 15 general purpose microprocessor          of some of the display
+cuitry more cheaply. Further it is desirable to define, in functions;
+a new way, the video display data, so that it can be              FIG. 3 is a block diagram illustrating a prior art per
+processed and combined complex video presentations sonal computer system in which a second or auxiliary
+using less expensive circuit structure.                        microprocessor was included to assist the main or first
+           SUMMARY OF THE INVENTION                         20 microprocessor including performing display functions;
+                                                                  FIG. 4 is a block diagram illustrating the principal
+   An object of the present invention is to provide a components and functional interconnection of the pres
+video game home computer which incorporates direct ent invention; and
+memory access (DMA) and increases the duty cycle of               FIG. 5 is a system chip diagram of the present inven
+the bus architecture thereby decreasing dead time and 25 tion of FIG, 4.
+increasing processing rates for the system.                            DETALED DESCRIPTION OF THE
+   A second object of the invention is to provide a sys                              INVENTION
+tem implemented with a main general purpose micro
+processor and a general purpose co-processor capable             The present invention provides an improved personal
+of processing video display information and imple 30 computer capable of generating more complex video
+mented in LSI circuitry germane to the rest of the sys presentations on a television receiver type display. The
+tem circuitry.                                                 system accomplishes this task using less circuitry (i.e.
+   A third object of the invention is to provide a system chip real estate), and with faster processing than often
+implemented with very few LSI chips thereby reducing found in microprocessor driven systems. Direct mem
+interchip wiring.                                           35 ory access and bit map image schemes are implemented
+ . A fourth object of the invention is to assign chip using a commercially available microprocessor and a
+geometry to limit chip size to the more economical 48 LSI ciruit implemented co-processor having a limited
+pin package size and with chip size in the 250-270 mil. estate instruction set, thereby saving unnecessary chip real
+range.                                                                for the co-processor and thereby has the ability to
+                                                               service the principal subsystem circuits in the computer
+   The objects of this invention are realized in a personal 40 system,
+computer system capable of driving a commercial tele                    as does the main microprocessor. A central bus
+                                                               architecture
+vision receiver to provide a complex display of the type and control logic    has queue and priority access; and timing
+desirable for video games, visual arts and other types of this bus architecture.   manages to enhance the duty cycle of
+presentations.                                                    F.G. 1 shows the basic circuitry for a single micro
+   A general purpose microprocessor is connected to a 45 processor
+bus architecture. Random access memory (RAM) is tem has abased                    personal computer. This prior art sys
+likewise connected to this bus architecture, as well as, (CPU) which receives and 11
+                                                                             microprocessor      central processing unit
+are three custom LSI circuit chips providing other plurality of peripheral equipment portsinformation
+                                                                                             transmits                to a
+                                                                                                        13 via wiring 15.
+principal functions of the system. The bus architecture 50 A display generator 17, either being software        loaded or
+includes controllable gates for directing access as be hard wired, provides red, green and blue (R.G.B.)
+tween the above-described major components accord drive signals to the ports for a video display 19video               via
+ing to priority selection and bus access control logic. A connection. 16. A standard television receiver (not
+direct memory access (DMA) scheme is implemented. shown), being set up to operate according to either U.S.
+   The three custom circuit chips contain audio cir 55 (NTSC), or European (PAL) or R.G.B. (red, green,
+cuitry, disk controller circuitry, bus interrupt priority blue) standards can also be connected to the ports.
+logic, pot port circuitry, mouse port circuitry, universal        The microprocessor 11 sends display control signals
+assyncronous transmission and receive (UART) port in the form of microprocessor bits of data 21 to drive
+circuitry, display generator circuitry, display bit map the display generator 17. DMA channels 23 are used to
+image manipulation circuitry and a general purpose fetch and write video display words to the display gen
+microprocessor (co-processor) having a limited instruc erator 17 from system memory 25. A bus 27 connects
+tion set.                                                      the microprocessor 11 and the memory 25 for fetching
+   The first mentioned general purpose microprocessor and writing machine instructions and data words.
+is implemented on a DIP chip and has the ability to               There have been several attempts in the past to in
+access audio, disk controller, display generator and bit 65 crease system processing speed without increasing cir
+map manipulator circuitry and system (RAM) memory, cuitry size considerably and without upgrading the
+as well as, does the co-processor have this ability to microprocessor 11 with a much more expensive proces
+access this circuitry and memory.                              sor. These have taken the form of attempts in the past to
+                           5
+                                                       4,777,621
+                                                                                             6
+ build specific special purpose hardware dedicated to            nique utilizes a shared address bus and a shared data bus
+ producing video data and thereby relieve the micro              where the memory 25 shares access to the information
+ processor of time consuming functions.                          bus with bus time being arbitrated between various
+   FIG. 2 shows one such prior attempt. Here, the mi             subsystem components.
+  croprocessor 11 communicates 15 with the peripheral                The invention operates in the bit map mode of opera
+  equipment ports 13 and fetches and writes machine tion. Every position on the screen for every time in
+  instruction and data words via bus 27 to and from the          stance of display is mapped by a code bit in a corre
+  memory 25. A display generator 17 is connected via sponding relationship in the memory 25. To generate
+   DMA channels 23 to the memory 25.                             the display this bit map of data words is transferred to
+     As in the system of FIG. 1, the display generator 17 O the display generator 35 from memory 25. To change an
+  drives the video display ports 19. This system, FIG. 2, object on the screen, data representing that object is
+  differs from the previous as a display instruction de moved to a new location in memory.
+  coder and register circuitry 29 is hard wired to provide          A bit map image manipulator circuit 47 is designed to
+  display control signals as decoder control line outputs perform certain logical operations such as a logical
+  31 to the display generator 17. This eliminates the need 5 AND, OR, EXCLUSIVE OR and SHIFT functions on
+  for microprocessor direct communication to the display the map play data in memory 25. This manipulation
+  generator 17 and data bits being sent from the micro reconfigures the data for the continuing display.
+  processor 11 to the display generator 17.                         A bus architecture is used to transfer both instruction
+     Video display words defining the composite signal to words and data. All of the system components such as
+  be sent to the display ports 19 are transferred from the microprocessor 11, co-processor 45, memory 25,
+  memory 25 to the decoder circuitry 29. These words display generator 35, audio generator 37, disk controller
+ are not microprocessor instructions.                           41 and bit map manipulator circuit 47 are connected to
+    The limitations of this previous system, FIG. 2, in this bus architecture. A bus control logic circuit 49
+  clude the use of a lot of circuitry (chip real estate) for controls access to the bus architecture as between all of
+ the special purpose of display code word fetch and 25 these components. This bus control logic 49 is fed bus
+ decode without this circuitry being usable for other request signals from a priority control logic for bus
+ functions.                                                     access 51. This priority control logic for bus access 51
+    A third prior system design, FIG. 3, incorporates a receives priority requests from the microprocessor 11,
+ second or auxiliary general purpose microprocessor 33 co-processor 45, display generator 35, bit map inage
+ in addition to a first microprocessor 11, and overcomes 30 manipulator circuitry 47, audio generator 37 and disk
+ the limitations of the circuit of FIG. 2.                      controller 41. The bus control logic 49 thereby controls
+    This third system, FIG. 3, duplicates the circuitry of the following signal transfers in addition to access to
+ the first system, FIG. 1, including microprocessor 11, DMA channels 23:
+ plural peripheral equipment ports 13, display generator           a. Control signals from the microprocessor 11 to the
+ 17, memory 25, DMA channels 23 and video display 35 audio generator 37,
+ RGB ports 19. This, FIG. 3, system, however, has a                b. Control signals from the co-processor to the audio
+ redundant microprocessor 33, and redundant connec generator 37,
+ tions 15 to the peripheral ports 13, bus connections 27 to        c. Control signals from the microprocessor 11 to the
+ the memory 25 and display control signals being micro disk controller 41,
+ processor data bits 21 to the display generator 17.               d. Control signals from the co-processor 45 to the
+    Both microprocessors 11, 33 are commercial units on disk controller 41,
+ DIP chips. If the auxiliary microprocessor 33 is the              e. Transfer of DMA data to the audio generator 37
+ same model as the first microprocessor 11 the costs for from memory 25,
+ the system processors is double that of the first system,         f. Control of DMA data back and forth between the
+ F.G. 1.                                                    45 disk buffers 41 and memory 25,
+    The present invention, FIG. 4, includes a commercial          g. Control of information to the bit map image manip
+ microprocessor 11 which can be implemented with a ulator circuitry 47 from the microprocessor 11,
+Motorola Corporation Inc. Model 68000 microproces                 h. Control of information to the bit map image manip
+sor. The microprocessor 11 is connected via connection ulator circuitry 47 from the co-processor 45.
+ 15 to a limited number of peripheral equipment ports 13. SO i. Control of DMA data back and forth between the
+The system includes a memory 25 which is a randon bit map image manipulator circuitry 47 and memory 25,
+access memory (RAM) being 128 to 512k bytes in size.              j. Control of machine instructions and data between
+DMA channels 23 connect a display generator 35 to the the microprocessor 11 and memory 25,
+memory 25. The display generator 35 is used to drive              k. Control of machine instructions and data between
+the video display ports 19.                                 55 the co-processor 45 and memory 25,
+   An audio generator circuit 37 drives an audio port 39          l. Control of display control signals in the form of
+and a disk controller circuitry 41 communicates with a microprocessorbits of data from the microprocessor 11
+disk port 43.                                                  to the display generator 35, and
+   The invention includes a second microprocessor 45.             m. Control of display control signals in the form of
+This second microprocessor 45 designed to be a general microprocessor bits of the data from the co-processor
+purpose microprocessor, but with an instruction set 45 to the display generator 35.
+smaller than the first microprocessor 11. This second             The invention of FIG. 4 is configured according to
+microprocessor is known as the co-processor 45 and chip architecture shown in FIG. 5. The Motorola 68000
+includes general purpose hard wired instructions in microprocessor 11 communicates an address bus, half
+cluding the following: (wait until), (move data), (skip if) 65 53 of which is used to transmit the nine least significant
+and (jump).                                                    bits of an address word from the microprocessor 11,
+   The invention includes a bus architecture and utilizes      while the second half of which, bus 55 transmits the
+direct memory access (DMA) technique. This tech nine most significant bits of the address word from the
+                                                       4,777,621                             8
+                             7
+microprocessor 11. The lower half address bus 53 also the microprocessor 11 and the data inputs of the first
+feeds the least significant eight bits of the address word custom chip 61, the second custom chip 63 and the third
+carried thereon to a tri-state buffer circuit 57, and to a custom chip 65, as well as, the input to RAM 25. These
+multiplexercircuit 59. The high half of the address bus three custom chips, 61, 63 and 65, as well as, the RAM
+55 feeds the nine highest bits of the address word from 25 all have bi-directional connections to the data bus 67.
+the microprocessor 11 to the multiplexer 59 and to bus             The basic system clock drives an oscilator circuit 69
+control logic circuitry 49.                                     which feeds clock pulses 71 to the bus control logic 49.
+   Tri-state buffer 57 selectively gates the eight lowest Clock pulses 73 are then sent to the microprocessor 11
+bits on the low bit address bus 53 through to address the from the bus control logic 49.
+three custom LSI chips 61, 63, 65 implemented in 48 pin O The first custom chip 61 generates a 18 bit dynamic
+NMOS technology packages. The first of these chips 61 RAM address multiplexed onto a nine bit bus 75 which
+houses the co-processor 45 circuitry, as well as, the bit is connected into the multiplexer 59. Multiplexer 59
+map image manipulation circuitry 47 of FIG. 4. The selects amongst the nine bits supplied by each of the
+second custom chip 63 contains the display generator buses 53, 55 and 75 to pass on a time share basis each
+circuitry 35, while the third custom chip 65 contains the 15 individual address (nine bit) word to address the RAM
+peripheral control circuitry including the audio genera 25 via a bus connection 77.
+tor circuitry 37, disk controller circuitry 41 and other           A two bit control line 79 comprises two wires from
+peripheral port circuitry 13.                                   the bus control logic 49 to control the state of the multi
+   Circuitry contained on each custom chip 61, 63, and plexer 59. These control lines will select the high 9 bit
+65 will be further discussed below. Access between the          address bus 55, and then the low 9 bit address bus 53 to
+register address bus 53 and the first custom chip 61 is make up 18 address bits from the microprocessor 11.
+bi-directional, while access from the register address Otherwise, they select the dynamic RAM address bus
+bus 53 is unidirectional into the display generator circuit 75 from the first custom chip 61, with 18 bits from chip
+custom chip 63 and peripheral control circuit custom 61 (9 bits at a time).
+chip 65. The peripheral control custom chip 65 trans 25 The microprocessor 11 has a DTACK input which
+mits audio signals to the audio ports 39 and has bi-direc serves to tell the microprocessor 11 that it has access to
+tional transmission signals between the disk ports 43.          the data bus 67. This DTACK signal is passed from the
+   The other ports 13 of FIG. 4 include a UART port 67 bus           control logic 49 to the microprocessor 11 on the
+and a pot port 69. Signal transmission between these DTACK line 79. An additional connection 81 exists
+ports 67, 69 and the peripheral control custom chip 65 is between the microprocessor 11 and the bus control
+bi-directional. Another peripheral port considered logic 49 as an address strobe signal 81. Another line 83
+amongst the group 13, FIG. 4, is a mouse port 71 which carries a read-write request 83 from the microprocessor
+sends signals to the second custom chip 63. The video 11 to the bus control logic 49.
+ports 19 are connected to receive signals from this sec            When the microprocessor 11 has been granted access
+ond custom chip 63.                                          35 to the RAM 25, via the bus 53, 55, 67, the read- write
+   Housed on the first custom chip 61 is the priority signal 83 is passed via a separate line 83 from the bus
+control logic for bus access 51, the co-processor 45, the control logic 49 to the RAM 25.
+bit map image manipulation circuitry 47 and the vertical           A "row address strobe' signal 85 and a "column
+position controller for movable objects (sprites), this address strobe" signal 87 provide additional control
+vertical position controller is a classical section of the inputs to the RAM 25 from the bus control logic 49. A
+first chip 61. Also housed on this custom chip are ad data source select line 89 provides a control to the bi
+dress registers for the DMA channels 23.                        directional tri-state latch 69 from the bus control logic
+   The display generator 35 is implemented on the sec 49. A register address select line 91 provides a control
+ ond custom chip 63 and includes the bit plane buffer line input to the tri-state buffer 57 from the bus control
+ registers for generating a plurality of multiple playfields 45 logic 49.
+ of fixed objects. The video color selection registers and         A bus request line 93 from the first custom chip 61
+ a display priority controller which determines collision inputs requests for bus access from the circuitry on that
+ priority of display between fixed and movable (sprite) chip 61 to the bus control logic 49. A DMA request line
+ objects are also on this chip 63. The display generator 95 provides bus access requests from the circuitry the
+ 35 also includes a sprite horizontal position controller 50 third custom chip 65 through the first custom chip 61 to
+ having horizontal position registers and a plurality of the bus control logic 49.
+ sprite data buffers connected to said horizontal position         The bi-directional tri-state latch 69 and tri-state buffer
+ controller.                                                     57 are controlled to operate in unison by the bus control
+    Also housed on this second custom chip 63 is a colli logic 49. This bus control logic 49 determines when the
+ sion detection circuitry for detecting collisions between 55 microprocessor 11 is on the data bus 67 and addresses
+ fixed and moving objects, and also mouse port counters. from the microprocessor 11 should be passed through
+    Housed on the third custom chip 65 are four audio the tri-state buffer 57 as well as the multiplexer 59 to
+ generator circuits, a disk controller circuit, a UART access RAM 25, as well as, the circuitry on the custon
+ communications circuit and pot port circuits.                   chip 61, 63 and 65.
+    The above circuitry placed on the custom chips 61,              The highest nine bits of the address from the micro
+ 63 and 65 may be implemented in a number of classical processor 11 are fed via the bus 55 to the bus control
+ ways previously practiced in the art.                           logic 49 where they are decoded to generate a register
+    The microprocessor 11 is capable of internal calcula address select signal 91 to the tri-state buffer 57 to allow
+ tion of information in 32 bit words. The microprocessor the address word to be passed to the three custom chips
+ 11, however, has a sixteen bit word data bus connection. 65 61, 63 and 65 via register address bus 53. These eight
+ This data bus connection is bi-directional between the          lowest bits on bus 53 thereby select which register on
+ microprocessor 11 and a sixteen bit data bus 67. A bi the particular custom chip 61, 63 and 65 is to receive
+ directional tri-state latch 69 operates as a gate between data from the data bus 67. This scheme saves pins and
+                                                      4,777,621
+                                                                                           10
+ interconnection wiring including back plane wiring,           bus 67 are resolved by priority logic resident on the first
+ card and board wiring, as well as, eliminates additional      custom chip 61 and carried out according to the bus
+ logic circuitry needed to select between the micro            control logic 49. The co-processor 45 can be pro
+ processor 11 and a custom chip 61, 63 and 65 logic.           grammed to handle the video display functions which,
+   All of the custom chips receive data bus information        in the system configuration of FIGS. 4 and 5, would
+ at the same time and each custon chip 61, 63 and 65           otherwise be handled by microprocessor 11. Co-proces
+ contains an address decoder for each data register.           sor 45 being smaller than the microprocessor 11 is much
+ When the proper address is received by that portion of        less expensively implemented. By being on the same
+ the circuit, that particular register portion is selected     LSI circuit chip, wiring problems are greatly reduced.
+ and the data on the bus 67 is thereby enabled to be 10          The architecture described in connection with FIG. 5
+entered into that register. This implementation elimi           enables the circuitry described in connection with FIG.
+ nates the need for additional decoders and additional         4 to be embodied on these custom LSI circuit chips 61,
+ lines into the chip. Each data register has a unique ad 63 and 65 each having a pin count below 48 pins, as well
+ dress. When an address is applied to the register address as the commercial microprocessor 11, the commercial
+ bus 53, that register is selected to receive data from the 15 RAM 25 and commercial tri-state buffer 57, multiplexer
+ data bus 67. This permits inter-circuit communication 59, bi-directional tri-state latch 69 and bus control logic
+ using but a single address bus and eliminates interchip 49.
+ wiring and additional circuitry. By taking advantage of          The microprocessor as stated above as a Motorola
+ the microprocessor 11 dead time, the control logic 49 Corporation 68000. The multiplexer 59 maybe imple
+ increases the signal and time of use of the bus 53, 55 and 20 mented in TTL logic including a Fairchild Corpora
+ 67 architecture.                                              tion, Model 74F374, octal latch and a Fairchild Corpo
+   The bus system carries addresses which have both the ration, Model 74F257, multiplexer being a two-to-one
+source address and the destination address. With few           multiplexer with tri-state output. The tri-state buffer 57
+exceptions, the dynamic RAM address (DRA word) can be implemented with a Texas Instruments, Model
+from the first custom chip 61 is almost always a source 25 74LS244, tri-state driver, while the bi-directional tri
+address and the register address on bus 53 also gener state latch 69 can be implemented with a Texas Instru
+ated by the first chip 61 almost always carries a destina ments, Model 74LS244, tri-state driver and a Model
+tion register address for DMA data transferred on the 74LS273 octal latch with tri-state outputs.
+data bus 67.                                                      The RAM 25 can be implemented with a 256k mem
+   The structure for circuit input buffer registers and 30 ory such as an NEC Corporation, Model D41254D. Bus
+circuit output buffer registers is known in the art. This control logic circuitry 49 can be implemented with a
+structure will not change regardless of whether the MMI Corporation, Model 16L8 switching circuit along
+information being temporarily stored is data or ad with a plurality of NAND gates and flip flops.
+dresses. The clocking of signals through such buffer              All of the above described circuitry, including the
+registers is also known in the art. Their use and purpose 35 subsystem circuits which are shown in the prior art are
+in the present invention, however, departs from the intended to be interconnected in their usual manner.
+prior art.                                                        The system, FIGS. 4-5, being the present invention,
+   During DMA data transfer, the first custom chip 61 utilizes operator provided instructions in the form of
+generates a register address (RGA signal) onto bus 53 software, which are loaded into RAM 25 when the
+which determines the destination for data and generates system is booted-up. The software instruction set for the
+a dynamic RAM address (bus 75) which selects the M68000, is incorporated. The peripheral prots 13, in
+location of source of data within the RAM 25.                  clude a keyboard input for entering instructions in a
+   During operation of the bit map image manipulator standard manner.
+circuit the latter communicates bi-directionally with the         The above description of the invention is intended to
+memory to access bit map video image information to read as illustrative of the invention and is not to be
+perform logical operations (e.g., AND, OR, SHIFT and considered as limiting the scope or intent. Changes can
+EXCLUSIVE OR) thereon under control of control be made in the invention without departing from the
+signals provided from the microprocessors. Such con intentive features and scope thereof.
+trol signals are stored in the control registers in chip 61   What is claimed is:
+which are loaded via the data busin response to register 50 1. A video game and personal computer operating
+address signals received on bus 53.                         under direct memory access (DMA) with an address
+   During display operations the display generator on bus shared between a main microprocessor and an auxil
+chip 63 reacts to display the bit map video image stored iary microprocessor, so that said microprocessors alter
+in the memory 25 and supplied via data bus 67. This is nately supply addresses to said bus comprising:
+done in response to control signals supplied via data bus 55 a main microprocessor;
+67 and stored in control registers in chip 63 in response     a memory;
+to address information supplied on bus 53 by the CPU          a data bus connected to said main microprocessor and
+11 or by the co-processor in chip 61.                            to said memory;
+   The duty cycle on the data bus 67 is increased and         a data bus switch being capable of interrupting said
+controlled in part by the DTACK signal 79 and the                data bus between said main microprocessor and
+address strobe signal 81. The specific operational char          said memory;
+acteristics of the microprocessor 11 allow this micro         a plurality of circuit chips connected on the same side
+processor 11 to make use of the data bus only about 50            of said data bus switch as said memory said chips
+percent of the time. So in the other time the custom              each having a plurality of control registers in con
+chips 61, 63 and 65 make use of the data bus 67. This 65           nection with said data bus for receiving data there
+enables a greatly increased usage of the busing architec          from;
+ture and reduces the size of the wiring between chips           a register address bus connected to said main micro
+and system geometry. Conflicts for access to the data             processor and to each of said plurality of circuit
+                                                  4,777,621                               12
+                          11
+     chips, each address carried thereon being operative       display information for generating said data display
+     to selectively enable said control registers on said      output.
+     chips;                                                      6. A video game and personal computer operating
+  a register address bus switch being capable of inter         under direct memory access (DMA) with a data bus
+     rupting said register address bus between said main       being utilized on a shared basis between a main micro
+     microprocessor and said chips;                            processor and a memory data manipulator circuit so
+  wherein one of said chips contains an auxiliary              that said manipulator circuit is enabled to process dis
+                                                               play data comprising:
+     (AUX) microprocessor, for controlling data dis              a main microprocessor;
+     play operations, said AUX microprocessor being 10           a memory;
+     capable of placing addresses on said register ad            a data bus connected to said main microprocessor and
+     dress bus when said register address bus switch                to said memory;
+     interrupts the connection between said register             a data bus switch for interrupting said data bus be
+     address bus and said main microprocessor; and                  tween said microprocessor and said memory;
+  wherein said one of said chips contains a DMA ad 15            a plurality of circuit chips connected to said data bus
+     dress encoder circuit and a DMA address genera                 on the same side of said data bus switch as said
+     tor, said DMA address encoder being capable of                 memory, said chips each having a plurality of con
+     placing register addresses on said register address            trol registers connected to said data bus for receiv
+     bus when said register address bus switch has dis 20           ing data therefrom;
+     connected said register address bus from said main          a register address bus connected to said main micro
+     microprocessor.                                                processor and to each of said plurality of circuit
+  2. The computer of claim 1 further including a mem                chips, each address carried thereon being operative
+                                                                    to selectively enable said control registers on said
+ory address output bus connected to said one of said                chips;
+chips, said output bus transmitting DMA memory ad 25             a register address bus switch being capable of inter
+dresses produced by said DMA address generator to                   rupting said register address bus between said main
+said memory when said register address bus is discon                microprocessor and said chips;
+nected from said main microprocessor.                            an address multiplexer circuit for transmitting ad
+  3. The computer of claim 2 further comprising a                   dress data to said memory from a plurality of
+display generator included in another of said circuit 30            sources, including said main microprocessor;
+chips for generating a data display output and a control         a memory data manipulator circuit included within
+circuit for operating said data bus switch for interrupt            one of said circuit chips, said circuit including a
+ing said data bus between said main microprocessor and              DMA address generator for supplying DMA ad
+said memory when said register address bus is discon 35             dress data to said address multiplexer circuit; and
+nected from said main microprocessor, whereby data is            a control circuit connected to said data bus switch,
+placed on said data bus in response to said DMA mem                said register address bus switch and said address
+ory addresses.                                                     multiplexer circuit for connecting said main mmi
+  4. The computer of claim 3 wherein said DMA ad                   croprocessor to said address bus to enable loading
+dress generator produces first address data for reading            of the control registers of said one circuit chip and
+display control information out of said memory onto                for thereafter disconnecting said data bus from
+                                                                   main microprocessor and enabling said multiplexer
+said data bus and said DMA address encoder circuit                 circuit to supply DMA address data from said
+produces register addresses for loading said display               memory data manipulator circuit to said memory,
+control information on said data bus into designated               whereby display data stored in said memory is read
+control registers in said other of said circuit chips. 45          into said manipulator circuit via said data bus for
+  5. The computer of claim 4 wherein said DMA ad                   processing by said data manipulator circuit in ac
+dress generator produces second address data for read              cordance with said data stored in said control regis
+ing display information out of said memory onto said               ters of said one circuit
+                                                                                    R
+                                                                                            chip.
+                                                                                               k
+data bus, whereby said display generator utilizes said
+                                                          50
+
+
+
+
+                                                          55
+
+
+
+
+                                                          65
+

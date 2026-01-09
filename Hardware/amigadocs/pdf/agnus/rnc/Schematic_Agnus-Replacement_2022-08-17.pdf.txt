@@ -1,0 +1,263 @@
+          1                                               2                                            3                                                4                   5                                            6                                           7                                           8
+
+
+
+
+A                                                                     +3.3VDC                                                                                                                                                                U4                                                                                                         A
+                                                                                                                                                                                                                                             ICE65L04F-TCB132C
+                                                                                                                                                                          +3.3VDC    A8 VCCIO0_1                 PIO0_02     A1    DMAL               +3.3VDC J9
+                                                                                                                                                                                                                                                                 VCCIO2_1                    PIO2_02     L4      GND
+                            JTAG               R3       R4      R2     R5                                                                                                            F6 VCCIO0_2                             A2    INTR                            M5 VCCIO2_2                           L5   REGEN
+                            HDR-M-2.54_2x5                                                                                                                                                                       PIO0_03                                                                     PIO2_03
+                                               10K      10K     10K    10K                                                                                                                                       PIO0_04     A3    BLIT
+                                                                                                                                                                                                                                                            R7                               PIO2_04     L6   RW
+         +3.3VDC
+                       1       2
+                                                                              TMS_SPI_SS_B
+                                                                                                                                                                                                                 PIO0_05     A4    DRD0                     10K                              PIO2_05     L7   RGA2
+             GND
+                       3       4
+                                                                              TCK_SPI_SCK
+                                                                                                                                                                                                                 PIO0_06     A5    DRD2       +3.3VDC              L10 CRESET_B              PIO2_06     L8   LDS
+             GND
+                       5       6
+                                                                              TDO_SPI_SO
+                                                                                                                                                                                                                 PIO0_07     A10   DRD15                           M10 CDONE                 PIO2_07     M3   AS
+                       7       8
+                                                                              TDI_SPI_SI
+                                                                                                                                                                                                                 PIO0_08     A11   HSYNC
+                                                                                                                                                                                                                                                                                             PIO2_08     M4   RGA8
+               GND                                                            TRST                                                                                                                                           A12   VSYNC                    10K                                          M6   RGA5
+                       9      10                                                                                                                                                                                 PIO0_09                                    R6                               PIO2_09
+                                                                                                                                                                                                                 PIO0_10     C10                                                             PIO2_10     M7   RGA3
+                                               R1                                                                                                                                                                PIO0_11     C11   LPEN                                     BANK2            PIO2_11     M8   A20
+                                               10K                                                                                                                                                               PIO0_12     C12   DRD12
+                                                                                                                                                                                                                                                                                             PIO2_12     M9   UDSX
+                                                                                                                                                                                                                 PIO0_13     C4    RESET                     JP2 L9                                      P2   RAMEN
+                                                                                                                                                                                           BANK0                             C5    DRD1                      JP1P10 PIO2_18/CBSEL0           PIO2_13
+                                                                                                                                                                                                                                                                                                         P3   RGA7
+
+
+
+
+                                                                                                                           RAMEN
+                                                                                                                           REGEN
+                                                                                                                           BLISS
+                                               GND                                                                                                                                                               PIO0_14                                                  PIO2_19/CBSEL1     PIO2_14
+
+
+
+
+                                                                                                                           BLIT
+                                                                                                                                                                                                                 PIO0_15     C6    DRD3
+                                                                                                                                                                                                                                                                                             PIO2_15     P4   RGA6
+                                                                                                                                                                                                                 PIO0_16     C7    DRD5                     RGA1 P8                                      P5   RGA4
+                                                                                                                                        Agnus_Agnus_8375_socket
+                                                                                                                                                                                                                             C8    DRD13                  CLK28M P7 GBIN4/PIO2_00            PIO2_16
+                                                                                                                                                                                                                                                                                                         P9   UDS
+                                                                                                                                                                                                                 PIO0_17                                                  GBIN5/PIO2_01      PIO2_17
+                                                                                                                                                                                                                 PIO0_18     C9    DRD14
+
+
+
+
+                                                                                                                             25
+                                                                                                                             23
+                                                                                                                             19
+                                                                                                                             20
+                                                                                                                U2
+                                                                                                                                                                                                                 PIO0_19     D5    BLISS
+B                                                                                               A20                                                                                                                          D6    DRD7                                                                                                                 B
+                                                                                                                                                                                                                 PIO0_20
+
+
+
+
+                                                                                                                              RAMEN
+                                                                                                                              REGEN
+                                                                                                                              BLISS
+                                                                                                                               BLIT
+                                                                                                           35   A20
+                                                                                                A19        59                                      21                                                            PIO0_21     D7    DRD8
+                                                                                                                A19                          WE
+                      U3                                                                        A18        77                                      57                                                            PIO0_22     D8    DRD9                      GND A9
+                                                                                                                                                                                                                                                                          GND               VPP_FAST A13
+                                                                                                                A18                        RAS0
+                      IS66WVS4M8BLL-104NLI                                                      A17        76                                      56                                                            PIO0_23     D9    DRD10                            F1    GND                VPP_2V5 A14
+                                                                                                                                                                                                                                                                                                              +3.3VDC
+                                                                                                                A17                        RAS1                                 DRD4 A6
+                                                                                                A16                                                                                                                          D10   CSYNC                            F7
+                                                                                                                                                                                DRD6 A7 GBIN0/PIO0_00            PIO0_24                                                  GND
+                                                                                                           75                                      55
+       DAT_EN        1                        8       +3.0VDC                                                   A16                        DRA9
+                       CE#                VCC                         +3.0VDC                   A15        74                                      54                                     GBIN1/PIO0_01          PIO0_25     D11                                    G7    GND
+         DAT1        2                        7       DAT3                                                      A15                        CASU
+                       SO/SIO1           SIO3                                                   A14        73                                      53       UDSX                                                                                                    G8    GND
+         DAT2        3                        6       DAT_CLK
+                                                                                                                                                                                                                                                                                          POWER
+                                                                                                                A14                        CASL
+                       SIO2              SCLK                                                   A13        72                                                                                                                                                       G9    GND
+          GND        4                        5       DAT0             C8                                       A13                                50
+                       VSS            SI/SIO0                          0.1u
+                                                                                                A12        71                              DRA8                                                                                                                     H6    GND
+                                                                                                                A12                                49
+                                                                                                A11        70                              DRA7                                                                                                                     H7    GND
+                                                                                                                A11                                48
+                                                                GND                             A10        69                              DRA6                                                                                                                     H8    GND                    VCC_1   F8   +1.2VDC
+                                                                                                                A10                                47
+                      U5                                                                         A9        68                              DRA5                                                                                                                     J8    GND                    VCC_2   G6
+                                                                                                                A9                                 46
+                      IS66WVS4M8BLL-104NLI                                                       A8        67                              DRA4                           +3.3VDC    F9 VCCIO1_1                 PIO1_02     B14   A17                             J14    GND                    VCC_3   H9
+                                                                                                                A8                                 45
+                                                                                                 A7        66                              DRA3                                     H14 VCCIO1_2                 PIO1_03     C14   A16                              L3    GND                    VCC_4   J4
+       DAT_EN        1                        8       +3.0VDC                                                   A7                                 44
+                       CE#                VCC                                                    A6        65                              DRA2
+                                                                                                                                                                                                                 PIO1_04     D12   A18                              P6    GND                    VCC_5   J7
+         DAT5        2                        7       DAT7                                                      A6                                 43
+                       SO/SIO1           SIO3                                                    A5        64                              DRA1
+                                                                                                                                                                                                                 PIO1_05     D14   A13
+         DAT6        3                        6       DAT_CLK                                                   A5                                 42       GND
+                       SIO2              SCLK                                                    A4                                        DRA0                        TCK_SPI_SCK L12                                       E11   A14
+                                                                                                                                                                        TDI_SPI_SI M12 TCK                       PIO1_06
+                                                                                                           63
+          GND        4                        5       DAT4                                                      A4
+                       VSS            SI/SIO0                         +3.0VDC                    A3                                                         RGA8                                                             E12   A12
+                                                                                                                                                                        TDO_SPI_SO N14 TDI                       PIO1_07
+                                                                                                           62   A3                         RGA8    26
+                                                                                                 A2                                                         RGA7                                                             E14   A11
+                                                                                                                                                                      TMS_SPI_SS_B P14 TDO                       PIO1_08
+                                                                                                           61   A2                         RGA7    27
+                                                                                                 A1                                                         RGA6                                                             F11   DRD11              +3.3VDC E3                                         B1   DAT0
+                                                                                                                                                                              TRST M14 TMS                       PIO1_09                                               VCCIO3_1              PIO3_00
+                                                                                                           60                                      28
+C                                                                      C12                                      A1                         RGA6                                                                                                                                                                                                         C
+                                                                       0.1u                   DRD15                                                29       RGA5
+                                                                                                                                                                                          TRST_B                 PIO1_10     F12   A10                              J6 VCCIO3_2              PIO3_01     C1   DAT2
+                                                                                                           83                              RGA5
+                                                                                              DRD14             DRD15                              30       RGA4
+                                                                                                                                                                                                                 PIO1_11     G11   A15                              K1 VCCIO3_3              PIO3_02     C3   DAT_CLK
+                                                                                                           84                              RGA4
+                                                                GND                           DRD13             DRD14                              31       RGA3
+                                                                                                                                                                                                                 PIO1_12     G12   A8
+                                                                                                                                                                                                                                                                                             PIO3_03     D3   DAT3
+                                                                                                           1                               RGA3
+                                                                                              DRD12             DRD13                              32       RGA2
+                                                                                                                                                                                                                 PIO1_13     H11   A6
+                                                                                                                                                                                                                                                                                             PIO3_04     D4
+                                                                                                                                                                                           BANK1
+                                                                                                           2                               RGA2
+                                                                                              DRD11             DRD12                              33       RGA1
+                                                                                                                                                                                                                 PIO1_14     H12   A4
+                                                                                                                                                                                                                                                                                             PIO3_05     E4   DAT_EN
+                                   U6                                                                      3                               RGA1
+                                                                                              DRD10             DRD11
+                                                                                                                                                                                                                 PIO1_15     J11   A5
+                                                                                                                                                                                                                                                                                             PIO3_06     D1   DAT1
+                                   W25X40CLSNIG                                                            4    DRD10                                       CLK14M                                                           J12   A3                                                                    E1   DAT4
+                                                                                               DRD9        5                                14M    40                                                            PIO1_16                                                                     PIO3_07
+    TMS_SPI_SS_B       1                   8      +3.3VDC                                                       DRD9                               39       CCK
+                                                                                                                                                                                                                 PIO1_17     K11                                                             PIO3_08     F4   GND
+                         CS#          VCC                                                      DRD8
+                                                                                                                                                                                                                                                                            BANK3
+                                                                                                           6                                CCK
+      TDI_SPI_SI       2                   7                                                                    DRD8                               38       CCKQ
+                                                                                                                                                                                                                 PIO1_18     K12   A1
+                                                                                                                                                                                                                                                                                             PIO3_09     F3
+                         DO         HOLD#                                                      DRD7        7                               CCKQ
+         +3.3VDC       3                   6         TCK_SPI_SCK                                                DRD7                                        CLK7M                 A7G14                                      K14   A2                                                                    G3   DAT7
+                                                                                                                                                                                  A9 F14 GBIN2/PIO1_00           PIO1_19                                                                     PIO3_10
+                                                                                                                                                   37
+                         WP#          CLK                                                      DRD6        8                                 7M
+             GND       4                   5         TDO_SPI_SO                                                 DRD6
+                                                                                                                                                                                          GBIN/3PIO1_01          PIO1_20     L14   A19
+                                                                                                                                                                                                                                                                                             PIO3_13     G4   DAT6
+                         GND            DI                                                     DRD5        9
+                                                                                               DRD4             DRD5                               78       LPEN
+                                                                                                                                                                                                                                                                                             PIO3_14     H3   GND
+                                                                                                           10                             LPEN
+                                                                                               DRD3             DRD4                               79       VSYNC
+                                                                                                                                                                                                                                                                                             PIO3_15     H4
+                                                                                                           11                            VSYNC
+                                                                                               DRD2             DRD3                               80       CSYNC
+                                                                                                                                                                                                                                                                                             PIO3_16     J3
+                                                                                                           12                            CSYNC
+                                                                                               DRD1             DRD2                               81       HSYNC
+                                                                                                                                                                                                                                                                                             PIO3_17     J1
+                                                                                                           13                            HSYNC
+                                                                                               DRD0             DRD1                                        GND                                                                                                                              PIO3_18     K3
+                                                                                                           14                                  GND 41
+                                                                                                                DRD0
+                                                                                                                                                                                                                                                                                             PIO3_19     K4   CLK7M
+                                                                                                                                                                            +3.3VDC L11                                      M11    TDO_SPI_SO                                                           L1   CDAC
+                                                                                                                                                            +5.0VDC                       SPI_VCC     PIOS_00/SPI_SO                                                                         PIO3_20
+                                                                                                 LDS                                       VCC 15                                                                            P11    TDI_SPI_SI                                                           M1   CCKQ
+                                                                                                           51   LDS                                                                                    PIOS_01/SPI_SI                                                                        PIO3_21
+D                                                                                                UDS       52                                               RESET
+                                                                                                                                                                                                     PIOS_02/SPI_SCK         P12    TCK_SPI_SCK             DAT5 H1
+                                                                                                                                                                                                                                                                       GBIN6/PIO3_10         PIO3_22     N1   CCK                                       D
+                                                                                                                                         RESET 16
+                                                                                                                                                                                           SPI
+                                                                                                                UDS
+                                                                                                  RW       22                                               INTR
+                                                                                                                                                                                                    PIOS_03/SPI_SS>B         P13    TMS_SPI_SS_B                    G1 GBIN7/PIO3_11         PIO3_23     P1   CLK14M
+                                                                                                  AS            R/W                       INTR 17           DMAL
+                                                                                                           24                             DMAL 18
+                                JP1                                                                             AS
+                                                                                                                        36 CDAC
+
+
+
+
+                                0603_SOLDERBRIDGE_NO
+                                                                                                                        34 28M
+
+
+
+
+                                                                                                                                      58 GND
+                                                                                                                                      82 GND
+
+
+
+
+                                       JP1
+                       GND
+                                JP2                                                                                                        GND
+                                0603_SOLDERBRIDGE_NO
+                                                                                                                          CLK28M
+                                                                                                                            CDAC
+
+
+
+
+                                       JP2
+                       GND
+
+
+
+
+                                                                                                                                                                                                                                                                                +3.3VDC                                            +1.2VDC
+                                                                                     R8
+                                                                                     RES 16 OHM 1% 1/10W 0603                                                                             C7              C9      C10                C13    C15    C16      C17          C18     C19              C6      C3         C4     C5      C11
+                                                                      +3.3VDC                                           +3.0VDC                                                           0.1u            0.1u    0.1u               0.1u   0.1u   0.1u     0.1u         0.1u    0.1u             0.1u    0.1u       0.1u   0.1u    0.1u
+E                                                                                                                                                                                                                                                                                                                                                       E
+                                 U1                                                          D1                                                                                     GND                                                                                                    GND
+                                 AP7312-1233FM-7                                             BZT52C3V0LP-7
+                                        7
+                                     EP                                                   GND
+    +5.0VDC                1            6                      +1.2VDC
+                             IN   OUT1
+                           2            5                      +3.3VDC
+                             EN1 OUT2
+                           3            4
+          C1                 EN2    GND                   C2
+          1u                                C14           1u
+                                             1u
+                                                               GND
+                                                                                                                                                                                                                                                      TITLE:
+                                                                                                                                                                                                                                                                     ReAgnus                                                               REV: 0.4
+
+                                                                                                                                                                                                                                                                                  Company: the Buffee Project                              Sheet: 1/1
+                                                                                                                                                                                                                                                                                  Date:    2022-05-07            Drawn By: Renee
+          1                                               2                                            3                                                4                   5                                            6                                           7                                           8
+

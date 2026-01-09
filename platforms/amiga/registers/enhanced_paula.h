@@ -1,20 +1,21 @@
 /*
  * SPDX-License-Identifier: MIT
  * 
- * PAULA chip register definitions for Amiga
+ * Enhanced PAULA chip register definitions for Amiga
  * Based on Amiga Hardware Reference Manual and official documentation
- * Addresses: $DFF000-$DFF1FF (shared with other custom chips)
  */
 
-#ifndef PAULA_H
-#define PAULA_H
+#ifndef ENHANCED_PAULA_H
+#define ENHANCED_PAULA_H
 
 #include "amiga_custom_chips.h"
 
-// PAULA base address is shared with other custom chips at 0xDFF000
+// PAULA base address is 0xDFF000 (same as AGNUS)
+#ifndef PAULA_BASE
 #define PAULA_BASE 0xDFF000
+#endif
 
-// Audio Channel 0 Registers
+// Audio Channel Registers
 #define AUD0LCH  (PAULA_BASE + 0x0A0)  // Audio channel 0 location high
 #define AUD0LCL  (PAULA_BASE + 0x0A2)  // Audio channel 0 location low
 #define AUD0LEN  (PAULA_BASE + 0x0A4)  // Audio channel 0 length
@@ -22,7 +23,6 @@
 #define AUD0VOL  (PAULA_BASE + 0x0A8)  // Audio channel 0 volume
 #define AUD0DAT  (PAULA_BASE + 0x0AA)  // Audio channel 0 data
 
-// Audio Channel 1 Registers
 #define AUD1LCH  (PAULA_BASE + 0x0B0)  // Audio channel 1 location high
 #define AUD1LCL  (PAULA_BASE + 0x0B2)  // Audio channel 1 location low
 #define AUD1LEN  (PAULA_BASE + 0x0B4)  // Audio channel 1 length
@@ -30,7 +30,6 @@
 #define AUD1VOL  (PAULA_BASE + 0x0B8)  // Audio channel 1 volume
 #define AUD1DAT  (PAULA_BASE + 0x0BA)  // Audio channel 1 data
 
-// Audio Channel 2 Registers
 #define AUD2LCH  (PAULA_BASE + 0x0C0)  // Audio channel 2 location high
 #define AUD2LCL  (PAULA_BASE + 0x0C2)  // Audio channel 2 location low
 #define AUD2LEN  (PAULA_BASE + 0x0C4)  // Audio channel 2 length
@@ -38,7 +37,6 @@
 #define AUD2VOL  (PAULA_BASE + 0x0C8)  // Audio channel 2 volume
 #define AUD2DAT  (PAULA_BASE + 0x0CA)  // Audio channel 2 data
 
-// Audio Channel 3 Registers
 #define AUD3LCH  (PAULA_BASE + 0x0D0)  // Audio channel 3 location high
 #define AUD3LCL  (PAULA_BASE + 0x0D2)  // Audio channel 3 location low
 #define AUD3LEN  (PAULA_BASE + 0x0D4)  // Audio channel 3 length
@@ -64,7 +62,7 @@
 #define POT0DAT  (PAULA_BASE + 0x012)  // Pot counter pair 0 (vertical/horizontal)
 #define POT1DAT  (PAULA_BASE + 0x014)  // Pot counter pair 1 (vertical/horizontal)
 #define POTGOR   (PAULA_BASE + 0x016)  // Pot pin data read
-#define POTGO    (PAULA_BASE + 0x034)  // Pot pin data write/start
+#define POTGO    (PAULA_BASE + 0x034)  // Pot port data write/start
 
 // Interrupt Control Registers
 #define INTENAR  (PAULA_BASE + 0x01C)  // Interrupt enable read
@@ -293,72 +291,4 @@
 #define JOYDAT_VERT_SHIFT   8       // Vertical counter shift
 #define JOYDAT_HORZ_SHIFT   0       // Horizontal counter shift
 
-// Audio Period Values (for different sample rates)
-#define AUDPER_44KHZ        160     // ~44.1kHz (CD quality)
-#define AUDPER_22KHZ        320     // ~22kHz
-#define AUDPER_11KHZ        640     // ~11kHz
-#define AUDPER_5KHZ         1280    // ~5.5kHz
-#define AUDPER_2_5KHZ       2560    // ~2.75kHz
-#define AUDPER_1_3KHZ       5120    // ~1.375kHz
-#define AUDPER_687HZ        10240   // ~687Hz
-#define AUDPER_344HZ        20480   // ~344Hz
-#define AUDPER_172HZ        40960   // ~172Hz
-#define AUDPER_86HZ         81920   // ~86Hz
-
-// Audio Volume Values
-#define AUDVOL_MUTE         0       // Mute
-#define AUDVOL_HALF         32      // Half volume
-#define AUDVOL_FULL         64      // Full volume
-
-// DMA Control Bits (DMACON/DMACONR)
-#define DMAF_SETCLR   0x8000  // Set/Clear control bit
-#define DMAF_AUDIO    0x000F  // Mask for AUD0..AUD3
-#define DMAF_AUD0     0x0001  // Audio channel 0 enable
-#define DMAF_AUD1     0x0002  // Audio channel 1 enable
-#define DMAF_AUD2     0x0004  // Audio channel 2 enable
-#define DMAF_AUD3     0x0008  // Audio channel 3 enable
-#define DMAF_DISK     0x0010  // Disk DMA enable
-#define DMAF_SPRITE   0x0020  // Sprite DMA enable
-#define DMAF_BLITTER  0x0040  // Blitter DMA enable
-#define DMAF_COPPER   0x0080  // Copper DMA enable
-#define DMAF_RASTER   0x0100  // Raster DMA enable
-#define DMAF_MASTER   0x0200  // Master DMA enable
-#define DMAF_BLITHOG  0x0400  // Blitter hog CPU (priority)
-#define DMAF_ALL      0x01FF  // All DMA channels
-
-// DMACONR specific bits
-#define DMAF_BLTDONE  0x4000  // Blitter done
-#define DMAF_BLTNZERO 0x2000  // Blitter not zero (busy)
-
-// Bit numbers for DMACON operations
-#define DMAB_AUD0     0
-#define DMAB_AUD1     1
-#define DMAB_AUD2     2
-#define DMAB_AUD3     3
-#define DMAB_DISK     4
-#define DMAB_SPRITE   5
-#define DMAB_BLITTER  6
-#define DMAB_COPPER   7
-#define DMAB_RASTER   8
-#define DMAB_MASTER   9
-#define DMAB_BLITHOG  10
-#define DMAB_BLTNZERO 13
-#define DMAB_BLTDONE  14
-#define DMAB_SETCLR   15
-
-// Function prototypes for PAULA register access
-extern uint16_t paula_read_register(uint32_t addr);
-extern void paula_write_register(uint32_t addr, uint16_t value);
-extern void paula_set_audio_period(int channel, uint16_t period);
-extern void paula_set_audio_volume(int channel, uint8_t volume);
-extern void paula_set_audio_location(int channel, uint32_t addr);
-extern void paula_set_audio_length(int channel, uint16_t length);
-extern uint16_t paula_get_interrupt_status(void);
-extern void paula_set_interrupt_enable(uint16_t mask);
-extern void paula_clear_interrupt_request(uint16_t mask);
-extern uint8_t paula_read_disk_byte(void);
-extern void paula_set_disk_pointer(uint32_t addr);
-extern void paula_set_disk_length(uint16_t length);
-extern void paula_set_disk_sync_pattern(uint16_t pattern);
-
-#endif // PAULA_H
+#endif // ENHANCED_PAULA_H

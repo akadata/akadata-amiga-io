@@ -1,0 +1,217 @@
+              APPLICATION                                                              REVISION
+
+
+  NEXT ASSY.              USED ON            LTR                            DESCRIPTION                               DATE      APPROVED
+
+                   A300/A500Plus/CDTV CR      A                   SPECIFICATION RELEASE
+
+
+
+
+    1.0       DESCRIPTION
+
+    This Specification describes the requirements for a Display ENcoder Integrated Circuit (I.C.).
+
+    Main Function:
+
+   •      Display data buffer, encode display object to RGB colors.
+
+   •      Bitplane & Sprite display. Parallel data from data bus is retained in six (6) Bitplane and eight pairs of
+          Sprite data buffers.
+
+   •      Bitplane Data loaded and serialized during display activity.
+
+   •      Sprite Data loaded during display inactivity - individual serialization occurs when Sprite position Com-
+          pare logic detects equality between the Sync Counter and any Sprite Position Register.
+
+   •      Six (6) lines of Bitplane & eight (8) pairs of serial data go to Priority control logic which selects only one
+          (1) of the Sprites or one (1) of the separate Bitmap images to produce the five (5) bit color select code at
+          its’ output. This five (5) bit code then selects one of the thirty-two (32) color registers to produce the
+          twelve (12) bit RGB video output.
+
+   •      The Bitplane and Sprite serial lines also go to the Collision Detect Logic, which detects real time coinci-
+          dence between them, and sets appropriate bits in the Collision Storage register. This register is read and
+          cleared by the 68000.
+
+   •      The four (4) "mouse counters" are controlled by the two (2) mouse-joystick connectors. These count the
+          pulses representing the horizontal and vertical motion of two (2) "mouse" controllers, and are read by the
+          68000.
+
+
+
+
+COMMODORE P. N.                STATUS
+       391081-01               ACTIVE
+
+
+
+
+UNLESS OTHERWISE SPECIFIED DIMENSIONS ARE IN             DRAWN                       DATE
+INCHES.
+TOLERANCES:
+                                                         Mike Rivers
+                                                         SYSTEM ENG.                 DATE
+                                                                                                      Commodore
+ANGLES +/- 1 DEGREE
+2 PLACE DECIMALS +/- 0.02                                                                                  1200 WILSON DRIVE
+3 PLACE DECIMALS +/- 0.010                               TEST ENG                    DATE                WEST CHESTER, PA. 19380
+                                                                                                              (215) 431-9100
+
+COPYRIGHT 1991                                           COMP. ENG                   DATE      TITLE:
+COMMODORE ELECTRONICS LTD                                Drew Shannon
+INFORMATION CONTAINED HEREIN IS THE UNPUB-                                                        IC, SM, LSI, DISPLAY ENCODER,
+LISHED AND CONFIDENTIAL PROPERTY OF    COMMO-            CIRCUIT ENG.                DATE
+                                                                                                        HI RES DENISE, 8373
+DORE ELECTRONICS LIMITED. USE, REPRODUCTION
+OR DISCLOSURE OF THIS INFORMATION WITHOUT                                                      SIZE     DRAWING NUMBER
+THE PRIOR WRITTEN PERMISSION OF COMMODORE IS                                                    A
+STRICTLY PROHIBITED. ALL RIGHTS RESERVED.                                                                              391081
+                                                                                                   SCALE                SHEET 1 OF 4
+                                 FIGURE 1 - PACKAGE DIMENSIONS
+
+
+                                                     TITLE
+           Commodore                                  IC, SM, LSI, DISPLAY ENCODER, HI RES DENISE,
+                                                                           8373
+SIZE   DRAWING NUMBER                         REV.     SCALE               SHEET 2 OF   4
+
+                        391081                 A
+       DENISE Chip Elements: 32 Color Registers. Bitplane Priority and Control Registers. Color Select Decoder. Priority Con-
+       trol Logic. 16 Sprite Serial Lines. Sprite Data Registers. Bit Plane Control Registers. Two (2) Mouse Connectors. Sprite
+       Position Compare Logic. Sprite Horizontal Control Registers. Bit Plane Serializer Collision Detect Logic. Collision Con-
+       trol Register. Collision Storage Register. Buffer - Data Bus. Buffer - Register Address Decode. Bit Plane Data Registers
+       Video: RGB. Sprite Serialization
+
+       1.1     CONFIGURATION
+
+       This device shall configured as a 52-pin PLCC plastic package with dimensions as in Figure 1.
+
+       1.2     SOURCES
+
+       Refer to Approved Vendors List.
+
+       1.3     APPLICABLE DOCUMENTS
+
+       Commodore Engineering Policy 1.02.007      Integrated Circuit Qualification Procedure
+       Commodore Engineering Policy 1.02.008      Integrated Circuit Process Test Specification
+
+       2.0 PIN DESCRIPTIONS
+
+       PIN             DESC                PIN             DESC
+       1               DRD6                27              B1
+       2               DRD5                28              B2
+       3               DRD4                29              B3
+       4               DRD3                30              G0
+       5               DRD2                31              G1
+       6               DRD1                32              G2
+       7               NC                  33              G3
+       8               DRD0                34              NC(BLANK)
+       9               MLH                 35              NC
+       10              M0H                 36              PIXELSW
+       11              RGA8                37              NC
+       12              RGA7                38              7M
+       13              RGA6                39              CCK
+       14              RGA5                40              GND1
+       15              RGA4                41              M0V
+       16              RGA3                42              M1V
+       17              RGA2                43              DRD15
+       18              RGA1                44              DRD14
+       19              BURST               45              DRD13
+       20              NC                  46              DRD12
+       21              VCC1                47              DRD13
+       22              R0                  48              DRD11
+       23              R1                  49              DRD10
+       24              R2                  50              DRD9
+       25              R3                  51              DRD8
+       26              B0                  52              DRD7
+
+
+
+
+                                                                        TITLE
+                    Commodore                                            IC, SM, LSI, DISPLAY ENCODER, HI RES DENISE,
+                                                                                              8373
+SIZE          DRAWING NUMBER                                    REV.      SCALE                        SHEET 3 OF   4
+
+                                  391081                          A
+   3.0         PHYSICAL REQUIREMENTS
+
+   3.1         MARKING
+
+       Parts shall be marked with Manufacturer’s Part Number, Manufacturer’s Identification, and EIA Date Code.
+
+       3.2     PACKAGING
+
+       The interconnected logic circuitry shall be contained in a 52-pin PLCC plastic package with exterior dimensions per Fig-
+       ure 1.
+
+   4.0 ENVIRONMENTAL REQUIREMENTS
+
+       Units furnished to the requirements of this specification shall meet the following environmental resistance requirements
+       (vendors shall furnish supporting documentation upon request):
+
+               Operating Temperature                0 to 70 deg. C
+               Operating Humidity                   5 to 95% RH non-condensing
+               Operating Altitude                   0 to 3000 meters
+               Storage Temperature                  - 20 to + 85 deg. C
+               Storage Humidity                     5 to 95% RH non-condensing
+               Storage Altitude                     0 to 15,000 meters
+
+   4.1       PROCESS QUALIFICATION TESTS
+
+       Integrated circuits supplied to the requirements of this specification shall meet the requirements of Engineering Policy
+       No. 1.02.008. Supporting documentation shall be supplied by vendor upon request.
+
+   4.2       ENVIRONMENTAL TEST CONDITIONS
+
+       Devices shall comply with the following environmental resistance tests per Commodore Engineering Policy 1.02.007.
+
+               1. Temperature/humidity (85 deg. C and 95% RH non-condensing) for 168 hours.
+               2. Operating life (1000 hours at 70 deg. C ambient temperature)
+               3. Solderability per MIL-STD-883, Method 2003
+               4.Pressure cooker (15 psig, 120 deg. C, and 100% RH for 24 hours)
+               5. Solvent resistance per MIL-STD-883,Method 2015, using water and trichloroethane
+               6. Solder temperature resistance (250 deg. C for five seconds)
+               7. ESD requirement MIL-STD 1686 Group 3
+
+       Note: Devices shall meet this specification’s operating performance requirements after the above tests are completed.
+
+   4.3       MINIMUM ACCEPTANCE LEVEL
+
+       The minimum acceptance level of any lot shall be an AQL of 0.65 as defined by MIL-STD 105 single sampling tech-
+       niques.
+
+   4.4       AGE OF DEVICES
+
+       Unit shall be rejected if EIA Date Code indicates an age of three (3) or more years.
+
+
+
+                                                                           TITLE
+                     Commodore                                              IC, SM, LSI, DISPLAY ENCODER, HI RES DENISE,
+                                                                                                 8373
+SIZE           DRAWING NUMBER                                      REV.       SCALE                      SHEET 4 OF     4
+
+                                    391081                           A
+                                           APPROVED VENDOR LIST
+
+              This sheet must be removed from this document before the document is shown or transmitted
+                                                     to a vendor.
+
+
+
+
+       Commodore Part Number                         Vendor                            Vendor Part Number
+
+             391081-01                                CSG                                     8373 R4
+
+
+
+
+                                                                TITLE
+               Commodore                                         IC, SM, LSI, DISPLAY ENCODER, HI RES DENISE,
+                                                                                      8373
+SIZE      DRAWING NUMBER                                 REV.      SCALE                       SHEET i OF i
+
+                            391081                        A
+

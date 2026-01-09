@@ -1,0 +1,1600 @@
+                                                                          ||||||||||||||         US005103499A
+United States Patent (19)                                                      11) Patent Number:                            5,103,499
+Miner et al.                                                                   45      Date of Patent:                     Apr. 7, 1992
+ 54 BEAM SYNCHRONIZED COPROCESSOR                                              4,180,805 12/1979 Burson ................................ 340/709
+                                                                               4,243,984 1/1981 Ackley et al. ....................... 340/703
+(75) Inventors: Jay G. Miner, Mtn. View; Dave                                  4,420,770 2/1983 Rahman ..........                   ... 358/183
+                        Dean, Ukiah; Joseph C. Decuir,                         4,572,506 2/1986 DiOrio ........                       364/521 X
+                        Albany; Ronald H. Nicholson,                           4,777,621 10/1988 Miner et al. ......................... 364/900
+                        Sunnyvale; Akio Tanaka,                                4,809, 169 2/1989 Sfavti et al. ......................... 364/200
+               Burlingame, all of Calif.                                  Primary Examiner-Heather R. Herndon
+(73) Assignee: Commodore-Amiga,     Inc., Los Gatos,                      Attorney, Agent, or Firm-Finnegan, Henderson,
+                        Calif.                                             Farabow, Garrett & Dunner
+(21) Appl. No.: 422,022                                                    (57)               ABSTRACT
+(22) Filed:             Oct. 16, 1989                                      A computer that provides data to a video display using
+                                                                           a bitmap display memory organization and bitplane
+                 Related U.S. Application Data                             addressing. Separate control is provided for two bit
+62)       Division of Ser. No. 886,796, Jul. 18, 1986, Pat. No.
+                                                                           plane backgrounds and for eight reusable and easily
+         4,874,164.                                                        movable sprites. Additional logic allows for dynamical
+                                                                           ly-controllable interobject priority and collision detec
+(51) Int. Cl. .............................................. G06F 3/153    tion among data in each of the bitplane backgrounds
+(52) U.S. C. ..................................... 395/162; 340/750        and sprites. A coprocessor provides for video beam
+ 58) Field of Search ....................... 364/518, 521, 522;            synchronized changes to data in registers, freeing the
+                 340/721, 723, 748-750; 273/1 E, DIG. 28;                  main processor for general purpose computing tasks. A
+                                                              358/22       block image transferer is provided to rapidly copy data
+(56)                  References Cited                                     in large blocks from one memory location to another. In
+               U.S. PATENT DOCUMENTS                                       hold-and-modify mode, color output circuitry holds the
+                                                                           values for a previously displayed pixel while bitplane
+       3,996,585 12/1976 Hogan et al................. 340/324 AD           data modifies those values, allowing for simultaneous
+       4,034,983 7/1977 Dash et al. ........................ 373/85 R
+       4,053,740 10/1977 Rosenthal ........................... 364/705     display of a greatly increased number of colors.
+       4,070,710 1/1978 Sukonick et al. ................... 364/900
+       4,177,462 12/1979 Chung................................. 340/703                     34 Claims, 11 Drawing Sheets
+                                       AABS
+
+
+
+
+                                                                          EEn
+                                                           SA) E)
+                                                           TE                        NNRO
+U.S. Patent               Apr. 7, 1992       Sheet 2 of 11   5,103,499
+
+
+
+                                 A/6 2.
+  DATABUS
+
+
+
+
+                                         (BLTTER
+                                          CONTROL)
+
+
+
+
+       SELECT BITS (8)                   n
+        FILL CARRY IN
+
+
+
+
+            FLLENABLE
+              STORE TO
+            DESTINATION
+
+
+
+
+     DATABUS
+U.S. Patent             Apr. 7, 1992               Sheet 3 of 11               5,103,499
+
+
+
+
+              A/6 t.
+                                                     SPRITE VER.         39
+                                                       POSITION
+                                                     COMPARATOR
+
+
+
+                                        SYNCH
+       LIGHT PEN                      VIDEO BEAM
+                                         CTR.
+              404
+
+
+
+
+                                                                               DMA
+                                                                              CONTROL
+                                                                              -----J
+                                                               REGISTER
+                                                               ADDRESS - -27
+                          wentarams
+                                                   29 f        DECODER
+
+          is AUDIO 2 BT BIT  MAP PLANE
+                                                       GATE
+                                                    NHBT SIGNAL
+
+                   COPROCESSOR                            33
+U.S. Patent                           Apr. 7, 1992               Sheet 4 of 11   5,103,499
+
+
+
+                                                          ||||
+
+
+
+
+          31}} dSWW0   8BITMOHINO0   !!!
+                                     OZIJ
+                                            JAWAWOO(-69
+
+
+                                                                                                        -–—1---
+
+
+
+
+                                                                                 \- - -
+
+  º9/3/                                                                           (9)S18WIW0_ _ j
+                                                                                                -;- -
+U.S. Patent                      5,103,499
+
+
+
+
+    Z39/3/
+
+
+
+
+             ">?HIM,62   THWNE
+                         »
+                         çLI
+U.S. Patent   Apr. 7, 1992   Sheet 6 of 11                5,103,499
+
+
+
+
+                                         (IWW0STH/1U3)8
+
+
+
+                                                              (SNH/W81038)0
+U.S. Patent                          Apr. 7, 1992   Sheet 8 of 11   5,103,499
+
+
+
+
+           ÇÇº
+
+ O/39 -/
+                 (1]1S3N(ºI8l9?d[)
+U.S. Patent          5,103,499
+
+
+
+
+              03}}
+              (91)
+U.S. Patent             Apr. 7, 1992        Sheet 10 of 11          5,103,499
+
+
+
+
+                                A/6 A.
+                           COLLISION DETECTION LOGC 335
+
+
+  SPRUs                         III
+                                 | | H.
+                                     | | |
+                       -DOH
+
+ BIT PLANE BUS
+       333
+                       372 || ||
+                       -DOH
+                          372
+                 O        372
+
+                 : H5OH                                   373         353
+                 6 BTS-LINES             373
+                                            A                 375 ---L--
+           COLLISION
+ E-i        REG. (6)
+                                                          5 CSION
+                                                            STRAGE
+                                 || |||st                 5
+
+                                                          DC
+                                                                O
+                                                                    BES
+                                                                    (6)
+U.S. Patent   Apr. 7, 1992             Sheet 11 of 11        5,103,499
+
+
+                                         g
+
+                             53
+                             N
+
+
+
+                                                    S.
+                                              UM)
+
+                                  CO
+                                  No
+                                  No
+                             S.         ZY 1 N      (NZY/N
+                             r
+
+
+
+
+ s                           N
+                             rf
+
+                                   D
+
+
+
+
+                                              2
+                                             - 2
+                                             as a
+                                             as a
+                                                 se
+                                                 Ca
+
+
+
+
+                     3
+                                                    5,103,499                         2
+                           1.
+                                                             Motorola Inc. 68000 and a 6502. In this system, the first
+    BEAM SYNCHRONIZED COPROCESSOR                            processor is dedicated to computational operations and
+                                                             the second microprocessor is dedicated to video display
+  This is a division of application Ser. No. 06/886,796,     information retrieval.
+filed July 18, 1986, now U.S. Pat. No. 4,874,164.              Other early game circuits, such as Dash et al., U.S.
+     BACKGROUND OF THE INVENTION
+                                                             Pat. No. 4,034,983 utilized special purpose control cir
+                                                             cuits to generate signals to the antenna connection of a
+  This invention relates to the field of microprocessor      commercial color television receiver. Such a special
+powered computers for video games and personal com purpose control circuit could include analog interface
+puters, incorporating DMA techniques, especially such 10 circuits for processing gamepaddle paddle signals and
+systems which are implemented in MOS (metal oxide decoding functions, and sync pulse generation could be
+semiconductor) LSI (large scale integrated) circuitry        used to generate horizontal sync and raster scan infor
+where circuit area is a consideration. The invention         nation.
+further relates to enhanced systems where auxiliary             Personal computer and microprocessor driven sys
+circuitry has been added to the host system; where a 15 tems, such as Chung, U.S. Pat. No. 4,177,462, have used
+televisiontype display device is used; and where bitmap display generator circuitry driven off of an address bus,
+mode (at least one bit of video information is stored in data bus and control bus, including raster line genera
+memory for every element location (pixel) of the pic tion and vertical position counters.
+ture displayed) is likewise incorporated.                       Likewise, Sukonick et al., U.S. Pat. No. 4,070,710
+   The invention also relates to video display drives for 20 incorporates video control circuits and raster memory
+color video display monitors where color sprites access into a system with data and address bus architec
+(which are sometimes called background) are operated ture. Sukonicket al. uses a video control circuit which
+in unison.                                                   relies upon a plurality of vertical and horizontal posi
+   Bit mapping, while space and time implementation tion registers, a skip pattern memory and modulo com
+consuming, has proven to be a straightforward and an 25 parison circuitry for "FIFO" processing of video infor
+accurate method for video display generation. Complex mation.
+displays provided by video games and personal comput            Sukonick, U.S. Pat. No. 4,070,710, shows a two pro
+ers require overlay presentations of movable and/or cessor system. Sukonick has added a display system 16
+changeable information and offixed information; and of to programmed host computer 10. This video display
+collisions between movable objects. Bit map implemen 30 system 16 contains an Intel Corporation 8088 micro
+tation has been the focus of various prior circuits.    processor 76 within the micro-control unit 22 of the
+   Prior video game circuits have provided a complex video display system.
+display format to a television receiver display unit (a          Along this line Burson, U.S. Pat. No. 4,180,805, has
+cathode ray tube), which display unit generates the provided a video display circuit which incorporates a
+presentation with a plurality of horizontal scans or ras 35 general purpose microprocessor 15, the TMS 1100 mi
+ter lines. A video game circuit which is capable of dis crocomputer. A character memory is provided separate
+playing fixed objects as background, as well as moving from a display memory and character generator mem
+objects, is shown by Rosenthal, U.S. Pat. No. 4,053,740. ory. Each display memory word is partitioned into two
+   Rosenthal has built a special purpose digital computer bytes, with the first of byte being a character memory
+to generate video game information from a plurality of 40 address and the second being a sub-address to locate a
+selected, on a mutually exclusive basis, software defined character-word within a set of character words in mem
+programs. Operator commands are separated into an ory. Each character memory word is likewise parti
+independent computational section and an independent tioned into two bytes with the first byte determining
+display section of the circuit for processing. Rosenthal, color and the second byte selecting a particular charac
+U.S. Pat. No. 4,053,740, utilized arithmetic logic units to 45 ter from a prestored set.
+drive accumulators to control x and y registers and              The use of a second general purpose commercially
+associated horizontal and vertical beam direction drive        available microcomputer to process video display infor
+circuits for cathode ray tube displays.                        mation, while increasing the system speed, also in
+   Personal computers, such as the Apple Computer, creases the cost of manufacture for the system, as well
+have utilized a main microprocessor to perform compu 50 as, the size of the system, i.e., chip "real estate.”
+tational operations and to process (retrieve) video dis           A micro-control unit is also used and is necessary to
+play information to generate displays to a television the circuitry. The micro-control unit decodes instruc
+type receiver.                                                 tions from a host computer for use by the raster memory
+   The Appie Computer has incorporated a general unit and generates (encodes) control information to
+ purpose microprocessor, the MOS Technology Inc. 55 cause the raster memory to write display information, as
+ Model 6502, to perform both computational operations well as to control the video control circuit to read infor
+and video display information retrieval. Such a single mation from the raster memory and to translate it into
+microprocessor driven system has speed limitations, as video signals usable by a CRT drive circuit. Ackley et
+most microprocessors, including the Model 6502, have al., U.S. Pat. No. 4,243,984, show a video display pro
+significant processing dead time used for refreshing cessor including general circuit components for overlay
+registers and resetting and initializing operations. As a control, priority selection, sequence control, and mem
+result, information processing in such systems can be ory control of sprite position and color.
+slow.                                                          Rahman, U.S. Pat. No. 4,420,770, shows a video
+   In order to enhance processing speeds these small background generation system including field correc
+microprocessor driven computers have sacrificed dis 65 tion logic, priority encoder circuitry and horizontal and
+play quality, i.e., "definition", "character" and "detail." vertical bit map memory.
+   One approach to increasing the speed of such a per         Others have developed display circuits which have
+sonal computer has been to utilize two processors; a included an address bus, data bus and control signal
+                                                     5, 103,499                            4.
+                             3
+lines for interfacing with a microprocessor based com increase in memory needed by the decoder approach,
+puter system. Some display circuits have included and which can be implemented where inter-chip and
+DMA control and playfield and spritegenerator compo backplane wiring is minimized.
+nents utilizing a plurality of control registers connected             SUMMARY OF THE INVENTION
+to operate with a plurality of memories, including colli
+sion detection and display priority logic.                      The   Amiga   personal computer is a low-cost high
+   Dual commercial microprocessor systems have in performance computer with advanced graphics fea
+creased off-chip wire connections as each commercial tures. It is an object of the invention to provide a high
+circuit comes as a separate dual-in-line package (DIP). resolution color display, fast graphics for simulation and
+In LSI (large scale integration) circuit design, this in 10 animation, and substantial processing power at low
+creases backplane and circuit card costs and increases . COSt.
+the likelihood of noise pickup, often necessitating addi        High resolution color displays are becoming increas
+tional filtering and increased signal levels, which usu ingly common because of the continued dramatic de
+ally leads to more power consumption. Except in the creases in the cost of memory. However, the resulting
+very expensive dual microprocessor systems--priced 15 huge display buffer memory can be painfully slow to
+above the personal computer market-display quality is draw or move display images around in, especially
+not greatly enhanced with these second microproces when using only a single conventional microprocessor.
+sors as noise pickup and filtering costs often dictate a This situation is worsened by other large memory trans
+lesser display output quality.                                fer channels, such as multi-channel stereo sound, high
+   Others have taken a divergent and different ap 20 speed line buffer objects (such as sprites), and full track
+proach, such as using a display generator circuit de floppy disk buffers, which compete with the display for
+signed as a raster scan line buffer structure. In such an memory bus time. The conflicting design goals of high
+approach, a general microprocessor can be used to resolution color, fast moving displays, and low produc
+address display object storage randon access memory tion cost have been largely resolved by the features of
+(RAM). The circuitry divides the display into moving 25 the invention. The hardware solutions are made less
+objects (sprites) and into stationary objects (playfields). costly by designing them on custom silicon chips.
+   This approach while cheaper to implement than the             Extensive use is made of Direct Memory Access
+dual microprocessor approaches discussed above, and channels,           to relieve the main microprocessor of most of
+using less chip geometry and inter-chip wiring, does the data transfers
+provide degraded system performance and display ca 30 to windowed, realand             beam position checking peculiar
+pabilities compared with the dual microprocessor sys ola 68000 is used astime,      the
+                                                                                          dynamic displays. The Motor
+                                                                                         main  microprocessor. The per
+tenS.
+   One specific display generator enhanced micro that gives it every alternate bus cycle,byallowing
+                                                              formance   of the  68000  is enhanced     a system design
+                                                                                                                it to run
+processor based system is shown by Hogan et al., U.S. at full rated speed most of the time. The special             func
+Pat. No. 3,996,585, where a display generator is imple tions described below are produced using two custom
+                                                           35
+mented with a plurality of buffer registers. He uses this designed VLSI circuits, which work in concert with the
+display generator to process bit map information ob 68000 to use the shared memory on a fully interleaved
+tained from random access memory (RAM). A pattern basis.            Since the 68000 only needs to access the memory
+generator is used to decode data for each raster scan
+line. Decoded rastor line data is stored in a buffer regis 40 bus  during each alternate clock cycle in order to run
+ter for display. The pattern generator also decodes con full-speed,       the rest of the time the memory bus is free for
+                                                              other activities. A coprocessor and a data-moving
+trol data to determine collisons. The decoded collison         DMA channel called the blitter can each steal time from
+control data is stored in a buffer register. Hogan et al.'s the
+circuit is intended to relieve the system microprocessor Thus,68000   the
+                                                                          for jobs they can do faster than the 68000.
+                                                                           system DMA channels are designed with
+from simple video display data retrieval and manipula maximum performance
+                                                            45
+                                                                                        in mind: the task is performed
+t1On.
+   In keeping with the display generator circuit ap byAthecustom      most efficient hardware element available.
+                                                                             display coprocessor allows for changes to
+proach of Hogan et al., others have built a decoder
+based video display generators. Such a circuit would most of the special-purpose registers in synchronization
+not utilize a second general purpose microprocessor to 50 with the position of the video beam. This allows such
+drive a video generator, but may use display instruction special effects as mid-screen changes to the color pal
+decoder circuits to provide movable object and station ette, splitting the screen into multiple horizontal slices,
+ary playfield object information to the video display, each          having different video resolutions and color
+thereby reducing the work on the only (general pur depths, and beam-synchronized interrupt generation for
+pose) microprocessor present. Any of these circuits, as 55 the 68000. The coprocessor can trigger many times per
+with Hogan et al., require an increase in memory or screen, in the middle of lines as well as during blanking
+storage space which is satisfied by a large number of intervals. The coprocessor itself can directly affect most
+registers. Some video display generators have their of the registers of the special-purpose hardware, freeing
+circuitry divided into a decoder(s), RAM(S) and regis the 68000 for general-purpose computing tasks.
+ter(s) for handling playfield fixed-object data; and into a 60 Thirty-two system color registers are provided, each
+decoder-selector(s) and register(s) for handling moving of which contains a 12-bit number as four bits of red,
+object data.                                                   four bits of green, and four bits of blue intensity infor
+   It is desirable to provide an auxiliary circuit which is mation. This allows a system color palette of 4,096
+intended to be incorporated into a microprocessor different choices of color for each register. A bitmap
+based personal computer system, which auxiliary cir 65 display memory organization called bitplane addressing
+cuit has true microprocessor capabilities, including bit is used. This method groups bitplanes (instead of pixels)
+ map data manipulation capabilities, but does not use the together in memory, allows variability in the number
+space and power of a second microprocessor or the and grouping of biplanes into separate images, and al
+                                                     5,103,499                            6
+                           5
+lows increased speed when using reduced numbers of art video game and personal computer applications.
+bitplanes.                                                      The system includes three custom IC's controlled by a
+    Eight reusable 16-bit-wide sprites are incorporated Motorola 68000 16/32 bit microprocessor. These chips
+into the hardware with up to 15 color choices per sprite provide extraordinary color graphics on a standard TV
+pixel (when sprites are paired). A sprite is an easily or on an RGB color monitor, with arcade quality reso
+movable graphics object whose display is entirely inde lution and depth to display video games, cartoons, low
+pendent of the background (called a playfield). Sprites resolution photographs, or up to 80 characters of text
+can be displayed "over" or "under' this background. on the screen. The sound circuits can duplicate complex
+After producing the last line of a sprite on the screen, a waveforms on each of four channels, matching com
+sprite DMA (direct memory access) channel may be O mercial synthesizers in quality. Chip costs were kept
+reused to produce yet another sprite image elsewhere low by using conservative design rules, process specifi
+on-screen (with at least one horizontal line between cations, and logic density. The process selected is a
+each reuse of a sprite processor).                              common silicon gate NMOS one that is supported by
+    Additional logic allows for dynamically-controllable almost all MOS manufacturers.
+inter-object priority, with collision detection. The sys 15 The Amiga system block diagram in FIG. 8 shows
+tem can dynamically control the video priority between the three custom chips, designated Agnus, Denise, and
+the sprite objects and the bit-plane backgrounds (play Paula, and how they are connected to the address and
+fields), and system hardware can be used to detect colli data bus of the Amiga system. The block diagram
+sions between objects so that a program can react to shows the system data bus connecting the RAM 401 to
+such collisions.                                             20 all three custom chips, and to the 68000 microprocessor
+    The Blitter is used for high speed data movement, 402 through the bidirectional tristate buffer 403. The
+adaptable to bitplane animation. The Blitter efficiently system data bus 404 is 16 bit and is bidirectional. The
+retrieves data from up to three sources, combines the register address bus 405, or RGA bus, is bidirectional
+data in one of 256 different possible ways, and option only with respect to the Agnus chip. The addresses to
+ally stores the combined data in a destination area. The 25 RAM 401 are input from either the Motorola 68000
+ Blitter can draw patterned lines into rectangularly orga processor 402, or from the Agnus chip through the
+ nized memory regions at a speed of about 1 million dots DRA bus 406, with selection of either source under the
+per second; and it can efficiently handle area fill.             control of multiplexer 407. The register address bus 405,
+    Additional objects and advantages of the invention or RGA bus, is driven when no DMA is occurring by
+ will be apparent to those skilled in the art from a read 30 the low address bits on output lines 408 of the 68000
+ ing of the following description.                               through tristate buffer 409 This allows the microproces
+                                                                 sor 402 to read or write the custom chips as if they were
+     BRIEF DESCRIPTION OF THE DRAWINGS                           random access memory. When a DMA cycle is needed,
+    The present invention will be better understood from the Agnus chip 410 informs the microprocessor 402 by
+ a reading of the following detailed description of the 35 asserting the data bus request (DBR) line 411. The bus
+ preferred embodiment in conjunction with the accom control logic 412 then outputs signal DTACK on line
+ panying drawings, in which:                                     413, which suspends operation of the 68000 micro
+     FIG. 1 is a block diagram of the address generator processor 402, and switches both tristate buffers 403 and
+ (Agnus) chip;                                                   409 so that processor 402 no longer has access to system
+     FIG. 2 is an operational block diagram of a bitmap data bus 404 or RGA bus 405. When in this DMA
+ image manipulator (Blitter) portion of the circuit;             mode, Agnus chip 410 addresses the RAM 401 with its
+     FIG. 3 is a block diagram of the light pen registers own RAM address bus, the DRA bus 406, which is
+ and synch counters portion of the circuit;                      selected by the multiplexer 407 for input to RAM 401
+     FIG. 4 is a block diagram of the RAM (random ac under the control of the bus control logic 412, while
+ cess memory) address generator portion of the cir 45 simultaneously placing a destination address for the
+ cuitry;                                                         data on the register address (RGA) bus 405. The regis
+     FIG. 5 is a block diagram of the bitplane DMA con ter address on the RGA bus 405 selects one of a plural
+  trol logic;                                                    ity of registers on any of the three custom chips, includ
+     FIG. 6 is a block diagram of the sprite vertical com ing Agnus chip 410, as the destination of the data from
+  parator and position registers portion of the circuitry; 50 the RAM 401.
+     FIG. 7 is a block diagram of the coprocessor (cop              Operation of the Amiga computer system as a whole
+  per);                                                           with a more detailed description of the interaction be
+     FIG. 8 is a block diagram of the Amiga system;               tween the microprocessor 402 and the custom chips,
+     FIG. 9 is a block diagram of the display encoder Agnus chip 410, Denise chip 420, and Paula chip 430, is
+  (Denise) chip;                                              55 described in the copending application filed July 19,
+     FIG. 10 is a block diagram of the bitplane data regis 1985, entitled “Video Game and Personal Computer",
+  ters and serializers;                                           Ser. No. 756,910, now U.S. Pat. No. 4,777,621, which is
+      FIG. 11 is a block diagram of the sprite data registers hereby incorporated by reference The present applica
+  and serializers.                                                tion is principally concerned with the hardware and
+      FIG. 12 is a diagram of the collision detection logic; features associated with the Agnus chip 410 and the
+  and                                                             Denise chip 420. Block diagrams of the Agnus chip and
+      FIG. 13 is a diagram of the display priority control the Denise chip are shown in FIGS. 1 and 9, respec
+  logic.                                                          tively. A description of the hardware and features asso
+          DETAILED DESCRIPTION OF THE
+                                                                  ciated with the Paula chip 430 is described in the co
+                                                              65 pending application filed July 18, 1986, entitled "Pe
+              PREFERRED EMBODIMENT                                ripheral Control Circuitry for Personal Computer",
+      The Amiga personal computer is a low cost, high Ser. No. 886,614, which is hereby incorporated by ref.
+  performance graphics and sound system for state of the erence.
+                                                     5, 103,499                           8
+                            7
+   The Agnus chip 410 is the address generator chip dress encoder 43 is driven by the DMA channel con
+(FIG. 1). It is 238X281 mils, and contains about 21,000 trollers and drives the register address bus 405 with a
+transistors. Its main function (in chip area) is the RAM unique code selected by the control logic for each
+address generator 45 and register address encoder 43 DMA channel. The 8 bits of the RGA bus 405 provide
+that produce all register and RAM addresses during enough address information so that each register on the
+DMA cycles. DMA (direct memory access) is a method three chips can have its own unique address, and some
+for transferring data between memory and one of the times separate ones for read/write, without separate
+custom chips without requiring execution of an "inter chip select lines or register read/write lines. Whenever
+rupt" routine by the microprocessor 402. The Agnus the Agnus chip 410 is not performing a DMA operation,
+chip contains all of the DMA channel controllers for 10 the encoder 43 will put eight 1's on the RGA bus 405,
+the Amiga system. It also contains a hardware bit map which signifies the default or "no address' address.
+image manipulator 67, called the Blitter, and a display         While a destination for data from RAM 401 is placed
+synchronized coprocessor 47, referred to as the Copper. on the register address bus 405 by the register address
+The Agnus block diagram shows the DMA control encoder 43, the RAM address generator 45 generates an
+logic and the drivers for the register address bus 405 and 15 address for accessing a memory word in the RAM
+RAM address bus 406. The output of each one of the 401-and places it on the DRA bus 406. Thus, when a
+DMA controller circuits is labeled with two numbered          DMA operation occurs, the Agnus chip 410 asserts the
+arrows. These arrows indicate the number of DMA               data bus demand line 411 and addresses a word in the
+channels from each of these controllers that are driving RAM with RAM address bus 406. The RAM address
+the register address encoder 43 and the RAM address 20 generator 45 is shown in greater detail in FIG. 4.
+generator 45.                                                   The Amiga personal computer system provides a
+   The Agnus chip 410 generates two addresses, for the total of 25 DMA channels. As shown in FIG. 1, control
+source and destination, for all DMA data transfers in
+volving any of the three chips, including data transfers signals     for all 25 DMA channels are input into the RAM
+utilizing registers on the Agnus chip 410 itself. The containsgenerator
+                                                           25
+                                                              address             45. The RAM address generator 45
+                                                                       a set of 25 pointer registers 138 (FIG. 4). Each
+source of DMA data transfers is almost always the of the pointer registers contains an 18-bit address, which
+dynamic RAM, which is addressed by the RAM ad points
+dress generator 45. The chip registers are almost always next fortothe  the location in memory of data to be fetched
+the destination of the DMA data transfers, and are ad ters 138 are particular
+                                                                           loaded
+                                                                                      DMA channel. The pointer regis
+                                                                                   with data (an address) from data bus
+dressed by the register address encoder 43.                30
+   The priority control logic 73 outputs a bus demand gram control. The DMA orchannels
+                                                              404 by  the processor  402    coprocessor 47 under pro
+                                                                                                    are associated with
+signal DBR on line 411 to the bus control logic 412 the sprite DMA control logic 41 (eight
+shown on FIG.8 whenever a DMA operation is needed Copper 47 (one channel), the audio DMAchannels),         control
+                                                                                                                     the
+                                                                                                                   logic
+in order to prevent the 68000 microprocessor 402 from 53 (four channels), the bitplane DMA control logic 57
+accessing the RAM 401 during a DMA operation. Each 35         (six channels), the disk and refresh DMA control logic
+of the DMA controllers 41, 47, 53, 57, 61, and 65 sends
+out a priority request signal and receives a priority 61        (2 channels), and the Blitter DMA control logic 65
+enable signal from the priority control logic 73. The (four        channels). For each of the 25 DMA channels, an
+actual logic is similar to a daisy chain connecting the pointerRAM
+                                                             18 bit         address pointer is stored in a designated
+                                                                      register 138 and is subsequently output on the
+DMA controllers and giving different priority to differ 40 DRA bus       406 when that channel is active in order to
+ent types of DMA requests. The logic 73 receives the select the memory
+video beam count from video beam counter 117, which accessed to DMA.address        The
+                                                                                         of the data in RAM 401 to be
+                                                                                        DRA    address lines from the
+is contained within synch counter circuits 31, and Agnus chip 410 are already pre-multiplexed               within the
+which can affect the priority given certain DMA chan chip into high and low order bytes by multiplexer          69, so
+nels. Memory access cycles are allocated among the        45
+DMA controllers and the processor 402, as will be that            9 rather than 18 lines are output from the Agnus
+described subsequently. Thus, for example, if the video chip 410 onto the RAM address bus 406 at one time,
+beam count indicates that the beam is scanning the dis thereby saving nine pins for other purposes. The multi
+play and is not being blanked, the DMA controller for plexer 69 in FIGS. 1 and 4 includes an output buffer
+the bitplane display will be given priority and a bus 50 406.register 141 that is directly connected to the DRA bus
+demand signal will be output by logic 73 whenever the
+bitplane DMA controller requests access to the data bus        The RAM address bus 406 is a nine pin bus that
+404.                                                         carries 18 bits of multiplexed address data to address
+   In order to select a register on any of the three cus one of 256K words (512K bytes) stored in the RAM
+tom chips as the destination or source for data to/from 55 401. The bus 406 is always driven by chip 410, and will
+the RAM 401 on the data bus 404, the register address drive the address pins on the RAM 401 when externally
+encoder 43 places a prewired address on the RGA bus selected and demultiplexed. Addresses on the bus are
+405 whenever one of the 25 DMA channels on the               generated one-half memory cycle early in order to be
+Amiga computer is activated. All addresses on the reg latched into the RAM 401 before data is actually trans
+ister address bus 405 are input to the register address ferred. The least significant nine bits of the RAM ad
+decoder 27 on the Agnus chip 410, which has a plurality dress are output on bus 406 during the last half of the
+of output lines 29 to the Blitter, the Copper, and all the preceding memory cycle. The most significant nine bits
+other registers contained on the Agnus chip. If one of of the RAM address are output on bus 406 during the
+the registers on the Agnus chip 410 is being addressed, first half of the present DMA cycle. During the second
+the decoder 27 places an output on a single one of its 65 half of the present DMA cycle, data contained in the
+output lines 29, which will enable the data bus 404 to be RAM is transferred to the selected register in one of the
+accessed only by the specific register selected by the three custom chips, and simultaneously the least signifi
+address on register address bus 405. The register ad cant nine bits of the RAM address for the next (if re
+                                                     5,103,499                              10
+                       9
+quired) DMA cycle are placed on the RAM address               address contained in the corresponding pointer registers
+bus.                                                          138 by one, the address jump value stored in the modulo
+  If the RAM is the destination during a data transfer,       register 131 is added to the address pointer in order to
+data will be transferred to the RAM from a register           access the data in RAM 401 corresponding to the begin
+during the first half of the present DMA cycle as well,       ning of the data to be used in displaying the next video
+which is called an early read. Although many registers        scan line. The six bitplanes have only two modulo regis
+act as sources of data when read by the microprocessor        ters, so that one register is reserved for even and one for
+402, only two chip registers are sources of data for          odd numbered bitplanes. Thus, for each of two play
+DMA data transfers into RAM 401. These are the Blit             fields, a larger image can be stored in memory than is
+ ter destination register 113 and a disk data read register 10 displayed on the screen. Each Blitter channel has its
+ (not shown). These types of DMA operations use early own modulo register. Therefore, each of three "source'
+ read cycles because data must be read very early from images and one "destination" image handled by the
+ the chip register in order to have the data available at Blitter can have images of different sizes stored in men
+ the RAM 401 before the end of the first half of the            ory, although the screen, of course, can only display a
+  DMA cycle. As a result, there is no time for a register 15 window of a single size.
+ address to be placed by the Agnus chip 410 on the                 There is an 18 bit adder 137 in the RAM address
+ register address bus 405. Therefore, the early read ad generator 45 that performs any incrementing and decre
+  dresses put on the RGA bus 405 are only dummy ad menting of the pointers in the pointer registers, and
+ dresses for cycle identification. The chip register data is which also adds or subtracts the modulos stored in the
+  automatically output by the Agnus chip 410 at the be 20 modulo registers 131 for the bitplane and Blitter DMA
+  ginning of the present DMA cycle because the chip can channels when the beam scanning the screen has
+  determine in advance when either of the these two              reached the end of a horizontal scan line (as defined by
+   DMA cycles is about to occur.                                comparing the video beam count with the value in a
+      The RAM address generator is composed of a RAM data fetch stop register). The adder 137 also can be
+  address bus 406, a group of 25 pointer registers 138, a 25 switched to "add" (substitute) the values in the six
+  group of six modulo registers 131, and a group of six backup registers 129 in place of the values in the corre
+  backup (or location) registers 129. These components sponding pointer registers 138 upon occurrence of the
+  are shown in FIG. 4. The 25 DMA channels described             audio DMA or Copper DMA events described above.
+  above each use an address pointer to address dynamic The backup registers 129 and modulo registers 131 have
+   RAM 401 when access to the data bus is obtained. The 30 their outputs to the adder 137 under the control of en
+   registers 138 are 18 bit registers that are loaded with a able lines 29 from the register address decoder 27 of
+   starting value by the microprocessor 402 or the Copper FIGS. 1 and 4, so that only one modulo or backup value
+   47. Each pointer is used as an address on the DRA bus is input to adder 137 at a time. As shown in FIG. 4, a
+   406 and is typically incremented by one to point to the gate inhibit signal on line 133, responsive to the Copper
+   next address in memory the next time it is utilized. 35 47 and audio DMA controller 53, controls a gate 135.
+   When a DMA channel must be quickly restarted over This gate 135 Controls the backup reloading operation,
+   and over again at the same address, the address pointer during which the gate 135 drives all inputs to adder 137
+   is reloaded from a hardware register automatically. from the registers 138 to zero, and the adder 137 is
+   This is done using the backup, or location, registers 129. operating in the add mode, so that the value in the
+   There are six backup registers 129, four for the four backup registers 129 is substituted for the previous
+   audio channels, and two location registers for the two value in the register 138. An invert instruction and a
+   Copper indirect jump registers. In the case of audio carry instruction is also provided to the adder 137 from
+    DMA, the backup value is reloaded into the pointer the DMA controllers. Four operations are performed
+   register whenever the audio waveform being output is by the adder 137 in response to the two bit input pro
+   finished. In the case of the coprocessor or Copper 47, 45 vided by the carry and invert instructions. The invert
+    the backup value is reloaded (strobed) into the pointer instruction causes the adder to operate in descending
+    register 138 (program counter) whenever the (strobe) mode, as required, for example, during certain Blitter
+    address which corresponds to either of the two copper operations involving overlapping memory. Thus, sub
+    location registers 129 is written.                           tract or decrement by one operations are chosen instead
+      The bitplane DMA control logic 57 and Blitter 67 are 50 of add or increment operations. The carry instruction
+    utilized in the display of bit-mapped video images. causes the adder to add or subtract two inputs, instead
+    When the window, i.e., the video image to be displayed of merely incrementing/decrementing the pointer, as is
+    on the screen, is a portion of a larger image stored in required in order to use the modulo and backup values.
+    RAM 401, it is necessary to increase the value of the The adder 137 provides the pointer return value, which
+    data address stored in the bitplane pointer registers 138 55 is output into multiplexer 139, in order to place the
+    from an address corresponding to the end of one hori address to be used during the next memory cycle into
+    zontal line of pixels to the address corresponding to the the pointer register 138. The multiplexer 139 also re
+    beginning of the next line of pixels to be scanned for that ceives an input from the data bus 404. More than 16 bits
+. . image. In order to accomplish this, modulo registers 131 are provided from the 16 bit system data bus by repeat
+    are utilized. There are six modulo registers 131, four for ing several of the bits on the bus as inputs to the multi
+    the four Blitter channels, and two that are used sepa plexer 139. Either the data on the data bus 404 or the
+    rately by the three even and three odd bitplane chan pointer return value from the adder 137 will be selected
+    nels. The modulo registers are preloaded with an ad by multiplexer 139 and be loaded into the particular
+    dress jump value that equals the number of words in pointer register 138 selected by the register address
+    memory between the last word being displayed on the 65 decoder 27.
+    screen on one horizontal line and the beginning of the          The bitplane control circuitry is shown in FIG. 5.
+    first word on the next line. Whenever the end of a video      There are several bitplane control registers, shown as
+    scan line is reached, instead of merely incrementing the registers 143, which receive data from the data bus 404.
+                                                    5, 103,499                          12
+                           11
+The control register 143 include bits for enabling each and, in turn, drives the register address encoder 43 and
+bitplane and are loaded under the control of an enable pointer registers 138 in RAM address generator 45 with
+signal from the register address decoder 27. The outputs output lines for each of the eight sprites.
+from the registers 143 are input in parallel to a state       The Copper 47 is a coprocessor that utilizes one
+sequencer 145 along with timing inputs and a bitplane DMA channel to fetch its instructions. The pointer
+run signal. The sequencer 145 pulses one of six output stored in the pointer register 138 corresponding to the
+lines for each of the six bitplane DMA channels. Each Copper 47 is the instruction or program counter, and
+output line is sent to both the RAM address generator must be preloaded with the starting address in memory
+45 and the register address encoder 43. The outputs to of the program instructions for the Copper. The Copper
+the RAM address generator 45 of FIG. 4 are used to 10 can control nearly the entire graphics system, freeing
+select a particular pointer for output on the RAM ad the processor 402 to execute program logic. The Cop
+dress bus 406 in order to access bitplane data stored at per can also directly affect the contents of most of the
+that address in RAM. Identical outputs to the register registers on the chips. The Copper serves as a powerful
+address encoder 43 cause the encoder to select the 8 bit    tool for directing midscreen modifications in graphics
+code that must be output on the register address bus 405 15 displays and for directing changes in register values that
+in order to select a destination for the bitplane data from must occur during the vertical blanking period between
+memory. The bitplane run signal on line 149 is from displays. Among other things, the Copper can control
+bitplane start/stop control logic in the priority control register updates, reposition sprites, change the color
+logic 73 and gives priority to the bitplane DMA con palette, update the audio channels, and control the Blit
+troller when it requests memory access. The run signal 20 ter. The Copper 47 is a coprocessor and has its own
+is output only when the video beam count indicates the instruction set consisting of only three instructions. The
+display is on and must therefore be given priority. This Copper can: WAIT for the beam scanning the screen to
+occurs when bitplane start/stop control logic indicates reach a specific screen position specified as X and Y
+the video beam count is between the limits set in display coordinates; MOVE an immediate data value from
+window start and stop and data fetch start and stop 25 RAM into one of the special purpose registers; and
+registers included among the bitplane control registers SKIP the next instruction if the video beam has already
+55. The circuitry shown in FIG. 5 for generating out reached a specified screen position. All of these instruc
+puts on lines to the encoder 43 and pointer registers 138 tions consist of two 16 bit words in sequential memory
+is similar to that used for all the DMA controllers.        locations. The Copper fetches both words each time it
+   The synch counters and light pen registers 31 shown 30 fetches an instruction. The MOVE and SKIP instruc
+in FIG. 1 are composed of the circuitry shown in FIG. tions require two memory cycles and two instruction
+3. The circuitry has access to the data bus 404 when words, and the WAIT instruction requires three mem
+enabled by one of the lines 29 from the register address ory cycles. In accordance with the DMA time slot
+decoder 27 (decoder 27 not shown in FIG. 3). A light allocation set up for the Amiga system, only the odd
+pen input signal 33 is fed into the light pen register 35 memory cycles are requested by the Copper 47, so four
+circuitry 119, and a television synch signal 35 is output memory cycles are required for execution of MOVE
+by the synch video bean counter 117 to the display to and SKIP instructions and six memory cycles are re
+synchronize its operation with that of the processor. quired for the WAIT instruction.
+The light pen signal 33 is received from a light pen port   The MOVE instruction transfers data from the RAM
+connected to the circuit and can cause the beam count        401 to a register destination. The first word in the
+when the beam passed the light pen to be loaded onto MOVE instruction contains the address of the destina
+the data bus 404 under the control of the register ad tion register, while the second word of the MOVE
+dress decoder 27. The output of the synch video beam instruction is irrelevant (it contains the data to be trans
+counter 117 is input into the Copper 47, the sprite verti ferred). The WAIT instruction causes the Copper 47 to
+cal position comparator 39, and into the priority control 45 wait until the beam position count equals or is greater
+logic 73. The beam count is important in determining than the coordinates specified in the instruction. While
+what DMA controllers can demand the next memory waiting, the Copper is off the system data bus 404 and is
+cycle, in displaying sprites, and in changing the contents not using any memory cycles. The first instruction
+of registers by the Copper 47 during a blanking interval word contains the vertical and horizontal coordinates
+or in the middle of a display.                              50 of the beam position. The second word contains enable
+   The vertical position and comparison logic for the bits that are used to form a mask that indicates which
+sprites is shown in greater detail in FIG. 6. Vertical start bits of the beam position count to use in making the
+location registers 153 and vertical stop location regis comparison. The SKIP instruction causes the Copper to
+ters 155 are loaded with data from the data bus 404 for        skip the next instruction if the video beam position
+up to eight possible sprites under the control of the 55 count is equal to or greater than the value given in the
+register address decoder 27. Each sprite channel sends instruction.
+two output lines 120 to a state sequencer in the sprite          The Copper 47 is shown in greater detail in FIG. 7. A
+DMA controller 41 in order to start and stop display of first instruction register 173 stores the contents of a first
+the sprite. The synch video beam counter 117 outputs instruction word received from the data bus 404, while
+the vertical portion of the count to a sprite vertical 60 a second instruction register receives the contents of a
+position comparator 39. The other inputs to comparator second instruction word received from the data bus 404.
+39 are provided by both the vertical start and stop loca The loading of data from the bus 404 to registers 173
+tion registers for each sprite. When the vertical count and 175 is controlled by enable signals sent on lines 29
+exceeds or equals the value in either of the registers 153 from the register address decoder 27. The least signifi
+and 155, output is sent on the corresponding line 120 to 65 cant bit in the first instruction word and in the second
+the sprite DMA controller 41. The sprite DMA con instruction word are used to determine which of the
+troller has a state sequencer that receives the vertical three possible instructions is to be executed. Thus, sin
+position comparator outputs for each of the eight sprites gle bit control lines 177 and 181 input the least signifi
+                                                     5,103,499                        14
+                            13
+cant bit of the first and second instruction words, re      counter (pointer register 138). incrementing the pro
+spectively, into an instruction operational code decoder    gram counter after each data fetch. When a jump strobe
+179. The operational code decoder 179 uses the two bits     address is written, the address stored in the correspond
+of input to determine the instruction to be executed, and   ing location register is loaded into the Copper 47 pro
+will enable either the MOVE instruction line 183, the       gram counter. This causes the Copper 47 to "jump' to
+SKIP instruction line 185, or the WAIT instruction line a new location in memory, from which its next program
+187. These three output lines identifying the requested instruction will be fetched. The program instruction
+instruction are input into a state sequencer 199.           fetch then continues sequentially until another jump
+   The least significant eight bits (not including bit 0) address strobe from register address decoder 27 occurs.
+loaded into the first instruction register are output to 10 At the start of each vertical blanking interval, the ad
+delay latches 191. If and only if a MOVE instruction is dress in first location register 129 is automatically used
+being executed by the Copper 47, these eight bits spec to start the program counter and the Jump 1 output is
+ify the address of the register that is the destination of activated. Thus, when the end of a vertical blanking
+the data that is on the data bus during fetch of the sec interval occurs, the Copper 47 will automatically restart
+ond word instruction. If a MOVE instruction is being 15 its operations with the instruction in RAM 401 at the
+executed by the Copper, the eight bits from the delay address specified in the first location register 129.
+latches 191 will be output at a later time from the regis      The Blitter DMA controller 65 operation is suffi
+ter address encoder 43 to the register address bus 405 ciently described by reference to FIGS. 4 and 5. The
+and the buffer circuitry 21. The placement of the eight Blitter control registers are each enabled by a line 29
+bits on the RGA bus 405 enables the particular register 20 from the register address decoder 27 in order to transfer
+being addressed to receive data that is output to the data data from the bus 404 into one of the registers 63. The
+bus 404 from the RAM 401 address specified in the Blitter control registers 63 have outputs sent to a state
+pointer register 138 corresponding to the copper.           sequencer, which is similar in structure to the state
+   The video beam position counter 117 contained sequencer 145 described with respect to the bitplane
+within the synch counter circuitry 31 outputs 15 bits of 25 controller 57. The state sequencer outputs, four in all
+data to a comparator 193 within the Copper 47. The for the four Blitter DMA channels, are input to the
+contents of the video beam position counter 117 indi register address encoder 43, which provides the priority
+cate the specific position that the electron beam scan control logic 73 with a priority request signal in order to
+ning the display has reached on the screen. Bits 1-15 in generate a data bus demand on line 411 to the bus con
+the first instruction word register during a WAIT or a 30 trol logic 412, and which also outputs the code selecting
+SKIP instruction specify the horizontal (bits 1-7) and a particular register on the register address bus 405. The
+vertical (bits 8-15) beam position, and form one set of four outputs are also sent to the RAM address generator
+inputs to an AND gate 195. The value input from the 45, where one of the pointer registers is selected and
+beam counter is compared within the comparator 193 where additional adder control circuitry exists to gener
+with a value input from the AND gate 195. The other 35 ate an invert instruction and a carry instruction as inputs
+set of inputs to the AND gate 195 is provided by the to the adder 137.
+least significant bits (not including bit 0) contained in      The implementation of the audio DMA controller 53
+the second instruction word register 175. These bits are shown on FIG. 1 is very similar to the circuitry shown
+enable bits that are used to form a mask, so that the for FIGS. 4 and 5 for bitplane DMA control. There is a
+comparator 193 will ignore certain bits in making the single set of registers 51 for holding left and right audio
+comparison during a WAIT or a SKIP instruction. In control information, and these registers have outputs
+the comparator 193, the beam position bits specified by connected to a state sequencer with four outputs similar
+the first instruction word that are not masked by the to the state sequencer 145 shown for the bitplane DMA
+ enable bits in the second instruction word are tested       channels in FIG. 5. Additional outputs are provided,
+ against the count of the video beam position counter 45 however, to the backup registers by the audio DMA
+ 117 before any further action is taken. The comparator controller rather than to the modulo registers as in the
+193 output is sent to the state sequencer 199.              case of the bitplane and Blitter DMA controllers. These
+  The state sequencer 199 provides three outputs in         outputs, like the Copper 47 jump outputs, are wired-OR
+response to jump address strobes and to input of the together and feed the line 133 providing the gate inhibit
+result of the beam count comparison and the inputs 50 signal to gate 135 in order to cause substitution rather
+identifying the instruction being executed. The fetch than addition by adder 137. In contrast, for the bitplane
+output on line 219 is sent to both the register address and Blitter control registers 55 and 63, certain registers
+encoder 43 and the pointer register (program counter) (such as the display window start and stop register or
+in the RAM address generator 45, so that the Copper 47 the Blitter size register) are loaded with display position
+can access memory if the priority control logic 73 so 55 count data in order to enable the sending of outputs to
+allows. Output lines 221 and 223 are sent to the RAM the modulo registers 131 at the proper time.
+address generator 45 shown in FIG. 4. The gate inhibit       The hardware for the Blitter 67 is shown in an opera
+signal on line 133 in FIG. 4 results from output lines 21 tional block diagram in FIG. 2. Data on the bus 404 is
+and 223 being wired-or together, so that either output input into the A and B source data registers 77 and 79
+causes the adder 137 to substitute a value in the backup under the control of the register address decoder 27.
+(location) registers 129 into the program counter 138. The A and B source data registers 77 and 79 each com
+The two outputs, Jump 1 and Jump 2, are also sent to prise two 16 bit register, with A and B old source data
+two respective location registers 129 containing the registers 77a and 79a each respectively storing the data
+address in RAM 401 of the next instruction to be exe       word that was previously input to registers 77 and 79.
+cuted by the Copper 47A first location register 129 and 65 The A and B source data registers each output two 16
+a second location register 129 contain the two indirect bit words into the 16 bit barrel shifter 81. Data on the
+jump addresses used by the Copper 47. The Copper 47 data bus 404 is also input to first word and second word
+fetches its instructions from RAM 401 using its program A mask registers 83 and 85. The output from these mask
+                                                      5,103,499                           16
+                           15
+registers is input for loading into the A source mask          connected to send data to the serializer circuitry 329
+logic 90. The A mask logic 90 receives control signals         when selected by the register address decoder 319. The
+(which also enable the modulo register 131) from the           outputs of the bitplane select serializer 329 are six bits
+Blitter DMA controller 65 of FIG. 1 when the word in           corresponding to each of the six bitplanes and constitut
+register 77 is the first and/or last in the Blitter window     ing the bitplane bus 333. Bitplane bus 333 is connected
+for a horizontal line.                                         to output color register selection data to both collision
+   Data bus 404 also provides an input into the C source       detection logic 335 and display priority control logic
+data register 89, which is also loaded under control of 337.
+the register address decoder 27. The C source data               A horizontal synch beam counter 339 exists on the
+register 89 sends data to a logic unit 91, which is a logic 10 Denise chip, and is synchronized with the beam counter
+unit that can be controlled to perform any one of 256 117 on the Agnus chip 410. The output is connected to
+possible logic operations on the three inputs it receives the bitplane control registers 327 and to sprite horizon
+from the A, B, and C registers. An A shift count register tal position comparator logic 341.
+93 and a B shift count register 95 among the Blitter             Sprite horizontal position registers 343 receive data
+control registers 63 are each loaded with four bits of 15 from each of eight data bus 315. The output from the
+data from the data bus 404. The 4 bit outputs are pro sprite horizontal position registers 343 is input as a sec
+vided by shift count registers 93 and 95 to the barrel ond input to the sprite horizontal position comparator
+shifter 81. The barrel shifter 81 can perform up to 15 bits logic 341. This sprite horizontal position comparator
+of shifting separately for the A and B source data regis logic 341 compares an 8-bit word from the horizontal
+ters 77 and 79, with the shifter containing 32 bits from 20 synch beam counter 339 with a word from each of the
+each source. A 16 bit output from the barrel shifter 81 sprite horizontal position registers 343.
+for each source is provided to the A and B holding               There are two 8-bit sprite data registers 345 receiving
+registers 101 and 102. The holding registers 101 and 102 data from data bus 315 for each of eight sprites. These
+have 16 bit outputs. One of the Blitter control registers sprite data registers 345 output color register selection
+63 receives a data word from the data bus 404, Eight 25 data to sprite select serializer circuitry 347, which acts
+bits in this Blitter control word contain multi-midterm        as a serializer and outputs eight pairs of signal lines
+select bits that are input to the logic unit 91 and select corresponding to each of eight sprites to form a sprite
+which of the eight available minterms to combine to bus 349. The sprite bus 349 is therefore 16 bits wide. The
+select one of 256 possible logic operations that can be output from the sprite horizontal position comparator
+performed on the A, B, and C source inputs.                 30 logic 341 is input to the sprite select serializer 347.
+   The logic unit 91 also includes fill logic circuitry. The Sprite bus 349 is connected to output color register
+fill logic circuitry operates to "fill in' bits between the selection data to both the collision detection logic 335
+horizontal outlines of an object that is being displayed and the display priority control logic 337.
+on the screen. It generates the data if one of the Blitter       A collision control register 351 receives data from
+control registers 63 has been loaded with bits enabling 35 data bus 315. The output from the collision control
+the fill operation. The fill logic for each bit and each register 351 is input to the collision detection logic 335.
+word has a fill carry out signal on line 107 which is A 16-bit output from the collision detection logic 335 is
+input to the logic for the next bit, or for the first bit of input to a collision storage register 353, which is con
+the next word if the Blitter operations on the present nected to send the data out on data bus 315.
+word are complete. The exclusive OR circuitry 108, 40 Bitplane priority and control registers 355 receive
+once a "l' is found for the first time on a horizontal line, data from the data bus 315. The output is connected to
+will change all subsequent zeroes on the line to "l's, the display priority control logic 337. Display priority
+until another '1' is found on the line. The logic unit 91 control logic 337 sends 5-bit color register selection
+output is input to a D holding register 113. The output data to a color select decoder 357.
+from the D holding register can be sent out on the data 45 The color select decoder 357 has 32 lines of output
+bus 404 and stored in the RAM 401.                             which are exclusively selected to enable one of 32 color
+    Data is conveyed with the display encoder (Denise) registers 359, which operate to provide the video to the
+chip 420 via the data bus 404 (FIG. 9). A bidirectional display using 12-bit codes that control the red, green
+buffer 313 is connected to the data bus, and a continua and blue guns used to generate images on a display. The
+tion 315 of this data bus continues throughout the cir 50 32 color registers 359 are loaded with data from the data
+cuits on the Denise chip 420. This data bus 315 is 16 bits bus 315.
+wide. Various registers receive or send data onto the            The video output is sent to hold and modify logic 360,
+data bus 315. These registers are controlled by load which also receives inputs from the bitplane bus. The
+enable signals 317 from a register address decoder 319, logic 360 is enabled by an output from one of the bit
+which utilizes destination "instructions' placed into the 55 plane control registers 355.
+address decoder 319 via the register address bus 405 and         Auxiliary peripheral controllers such as mouse count
+through a buffer circuit 323 connected to a register ers. 361 can also be connected to data bus 315. Such
+address bus continuation portion 325, which is 8 bits mouse counters 361 are used with commercial cursor
+ wide. The register address decoder 319 decodes a desti positioning devices. Such mouse counter circuits 361
+ nation "instruction' and provides an output on one of 60 receive and dump data onto the data bus 315.
+ the lines 317 to enable a data transfer into or out of a        The bitplane data registers 331, of which there are six,
+ particular destination register.                              are each 16 bits wide (FIG. 10). Each of the six bitplane
+    Among the registers connected to the data bus 315 data registers 331 passes 16-bit information into a corre
+are bitplane control registers 327. These registers 327 sponding one of six bitplane parallel-to-serial registers
+ send control signals to the bitplane select serializer cir 65 363 in bitplane serializer 329. The transfer of the data in
+ cuitry 329. Bitplane select serializer 329 acts as a serial each bitplane data register 331 to a corresponding paral
+ izer for bitplane data received from the bitplane data lel-to-serial registers 363 occurs after data for all active
+ registers 331, of which there are six. Each register 331 is bitplanes has been transferred to the bitplane data regis
+                                                     5, 103,499                            18
+                             17
+ters 331 under DMA control. Each bitplane parallel-to green, and blue video color intensity. Each color regis
+serial register 363 passes bitplane information in serial ter is loaded with the bits defining its color from the
+form on a corresponding one of six output lines com data bus 315.
+prising the bitplane bus 333. This occurs after line 317 to                  THEORY OF OPERATION
+bitplane data register 1 has caused this register to be
+loaded, triggering the simultaneous dump of data by               There  are two basic parts to any display which can be
+each of the bitplane registers into the corresponding seen on the display screen when using the Amiga per
+serializers in response to bitplane control register enable sonal computer. First, are objects which are easily mov
+signals on lines 365 from the bitplane control registers able, called sprites. Second, are things which do not
+327.                                                        10 move or can only move slowly, called playfields or
+   The sprite select serializer 347 of the Denise chip, playfield objects. The playfield is the background
+FIG. 11, uses parallel-to-serial conversion and serializa against which the sprites and objects may be displayed
+tion, as does the bitplane select serializer 329 described or with which the sprites and objects can interact. A
+above. The sprite data registers 345 are comprised of playfield object is simply a smaller subsection of the
+two 16-bit sprite data registers 367 for each of the eight 15 playfield, but it is considered by the software in the
+sprites. A total of eight pairs of 16-bit registers 367 Amiga system to be an object of some kind. Even
+receive data from the data bus 315. Each individual             though playfield objects are classified as non-moving
+sprite data register 367 is connected to a corresponding objects, these objects can appear to move by using a
+sprite parallel-to-serial register 369, of which there also technique called playfield animation. Thus, the Blitter
+                                                                allows playfield objects to be rapidly redrawn on the
+are a total of eight pairs. Each of the 16 sprite parallel 20 screen,
+to-serial registers 369 feeds sprite data serially onto a                while saving and restoring the background or
+corresponding one of the 16 output lines comprising the playfield onto which they are drawn, to give the illusion
+sprite bus 333. Output from each pair of registers 369 for of motion.
+each sprite is under the control of a signals on 8 pairs of        There are two different operating modes for the play
+output lines 371 from the sprite horizontal position com 25 field display: normal resolution and high resolution. In
+ parator logic 341 to each of the registers 369.                normal resolution mode, there are 320 picture elements
+    The collision detection logic 335 is shown in greater or pixels which form each horizontal line of the screen.
+ detail in FIG. 12. Collisions can be detected when two         This is the resolution generally used for standard home
+ or more objects, as defined by any non-zero bits used to television. High resolution pictures are normally only
+ display any of eight sprites or two playfields, overlap in 30 available on a high resolution monochrome or RGB
+ the same pixel position. A logic array network consist monitor. In high resolution mode, there are 640 pixels
+ ing of two stages of NAND gates 373 and 375 (gates 373 which form each horizontal line of the screen display.
+ being the first stage and gates 375 being the second There are normally approximately 200 lines per display
+ stage) forms the collision detection logic. The first stage screen in a vertical direction. In interlace mode, how
+ of NAND gates 373 receive inverted data (using invert 35 ever, there are approximately 400 lines per display
+ ers 372) or non-inverted data from each line of the bit screen in the vertical direction. In interlace mode, the
+ plane bus 333 and the sprite bus 349, and from each line video scanning circuitry displays a set of 200 lines dur
+ output from the collision control register 351. Each of ing one frame (which occurs 60 times per second), but
+ the second stage NAND gates 375 has connected as on the very next display frame, the video scanning cir
+ inputs thereto a selected number of the outputs from the 40 cuitry interlaces a different 200 lines on the screen by
+ first stage NAND gates 373 for certain sprites or play placing the 200 lines of each frame in between each
+ fields to form a MIDTERM. The bits loaded in the                other. This provides double the vertical resolution. The
+ collision control register 351 determine whether odd count from video beam counter 117 includes a long
+ numbered sprites and specific bitplanes will be utilized frame bit used for interlaced mode to distinguish the
+                                                                 two frames. A Bitplane control registers contain 55 and
+ by the detection logic 335 in setting the bits in collision 45 327
+ storage register 353. Depending on the implementation               the bits which define both the horizontal bit resolu
+ selected by the bits in control register 351, the polarity tion and the interlace mode for vertical resolution. One
+of the bits used to detect a collision can also be speci       bit selects the high resolution mode, and another bit
+ fied.                                                         enables the interlace mode.
+  The bitplane and display priority portion of the cir 50 In the Amiga system, the user can define a color
+cuit is shown in FIG. 13. The display priority control "palette" containing 32 out of a possible 4096 available
+ logic 337 is implemented by a logic array network con colors. In normal resolution mode, any one of the 32
+ sisting of two stages of NAND gates 377 and 378. The colors in the palette can be selected and matched with
+ first stage of NAND gates 377 receives inverted data any one of the pixel elements that make up the overall
+ (through inverters 376) or non-inverted data from each 55 picture being displayed. A pixel is the smallest picture
+ of six lines of the bitplane bus 333 and 16 lines from the element in the video display. In high resolution mode,
+ sprite bus 349, and also receives inputs from the bitplane each pixel can be any one of 16 colors contained in the
+ priority register 355, to generate an array of MIN color palette. In the special hold and modify operating
+ TERMS. A selected combination of the first stage mode, up to 3616 colors can be written on the screen at
+ NAND gate 377 outputs are used to generate the 5 bit the same time for a standard television, or up to 4096
+ output sent to the color select decoder 357. The sprites colors can be drawn on the screen of an RGB monitor.
+ have fixed priorities with respect to each other, but the      Each pixel displayed on the screen is represented by
+ priority of the even and odd bitplanes with respect to one or more bits in the Amiga random access memory
+ sprites and each other can be controlled with the bit 401. Thus, for each individual pixel, there is a corre
+ plane priority register 355.                              65 sponding set of bits in the computer memory which
+    The color select decoder 357 provides 32 control determines which of the 32 color registers 359 contains
+ lines corresponding to the 32 color registers 359 for the color information for that pixel. Because the pixels
+ selecting the three 4-bit color code words for red, are organized in a two-dimensional (horizontal and
+                                                      5,103,499                           20
+                           19
+vertical) array, the playfield is referred to as a color      certain objects are to be placed in front of or behind
+plane. The corresponding sections in RAM 401 that             each other by controlling the relative visual priority of
+contain bits that determine the color of each of the          the playfields and sprites, using the bitplane priority
+playfield pixels are Called bitplanes. The value of the       register 355. In dual playfield mode, the two playfields
+color to be used for each pixel is not stored directly as     are combined on the screen to form a dual playfield
+part of the bitplanes in memory, but is rather stored in a    display. If playfield 1 has a higher priority than play
+color table, previously referred to as the color palette.     field 2, the color for each pixel element is selected in
+Thirty-two color registers 359 are contained on the           display priority control logic 337 by utilizing the color
+display encoder chip 420, and consist of a set of 12-bit      registers designated by the odd bitplanes of playfield 1.
+registers, each of which is selectable by one of 32 lines 10 However, if any pixels on the screen are placed in the
+from the color select decoder 357. Thus, any particular transparent mode (all bits are zero) by the odd bitplanes
+pixel on the display can have any one of 32 different for playfield 1, then the pixels will be colored using the
+colors The contents of each of the 32 registers are se color register designated by the even bitplanes associ
+lected by the user. The 12 bits contained in each register ated with playfield 2. If the bitplanes for both playfields
+allow selection from a total of 4096 possible colors for 15 select the COLORO register for the same pixel, that
+each color register. The COLORO register is always pixel element will be colored with the background
+reserved for the background color of the screen. The color contained in the COLORO register.
+background color is the color which shows in any area             In order to simultaneously display more colors than
+on the display when no other objects are present, since the 32 possible choices stored in the color registers 359,
+all other objects have a higher priority than the back 20 there is a special hold-and-modify mode. The mode is
+ground.                                                         selected using a bit within the bitplane control registers
+   In order to select the color of a particular pixel from 355. In this mode, the system interprets the bitplane data
+a palette of more than two colors, there must be more in a different manner. As described previously, each
+than a single bit in RAM 401 corresponding to each color register 359 contains 12 bits that designate a par
+pixel displayed on the screen so that one of several color 25 ticular color. An RGB color monitor is driven directly
+registers can be selected. If only one bitplane is used to by an RGB (red, green, blue) color input signal. An
+specify the colors of a playfield, each pixel in that play RGB color signal is virtually three monochrome sig
+field can only have the color specified in color registers nals, separately driving the red, green, and blue guns of
+COLOR0 and COLOR1. Additional color choices for                 a raster display. When using normal resolution, the 12
+the pixels become available when several bitplanes are 30 bits of the color registers are interpreted such that bits 0
+combined in order to specify the color register for each through 3 designate the intensity level for the blue elec
+individual pixel. When several bitplanes are combined tron gun, bits 4 through 7 correspond to the green elec
+in order to specify the color of the onscreen pixel ele tron gun, and bits 8 through 11 correspond to the red
+ments, the bits from each are combined into a longer electron gun. In hold-and-modify mode, the value in the
+binary number which can select additional color regis 35 color output circuitry for the previously displayed pixel
+ters. Normally, for a single playfield, only five bitplanes is held, and one of the three 4-bit parts of that value is
+can be active in the Amiga system. The combination of then modified by the data in the first four bitplanes for
+five binary bits for each pixel element allows a choice that pixel. In hold and modify mode, the bit combina
+among 32 different color registers 359, each of which tions for a pixel from bitplanes 5 and 6 are used to mod
+specifies a color. Each bitplane forms a separate block ify the way in which the bits from bitplanes 1 through 4
+of bits stored in RAM 401. However, the display inter are interpreted. The bitplane bus 333 and the 12 video
+prets the bitplanes as if they were stacked, so that bits in outputs from the color registers 359 are input to the
+corresponding positions in different bitplanes are com hold and modify circuitry 360, which has 12 video out
+bined by the display hardware to form a binary number puts. If the bits in bitplanes 5 and 6 for a pixel element
+ which corresponds to a particular color register used to 45 are set to zero, the first four bitplanes will be used to
+ provide the color for that pixel element. A bitplane choose one of 16 color registers 359. For the three other
+ control register contains three bits which allow the user possible combinations of the two bits from bitplanes 5
+to designate from 0 to 6 bitplanes for the display.             and 6, the color of the previous pixel displayed (to the
+    The bitplane control registers 355 also contain a dual left of the current pixel) will be duplicated, except for a
+ playfield enable bit. In the dual playfield mode of opera 50 4-bit modification. The bits contained in bitplanes 5 and
+ tion, all odd numbered bitplanes are grouped together 6 determine whether the red, green, or blue portion of
+ as playfield 1 and all even numbered bitplanes are the display will be modified. The four bits in bitplanes 1
+ grouped together as playfield 2. For example, if six through 4 will then be used to replace the four (out of
+ bitplanes are specified and the dual playfield mode is 12) bits used in driving either the red, green, or blue gun
+ selected, eight different color registers can be desig 55 of the display. Thus, in this mode, two parts (e.g., green
+ nated for any particular pixel by three bits combined for and red) of the output from the color registers are held
+ each playfield, and the set of eight color registers is over from the previous pixel, and one part (e.g., blue) is
+ completely separate for each playfield.                        modified by the data contained in the bitplanes.
+    A special case exists when the bitplanes contain all           Each line of pixels that is displayed on a television
+ zeros for a particular pixel in either playfield 1 or play screen is formed from the overlap of one or more bit
+ field 2. The designation of all zeros for a pixel means planes containing bits associated with each particular
+ that the playfield is in transparent mode. (The pixel. Each bitplane, in turn, is formed from blocks of 16
+ COLORO register contains the background color.) bit data words in consecutive locations in random ac
+ Wherever the bit combination in either playfield is set cess memory 401. Each line of a bitplane consists of a
+ for transparent mode the display will show the color of 65 sequence of data words, with the most significant bit of
+ whatever is "behind" (has lower priority than) the par each data word relating to the leftmost pixel to appear
+ ticular playfield (e.g., the other playfield, a sprite, or the on the display of pixel elements. Each memory word is
+ background color). The user can designate whether at a sequentially increasing memory address as one
+                                                      5,103,499                            22
+                           21
+moves from left to right across the display If the entire      to that bitplane in one of the six bitplane pointer regis
+bitplane corresponds to pixels that will all be displayed,     ters 138 contains a value corresponding to the starting
+then the leftmost pixel displayed on any horizontal line       memory address for that line plus 20. A modulo of 20
+corresponds to a bit contained in a memory word at an          words must be added to this pointer using modulo regis
+address one greater than the address of the word con           ter 131 and adder 137, so that when the data fetch for
+taining the bit corresponding to the last pixel on the         the next horizontal line begins, the next 20 words in
+right of the horizontal line displayed immediately             memory (corresponding to the part of the playfield
+above. Within each data word, each bit represents a            picture that is to the right or left of what can be dis
+single pixel on the screen. The sequence of bits stored in played on the 320 available pixels at that particular
+memory defines a two-dimensional plane of bits having O instant) will be skipped. In this manner, the address of
+one bit for each x and y position defined on the display,      the data not used in the current display is not placed by
+referred to as a bitplane. Each bitplane as a whole pro        the generator 45 on the RAM address bus 406. When
+vides one bit for each possible x-y coordinate on the          the high resolution mode is being used to display the
+SCTee.                                                         playfields, 40 words of data must be fetched for each
+    In order to display the background color and one or 15 line instead of 20, and the modulo is 40 when the bit
+two playfields on the screen, the Amiga system must be plane is double the window size.
+given the starting address during the vertical blanking           The system can be directed to display another portion
+time for the data block for each of the bitplanes to be (e.g., the right half) of the picture defined by a bitplane
+used. The start of the bitplane data is specified using that is larger than (e.g., twice) the size of the allowable
+pointers contained in the pointer registers 138 of FIG.4, 20 display window. In such a case, a different pointer value
+with one register existing for each of the six possible is loaded into the pointer register 138 for that bitplane
+bitplanes. The bitplane pointers are address pointers when the first bit is fetched for display of the upper left
+which point to the starting address within RAM 401 at pixel on the screen (during vertical blanking). To dis
+which the data for a specific bitplane actually starts. play only the right half of a picture defined by bitplanes
+The pointers in the registers 138 are 19 bits wide and are 25 with 640-bit wide horizontal lines, the value of the
+dynamic. Once the fetch of bitplane data begins during pointer must be 20 words (320 bits) higher than the
+DMA cycles, the pointers in registers 138 are continu starting address when only the left half of the picture is
+ously incremented using adder 137 to point to the ad displayed In this case, the modulo would remain at 20 to
+dress of the next word in RAM 401 to be fetched. The            prevent the addressing of data related to the left half of
+address of the data being accessed is then placed on the 30 the picture after each line is scanned.
+DRA bus 406 by the RAM address generator 45 of the                The modulo stored in the bitplane modulo registers
+Agnus chip 410. When the electron beam for the televi 131 is also used in producing an interlaced picture. A
+sion screen reaches the last pixel to be displayed on a frame bit generated by the video beam counter 117 can
+horizontal line, (as determined by the beam count), it be loaded into a control register and read during the
+will have fetched the last data word for that line. Each 35 vertical blanking routines of the operating system. De
+pointer for each of the bitplanes is then adjusted by the pending on the state of this bit, the system will produce
+modulo amount contained in the modulo registers 131, either an odd frame or an even frame. Based on the
+which is added to the pointer value stored in registers value of this bit, for odd frames the vertical blanking
+ 138 using the adder 137. The addition of the modulo routines will load the bitplane pointer register 138 with
+amount ensures that the next data word fetched will be          an address corresponding to line one, whereas for even
+the word in memory corresponding to the leftmost pixel frames an address corresponding to data related to line
+to be displayed on the next line of the screen. A Sepa two is loaded. The Copper 47 skip instruction can be
+ rate modulo amounts can be used for the even and odd           utilized to achieve this. The display of alternate lines of
+bitplanes and stored in two modulo registers 131.               a complete picture contained in memory during alter
+    As described previously, there are 320 pixels in each 45 nate frames of the display requires setting the modulo
+ horizontal line in normal resolution mode. Each data           number in registers 131 equal to the total number of
+ word consists of 16 bits, so that 20 data words contain words in memory relating to a single horizontal line
+ ing 320 bits are sufficient for each bitplane to contain all plus the normal value associated with the modulo (the
+ the data corresponding to one horizontal line of pixels number of words by which the data in memory defining
+ being displayed. If the size of the bitplane is exactly the 50 a particular horizontal line exceeds the number of pixels
+ same as the size of the display window, then zero is that are displayed on the screen at any one time.) If the
+ loaded into the modulo register 131. In this case, the "picture' stored in memory is defined as 400 lines long,
+ number of bits stored in RAM 401 is exactly the same as the 200 odd numbered lines are shown during one
+ the number of pixels which will appear on the screen. frame, and the other 200 even numbered lines are shown
+ As each data word for the bitplane is fetched as the 55 during the next frame to form the complete picture. The
+ electron beam travels horizontally along the screen, the scanning circuitry vertically offsets the start of every
+ pointer for that bitplane is incremented by one by adder other field by half a scan line in interlaced mode. For
+ 137. Thus, after each horizontal line is scanned by the odd frames, the pointer loaded in the pointer register
+ beam, the value (in words) stored in the pointer register 138 for a bitplane during the vertical blanking interval is
+ 138 when the data fetch for the next line is begun will set at some starting memory address. Then, for even
+ exceed the pointer value when the previous line was frames, the value of the pointer loaded in the pointer
+ begun by 20. However, if, for example, the bitplane has register 138 at the beginning of the scan of an even
+ exactly twice the number of bits per horizontal line as frame corresponds to the original starting memory ad
+ the number of pixels to be displayed, a modulo of 20 dress plus the total number of words in memory con
+ words must be used to assure that the data used togen 65 taining bits relating to a single horizontal line.
+ erate the colors for the next line of pixels are the bits         To create a playfield that is the same size as the televi
+  relating to the next horizontal line. After displaying the sion screen, a width of either 320 pixels or 640 pixels
+  last pixel on a horizontal line, the pointer corresponding (high resolution) is chosen. The height can be either 200
+                                                      5,103,499                            24
+                            23
+lines or 400 lines (interlaced mode). The actual size of       tions for the Copper 47 are used to perform this opera
+the on screen display, however, can be further adjusted        tion as part of a vertical blanking task.
+by defining a window size. Nothing will be displayed             One of the features of the Copper 47 is its ability to
+outside of the defined display window, including play          wait for a specific video beam position, then move data
+fields and sprites. The display window size is defined by      into a system register. During the wait period, the Cop
+specifying the horizontal and vertical positions at which      per 47 examines the contents of the video beam position
+                                                               counter 117 directly. Thus, while the Copper 47 is wait
+the display window starts and stops. The resolution of ing for the beam to reach a specific position, it does not
+vertical start and stop is one scan line; the resolution of use the data bus 404 at all. Therefore, the data bus 404
+horizontal start and stop is one low resolution mode 10 is freed for use by other DMA channels or by the mi
+pixel. The display window start register controls the croprocessor 402. When the wait condition has been
+display window starting position. Both the horizontal satisfied, the Copper 47 steals memory cycles from
+and vertical components of the display window starting either the Blitter 67 or the processor 402 to move the
+positions are loaded into this register, which is located specified data into the selected special purpose registers.
+among the bitplane control registers 55 on the Agnus 15 The          Copper 47 is a two cycle processor that requests
+chip 410, by either the processor 402 or the Copper 47. the bus
+Similarly, a display window stop register exists on the preventsonly          during odd numbered memory cycles. This
+Agnus chip 410 and is loaded with the horizontal and most low resolutionwith
+                                                                          collision      audio, disk, refresh, sprites, and
+                                                                                      display DMA access, all of which
+vertical components of the display window stopping use only the even numbered
+position. The stopping position, like the starting posi 20 per 47 therefore needs prioritymemory  over
+                                                                                                        cycles. The Cop
+                                                                                                       only  the processor
+tion, is interpreted in low resolution non-interlaced 402 and the Blitter 67.
+mode, even if the high resolution or interlaced modes             The Copper 47 instruction list is sufficient to accom
+are selected.                                                  plish  all the register resetting done during the vertical
+   After the size and position of the display window is blanking           interval and the register modifications neces
+defined using the display window start and stop regis 25 sary for making          midscreen alterations. For example, the
+ters, the onscreen location for the data fetched from pointers for the odd and even bitplanes used in playfield
+memory must be identified. This is done by loading the displays and the sprite pointers must be rewritten during
+horizontal positions where each line starts and stops to the vertical blanking interval so that the data relating to
+a data fetch start register and a data fetch stop register the top left of the screen will be retrieved when the
+located among the bitplane control registers 55. Unlike 30 display starts again. This can be done with a Copper
+the display window registers, which have a one pixel instruction list that does the following: (1) wait until the
+resolution (low resolution mode), the data fetch regis video beam reaches the first line of the display; (2)
+ters have only a 4 pixel resolution because only five bits MOVE starting address in RAM 401 for odd bitplane
+are used in either register to specify the beginning and data to the first bitplane pointer register; (3) MOVE
+ending position for the data fetch. The hardware re 35 starting address for even bitplane data to second bit
+quires some time after the first data fetch before it can plane pointer register; (4) MOVE data to first sprite
+actually display the data. As a result, there is a differ pointer register; etc. As another example, the color
+ence between the value of window start and data fetch          registers can be reloaded with bits specifying the dis
+start, and the registers control the horizontal timing of play of different colors in the middle of the display of a
+the bitplane DMA data fetch. In low resolution mode, 40 screen. Thus, the program instruction list for the Cop
+the difference is 8.5 clock cycles; the difference is 4.5 per 47 would wait for the first line of the display, then
+clock cycles in high resolution mode. As described move a series of 12 bit codes into several of the color
+previously, the bitplane address pointers stored in registers, wait for a subsequent line of the display (such
+ pointer registers 138 are used to fetch the data to the as the first line corresponding to a reuse of a particular
+ screen. Once the data fetch begins, the pointers are 45 sprite processor), and then move 12 bits of data specify
+ continuously incremented to point to the next word. ing a new set of colors into some of the color registers
+ The data fetch stop register defines when the end of a previously loaded during the first line of display.
+ horizontal line is reached, at which point the bitplane          The Copper 47 fetches its instructions by using its
+ run signal is off and the modulo contained in the modulo program counter and increments the program counter
+ register 131 for that bitplane is added to the pointer for 50 after each fetch. The Copper 47, however, has two
+ that bitplane. Thus, the pointer is adjusted to contain jump strobe addresses, jump 1 and jump 2. When an
+ the address of the first word of data to be fetched for the   attempt is made to write to either the jump 1 or jump 2
+ next horizontal line. There are two modulo registers, strobe addresses, the program counter of the Copper 47
+ the bitplane modulo register for the odd numbered is loaded with a new address. The Copper 47 has a first
+ bitplanes (or for playfield 1 when operating in the dual 55 and a second location register 129, which contain RAM
+ playfield mode) and bitplane 2 modulo register for the addresses. Whenever a jump strobe address strobe is
+ even numbered bitplanes (or for playfield 2 when oper written, the address contained in the corresponding
+ ating in the dual playfield mode).                             location register is loaded into the Copper program
+    To start the display of the playfields, the pointers for counter (pointer register) using adder 137 and the gate
+ the bitplanes must be set and the bitplane DMA is 60 inhibit signal. This causes the Copper to jump to the
+ turned on. The bitplane DMA is turned on by setting a address specified in either the first or second location
+ bit in a DMA control register. Each time the playfield register 129, and to execute the instruction contained at
+ is redisplayed after the vertical blanking interval, the that RAM address. The instruction fetch then continues
+ bitplane pointers must be reset Resetting is necessary sequentially until the Copper 47 is interrupted by an
+ because the values in the pointer register have been 65 other jump address strobe. At the start of each vertical
+ incremented to point to each successive word in mem blanking interval, no matter what the Copper is doing,
+ ory for each set of bitplanes and must now be repointed the Copper is automatically forced to restart its opera
+ to the first word for the next display. Program instruc tions at the address contained in the first location regis
+                                                    5, 103,499                        26
+                          25
+ter. The Copper can also write to its own location regis    of delay must be loaded into a bitplane control register
+ters and then to its strobe addresses to perform pro 327.
+grammed jumps. Thus, the Copper can move a new                 The term Blitter stands for block image transferer.
+address into the second location register. Then, a subse The primary purpose of the Blitter 67 is to copy (trans
+quent move instruction executed by the Copper that fer) data in large blocks from one memory location to
+addresses the jump 2 address causes the new address in another, with or without further processing. The opera
+the second location register to be strobed into the Cop tions it performs after its registers are set up are consid
+per's program counter. At power on or reset time, the erably faster than those performed by the microproces
+first and second location registers of the Copper must be sor 402. The Blitter 67 is very efficient at copying
+initialized and the jump strobe address must be written 10 blocks of data because it needs to be told only the start
+to so that a known start address and known state is          ing address in RAM 401, the destination address in
+ensured before the Copper DMA is first turned on. RAM 401, and the size of the block. It will then auto
+Then, if the contents of the first location register are not matically move the data block, one word at a time,
+changed, the Copper will restart at the same location whenever the data bus 404 is available. The Blitter will
+every time vertical blanking occurs for each subsequent 15 signal the processor 402 with a flag and an interrupt
+video screen. One bit in a DMA control register is set in when the transfer has been completed.
+order to enable coprocessor DMA operations.                    The Blitter performs its various data fetch, modify,
+   In order to obtain a background display that moves, a and store operations through DMA sequences, and it
+playfield larger than the display window is stored in shares memory access with the other devices in the
+memory and scrolled. When using dual playfields, each 20 Amiga system. Disk DMA, audio DMA, bitplane
+playfield can be scrolled separately. In horizontal DMA, and sprite DMA all have the highest priority
+scrolling, one additional word of data must be fetched level. Each of these four devices is allocated a group of
+for the display of each horizontal line, and the display of time slots during each horizontal scan of the video
+this data must be delayed. In vertical scrolling, the beam. If a device does not request one of its allocated
+starting address loaded into the bitplane pointers is 25 time slots, the slot is open for other uses. First priority
+increased or decreased by an integer multiple of the is given to these devices because missed DMA cycles
+amount of words taken up by a horizontal line in mem        can cause lost data, noise in the sound output, or inter
+ory. This causes a lower or higher part of the picture to   ruptions in the display on the screen. The Copper 47 has
+be displayed after each vertical blanking interval. To the next priority because it must perform its operations
+accomplish vertical scrolling, during each vertical 30 at the same time during each display frame to remain
+blanking interval, the Copper must increase or decrease synchronized with the video beam sweeping the screen.
+the value of the pointer stored in the bitplane pointer The lowest priorities are assigned to the Blitter 67 and
+register 138 by an amount large enough to ensure that the microprocessor 402, in that order. The Blitter 67 is
+the display begins at least one horizontal line later or given the higher priority because it performs data copy
+earlier each time. For either type of scrolling, the Cop 35 ing. modifying, and line drawing operations much faster
+per 47 can be used during the vertical blanking interval than the microprocessor 402. During scan of a horizon
+to reset pointers and data fetch registers. For a low tal line, there are typically 227.5 memory access cycles,
+resolution display in which only 20 words of data is each of which is approximately 280 nanoseconds in
+used for each horizontal line, the starting address loaded duration. Of this time, 226 cycles are available to be
+into the pointer register 138 by the Copper 47 would be allocated to the various devices needing memory ac
+changed by a multiple of 20 words during each vertical cess. The memory cycles are allocated as follows: four
+blanking interval.                                           cycles for memory refresh (assigned only to odd num
+   The playfields can be scrolled horizontally from left bered cycles); three cycles for disk DMA (assigned only
+to right or vice versa on the screen. Horizontal scrollinq to odd numbered cycles); four cycles for audio DMA
+is controlled by specifying the amount of delay prior to 45. (assigned only to odd numbered cycles, one word per
+display of the pixels. The delay occurs when an extra channel); 16 cycles for sprite DMA (assigned only to
+word of data for a horizontal line is fetched but is not     odd numbered cycles, two words per channel); and 80
+immediately displayed. The additional data word is cycles for bitplane DMA (can be assigned only to odd
+located to the left of the left edge of the display window numbered cycles if display is low resolution and con
+and is retrieved before normal data fetch begins. As the 50 tains four or fewer bitplanes). The microprocessor 402
+beam scans to the right, however, the bits in this addi uses only the even numbered memory access cycles.
+ tional data word are used to define the color of the        Normally, during a complete processor instruction
+ pixels appearing on screen at the left hand side of the time, the processor 402 spends about half of the time
+window, and data formerly used to color pixels appear doing internal operations and the other half accessing
+ ing on the right hand side of the screen no longer ap 55 memory. Therefore, by allocating every other memory
+ pears during the display. For each pixel of delay speci cycle to the 68000 processor, the processor 402 can run
+fied, the onscreen data shifts one pixel to the right after at full speed because it appears to the processor that it
+each vertical blanking interval. The greater the delay has memory access all of the time. Thus, the 68000 runs
+utilized, the greater the speed of scrolling of the display. at full speed most of the time if there is no Blitter DMA
+Up to 15 pixels of delay can be specified by loading a interference. If cycles are missed by the 68000, it waits
+bitplane control register 327 with four bits of data speci until its next available memory cycle before continuing.
+fying the delay for playfield 1 and four bits of data However, if there are more than four bitplanes being
+specifying the delay for playfield 2. Thus, in horizontal displayed, or a high resolution display is used, bitplane
+scrolling, the data fetch start register must be loaded 65 DMA will begin to steel cycles from the 68000 during
+with a beginning position for the data fetch that is 16 the display. If for example four high resolution bitplanes
+pixels (one extra word) before the unscrolled beginning are specified, bitplane DMA needs all of the available
+position for data fetch, the modulo for the playfield memory time slots during the display time (bitplane run
+must be increased by one word, and the number of bits signal is on) in order to fetch the 40 data words needed
+                                                       5, 103,499                            28
+                            27
+for each line for each of the four bitplanes. This effec        by loading a bit contained within the Blitter control
+tively locks out the processor 42 as well as the Blitter 67      register 63.
+and Copper 47 from any memory access during the                    A Blitter size register among control register 63 is
+display. During the display time for a four bitplane low        loaded with the width and height of the window being
+resolution display, 80 odd numbered time slots are re           operated on by the Blitter. Ten bits in this register de
+served for the bitplane DMA and the 80 even numbered            fine the height of the Blitter operation, up to a maximum
+time slots are all available for the processor 402. For a       of 1024 lines. Six bits in this register define the width of
+display of a six bitplane low resolution display, bitplane the       Blitter operation, up to a maximum of 64 words or
+                                                                1024 pixels. Loading data into the Blitter size register
+DMA steals half of the 80 even numbered slots during O starts           operation of the Blitter, and is done last after all
+the display because 120 time slots are needed to fetch 20 pointers         and control registers have been initialized.
+data words for six bitplanes No memory time slots are
+available during display of a four bitplane high resolu the Blitterofcansimply
+                                                                   Instead            retrieving data from a single source,
+                                                                                 retrieve data from up to three sources as
+tion display because all 160 time slots are needed to it generates a result for
+fetch the 40 data words for each of the four bitplanes. 15 These sources are usuallyaone         possible destination area.
+                                                                                                     bitplane from each of
+   The Blitter 67 normally has a higher priority than the three separate graphic images. The             Blitter logic opera
+processor 402 for DMA cycles If given the chance, the tion is defined by describing what occurs
+Blitter would steal every available memory cycle, possible combinations of one bit from eachfor                     all of the
+blocking the processor 402 from bus access By setting a sources. The eight possible data combinationsthe         of      three
+bit in a DMA control register, the Blitter will be given 20 bits are referred to as MINTERMS. For each ofthree       of
+                                                                                                                           the
+priority over the processor 402 for every available eight input possibilities, the value of the bit output to the
+memory cycle However, if the bit is not set, the Blitter corresponding destination in RAM 401 must be speci
+67 will be forced to release the data bus 404 to the pro fied. One of the Blitter control registers 63 is loaded
+cessor 402 for one cycle if the processor 402 is unsatis with eight bits used as logic function MINTERM select
+fied for three consecutive memory cycles.                    25 lines. The setting of these eight bits specifies one of 256
+   The Blitter uses up to four DMA channels Three possible logic operations to be performed on the data
+DMA channels are dedicated to retrieving data from from three sources during the Blitter operation.
+RAM 401 to the Blitter 67, and are designated as source             The Blitter 67 is extremely efficient in performing
+A, source B, and source C. The one destination DMA bitplane animation because it can logically combine data
+channel is designated as destination D. A Blitter control 30 bits from separate image sources during a data move.
+register 63 is loaded with data from data bus 404 to For example, it may be desired to move a predrawn
+indicate which of the four DMA channels are to be               image of a car in front of a predrawn image of a build
+used, with four bits needed in all to independently en ing. To animate (move) the car, the first step is to save
+able each of the four channels. Each of the Blitter              a window containing the background image where the
+source and destination channels has its own memory 35 car will be placed. Data containing the complete outline
+pointer register 138 and its own modulo register 131. (mask) of the car is created somewhere in memory and
+This allows the Blitter to move data to and from identi          can be designated as source A, the data containing one
+cal rectangular windows within larger playfield images of the bitplanes defining the color for the car object
+that can be of different sizes for each of the sources and       itself can be designated as source B, and the data con
+for the destination block in memory. The pointer regis taining the background (or building) can be referred to
+ters 138 for the Blitter channels are used to point to the as source C. Next, a temporary location T in RAM 401
+address in RAM 401 where the next word of source or              is designated the destination for the background of
+ destination data is located. Similar to the bitplane opera source C where the car is going to be placed. The AC
+tions described previously, the Blitter 67 uses modulos logic operation is selected, which will save the back
+to allow manipulation of smaller windows within larger 45 ground by copying it to a new destination at all points
+ images stored in memory. When the modulo amount where the outline mask of the car (A) and the back
+ stored in the corresponding modulo register 131 is ground (C) exist at the same location. The next step is to
+ added to the value in the appropriate pointer register copy the car in its first location. The destination se
+ 138, the address pointer will identify the start of the next lected this time is the same as the block of data contain
+ horizontal line after the last word in the window on the 50 ing the background (C). The AB-- AC operation is used
+ previous line has been processed. When operating on to indicate that the window will now contain the car
+ data words contained on the same horizontal line of a           data (B) wherever the car outline mask (A) exists, but
+ window of selected size, the address contained in the will keep the previous background data (C) wherever
+ pointer register 138 will be incremented by one word the car outline mask does not exist (A). If the car was
+ each time. It is possible to specify blocks of data for the 55 already present somewhere on the display, the old back
+ sources and destination that overlap. In such a case, it is ground image which the car covered prior to moving
+ possible that the Blitter will write to a particular mem must be restored at the location from which the car was
+ ory address within the destination block before the data moved before copying the background that will be
+ at that same address was read by the Blitter as the covered next. The background (C) is the destination
+ source. To prevent such data destruction, it is possible and the operation AT is used, where the source T is the
+ to either increment or decrement the pointer values as temporary destination at which the background where
+ the data is being processed using an invert instruction the car was previously placed was stored using the AC
+ signal. For example, the value in the pointer registers operation. This AT logic operation replaces the back
+ should be decremented and the Blitter should operate in ground (C) with the saved background at all places
+ descending mode if there is an overlap between the 65 where the car outline mask (A) existed. If the data and
+ source and destination blocks of data and it is desired to       the mask is shifted to a new location and the logic oper
+  move data toward a higher address in RAM 401. The ations above are repeated continuously by the Blitter,
+  descending or ascending mode of operation is selected the car will appear to move across the background. The
+                                                      5,103,499                              30
+                           29
+logic operation in which the new image is created using          line draw mode is preloaded with a 16 bit word contain
+the logic operation AB+AC is referred to as the ing 15 zeros and a single "1" as the most significant bit.
+"cookie cut” operation.                                          This is the single bit which will be shifted into the cor
+    In the example just described, the car image (B) and rect position by the value in the A shift register 93
+the car outline mask (A) must be shifted to a new posi initially, then by the line-drawing hardware later in the
+tion each time before the background is saved (AC) and process. The 16 bits in the B data register 77 are used to
+the car is placed (AB+AC). The movement of an image indicate the texture of the line and are preloaded with
+(B) across a background (C) can cause the edge of the all ones to create the solid lines required if the fill mode
+image to land on any bit position within a 16 bit word. will be executed subsequently. Four bits in a Blitter
+This creates a need for a high speed shift capability 10 control register 63 are loaded with the bit position
+within the Blitter 67. Accordingly, the Blitter contains within the word at which the starting bit of the line
+a barrel Shifter 81 that is used with both the A and B           occurs. Three bits in a Blitter control register 63 are
+data source registers 77 and 79. The shifter 81 can shift loaded with a value that selects one of eight octants
+sources A and B from zero to 15 bits. It is a true barrel        used for line drawing. The eight octants are used to
+shifter in that bigger shifts do not take more time than 15 divide a two dimensional Cartesian plane into eight
+smaller shifts, as they would if performed by the micro regions to define the direction of the line for purposes of
+processor 402. Thus, even though 16 pixels must be line drawing. The Blitter size register is used to control
+addressed at a time as each word in a bitplane is fetched, the line length and starts the line draw when data is
+the shifter 81 allows movement of images on pixel written into it. Ten bits designate the height and allow
+boundaries. The amount of the shift for each of the 20 for lines extending up to 1024 pixels, while six bits indi
+sources is set by loading four bits into the Blitter control cating the number of words in the width must always be
+registers 63 for the A source and four bits for the B set equal to two. The slope of the line is defined by
+SOC.                                                              loading the difference in bit position between the start
+    The Blitter 67 can mask the left most and right most ing and ending points of the line in the A modulo regis
+data word in the selected window from each horizontal 25 ter (horizontal change) and B modulo register (vertical
+line. Mask registers 83 and 85 are provided for the first change). The Blitter pointer register 138 for source A is
+and last words on every horizontal line of Blitter data used as an accumulator when in line mode. The pointer
+for source A. This allows logic operations on bit bound registers for the source C and destination D must be
+aries from both the left and the right edge of a rectangu preloaded with the starting address of the first horizon
+lar region. Only when there is a 1 bit loaded in the first 30 tal line. The modulo registers for the C source and D
+ word mask will that bit from the first word of source A          destination are both preloaded with the width of the
+be utilized in the logic operations performed by the screen into which the line is being drawn.
+ Blitter. In a similar way, the last word mask 85 masks             The Blitter control register 63 during a line draw
+ the right most word of the source A data. Thus, it is mode is always loaded with the same logic function
+ possible to perform operations on a rectangular block of 35 minterm select bits. The logic function selected Blitter
+ data with left and right edges occurring between word operation during line draw mode is the moving into the
+ boundaries. If the window is only one word wide, the destination of AC+ABC. The A source data register
+ first and last word masks overlap and bits from the 77, as described above, is loaded with only a single bit in
+ source A word will be utilized only at bit positions the data word, a one. Therefore, this operation on the
+ where both masks contain ones.                                   display field (C) will leave most bits in the bitplanes
+     The Blitter can sense whether any “1” bits are present unchanged, because for at least 15 of the 16 bits in each
+ as a result of a logic operation on data This feature can word, the destination will be loaded with the existing bit
+ be used for hardware assisted detection of a collision           values in the C source data register 89 (AC). If the line
+ between two images. The operation AB can be per draw is to be followed by an area fill, untextured lines
+ formed, and if the images A and B do not overlap, a 45 are required, so that the B source data register 79 con
+ zero flag will be set in a Blitter DMA status register. tains only ones. Therefore, for the one bit per word in
+ When the Blitter is doing only zero detection and not the A source register 77 that is a one, the bit value
+ being used to generate a destination image, time and bus contained in the C source data register 89 will be in
+ cycles can be saved by disabling the destination channel verted (ABC). For each subsequent horizontal line, the
+ by not setting the appropriate bit in the Blitter control 50 Blitter hardware automatically moves the “1” to the
+  registers 63.                                                   correct position in the data words being stored in the A
+     In addition to copying data, the Blitter 67 can simul source data register 77. As a result, special lines with
+ taneously perform a fill operation during the copy. A one pixel on each horizontal scan line can be drawn by
+  restriction on the fill operation requires that the fill area the Bitter 67.
+ be defined by first drawing untextured lines that contain 55 A fill operation can be performed during other Blitter
+  only one pixel per horizontal line to set the boundaries data copy operations. Prior to the area fill, a Blitter line
+  for the fill. A special line draw mode executed by the draw is first performed to provide two vertical lines,
+  Blitter can accomplish this line drawing operation. The each one bit wide, on the display. The fill operation
+  Blitter can draw ordinary lines of any angle and can also operates correctly only in the descending mode (from
+  apply a pattern to the lines it draws. A bit is set in the higher memory addresses to lower memory addresses).
+  Blitter control registers 63 in order to indicate the Blit Only one source and the destination D is required. The
+  ter is to operate in line draw mode. In order to ensure pointers for the source and the destination in pointer
+  that the lines being drawn are one pixel wide, as re registers 138 should be set to the same value, which will
+  quired for a subsequent area fill, another bit must be set be the address of the last word of the enclosing rectan
+  in the Blitter control register 63 to designate a single bit 65 gle of the window in RAM 401 since the operation is
+  per horizontal line. The source A and source C are performed in a descending direction. The modulo regis
+  utilized in conjunction with the destination D Blitter ters for the source and destination are loaded with the
+  DMA channels. The Blitter source A register 77 during difference between the number of words in a horizontal
+                                                      5,103,499                          32
+                              31
+line of the rectangle to be filled and the number of For purposes of color selection, the eight sprites are
+words per horizontal line taken up in memory by the organized into pairs and each pair uses one of three
+bitplanes. The Blitter size register is then loaded with 10 color registers or else selects the transparent mode. For
+bits setting the number of vertical lines in the display each of the odd numbered sprites, the associated control
+window and 6 bits specifying the number of words in register 37 contains a bit that can be set in order to
+each horizontal line. Writing to the Blitter size register attach an odd and an even numbered sprite to pair the
+will start the operation of the Blitter. A Fill Carry In data for both sprites in color interpretation. The two
+control bit is loaded into a Blitter control register 63 to sprites will remain capable of independent motion.
+indicate the starting fill state beginning at the right most However, if their edges overlay one another at any
+edge (descending mode) of each line. If the Fill Carry 10 particular pixel location, a greater selection of colors is
+In bit is set to a one, the area in the source area outside possible because all four bits are then utilized in select
+the lines is filled with ones and the area inside the lines  ing one of 16 color registers.
+is left with zeros. If the Fill Carry In bit is a zero, the    The memory address for the data defining each sprite
+area between the lines is filled with ones. The Blitter      must be written into the proper pointer registers 138
+control register 63 also is loaded with bits indicating 15 during the vertical blanking interval before the first
+whether an inclusive fill or an exclusive fill is to be        display of the sprite. Normally, the sprite pointer regis
+utilized. When the exclusive fill is enabled, the outline      ters are loaded during the vertical blanking interval by
+on the trailing edge of the fill (left side) is excluded from the Copper 47. The values in the sprite pointer registers
+the resulting filled area. Enabling the exclusive fill are dynamic and are incremented using the adder 137
+mode is used to produce sharp, single pixel vertices. 20 and point first to the memory address containing the
+   Sprite objects are graphic objects that can be moved start data to be loaded into the position register, then the
+quickly on the screen, without moving their image loca next address containing vertical stop data to be loaded
+tion in memory. In contrast, bitmapped objects have a into the sprite (vertical stop) control register 155, then
+position on the display screen that is directly related to the following addresses containing pairs of data words
+their location in RAM 401, and in order to move them, 25 specifying the color selection information needed for
+the object image stored in memory must be erased and each horizontal line of the sprite. After the data words
+rewritten in a different location This can be very time describing the color selection in the last horizontal line
+consuming. The sprites used in the Amiga system are in the sprite, two data words indicate the next usage of
+moved with extra hardware, such as horizontal position this sprite and comprise the start and stop data for reuse
+registers 343, vertical position registers 37, a horizontal 30 of the sprite. This last word pair contains all zeros if the
+position comparator 341, a vertical position comparator particular sprite processor is to be used only once verti
+39, and sprite data buffer registers 345. To move a cally in the display frame. During the vertical blanking
+sprite, the values stored in the position registers are interval, the sprite pointers must be rewritten into the
+simply changed The vertical position circuits are lo pointer registers. The video beam counter 117 contains
+cated on the Agnus chip 410. The data buffers and the 35 a count indicating the current location of the video
+horizontal position circuits are located on the Denise beam that is producing the picture. The sprite vertical
+chip 420.                                                      position comparator 39 and horizontal position compar
+   The location of a sprite is defined by specifying the ator 341 compare the value of the beam counter to the
+coordinates of its upper lefthand pixel In the Amiga value of the start position in the sprite position registers
+system, each sprite forms a rectangle on the display 40 153 and 343. Writing to the sprite position and control
+with a fixed width of 16 pixels (one data word) and a registers disables the horizontal comparator circuitry
+variable height. A sprite therefore consists of a series of 341. This prevents the data registers 345 from sending
+ 16 bit words in a contiguous memory area. To create a any output to the serializers 347 and to the sprite bus
+sprite data structure, the bits in the position register 153 349. If the beam has reached the horizontal line on
+and 343 for that particular sprite (there are eight sprites 45 which the uppermost pixel of the sprite is to appear, the
+available in all) are loaded with eight bits that specify vertical position comparator 39 causes the sprite DMA
+the vertical start position and eight bits that specify the controller 41 to have data registers 345 for that sprite
+horizontal start position of the pixel at the upper left loaded, which enables the horizontal comparator 341.
+hand corner of the sprite. Next, eight bits in the vertical This enables output by the serializers 369 for that sprite
+stop location register 155 for that particular sprite are 50 to the sprite bus when comparator 341 indicates the
+loaded with the vertical stop position for the particular horizontal start position has been reached. Each of the
+sprite (also referred to as a sprite control register). 16 bits of a sprite data word is individually sent to the
+There is one position and one control register for each color select circuitry at the time that the pixel associ
+sprite, or a total of eight of each for the entire Amiga ated with that bit is being displayed on screen. Each
+ system. Each sprite also is associated with two data 55 parallel to serial converter 369 begins shifting the bits
+ registers containing the bits defining the color registers out of the converter, with the most significant bit first.
+ utilized for each of 16 pixels on a particular horizontal The shift occurs once during each low resolution pixel
+ line of the sprite. The two data registers for each sprite time and continues until all 6 bits have been transferred
+ allow two bits to be used in defining the color register to the sprite bus 349. The sprite bus goes to the priority
+ associated with any particular pixel in the sprite. There circuitry 337 to establish the priority between sprites
+ fore, four possible registers are available. When both and playfields in selecting a color register. The sprite
+ bits are set at zero for a particular pixel, this is inter DMA channel examines the contents of the sprite posi
+ preted as "transparent" and the color defined by the tion and control registers to determine how many lines
+ data associated with a playfield or sprite having a lower of sprite data are to be fetched, with two data words
+ priority can be displayed. Any other binary number 65 fetched per each horizontal scan line occurs during a
+ points to one of the three color registers assigned to that horizontal blanking interval. The fetch and store for
+ particular sprite DMA channel. The eight sprites use each horizontal scan line occurs during a horizontal
+ system color registers 17-19, 21-23, 25-27, and 29-31. blanking interval. When the data words are fetched and
+                                                      5,103,499                              34
+                            33
+written into the data registers, this arms the sprite hori      Thus, it is possible to have sprites appear in front of
+zontal comparators 341 and allows them to start the             playfield 1 but disappear behind playfield 2 while play
+output of the sprite data to the screen as soon as the          field 2, in turn, has lower priority than playfield 1 and is
+horizontal beam count value matches the value stored            not visible behind it.
+in the sprite horizontal position register 343. When the          The collision control register 351 contains the bits
+vertical position of the beam counter is equal to the           that define certain characteristics of collision detection.
+vertical stop value contained in the sprite control regis       Collisions are detected when two or more objects at
+ter, the next two words addressed by the sprite pointer         tempt to overlap in the same pixel position. This will set
+registers and fetched from memory will be written into a bit in the collision data storage register 353 if the
+the sprite position and control registers instead of being O collision control register indicates that particular over
+sent to the data registers 345. These words are inter lap will cause a collision. Fifteen bits in the collision
+preted by the hardware in exactly the same manner as storage register are utilized to indicate whether any of
+the original words first loaded into the position and several types of overlaps has occurred: e.g., one sprite
+control registers. By loading the position register with a to another sprite, even bitplanes to odd bitplanes, even
+vertical starting position that is higher than the current 15 bitplanes to a certain sprite, or odd bitplanes to a certain
+beam position, the sprite can be reused during the same sprite. The collision control register contains bits that
+display field.                                                  specify whether to include or exclude the odd-num
+    A sprite generated in the manner described above can bered sprites or specific bitplanes from collision detec
+be moved by simply changing the vertical and horizon tion. Furthermore, other bits specify the true-false con
+tal starting position and vertical stopping position 20 dition of the bits in each bitplane that will cause a colli
+loaded into the sprite position and control registers. If sion. Thus, it is possible to register collision only when
+this position data is changed before the sprite is re an object collides with something of a particular color.
+drawn, the sprite will appear in a new position and will
+appear to be moving. Usually, the vertical blanking beThe                above description of the invention is intended to
+                                                                     illustrative   of a single preferred embodiment.
+period is the best time to change the position of the Changes can be made
+                                                             25
+                                                                                         to the structures described herein
+sprite. Each sprite DMA channel can be reused several without departing from the features and scope of the
+times within the same display field. The only restriction invention.
+on reuse of a sprite at a lower vertical position on the           What is claimed is:
+display screen is that the last line of the prior usage of a       1. A method for using a computer system to make
+sprite must be separated by at least one horizontal scan 30 midscreen        alterations to display control data stored in a
+line from the top line of the next usage of the sprite. This storage location         included in the computer system,
+restriction is necessary because the time during thus wherein a video beam                scans a plurality of positions on a
+horizontal scan line is needed to fetch the position and screen, and wherein the             computer system executes the
+control words defining the next usage of the sprite. As following steps:
+sprites move on the display screen, they can collide         35
+                                                                   indicating the position of the video beam on the
+ with each other or with either of the two playfields.                screen;
+The Amiga system contains special collision detection              specifying a video beam position that does not corre
+ logic 335 to create special effects or to keep a moving              spond to a blanking period of the screen;
+ object within specific onscreen boundaries. Built in              comparing     the video beam position indication wtih
+ sprite video priority ensures that one sprite appears to             the specified video beam position; and
+ be behind the other when sprites are overlapped. The              transferring display control data into the storage lo
+ priority circuitry 337 gives the lowest numbered sprite               cation, at times when the video beam position indi
+ the highest priority and the highest numbered sprite the             cation   corresponds to the specified video beam
+ lowest priority. Therefore, when two sprites overlap,                 position, to make midscreen alterations to display
+ the image defined by the data for the lower numbered 45
+ sprite will be displayed except for pixel positions that              control data stored in the storage location.
+ are designated as being transparent, in which case the            2. A method in accordance with claim 1, in which the
+ lower priority sprite data can be used to generate an tions     computer system includes a plurality of storage loca
+ image.                                                                 for storing display control data, and further com
+    The priorities of various objects on the display can be 50 prising:
+ controlled to give the illusion of three dimensions. For          selecting one of the plurality of storage locations,
+ playfield priority and collision purposes only, sprites are           wherein display control data is transferred to the
+ treated as four groups of two sprites each. The relative              selected storage location.
+  priority of the sprites to each other cannot be changed.          3. A method for using a coprocessor to transfer dis
+ They will always appear on the screen with the lower 55 play control data to a storage location when a video
+  numbered sprites appearing in front of (having higher beam             reaches a specified position on a screen, wherein
+  screen priority than) the higher numbered sprites. This the video beam scans a plurality of positions on the
+  priority is wired into the display priority control logic screen, wherein the coprocessor has a program counter
+ 337. In the bitplane priority registers 355, seven bits can and is responsive to a plurality of different instructions,
+  be loaded that will control the relative video priorities wherein the coprocessor is in a computer system that
+  of playfield 1, playfield 2, and the four pairs of sprites. includes a memory, a bus, the storage location, and
+  Three bits are utilized to determine the relative priority means for indicating the position of the video beam on
+  of playfield 1 with respect to the four pairs of sprites. the screen, wherein the coprocessor, the memory, and
+  Similarly, three more bits are utilized to establish the the storage location are coupled to the bus, and wherein
+  priority between playfield 2 and four pairs of sprites. 65 the coprocessor carries out the following steps:
+   However, one more bit is utilized to determine which of          fetching the next instruction to be executed from the
+  the two playfields has higher priority than the other.                memory at an address stored in the program
+  This allows for unusual visual affects on the screen.                 counter;
+                                                    5,103,499                           36
+                          35
+  receiving an indication of the position of the video       next instruction only in response to the video beam
+    beam from the video beam position indicating             position indication corresponding to the specified video
+      means;                                                 beam position, when executing a SKIP instruction.
+   comparing the video beam position indication with a          16. A method in accordance with claim 15, in which
+      specified video beam position;                      5 the coprocessor performs the function of skipping the
+   performing a specified program function, after com next instruction only in response to the video beam
+      paring the video beam position indication with the position indication corresponding to a video beam posi
+      specified video beam position, in response to the tion specified by data in the SKIP instruction.
+      video beam position indication corresponding to           17. A method in accordance with claim 13, in which
+      the specified video bean position, when executing 10 the coprocessor performs the function of skipping the
+      at least one of the plurality of instructions; and     next instruction only in response to the video beam
+   transferring display control data into the storage lo position indication corresponding to the specified video
+      cation, when executing at least one of the plurality beam position, when executing a SKIP instruction.
+      of instructions.                                          18. A method in accordance with claim 17, in which
+   4. A method in accordance with claim 3, in which the 15 the coprocessor performs the function of skipping the
+computer system includes a plurality of storage loca next instruction only in response to the video beam
+tions for storing display control data, and further com position indication corresponding to a video beam posi
+prising the following step:                                  tion specified by data in the SKIP instruction.
+   selecting one of the plurality of storage locations,         19. A method in accordance with claim 4 or 6, in
+      wherein display control data is transferred to the 20 which the coprocessor performs the function of skip
+      selected storage location.                             ping the next instruction only in response to the video
+   5. A method in accordance with claim 3, in which the beam position indication corresponding to the specified
+coprocessor transfers display control data into the stor video beam position, when executing a SKIP instruc
+age location, when executing a MOVE instruction.             tion.
+   6. A method in accordance with claim 5, in which the 25 20. A method in accordance with claim 19, in which
+computer system includes a plurality of storage loca the coprocessor performs the function of skipping the
+tions for storing display control data, and in which next instruction only in response to the video beam
+display control data is transferred to a selected storage position indication corresponding to a video beam posi
+location specified by data in the MOVE instruction.          tion specified by data in the SKIP instruction.
+   7. A method in accordance with claim 6, in which the 30 21. A method in accordance with claim 3, in which
+display control data transferred to the storage location the coprocessor performs the function of executing the
+is specified by data in the MOVE instruction.                next instruction only in response to the video beam
+   8. A method in accordance with claim 5, in which the position indication corresponding to the specified video
+display control data transferred to the storage location beam position, when executing a WAIT instruction.
+is specified by data in the MOVE instruction,             35    22. A method in accordance with claim 21, in which
+   9. A method in accordance with claim 5, in which the the coprocessor performs the function of executing the
+coprocessor performs the function of executing the next next instruction only in response to the video beam
+instruction only in response to the video beam position position indication corresponding to a video beam posi
+indication corresponding to the specified video beam tion specified by data in the WAIT instruction.
+position, when executing a WAIT instruction.                    23. A method in accordance with claim 9, 10, 21, or
+   10. A method in accordance with claim 9, in which 22, in which the coprocessor performs the function of
+the coprocessor performs the function of executing the skipping the next instruction only in response to the
+next instruction only in response to the video beam video beam position indication corresponding to the
+position indication corresponding to a video beam posi specified video beam position, when executing a SKIP
+tion specified by data in the WAIT instruction.           45 instruction.
+   11. A method in accordance with claim 5, in which            24. A method in accordance with claim 23, in which
+the coprocessor performs the function of skipping the the coprocessor performs the function of skipping the
+next instruction only in response to the video beam next instruction only in response to the video beam
+position indication corresponding to the specified video position indication corresponding to a video beam posi
+beam position, when executing a SKIP instruction. 50 tion specified by data in the SKIP instruction.
+   12. A method in accordance with claim 11, in which           25. A method in accordance with claim 3, in which
+the coprocessor performs the function of skipping the the coprocessor performs the function of skipping the
+next instruction only in response to the video beam next instruction only in response to the video beam
+position indication corresponding to a video beam posi position indication corresponding to the specified video
+tion specified by data in the SKIP instruction.           55 beam position, when executing a SKIP instruction.
+    13. A method in accordance with claim 4 or 6, in            26. A method in accordance with claim 25, in which
+which the coprocessor performs the function of execut the coprocessor performs the function of skipping the
+ing the next instruction only in response to the video next instruction only in response to the video beam
+beam position indication corresponding to the specified position indication corresponding to a video beam posi
+video beam position, when executing a WAIT instruc tion specified by data in the SKIP instruction.
+tion.                                                           27. A method in accordance with claim 26, in which
+    14. A method in accordance with claim 13, in which the coprocessor changes the address stored in the pro
+the coprocessor performs the function of executing the gram counter when executing a SKIP instruction.
+next instruction only in response to the video beam             28. A method in accordance with claim 25, in which
+position indication corresponding to a video beam posi 65 the coprocessor changes the address stored in the pro
+tion specified by data in the WAIT instruction.              gram counter when executing a SKIP instruction.
+    15. A method in accordance with claim 14, in which          29. A method in accordance with claim 3, wherein
+the coprocessor performs the function of skipping the the program counter is coupled to a location register
+                                                    5,103,499
+                           37                                                         38
+storing a jump address corresponding to an instruction,     the coprocessor   fetches the next instruction from the
+and further comprising the following step:                    memory by direct memory access; and
+  storing the jump address in the program counter as        the receiving and comparing steps are executed by
+                                                              the coprocessor without accessing the data bus.
+     the address corresponding to the next instruction to 5 33. A method in accordance with claims 3, 5, 6, 9, 21,
+     be executed, in response to generation of a control 11 or 25, and further comprising the following step:
+     signal.                                                specifying a video beam position that does not corre
+  30. A method in accordance with claim 29, wherein           spond to a blanking period of the screen;
+the control signal is generated when a strobe address 10    wherein   the coprocessor makes midscreen alterations
+corresponding to the location register is accessed.            to display control data stored in the storage loca
+                                                                  tion.
+  31. A method in accordance with claims 3, 5, 6, 9, 21,        34. A method in accordance with claims 3, 5, 6, 9, 21,
+11, or 25, in which the computer system includes a main 11, or 25, and further comprising the following step:
+processor, and in which the steps are carried out by the  specifying a video beam position that corresponds to
+coprocessor without interrupting the main processor. 15      a blanking period of the screen.
+                                                                                  k   sk   sk   k
+  32. A method in accordance with claim 31, in which:
+
+
+                                                           20
+
+
+
+
+                                                           25
+
+
+
+
+                                                           30
+
+
+
+
+                                                           35
+
+
+
+
+                                                           45
+
+
+
+
+                                                           50
+
+
+
+
+                                                           55
+
+
+
+
+                                                           65
+

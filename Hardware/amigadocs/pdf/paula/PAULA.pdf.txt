@@ -1,0 +1,161 @@
+            APPLICATION                                                          REVISION
+
+
+  NEXT ASSY.           USED ON           LTR                          DESCRIPTION                              DATE      APPROVED
+
+                      A600/A2200          A                  SPECIFICATION RELEASE
+
+
+
+
+    1.0     DESCRIPTION
+
+    This specification describes the requirements for a custom audio and peripherals controller chip (PAULA).
+    For electrical specificatioons refer to specification 252127.
+
+   1.1      CONFIGURATION
+
+    This device shall be configured as a 52-pin plastic PLCC chip. See Figure 1 for pinouts and Figure 2 for
+    package dimensions.
+
+   1.2      SOURCES
+
+    Refer to Approved Vendors List.
+
+   1.3      APPLICABLE DOCUMENTS
+
+    Commodore Engineering Policy 1.02.007       Integrated Circuit Qualification Procedure
+    Commodore Engineering Policy 1.02.008       Integrated Circuit Process Test Specification
+
+
+
+
+COMMODORE P. N.             STATUS
+     391077-01              ACTIVE
+
+
+
+
+UNLESS OTHERWISE SPECIFIED DIMENSIONS ARE IN         DRAWN                      DATE
+INCHES.
+TOLERANCES:
+                                                     Mike Rivers
+                                                     SYSTEM ENG.                DATE
+                                                                                                 Commodore
+ANGLES +/- 1 DEGREE
+2 PLACE DECIMALS +/- 0.02                                                                             1200 WILSON DRIVE
+3 PLACE DECIMALS +/- 0.010                           TEST ENG                   DATE                WEST CHESTER, PA. 19380
+                                                                                                         (215) 431-9100
+
+COPYRIGHT 1991                                       COMP. ENG                  DATE     TITLE:
+COMMODORE ELECTRONICS LTD                            Drew Shannon
+INFORMATION CONTAINED HEREIN IS THE UNPUB-                                                          IC, SM, PAULA, 8364
+LISHED AND CONFIDENTIAL PROPERTY OF    COMMO-        CIRCUIT ENG.               DATE
+DORE ELECTRONICS LIMITED. USE, REPRODUCTION
+OR DISCLOSURE OF THIS INFORMATION WITHOUT                                                SIZE      DRAWING NUMBER
+THE PRIOR WRITTEN PERMISSION OF COMMODORE IS                                              A
+STRICTLY PROHIBITED. ALL RIGHTS RESERVED.                                                                       391077
+                                                                                                SCALE            SHEET 1 OF 4
+                                 FIGURE 1 - PINOUTS
+
+
+
+
+                                              TITLE
+           Commodore                                    IC, SM, PAULA, 8364
+
+SIZE   DRAWING NUMBER                  REV.     SCALE            SHEET 2 OF   4
+
+                        391077          A
+                                 FIGURE 2 - PACKAGE DIMENSIONS
+
+
+
+
+                                                      TITLE
+           Commodore                                             IC, SM, PAULA, 8364
+
+SIZE   DRAWING NUMBER                          REV.     SCALE             SHEET 3 OF   4
+
+                        391077                  A
+   3.0         PHYSICAL REQUIREMENTS
+
+   3.1         MARKING
+
+       Parts shall be marked with Manufacturer’s Part Number, Manufacturer’s Identification, and EIA Date Code.
+
+       3.2     PACKAGING
+
+       The interconnected logic circuitry shall be contained in a 52-pin PLCC plastic package with exterior dimensions per Fig-
+       ure 2.
+
+   4.0 ENVIRONMENTAL REQUIREMENTS
+
+       Units furnished to the requirements of this specification shall meet the following environmental resistance requirements
+       (vendors shall furnish supporting documentation upon request):
+
+               Operating Temperature                0 to 70 deg. C
+               Operating Humidity                   5 to 95% RH non-condensing
+               Operating Altitude                   0 to 3000 meters
+               Storage Temperature                  - 20 to + 85 deg. C
+               Storage Humidity                     5 to 95% RH non-condensing
+               Storage Altitude                     0 to 15,000 meters
+
+   4.1       PROCESS QUALIFICATION TESTS
+
+       Integrated circuits supplied to the requirements of this specification shall meet the requirements of Engineering Policy
+       No. 1.02.008. Supporting documentation shall be supplied by vendor upon request.
+
+   4.2       ENVIRONMENTAL TEST CONDITIONS
+
+       Devices shall comply with the following environmental resistance tests per Commodore Engineering Policy 1.02.007.
+
+               1. Temperature/humidity (85 deg. C and 95% RH non-condensing) for 168 hours.
+               2. Operating life (1000 hours at 70 deg. C ambient temperature)
+               3. Solderability per MIL-STD-883, Method 2003
+               4.Pressure cooker (15 psig, 120 deg. C, and 100% RH for 24 hours)
+               5. Solvent resistance per MIL-STD-883,Method 2015, using water and trichloroethane
+               6. Solder temperature resistance (250 deg. C for five seconds)
+               7. ESD requirement MIL-STD 1686 Group 3
+
+       Note: Devices shall meet this specification’s operating performance requirements after the above tests are completed.
+
+   4.3       MINIMUM ACCEPTANCE LEVEL
+
+       The minimum acceptance level of any lot shall be an AQL of 0.65 as defined by MIL-STD 105 single sampling tech-
+       niques.
+
+   4.4       AGE OF DEVICES
+
+       Unit shall be rejected if EIA Date Code indicates an age of three (3) or more years.
+
+
+
+                                                                           TITLE
+                     Commodore                                                                IC, SM, PAULA, 8364
+
+SIZE           DRAWING NUMBER                                      REV.       SCALE                      SHEET 4 OF     4
+
+                                    391077                           A
+                                           APPROVED VENDOR LIST
+
+              This sheet must be removed from this document before the document is shown or transmitted
+                                                     to a vendor.
+
+
+
+
+       Commodore Part Number                         Vendor                            Vendor Part Number
+
+             391077-01                                CSG                                     8364 R7
+
+
+
+
+                                                                TITLE
+               Commodore                                                          IC, SM, PAULA, 8364
+
+SIZE      DRAWING NUMBER                                 REV.      SCALE                       SHEET i OF i
+
+                            391077                        A
+

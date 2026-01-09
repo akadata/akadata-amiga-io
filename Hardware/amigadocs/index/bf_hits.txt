@@ -1,0 +1,13 @@
+_text/pdf/gayle/Gayle_Specifications.pdf.txt:142:  negates on the first write to CIA1 (address range of $BFDOOO to $BFDFFF.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9552:CIAAPRA   ($BFE001) Input and output for pin 6 (port 1 and 2 fire buttons)
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9684:o The left button on the Amiga mouse is connected to, CIAAPRA ($BFE001). The button
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:9773:The fire buttons for ports 0 and 1 are connected to bits 6 and 7 of CIAAPRA ($BFE001). A
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10072:The joystick fire buttons can also be configured as outputs. CIAADDRA ($BFE201) contains
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10073:a mask that corresponds one-to-one with the data read register, CIAAPRA ($BFE001).
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10100:    CIAAPRA ($BFE001) four input bits for disk sensing
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10101:    CIABPRB ($BFD100) eight output bits for disk selection,
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10125:are input bits in CIAAPRA ($BFE001). Bits labelled "PB" are output bits located in CIAAPRB
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10126:($BFD100). More information on how the 8520 chips operate can be found in Appendix F.
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:10205:FLAG   DSKINDEX*   Disk index pulse ($BFDD00, bit 4). Can be used to
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13480:    |    | 1\ | 0\ |                                               |$BFE001
+_text/pdf/Amiga_Hardware_Reference_Manual.pdf.txt:13489:                                                                    $BFE201

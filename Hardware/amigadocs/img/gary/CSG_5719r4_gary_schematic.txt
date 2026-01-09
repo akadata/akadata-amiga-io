@@ -1,0 +1,266 @@
+clock signals
+
+5719R4
+
+end result of dissection
+
+ext. RAN
+
+lagic >cancept< only,
+different from ariginal circuitry
+
+EXPi
+
+e
+
+caaeda Exansmn '
+
+11@X.XXXX )
+
+74238 -~
+
+B N
+B C8@eaa_D7FFFF
+
+[ |
+
+>4
+
+A23
+PAD
+
+D> D> D>
+>N D B F 33
+o® =N} =N
+
+QUR#=0:
+
+DTACK# averride
+(disable) by slave
+uhich generates
+its own DTACK#
+
+QUR#
+
+ROM_AUTOCFB
+
+8520_AB
+CBeRe_D7FFF
+
+R/W#
+PAD
+
+LDS#
+PAD
+
+uDs#
+PAD
+
+PAD
+
+system clock
+7.16MHz NTSC
+7.08MHz PAL
+
+CCKQ clack
+3.58MHz NTSC
+3.55MHz PAL
+9@° lag to CCK
+
+CCK clack
+3.58MHz NTSC
+a.56MHz PAL
+
+BLIT# ' RAMsel_FF
+
+D> o D
+> ! =3 >
+=3 > o
+
+[=]
+
+=
+
+3
+
+A23..A16
+
+00ae.0aaa
+aaaa.
+@aae.1aaa
+@aai.aa
+@ai0.0aaa
+1@1@.aa
+10114114
+1@11.4111
+
+11@0.0aea@
+1104.100@8
+11@1.110a@
+1104.4111
+
+1110.0000
+1110.1@aa
+
+111@.1@a1
+1111.00@
+11114108
+
+chin | BLrT# m
+access | pAD I
+ROM -' -
+oot [
+-
+e
+alave ancs I "
+uait cycles .4_-I
+|
+L
+
+ROM_AUTOCFG
+
+i
+
+Amiga Harduare Reference Manual, page 314 //PDF page 239
+
+Eancdn
+
+\[ ]/
+
+Address Range
+
+@@e0.0011
+@@ea.a111
+@@e0.1111
+1@01.1111
+1@04.1111
+ie@11.111@
+10141.4141
+1@11.1111
+
+11@1.0111
+11014011
+i1iei.11@0@
+11044141
+
+111@.6111
+1110.10@0
+
+11104114
+11114014
+11114444
+
+Description
+
+256kB Chip RAM (A1@8@ Chip RAM, ist 256kB for AS0A/A200@)
+256kB of Chip RAM <2nd 256kB for AS@@/A200Q)
+
+5§12kB Extended Chip RAM <to 1MB for A20@@)
+
+Reserved. Do not use.
+
+primary 8MB Auto-config space.
+
+Reserved. Do not use.
+
+8520-B (access at even-Byte addresses only). //BF Dr@@
+8528-A (access at odd-Byte addresses anly). //BF Er@1i
+
+Internal Expansion (slou) memary Con some systems)
+Reserved. Do not use.
+
+Real time clack (nat accessable on all systems)
+Chip registers.
+
+Reserved. Do not use.
+
+Auto-config space. Boards appear here
+
+befare the system relacates them ta their final address.
+Secondary auto-config space (usually é4kB I/0 boards).
+Reserved. Do not use.
+
+256kB system ROM.
+
+MFM output data
+{from Amiga
+
+drive
+urite gate (enable)
+
+motor on
+
+clacked inta drive’s
+mator on ﬂipf‘.lof
+
+by active transition
+of SELx#
+
+drive
+mator on
+
+DEB#
+PAD
+
+enable videa bus
+autput buffers
+
+DEL#
+PAD
+
+enable videa bus
+read buffers
+
+priority
+
+W/Ri to @
+
+RTCW#
+PAD
+
+RTC
+urite
+
+RTCR#
+
+-
+>
+=1
+o
+3
+3
+
+RTC
+I As '
+I RES# c4
+enable videa bus
+PAD read latch
+QUR#
+| | e52e_aB '>.
+] s —
+
+CPU_RAMSEL II
+
+7405
+
+> . BLISSH| chnip
+PAD Blitter slowdown
+
+DTACK#
+PAD
+
+ROME# | paoyM
+
+PAD enable
+RAM
+enable
+
+REGE#
+
+chip registers
+PAD bie
+
+enable
+
+https//wwu.devili.iki.fi/mirrors/haynie/systems/amiga2k/docs/gary.txt
+

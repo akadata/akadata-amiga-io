@@ -1,0 +1,268 @@
+Register Name,Address,Hex Address,Chip,Family,Model Support,Description,Access Type,Width,Bits,Function,Notes
+DMACONR,DFF002,0xDFF002,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,DMA Control (and blitter status) read,R,16,,,,Read DMA control / blitter status
+DMACON,DFF096,0xDFF096,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,DMA Control write (clear or set),W,16,,,,DMA Control write (clear or set)
+VPOSR,DFF004,0xDFF004,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Read vertical most sig. bits (and frame flop),R,16,,,,Read vertical MSB + frame flop
+VHPOSR,DFF006,0xDFF006,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Read vert and horiz position of beam,R,16,,,,Read vertical/horizontal beam position
+VPOSW,DFF02A,0xDFF02A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Write vert most sig. bits (and frame flop),W,16,,,,Write vertical MSB + frame flop
+VHPOSW,DFF02C,0xDFF02C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Write vert and horiz pos of beam,W,16,,,,Write vertical/horizontal position
+DIWSTRT,DFF08E,0xDFF08E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Display window start,W,16,,,,Display window start (upper left vertical/horizontal position)
+DIWSTOP,DFF090,0xDFF090,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Display window stop,W,16,,,,Display window stop (lower right vertical/horizontal position)
+DDFSTRT,DFF092,0xDFF092,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Display data fetch start (horizontal position),W,16,,,,Display data fetch start (horizontal position)
+DDFSTOP,DFF094,0xDFF094,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Display data fetch stop (horizontal position),W,16,,,,Display data fetch stop (horizontal position)
+COPCON,DFF02E,0xDFF02E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor control,W,16,,,,Coprocessor control (CDANG)
+COP1LCH,DFF080,0xDFF080,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor 1st location (high 5 bits (OCS: 3 bits)),W,16,,,,Coprocessor first location register (high 5 bits)
+COP1LCL,DFF082,0xDFF082,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor 1st location (low 15 bits),W,16,,,,Coprocessor first location register (low 15 bits)
+COP2LCH,DFF084,0xDFF084,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor 2nd location(high 5 bits (OCS: 3 bits)),W,16,,,,Coprocessor second location register (high 5 bits)
+COP2LCL,DFF086,0xDFF086,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor 2nd location (low 15 bits),W,16,,,,Coprocessor second location register (low 15 bits)
+COPJMP1,DFF088,0xDFF088,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor restart at 1st location,S,16,,,,Coprocessor restart at first location
+COPJMP2,DFF08A,0xDFF08A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor restart at 2nd location,S,16,,,,Coprocessor restart at second location
+COPINS,DFF08C,0xDFF08C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Coprocessor inst fetch identify,S,16,,,,Coprocessor instruction fetch identify
+BPL1PTH,DFF0E0,0xDFF0E0,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 1 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 1 pointer high
+BPL1PTL,DFF0E2,0xDFF0E2,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 1 (low 15 bits),W,16,,,,Bitplane 1 pointer low
+BPL2PTH,DFF0E4,0xDFF0E4,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 2 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 2 pointer high
+BPL2PTL,DFF0E6,0xDFF0E6,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 2 (low 15 bits),W,16,,,,Bitplane 2 pointer low
+BPL3PTH,DFF0E8,0xDFF0E8,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 3 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 3 pointer high
+BPL3PTL,DFF0EA,0xDFF0EA,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 3 (low 15 bits),W,16,,,,Bitplane 3 pointer low
+BPL4PTH,DFF0EC,0xDFF0EC,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 4 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 4 pointer high
+BPL4PTL,DFF0EE,0xDFF0EE,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 4 (low 15 bits),W,16,,,,Bitplane 4 pointer low
+BPL5PTH,DFF0F0,0xDFF0F0,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 5 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 5 pointer high
+BPL5PTL,DFF0F2,0xDFF0F2,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 5 (low 15 bits),W,16,,,,Bitplane 5 pointer low
+BPL6PTH,DFF0F4,0xDFF0F4,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 6 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 6 pointer high
+BPL6PTL,DFF0F6,0xDFF0F6,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 6 (low 15 bits),W,16,,,,Bitplane 6 pointer low
+BPL7PTH,DFF0F8,0xDFF0F8,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 7 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 7 pointer high (AGA)
+BPL7PTL,DFF0FA,0xDFF0FA,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 7 (low 15 bits),W,16,,,,Bitplane 7 pointer low (AGA)
+BPL8PTH,DFF0FC,0xDFF0FC,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 8 (high 5 bits (OCS: 3 bits)),W,16,,,,Bitplane 8 pointer high (AGA)
+BPL8PTL,DFF0FE,0xDFF0FE,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane pointer 8 (low 15 bits),W,16,,,,Bitplane 8 pointer low (AGA)
+BPL1MOD,DFF108,0xDFF108,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane modulo (odd planes),W,16,,,,Bitplane 1 modulo
+BPL2MOD,DFF10A,0xDFF10A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane modulo (even planes),W,16,,,,Bitplane 2 modulo
+BPLCON0,DFF100,0xDFF100,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane control (miscellaneous control bits),W,16,,,,Bitplane control 0
+BPLCON1,DFF102,0xDFF102,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane control (scroll value),W,16,,,,Bitplane control 1
+BPLCON2,DFF104,0xDFF104,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane control (video priority control),W,16,,,,Bitplane control 2
+BPLCON3,DFF106,0xDFF106,AGNUS,ECS/AGA,A600/A1200/A4000,Bitplane control (enhanced features),W,16,,,,Bitplane control 3 (ECS/AGA)
+BPLCON4,DFF10C,0xDFF10C,AGNUS,AGA,A4000,Bitplane control (bitplane and sprite-masks),W,16,,,,Bitplane control 4 (AGA)
+BPL1DAT,DFF110,0xDFF110,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 1 data (parallel to serial convert),W,16,,,,Bitplane 1 data
+BPL2DAT,DFF112,0xDFF112,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 2 data (parallel to serial convert),W,16,,,,Bitplane 2 data
+BPL3DAT,DFF114,0xDFF114,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 3 data (parallel to serial convert),W,16,,,,Bitplane 3 data
+BPL4DAT,DFF116,0xDFF116,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 4 data (parallel to serial convert),W,16,,,,Bitplane 4 data
+BPL5DAT,DFF118,0xDFF118,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 5 data (parallel to serial convert),W,16,,,,Bitplane 5 data
+BPL6DAT,DFF11A,0xDFF11A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Bitplane 6 data (parallel to serial convert),W,16,,,,Bitplane 6 data
+BPL7DAT,DFF11C,0xDFF11C,AGNUS,AGA,A4000,Bitplane 7 data (parallel to serial convert),W,16,,,,Bitplane 7 data (AGA)
+BPL8DAT,DFF11E,0xDFF11E,AGNUS,AGA,A4000,Bitplane 8 data (parallel to serial convert),W,16,,,,Bitplane 8 data (AGA)
+SPR0PTH,DFF120,0xDFF120,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 0 pointer high
+SPR0PTL,DFF122,0xDFF122,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 pointer (low 15 bits),W,16,,,,Sprite 0 pointer low
+SPR1PTH,DFF124,0xDFF124,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 1 pointer high
+SPR1PTL,DFF126,0xDFF126,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 pointer (low 15 bits),W,16,,,,Sprite 1 pointer low
+SPR2PTH,DFF128,0xDFF128,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 2 pointer high
+SPR2PTL,DFF12A,0xDFF12A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 pointer (low 15 bits),W,16,,,,Sprite 2 pointer low
+SPR3PTH,DFF12C,0xDFF12C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 3 pointer high
+SPR3PTL,DFF12E,0xDFF12E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 pointer (low 15 bits),W,16,,,,Sprite 3 pointer low
+SPR4PTH,DFF130,0xDFF130,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 4 pointer high
+SPR4PTL,DFF132,0xDFF132,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 pointer (low 15 bits),W,16,,,,Sprite 4 pointer low
+SPR5PTH,DFF134,0xDFF134,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 5 pointer high
+SPR5PTL,DFF136,0xDFF136,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 pointer (low 15 bits),W,16,,,,Sprite 5 pointer low
+SPR6PTH,DFF138,0xDFF138,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 6 pointer high
+SPR6PTL,DFF13A,0xDFF13A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 pointer (low 15 bits),W,16,,,,Sprite 6 pointer low
+SPR7PTH,DFF13C,0xDFF13C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Sprite 7 pointer high
+SPR7PTL,DFF13E,0xDFF13E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 pointer (low 15 bits),W,16,,,,Sprite 7 pointer low
+SPR0POS,DFF140,0xDFF140,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 vert,horiz start pos data,W,16,,,,Sprite 0 position
+SPR0CTL,DFF142,0xDFF142,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 position and control data,W,16,,,,Sprite 0 control
+SPR0DATA,DFF144,0xDFF144,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 image data register A,W,16,,,,Sprite 0 data
+SPR0DATB,DFF146,0xDFF146,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 0 image data register B,W,16,,,,Sprite 0 data B
+SPR1POS,DFF148,0xDFF148,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 vert,horiz start pos data,W,16,,,,Sprite 1 position
+SPR1CTL,DFF14A,0xDFF14A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 position and control data,W,16,,,,Sprite 1 control
+SPR1DATA,DFF14C,0xDFF14C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 image data register A,W,16,,,,Sprite 1 data
+SPR1DATB,DFF14E,0xDFF14E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 1 image data register B,W,16,,,,Sprite 1 data B
+SPR2POS,DFF150,0xDFF150,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 vert,horiz start pos data,W,16,,,,Sprite 2 position
+SPR2CTL,DFF152,0xDFF152,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 position and control data,W,16,,,,Sprite 2 control
+SPR2DATA,DFF154,0xDFF154,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 image data register A,W,16,,,,Sprite 2 data
+SPR2DATB,DFF156,0xDFF156,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 2 image data register B,W,16,,,,Sprite 2 data B
+SPR3POS,DFF158,0xDFF158,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 vert,horiz start pos data,W,16,,,,Sprite 3 position
+SPR3CTL,DFF15A,0xDFF15A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 position and control data,W,16,,,,Sprite 3 control
+SPR3DATA,DFF15C,0xDFF15C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 image data register A,W,16,,,,Sprite 3 data
+SPR3DATB,DFF15E,0xDFF15E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 3 image data register B,W,16,,,,Sprite 3 data B
+SPR4POS,DFF160,0xDFF160,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 vert,horiz start pos data,W,16,,,,Sprite 4 position
+SPR4CTL,DFF162,0xDFF162,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 position and control data,W,16,,,,Sprite 4 control
+SPR4DATA,DFF164,0xDFF164,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 image data register A,W,16,,,,Sprite 4 data
+SPR4DATB,DFF166,0xDFF166,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 4 image data register B,W,16,,,,Sprite 4 data B
+SPR5POS,DFF168,0xDFF168,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 vert,horiz start pos data,W,16,,,,Sprite 5 position
+SPR5CTL,DFF16A,0xDFF16A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 position and control data,W,16,,,,Sprite 5 control
+SPR5DATA,DFF16C,0xDFF16C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 image data register A,W,16,,,,Sprite 5 data
+SPR5DATB,DFF16E,0xDFF16E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 5 image data register B,W,16,,,,Sprite 5 data B
+SPR6POS,DFF170,0xDFF170,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 vert,horiz start pos data,W,16,,,,Sprite 6 position
+SPR6CTL,DFF172,0xDFF172,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 position and control data,W,16,,,,Sprite 6 control
+SPR6DATA,DFF174,0xDFF174,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 image data register A,W,16,,,,Sprite 6 data
+SPR6DATB,DFF176,0xDFF176,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 6 image data register B,W,16,,,,Sprite 6 data B
+SPR7POS,DFF178,0xDFF178,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 vert,horiz start pos data,W,16,,,,Sprite 7 position
+SPR7CTL,DFF17A,0xDFF17A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 position and control data,W,16,,,,Sprite 7 control
+SPR7DATA,DFF17C,0xDFF17C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 image data register A,W,16,,,,Sprite 7 data
+SPR7DATB,DFF17E,0xDFF17E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Sprite 7 image data register B,W,16,,,,Sprite 7 data B
+COLOR00,DFF180,0xDFF180,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 0, color of background & borders,W,16,,,,Color table 0
+COLOR01,DFF182,0xDFF182,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 1,W,16,,,,Color table 1
+COLOR02,DFF184,0xDFF184,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 2,W,16,,,,Color table 2
+COLOR03,DFF186,0xDFF186,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 3,W,16,,,,Color table 3
+COLOR04,DFF188,0xDFF188,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 4,W,16,,,,Color table 4
+COLOR05,DFF18A,0xDFF18A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 5,W,16,,,,Color table 5
+COLOR06,DFF18C,0xDFF18C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 6,W,16,,,,Color table 6
+COLOR07,DFF18E,0xDFF18E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 7,W,16,,,,Color table 7
+COLOR08,DFF190,0xDFF190,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 8,W,16,,,,Color table 8
+COLOR09,DFF192,0xDFF192,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 9,W,16,,,,Color table 9
+COLOR10,DFF194,0xDFF194,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 10,W,16,,,,Color table 10
+COLOR11,DFF196,0xDFF196,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 11,W,16,,,,Color table 11
+COLOR12,DFF198,0xDFF198,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 12,W,16,,,,Color table 12
+COLOR13,DFF19A,0xDFF19A,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 13,W,16,,,,Color table 13
+COLOR14,DFF19C,0xDFF19C,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 14,W,16,,,,Color table 14
+COLOR15,DFF19E,0xDFF19E,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 15,W,16,,,,Color table 15
+COLOR16,DFF1A0,0xDFF1A0,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 16,W,16,,,,Color table 16
+COLOR17,DFF1A2,0xDFF1A2,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 17, color #1 of sprite #0 & #1,W,16,,,,Color table 17
+COLOR18,DFF1A4,0xDFF1A4,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 18, color #2 of sprite #0 & #1,W,16,,,,Color table 18
+COLOR19,DFF1A6,0xDFF1A6,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 19, color #3 of sprite #0 & #1,W,16,,,,Color table 19
+COLOR20,DFF1A8,0xDFF1A8,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 20,W,16,,,,Color table 20
+COLOR21,DFF1AA,0xDFF1AA,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 21, color #1 of sprite #2 & #3,W,16,,,,Color table 21
+COLOR22,DFF1AC,0xDFF1AC,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 22, color #2 of sprite #2 & #3,W,16,,,,Color table 22
+COLOR23,DFF1AE,0xDFF1AE,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 23, color #3 of sprite #2 & #3,W,16,,,,Color table 23
+COLOR24,DFF1B0,0xDFF1B0,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 24,W,16,,,,Color table 24
+COLOR25,DFF1B2,0xDFF1B2,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 25, color #1 of sprite #4 & #5,W,16,,,,Color table 25
+COLOR26,DFF1B4,0xDFF1B4,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 26, color #2 of sprite #4 & #5,W,16,,,,Color table 26
+COLOR27,DFF1B6,0xDFF1B6,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 27, color #3 of sprite #4 & #5,W,16,,,,Color table 27
+COLOR28,DFF1B8,0xDFF1B8,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 28,W,16,,,,Color table 28
+COLOR29,DFF1BA,0xDFF1BA,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 29, color #1 of sprite #6 & #7,W,16,,,,Color table 29
+COLOR30,DFF1BC,0xDFF1BC,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 30, color #2 of sprite #6 & #7,W,16,,,,Color table 30
+COLOR31,DFF1BE,0xDFF1BE,DENISE,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Color table 31, color #3 of sprite #6 & #7,W,16,,,,Color table 31
+HTOTAL,DFF1C0,0xDFF1C0,AGNUS,ECS,A600/A1200/A3000/A4000,Highest number count, horiz line (VARBEAMEN=1),W,16,,,,Highest number count, horiz line (ECS)
+HSSTOP,DFF1C2,0xDFF1C2,AGNUS,ECS,A600/A1200/A3000/A4000,Horizontal line position for HSYNC stop,W,16,,,,Horizontal line position for HSYNC stop (ECS)
+HBSTRT,DFF1C4,0xDFF1C4,AGNUS,ECS,A600/A1200/A3000/A4000,Horizontal line position for HBLANK start,W,16,,,,Horizontal line position for HBLANK start (ECS)
+HBSTOP,DFF1C6,0xDFF1C6,AGNUS,ECS,A600/A1200/A3000/A4000,Horizontal line position for HBLANK stop,W,16,,,,Horizontal line position for HBLANK stop (ECS)
+VTOTAL,DFF1C8,0xDFF1C8,AGNUS,ECS,A600/A1200/A3000/A4000,Highest numbered vertical line (VARBEAMEN=1),W,16,,,,Highest numbered vertical line (ECS)
+VSSTOP,DFF1CA,0xDFF1CA,AGNUS,ECS,A600/A1200/A3000/A4000,Vertical line position for VSYNC stop,W,16,,,,Vertical line position for VSYNC stop (ECS)
+VBSTRT,DFF1CC,0xDFF1CC,AGNUS,ECS,A600/A1200/A3000/A4000,Vertical line for VBLANK start,W,16,,,,Vertical line for VBLANK start (ECS)
+VBSTOP,DFF1CE,0xDFF1CE,AGNUS,ECS,A600/A1200/A3000/A4000,Vertical line for VBLANK stop,W,16,,,,Vertical line for VBLANK stop (ECS)
+BEAMCON0,DFF1DC,0xDFF1DC,AGNUS,ECS,A600/A1200/A3000/A4000,Beam counter control register (SHRES,UHRES,PAL),W,16,,,,Beam counter control (ECS)
+HSSTRT,DFF1DE,0xDFF1DE,AGNUS,ECS,A600/A1200/A3000/A4000,Horizontal sync start (VARHSY),W,16,,,,Horizontal sync start (ECS)
+VSSTRT,DFF1E0,0xDFF1E0,AGNUS,ECS,A600/A1200/A3000/A4000,Vertical sync start (VARVSY),W,16,,,,Vertical sync start (ECS)
+HCENTER,DFF1E2,0xDFF1E2,AGNUS,ECS,A600/A1200/A3000/A4000,Horizontal position for Vsync on interlace,W,16,,,,Horizontal position for Vsync on interlace (ECS)
+DIWHIGH,DFF1E4,0xDFF1E4,AGNUS,ECS,A600/A1200/A3000/A4000,Display window - upper bits for start/stop,W,16,,,,Display window upper bits (ECS)
+AUD0LCH,DFF0A0,0xDFF0A0,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 location (high 5 bits (OCS: 3 bits)),W,16,,,,Audio channel 0 location high
+AUD0LCL,DFF0A2,0xDFF0A2,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 location (low 15 bits),W,16,,,,Audio channel 0 location low
+AUD0LEN,DFF0A4,0xDFF0A4,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 length,W,16,,,,Audio channel 0 length
+AUD0PER,DFF0A6,0xDFF0A6,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 period,W,16,,,,Audio channel 0 period
+AUD0VOL,DFF0A8,0xDFF0A8,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 volume,W,16,,,,Audio channel 0 volume
+AUD0DAT,DFF0AA,0xDFF0AA,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 0 data,W,16,,,,Audio channel 0 data
+AUD1LCH,DFF0B0,0xDFF0B0,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 location (high 5 bits (OCS: 3 bits)),W,16,,,,Audio channel 1 location high
+AUD1LCL,DFF0B2,0xDFF0B2,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 location (low 15 bits),W,16,,,,Audio channel 1 location low
+AUD1LEN,DFF0B4,0xDFF0B4,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 length,W,16,,,,Audio channel 1 length
+AUD1PER,DFF0B6,0xDFF0B6,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 period,W,16,,,,Audio channel 1 period
+AUD1VOL,DFF0B8,0xDFF0B8,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 volume,W,16,,,,Audio channel 1 volume
+AUD1DAT,DFF0BA,0xDFF0BA,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 1 data,W,16,,,,Audio channel 1 data
+AUD2LCH,DFF0C0,0xDFF0C0,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 location (high 5 bits (OCS: 3 bits)),W,16,,,,Audio channel 2 location high
+AUD2LCL,DFF0C2,0xDFF0C2,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 location (low 15 bits),W,16,,,,Audio channel 2 location low
+AUD2LEN,DFF0C4,0xDFF0C4,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 length,W,16,,,,Audio channel 2 length
+AUD2PER,DFF0C6,0xDFF0C6,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 period,W,16,,,,Audio channel 2 period
+AUD2VOL,DFF0C8,0xDFF0C8,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 volume,W,16,,,,Audio channel 2 volume
+AUD2DAT,DFF0CA,0xDFF0CA,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 2 data,W,16,,,,Audio channel 2 data
+AUD3LCH,DFF0D0,0xDFF0D0,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 location (high 5 bits (OCS: 3 bits)),W,16,,,,Audio channel 3 location high
+AUD3LCL,DFF0D2,0xDFF0D2,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 location (low 15 bits),W,16,,,,Audio channel 3 location low
+AUD3LEN,DFF0D4,0xDFF0D4,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 length,W,16,,,,Audio channel 3 length
+AUD3PER,DFF0D6,0xDFF0D6,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 period,W,16,,,,Audio channel 3 period
+AUD3VOL,DFF0D8,0xDFF0D8,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 volume,W,16,,,,Audio channel 3 volume
+AUD3DAT,DFF0DA,0xDFF0DA,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio channel 3 data,W,16,,,,Audio channel 3 data
+DSKPTH,DFF020,0xDFF020,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk pointer (high 5 bits (OCS: 3 bits)),W,16,,,,Disk pointer high
+DSKPTL,DFF022,0xDFF022,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk pointer (low 15 bits),W,16,,,,Disk pointer low
+DSKLEN,DFF024,0xDFF024,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk length,W,16,,,,Disk length
+DSKDAT,DFF026,0xDFF026,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk DMA data write,W,16,,,,Disk DMA data write
+DSKSYNC,DFF07E,0xDFF07E,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk sync pattern reg for disk read,W,16,,,,Disk sync register
+SERDAT,DDF030,0xDDF030,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Serial port data and stop bits write,W,16,,,,Serial port data and stop bits write
+SERPER,DFF032,0xDFF032,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Serial port period and control,W,16,,,,Serial port period and control
+POTGO,DFF034,0xDFF034,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Pot count start,pot pin drive enable data,W,16,,,,Pot count start
+JOYTEST,DFF036,0xDFF036,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Write to all 4 joystick-mouse counters at once,W,16,,,,Write to all 4 joystick-mouse counters at once
+STREQU,DFF038,0xDFF038,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Strobe for horiz sync with VB and EQU,S,16,,,,Strobe for horiz sync with VB and EQU
+STRVBL,DFF03A,0xDFF03A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Strobe for horiz sync with VB (vert blank),S,16,,,,Strobe for horiz sync with VB (vert blank)
+STRHOR,DFF03C,0xDFF03C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Strobe for horiz sync,S,16,,,,Strobe for horiz sync
+STRLONG,DFF03E,0xDFF03E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Strobe for identification of long horiz line,S,16,,,,Strobe for identification of long horiz line
+BLTCON0,DFF040,0xDFF040,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter control register 0,W,16,,,,Blitter control register 0
+BLTCON1,DFF042,0xDFF042,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter control register 1,W,16,,,,Blitter control register 1
+BLTAFWM,DFF044,0xDFF044,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter first word mask for source A,W,16,,,,Blitter first word mask for source A
+BLTALWM,DFF046,0xDFF046,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter last word mask for source A,W,16,,,,Blitter last word mask for source A
+BLTCPTH,DFF048,0xDFF048,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source C (high 5 bits (OCS: 3 bits)),W,16,,,,Blitter pointer to source C high
+BLTCPTL,DFF04A,0xDFF04A,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source C (low 15 bits),W,16,,,,Blitter pointer to source C low
+BLTBPTH,DFF04C,0xDFF04C,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source B (high 5 bits (OCS: 3 bits)),W,16,,,,Blitter pointer to source B high
+BLTBPTL,DFF04E,0xDFF04E,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source B (low 15 bits),W,16,,,,Blitter pointer to source B low
+BLTAPTH,DFF050,0xDFF050,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source A (high 5 bits (OCS: 3 bits)),W,16,,,,Blitter pointer to source A high
+BLTAPTL,DFF052,0xDFF052,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to source A (low 15 bits),W,16,,,,Blitter pointer to source A low
+BLTDPTH,DFF054,0xDFF054,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to dest D (high 5 bits (OCS: 3 bits)),W,16,,,,Blitter pointer to dest D high
+BLTDPTL,DFF056,0xDFF056,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter pointer to dest D (low 15 bits),W,16,,,,Blitter pointer to dest D low
+BLTSIZE,DFF058,0xDFF058,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter start and size (win/width,height),W,16,,,,Blitter start and size (win/width,height)
+BLTCON0L,DFF05A,0xDFF05A,BLITTER,ECS,A600/A1200/A3000/A4000,Blitter control 0, lower 8 bits (minterms),W,16,,,,Blitter control 0, lower 8 bits (minterms) (ECS)
+BLTSIZV,DFF05C,0xDFF05C,BLITTER,ECS,A600/A1200/A3000/A4000,Blitter V size (for 15 bit vertical size),W,16,,,,Blitter V size (for 15 bit vertical size) (ECS)
+BLTSIZH,DFF05E,0xDFF05E,BLITTER,ECS,A600/A1200/A3000/A4000,Blitter H size and start (for 11 bit H size),W,16,,,,Blitter H size and start (for 11 bit H size) (ECS)
+BLTCMOD,DFF060,0xDFF060,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter modulo for source C,W,16,,,,Blitter modulo for source C
+BLTBMOD,DFF062,0xDFF062,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter modulo for source B,W,16,,,,Blitter modulo for source B
+BLTAMOD,DFF064,0xDFF064,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter modulo for source A,W,16,,,,Blitter modulo for source A
+BLTDMOD,DFF066,0xDFF066,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter modulo for dest D,W,16,,,,Blitter modulo for dest D
+BLTCDAT,DFF070,0xDFF070,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter source C data register,W,16,,,,Blitter source C data register
+BLTBDAT,DFF072,0xDFF072,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter source B data register,W,16,,,,Blitter source B data register
+BLTADAT,DFF074,0xDFF074,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter source A data register,W,16,,,,Blitter source A data register
+BLTDDAT,DFF000,0xDFF000,BLITTER,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Blitter dest. early read (dummy address),E,16,,,,Blitter dest. early read (dummy address)
+JOY0DAT,DFF00A,0xDFF00A,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Joystick-mouse 0 data (vert, horiz),R,16,,,,Joystick-mouse 0 data (vert, horiz)
+JOY1DAT,DFF00C,0xDFF00C,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Joystick-mouse 1 data (vert, horiz),R,16,,,,Joystick-mouse 1 data (vert, horiz)
+CLXDAT,DFF00E,0xDFF00E,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Collision data reg. (read and clear),R,16,,,,Collision data reg. (read and clear)
+ADKCONR,DFF010,0xDFF010,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio, disk control register read,R,16,,,,Audio, disk control register read
+POT0DAT,DFF012,0xDFF012,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Pot counter data left pair (vert, horiz),R,16,,,,Pot counter data left pair (vert, horiz)
+POT1DAT,DFF014,0xDFF014,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Pot counter data right pair (vert, horiz),R,16,,,,Pot counter data right pair (vert, horiz)
+POTINP,DFF016,0xDFF016,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Pot pin data read,R,16,,,,Pot pin data read
+SERDATR,DFF018,0xDFF018,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Serial port data and status read,R,16,,,,Serial port data and status read
+DSKBYTR,DFF01A,0xDFF01A,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk data byte and status read,R,16,,,,Disk data byte and status read
+INTENAR,DFF01C,0xDFF01C,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Interrupt enable bits read,R,16,,,,Interrupt enable bits read
+INTREQR,DFF01E,0xDFF01E,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Interrupt request bits read,R,16,,,,Interrupt request bits read
+DSKDATR,DFF008,0xDFF008,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Disk data early read (dummy address),E,16,,,,Disk data early read (dummy address)
+CLXCON,DFF098,0xDFF098,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Collision control,W,16,,,,Collision control
+INTENA,DFF09A,0xDFF09A,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Interrupt enable bits (clear or set bits),W,16,,,,Interrupt enable bits (clear or set bits)
+INTREQ,DFF09C,0xDFF09C,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Interrupt request bits (clear or set bits),W,16,,,,Interrupt request bits (clear or set bits)
+ADKCON,DFF09E,0xDFF09E,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Audio, disk,UART control,W,16,,,,Audio, disk,UART control
+DENISEID,DFF07C,0xDFF07C,DENISE,ECS,A600/A1200/A3000/A4000,Chip revision level for Denise/Lisa (video out chip),R,16,,,,Chip revision level for Denise/Lisa (video out chip) (ECS)
+SPRHSTRT,DFF1D0,0xDFF1D0,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES sprite vertical start,W,16,,,,UHRES sprite vertical start (ECS)
+SPRHSTOP,DFF1D2,0xDFF1D2,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES sprite vertical stop,W,16,,,,UHRES sprite vertical stop (ECS)
+BPLHSTRT,DFF1D4,0xDFF1D4,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES bitplane vertical start,W,16,,,,UHRES bitplane vertical start (ECS)
+BPLHSTOP,DFF1D6,0xDFF1D6,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES bitplane vertical stop,W,16,,,,UHRES bitplane vertical stop (ECS)
+HHPOSW,DFF1D8,0xDFF1D8,AGNUS,ECS,A600/A1200/A3000/A4000,DUAL mode hires H beam counter write,W,16,,,,DUAL mode hires H beam counter write (ECS)
+HHPOSR,DFF1DA,0xDFF1DA,AGNUS,ECS,A600/A1200/A3000/A4000,DUAL mode hires H beam counter read,R,16,,,,DUAL mode hires H beam counter read (ECS)
+BPLHMOD,DFF1E6,0xDFF1E6,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES bitplane modulo,W,16,,,,UHRES bitplane modulo (ECS)
+SPRHPTH,DFF1E8,0xDFF1E8,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES sprite pointer (high 5 bits),W,16,,,,UHRES sprite pointer high (ECS)
+SPRHPTL,DFF1EA,0xDFF1EA,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES sprite pointer (low 15 bits),W,16,,,,UHRES sprite pointer low (ECS)
+BPLHPTH,DFF1EC,0xDFF1EC,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES bitplane pointer (high 5 bits),W,16,,,,UHRES bitplane pointer high (ECS)
+BPLHPTL,DFF1EE,0xDFF1EE,AGNUS,ECS,A600/A1200/A3000/A4000,UHRES bitplane pointer (low 15 bits),W,16,,,,UHRES bitplane pointer low (ECS)
+SPRHDAT,DFF078,0xDFF078,AGNUS,ECS,A600/A1200/A3000/A4000,Ext. logic UHRES sprite pointer and data identifier,W,16,,,,Ext. logic UHRES sprite pointer and data identifier (ECS)
+BPLHDAT,DFF07A,0xDFF07A,AGNUS,ECS,A600/A1200/A3000/A4000,Ext. logic UHRES bit plane identifier,W,16,,,,Ext. logic UHRES bit plane identifier (ECS)
+FMODE,DFF1FC,0xDFF1FC,AGNUS,AGA,A4000,Fetch mode register,W,16,,,,Fetch mode register (AGA)
+NOOP,DFF1FE,0xDFF1FE,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,No operation/NULL (Copper NOP instruction),R,16,,,,No operation/NULL (Copper NOP instruction)
+REFPTR,DFF028,0xDFF028,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,Refresh pointer,W,16,,,,Refresh pointer
+CIAAPRA,BFE001,0xBFE001,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Port A data,R/W,8,,,,CIA A Port A data
+CIAAPRB,BFE101,0xBFE101,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Port B data,R/W,8,,,,CIA A Port B data
+CIAADDR_A,BFE201,0xBFE201,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Port A direction,R/W,8,,,,CIA A Port A direction
+CIAADDR_B,BFE301,0xBFE301,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Port B direction,R/W,8,,,,CIA A Port B direction
+CIAATALO,BFE401,0xBFE401,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Timer A low,R/W,8,,,,CIA A Timer A low
+CIAATAHI,BFE501,0xBFE501,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Timer A high,R/W,8,,,,CIA A Timer A high
+CIAATBLO,BFE601,0xBFE601,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Timer B low,R/W,8,,,,CIA A Timer B low
+CIAATBHI,BFE701,0xBFE701,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Timer B high,R/W,8,,,,CIA A Timer B high
+CIAATODLOW,BFE801,0xBFE801,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Time Of Day low,R/W,8,,,,CIA A Time Of Day low
+CIAATODMID,BFE901,0xBFE901,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Time Of Day mid,R/W,8,,,,CIA A Time Of Day mid
+CIAATODHI,BFEA01,0xBFEA01,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Time Of Day high,R/W,8,,,,CIA A Time Of Day high
+CIAASDR,BFEC01,0xBFEC01,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Serial Data Register,R/W,8,,,,CIA A Serial Data Register
+CIAAICR,BFED01,0xBFED01,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Interrupt Control Register,R/W,8,,,,CIA A Interrupt Control Register
+CIAACRA,BFEE01,0xBFEE01,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Control Register A,R/W,8,,,,CIA A Control Register A
+CIAACRB,BFEF01,0xBFEF01,CIAA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA A Control Register B,R/W,8,,,,CIA A Control Register B
+CIABPRA,BFD000,0xBFD000,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Port A data,R/W,8,,,,CIA B Port A data
+CIABPRB,BFD100,0xBFD100,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Port B data,R/W,8,,,,CIA B Port B data
+CIABDDRA,BFD200,0xBFD200,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Port A direction,R/W,8,,,,CIA B Port A direction
+CIABDDRB,BFD300,0xBFD300,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Port B direction,R/W,8,,,,CIA B Port B direction
+CIABTALO,BFD400,0xBFD400,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Timer A low,R/W,8,,,,CIA B Timer A low
+CIABTAHI,BFD500,0xBFD500,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Timer A high,R/W,8,,,,CIA B Timer A high
+CIABTBLO,BFD600,0xBFD600,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Timer B low,R/W,8,,,,CIA B Timer B low
+CIABTBHI,BFD700,0xBFD700,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Timer B high,R/W,8,,,,CIA B Timer B high
+CIABTODLOW,BFD800,0xBFD800,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Time Of Day low,R/W,8,,,,CIA B Time Of Day low
+CIABTODMID,BFD900,0xBFD900,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Time Of Day mid,R/W,8,,,,CIA B Time Of Day mid
+CIABTODHI,BFDA00,0xBFDA00,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Time Of Day high,R/W,8,,,,CIA B Time Of Day high
+CIABSDR,BFDC00,0xBFDC00,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Serial Data Register,R/W,8,,,,CIA B Serial Data Register
+CIABICR,BFDD00,0xBFDD00,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Interrupt Control Register,R/W,8,,,,CIA B Interrupt Control Register
+CIABCRA,BFDE00,0xBFDE00,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Control Register A,R/W,8,,,,CIA B Control Register A
+CIABCRB,BFDF00,0xBFDF00,CIAB,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,CIA B Control Register B,R/W,8,,,,CIA B Control Register B
+</content>
