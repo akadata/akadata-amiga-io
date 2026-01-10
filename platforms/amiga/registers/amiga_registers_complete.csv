@@ -48,7 +48,7 @@ BPL5DAT,DFF118,$DFF118,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,B
 BPL6DAT,DFF11A,$DFF11A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 6 data,W,Bitplane 6 data (parallel to serial convert)
 BPL7DAT,DFF11C,$DFF11C,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 7 data,W,Bitplane 7 data (parallel to serial convert)
 BPL8DAT,DFF11E,$DFF11E,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 8 data,W,Bitplane 8 data (parallel to serial convert)
-HTOTAL,DFF1C0,$DFF1C0,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Horizontal line count,W,Highest number count, horiz line (VARBEAMEN=1)
+HTOTAL,DFF1C0,$DFF1C0,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Horizontal line count,W,Highest number count horiz line (VARBEAMEN=1)
 HSSTOP,DFF1C2,$DFF1C2,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HSYNC stop,W,Horizontal line position for HSYNC stop
 HBSTRT,DFF1C4,$DFF1C4,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HBLANK start,W,Horizontal line position for HBLANK start
 HBSTOP,DFF1C6,$DFF1C6,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HBLANK stop,W,Horizontal line position for HBLANK stop
