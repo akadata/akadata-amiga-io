@@ -14,9 +14,13 @@
 // AGNUS base address is shared with other custom chips at 0xDFF000
 #define AGNUS_BASE 0xDFF000
 
-// DMA Control Registers (shared with PAULA)
+// DMA Control Registers (shared with PAULA) - Only define if not already defined in PAULA
+#ifndef DMACONR
 #define DMACONR  (AGNUS_BASE + 0x002)  // Read DMA control / blitter status
+#endif
+#ifndef DMACON
 #define DMACON   (AGNUS_BASE + 0x096)  // Write DMA control (set/clear)
+#endif
 
 // Beam Position Registers
 #define VPOSR    (AGNUS_BASE + 0x004)  // Read vertical MSB + frame flop
@@ -24,11 +28,19 @@
 #define VPOSW    (AGNUS_BASE + 0x02A)  // Write vertical MSB + frame flop
 #define VHPOSW   (AGNUS_BASE + 0x02C)  // Write vertical/horizontal position
 
-// Display Window / Data Fetch
+// Display Window / Data Fetch - Only define if not already defined in DENISE
+#ifndef DIWSTRT
 #define DIWSTRT  (AGNUS_BASE + 0x08E)  // Display window start
+#endif
+#ifndef DIWSTOP
 #define DIWSTOP  (AGNUS_BASE + 0x090)  // Display window stop
+#endif
+#ifndef DDFSTRT
 #define DDFSTRT  (AGNUS_BASE + 0x092)  // Display data fetch start (horizontal)
+#endif
+#ifndef DDFSTOP
 #define DDFSTOP  (AGNUS_BASE + 0x094)  // Display data fetch stop (horizontal)
+#endif
 
 // Copper Registers
 #define COPCON   (AGNUS_BASE + 0x02E)  // Copper control (CDANG)
@@ -62,22 +74,48 @@
 #define BPL1MOD  (AGNUS_BASE + 0x108)  // Bitplane 1 modulo (odd planes)
 #define BPL2MOD  (AGNUS_BASE + 0x10A)  // Bitplane 2 modulo (even planes)
 
-// Bitplane Control Registers
+// Bitplane Control Registers - Only define if not already defined in DENISE
+#ifndef BPLCON0
 #define BPLCON0  (AGNUS_BASE + 0x100)  // Bitplane control 0 (miscellaneous control bits)
+#endif
+#ifndef BPLCON1
 #define BPLCON1  (AGNUS_BASE + 0x102)  // Bitplane control 1 (horizontal scroll)
+#endif
+#ifndef BPLCON2
 #define BPLCON2  (AGNUS_BASE + 0x104)  // Bitplane control 2 (priority control)
+#endif
+#ifndef BPLCON3
 #define BPLCON3  (AGNUS_BASE + 0x106)  // Bitplane control 3 (enhanced features - ECS)
+#endif
+#ifndef BPLCON4
 #define BPLCON4  (AGNUS_BASE + 0x10C)  // Bitplane control 4 (enhanced features - AGA)
+#endif
 
-// Bitplane Data Registers
+// Bitplane Data Registers - Only define if not already defined in DENISE
+#ifndef BPL1DAT
 #define BPL1DAT  (AGNUS_BASE + 0x110)  // Bitplane 1 data
+#endif
+#ifndef BPL2DAT
 #define BPL2DAT  (AGNUS_BASE + 0x112)  // Bitplane 2 data
+#endif
+#ifndef BPL3DAT
 #define BPL3DAT  (AGNUS_BASE + 0x114)  // Bitplane 3 data
+#endif
+#ifndef BPL4DAT
 #define BPL4DAT  (AGNUS_BASE + 0x116)  // Bitplane 4 data
+#endif
+#ifndef BPL5DAT
 #define BPL5DAT  (AGNUS_BASE + 0x118)  // Bitplane 5 data
+#endif
+#ifndef BPL6DAT
 #define BPL6DAT  (AGNUS_BASE + 0x11A)  // Bitplane 6 data
+#endif
+#ifndef BPL7DAT
 #define BPL7DAT  (AGNUS_BASE + 0x11C)  // Bitplane 7 data (AGA)
+#endif
+#ifndef BPL8DAT
 #define BPL8DAT  (AGNUS_BASE + 0x11E)  // Bitplane 8 data (AGA)
+#endif
 
 // ECS Beam / Timing Registers
 #define HTOTAL   (AGNUS_BASE + 0x1C0)  // Horizontal line count (ECS)
@@ -92,7 +130,9 @@
 #define HSSTRT   (AGNUS_BASE + 0x1DE)  // HSYNC start (ECS)
 #define VSSTRT   (AGNUS_BASE + 0x1E0)  // VSYNC start (ECS)
 #define HCENTER  (AGNUS_BASE + 0x1E2)  // Horizontal position for Vsync on interlace (ECS)
+#ifndef DIWHIGH
 #define DIWHIGH  (AGNUS_BASE + 0x1E4)  // Display window upper bits for start/stop (ECS)
+#endif
 
 // UHRES (Ultra High Resolution) Registers (ECS/AGA)
 #define SPRHSTRT (AGNUS_BASE + 0x1D0)  // UHRES sprite vertical start

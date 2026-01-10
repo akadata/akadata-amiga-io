@@ -15,7 +15,7 @@ echo "Using compiler: $CC"
 $CC -O2 -Wall -Wextra -std=c99 \
     -I./ \
     -Iplatforms/amiga/registers/ \
-    platforms/amiga/registers/regtool.c \
+    src/regtool.c \
     gpio/ps_protocol.c \
     gpio/rpi_peri.c \
     -o regtool

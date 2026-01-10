@@ -14,28 +14,62 @@
 // DENISE base address is shared with other custom chips at 0xDFF000
 #define DENISE_BASE 0xDFF000
 
-// Bitplane Data Registers
+// Bitplane Data Registers - Only define if not already defined in AGNUS
+#ifndef BPL1DAT
 #define BPL1DAT  (DENISE_BASE + 0x110)  // Bitplane 1 data (parallel to serial convert)
+#endif
+#ifndef BPL2DAT
 #define BPL2DAT  (DENISE_BASE + 0x112)  // Bitplane 2 data (parallel to serial convert)
+#endif
+#ifndef BPL3DAT
 #define BPL3DAT  (DENISE_BASE + 0x114)  // Bitplane 3 data (parallel to serial convert)
+#endif
+#ifndef BPL4DAT
 #define BPL4DAT  (DENISE_BASE + 0x116)  // Bitplane 4 data (parallel to serial convert)
+#endif
+#ifndef BPL5DAT
 #define BPL5DAT  (DENISE_BASE + 0x118)  // Bitplane 5 data (parallel to serial convert)
+#endif
+#ifndef BPL6DAT
 #define BPL6DAT  (DENISE_BASE + 0x11A)  // Bitplane 6 data (parallel to serial convert)
+#endif
+#ifndef BPL7DAT
 #define BPL7DAT  (DENISE_BASE + 0x11C)  // Bitplane 7 data (AGA only)
+#endif
+#ifndef BPL8DAT
 #define BPL8DAT  (DENISE_BASE + 0x11E)  // Bitplane 8 data (AGA only)
+#endif
 
-// Bitplane Control Registers
+// Bitplane Control Registers - Only define if not already defined in AGNUS
+#ifndef BPLCON0
 #define BPLCON0  (DENISE_BASE + 0x100)  // Bitplane control 0 (miscellaneous control bits)
+#endif
+#ifndef BPLCON1
 #define BPLCON1  (DENISE_BASE + 0x102)  // Bitplane control 1 (horizontal scroll control)
+#endif
+#ifndef BPLCON2
 #define BPLCON2  (DENISE_BASE + 0x104)  // Bitplane control 2 (video priority control)
+#endif
+#ifndef BPLCON3
 #define BPLCON3  (DENISE_BASE + 0x106)  // Bitplane control 3 (enhanced features - ECS/AGA)
+#endif
+#ifndef BPLCON4
 #define BPLCON4  (DENISE_BASE + 0x10C)  // Bitplane control 4 (AGA enhanced features)
+#endif
 
-// Display Window Registers
+// Display Window Registers - Only define if not already defined in AGNUS
+#ifndef DIWSTRT
 #define DIWSTRT  (DENISE_BASE + 0x08E)  // Display window start (upper left vertical-horizontal position)
+#endif
+#ifndef DIWSTOP
 #define DIWSTOP  (DENISE_BASE + 0x090)  // Display window stop (lower right vertical-horizontal position)
+#endif
+#ifndef DDFSTRT
 #define DDFSTRT  (DENISE_BASE + 0x092)  // Display data fetch start (horizontal position)
+#endif
+#ifndef DDFSTOP
 #define DDFSTOP  (DENISE_BASE + 0x094)  // Display data fetch stop (horizontal position)
+#endif
 
 // Sprite Position and Control Registers
 #define SPR0POS  (DENISE_BASE + 0x140)  // Sprite 0 vertical-horizontal start position
@@ -112,15 +146,21 @@
 #define COLOR30  (DENISE_BASE + 0x1BC)  // Color 30 (sprite 6/7 color 2)
 #define COLOR31  (DENISE_BASE + 0x1BE)  // Color 31 (sprite 6/7 color 3)
 
-// Collision Detection Registers
+// Collision Detection Registers - Only define if not already defined in PAULA
+#ifndef CLXCON
 #define CLXCON   (DENISE_BASE + 0x098)  // Collision control register
+#endif
+#ifndef CLXDAT
 #define CLXDAT   (DENISE_BASE + 0x00E)  // Collision data register (read and clear)
+#endif
 
 // Denise ID Register
 #define DENISEID (DENISE_BASE + 0x07C)  // Denise chip revision level (read-only)
 
-// UHRES (Ultra High Resolution) Registers (ECS/AGA)
+// UHRES (Ultra High Resolution) Registers (ECS/AGA) - Only define if not already defined in AGNUS
+#ifndef DIWHIGH
 #define DIWHIGH  (DENISE_BASE + 0x1E4)  // Display window upper bits for start/stop
+#endif
 
 // BPLCON0 register bits
 #define BPLCON0_HIRES      0x8000  // High resolution mode

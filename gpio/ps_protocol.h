@@ -8,9 +8,6 @@
 #ifndef _PS_PROTOCOL_H
 #define _PS_PROTOCOL_H
 
-// ps_protocol.c expects this hook from emulator or tools.
-void m68k_set_irq(unsigned int level);
-
 #define PIN_TXN_IN_PROGRESS 0
 #define PIN_IPL_ZERO 1
 #define PIN_A0 2
@@ -128,7 +125,7 @@ static inline uint32_t ps_read_8_ex(volatile uint32_t *gpio, uint32_t address) {
     GPIO_WRITEREG(REG_ADDR_LO, (address & 0xFFFF));
     GPIO_WRITEREG(REG_ADDR_HI, (0x0300 |(address >> 16)));
 
-    asm("nop"); asm("nop");
+    __asm__("nop"); __asm__("nop");
     GPFSEL_INPUT;
     GPIO_PIN_RD;
 
@@ -148,7 +145,7 @@ static inline uint32_t ps_read_16_ex(volatile uint32_t *gpio, uint32_t address) 
     GPIO_WRITEREG(REG_ADDR_LO, (address & 0xFFFF));
     GPIO_WRITEREG(REG_ADDR_HI, (0x0200 |(address >> 16)));
 
-    asm("nop"); asm("nop");
+    __asm__("nop"); __asm__("nop");
     GPFSEL_INPUT;
     GPIO_PIN_RD;
 

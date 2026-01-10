@@ -80,13 +80,21 @@
 #define JOY0DAT  (PAULA_BASE + 0x00A)  // Joystick/mouse 0 data (vertical/horizontal)
 #define JOY1DAT  (PAULA_BASE + 0x00C)  // Joystick/mouse 1 data (vertical/horizontal)
 
-// Collision Detection
+// Collision Detection - Only define if not already defined in DENISE
+#ifndef CLXDAT
 #define CLXDAT   (PAULA_BASE + 0x00E)  // Collision data (read/clear)
+#endif
+#ifndef CLXCON
 #define CLXCON   (PAULA_BASE + 0x098)  // Collision control
+#endif
 
-// DMA Control (shared with AGNUS)
+// DMA Control (shared with AGNUS) - Only define if not already defined
+#ifndef DMACONR
 #define DMACONR  (PAULA_BASE + 0x002)  // Read DMA control / blitter status
+#endif
+#ifndef DMACON
 #define DMACON   (PAULA_BASE + 0x096)  // Write DMA control (set/clear)
+#endif
 
 // Audio Control Bits (ADKCON/ADKCONR)
 #define ADKF_SETCLR   0x8000  // Set/Clear control bit

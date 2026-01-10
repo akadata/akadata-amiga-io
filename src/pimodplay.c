@@ -2,6 +2,8 @@
 // Pi-side Paula DMA audio harness (raw sample playback).
 // MOD replay engine will be layered on top of this.
 
+#define _GNU_SOURCE
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
