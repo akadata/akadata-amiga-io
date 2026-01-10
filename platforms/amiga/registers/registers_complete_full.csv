@@ -1,0 +1,111 @@
+Register Name,Address,Hex Address,Chip,Family,Model Support,Width,Bits,Function,Access Type,Notes
+DMACONR,DFF002,$DFF002,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,DMA Control (and blitter status) read,R,Read DMA control / blitter status
+DMACON,DFF096,$DFF096,PAULA,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,DMA Control write (clear or set),W,Write DMA control (clear or set)
+VPOSR,DFF004,$DFF004,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Read vertical MSB + frame flop,R,Read vertical MSB + frame flop
+VHPOSR,DFF006,$DFF006,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Read vertical/horizontal beam position,R,Read vertical/horizontal beam position
+VPOSW,DFF02A,$DFF02A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Write vertical MSB + frame flop,W,Write vertical MSB + frame flop
+VHPOSW,DFF02C,$DFF02C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Write vertical/horizontal position,W,Write vertical/horizontal position
+DIWSTRT,DFF08E,$DFF08E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Display window start,W,Display window start (upper left vertical/horizontal position)
+DIWSTOP,DFF090,$DFF090,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Display window stop,W,Display window stop (lower right vertical/horizontal position)
+DDFSTRT,DFF092,$DFF092,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Display data fetch start (horizontal),W,Display data fetch start (horizontal position)
+DDFSTOP,DFF094,$DFF094,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Display data fetch stop (horizontal),W,Display data fetch stop (horizontal position)
+COPCON,DFF02E,$DFF02E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper control (CDANG),W,Copper control (CDANG)
+COP1LCH,DFF080,$DFF080,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper list 1 pointer high,W,Copper list 1 pointer high
+COP1LCL,DFF082,$DFF082,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper list 1 pointer low,W,Copper list 1 pointer low
+COP2LCH,DFF084,$DFF084,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper list 2 pointer high,W,Copper list 2 pointer high
+COP2LCL,DFF086,$DFF086,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper list 2 pointer low,W,Copper list 2 pointer low
+COPJMP1,DFF088,$DFF088,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper restart at first location,S,Strobe address - Copper restart at first location
+COPJMP2,DFF08A,$DFF08A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper restart at second location,S,Strobe address - Copper restart at second location
+COPINS,DFF08C,$DFF08C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Copper instruction fetch identify,S,Copper instruction fetch identify
+BPL1PTH,DFF0E0,$DFF0E0,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 1 pointer high,W,Bitplane 1 pointer (high 5 bits (OCS: 3 bits))
+BPL1PTL,DFF0E2,$DFF0E2,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 1 pointer low,W,Bitplane 1 pointer (low 15 bits)
+BPL2PTH,DFF0E4,$DFF0E4,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 2 pointer high,W,Bitplane 2 pointer (high 5 bits (OCS: 3 bits))
+BPL2PTL,DFF0E6,$DFF0E6,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 2 pointer low,W,Bitplane 2 pointer (low 15 bits)
+BPL3PTH,DFF0E8,$DFF0E8,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 3 pointer high,W,Bitplane 3 pointer (high 5 bits (OCS: 3 bits))
+BPL3PTL,DFF0EA,$DFF0EA,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 3 pointer low,W,Bitplane 3 pointer (low 15 bits)
+BPL4PTH,DFF0EC,$DFF0EC,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 4 pointer high,W,Bitplane 4 pointer (high 5 bits (OCS: 3 bits))
+BPL4PTL,DFF0EE,$DFF0EE,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 4 pointer low,W,Bitplane 4 pointer (low 15 bits)
+BPL5PTH,DFF0F0,$DFF0F0,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 5 pointer high,W,Bitplane 5 pointer (high 5 bits (OCS: 3 bits))
+BPL5PTL,DFF0F2,$DFF0F2,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 5 pointer low,W,Bitplane 5 pointer (low 15 bits)
+BPL6PTH,DFF0F4,$DFF0F4,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 6 pointer high,W,Bitplane 6 pointer (high 5 bits (OCS: 3 bits))
+BPL6PTL,DFF0F6,$DFF0F6,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 6 pointer low,W,Bitplane 6 pointer (low 15 bits)
+BPL7PTH,DFF0F8,$DFF0F8,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 7 pointer high,W,Bitplane 7 pointer (high 5 bits (OCS: 3 bits))
+BPL7PTL,DFF0FA,$DFF0FA,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 7 pointer low,W,Bitplane 7 pointer (low 15 bits)
+BPL8PTH,DFF0FC,$DFF0FC,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 8 pointer high,W,Bitplane 8 pointer (high 5 bits (OCS: 3 bits))
+BPL8PTL,DFF0FE,$DFF0FE,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 8 pointer low,W,Bitplane 8 pointer (low 15 bits)
+BPL1MOD,DFF108,$DFF108,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane modulo (odd planes),W,Bitplane modulo (odd planes)
+BPL2MOD,DFF10A,$DFF10A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane modulo (even planes),W,Bitplane modulo (even planes)
+BPLCON0,DFF100,$DFF100,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane control register 0,W,Bitplane control register (miscellaneous control bits)
+BPLCON1,DFF102,$DFF102,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane control register 1,W,Bitplane control register (horizontal scroll)
+BPLCON2,DFF104,$DFF104,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane control register 2,W,Bitplane control register (video priority control)
+BPLCON3,DFF106,$DFF106,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Bitplane control register 3,W,Bitplane control register (enhanced features)
+BPLCON4,DFF10C,$DFF10C,AGNUS,AGA,A4000,16,15-0,Bitplane control register 4,W,Bitplane control register (enhanced features)
+BPL1DAT,DFF110,$DFF110,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 1 data,W,Bitplane 1 data (parallel to serial convert)
+BPL2DAT,DFF112,$DFF112,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 2 data,W,Bitplane 2 data (parallel to serial convert)
+BPL3DAT,DFF114,$DFF114,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 3 data,W,Bitplane 3 data (parallel to serial convert)
+BPL4DAT,DFF116,$DFF116,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 4 data,W,Bitplane 4 data (parallel to serial convert)
+BPL5DAT,DFF118,$DFF118,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 5 data,W,Bitplane 5 data (parallel to serial convert)
+BPL6DAT,DFF11A,$DFF11A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Bitplane 6 data,W,Bitplane 6 data (parallel to serial convert)
+BPL7DAT,DFF11C,$DFF11C,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 7 data,W,Bitplane 7 data (parallel to serial convert)
+BPL8DAT,DFF11E,$DFF11E,AGNUS,AGA,A4000/A1200,16,15-0,Bitplane 8 data,W,Bitplane 8 data (parallel to serial convert)
+HTOTAL,DFF1C0,$DFF1C0,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Horizontal line count,W,Highest number count, horiz line (VARBEAMEN=1)
+HSSTOP,DFF1C2,$DFF1C2,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HSYNC stop,W,Horizontal line position for HSYNC stop
+HBSTRT,DFF1C4,$DFF1C4,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HBLANK start,W,Horizontal line position for HBLANK start
+HBSTOP,DFF1C6,$DFF1C6,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HBLANK stop,W,Horizontal line position for HBLANK stop
+VTOTAL,DFF1C8,$DFF1C8,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Vertical line count,W,Highest numbered vertical line (VARBEAMEN=1)
+VSSTOP,DFF1CA,$DFF1CA,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,VSYNC stop,W,Vertical line position for VSYNC stop
+VBSTRT,DFF1CC,$DFF1CC,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,VBLANK start,W,Vertical line for VBLANK start
+VBSTOP,DFF1CE,$DFF1CE,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,VBLANK stop,W,Vertical line for VBLANK stop
+BEAMCON0,DFF1DC,$DFF1DC,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Beam counter control,W,Beam counter control register
+HSSTRT,DFF1DE,$DFF1DE,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,HSYNC start,W,Horizontal sync start
+VSSTRT,DFF1E0,$DFF1E0,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,VSYNC start,W,Vertical sync start
+HCENTER,DFF1E2,$DFF1E2,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Horizontal position for Vsync on interlace,W,Horizontal position for Vsync on interlace
+DIWHIGH,DFF1E4,$DFF1E4,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Display window upper bits for start/stop,W,Display window upper bits for start/stop
+SPRHSTRT,DFF1D0,$DFF1D0,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES sprite vertical start,W,UHRES sprite vertical start
+SPRHSTOP,DFF1D2,$DFF1D2,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES sprite vertical stop,W,UHRES sprite vertical stop
+BPLHSTRT,DFF1D4,$DFF1D4,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES bitplane vertical start,W,UHRES bitplane vertical start
+BPLHSTOP,DFF1D6,$DFF1D6,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES bitplane vertical stop,W,UHRES bitplane vertical stop
+HHPOSW,DFF1D8,$DFF1D8,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,DUAL mode hires H beam counter write,W,DUAL mode hires H beam counter write
+HHPOSR,DFF1DA,$DFF1DA,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,DUAL mode hires H beam counter read,R,DUAL mode hires H beam counter read
+BPLHMOD,DFF1E6,$DFF1E6,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES bitplane modulo,W,UHRES bitplane modulo
+SPRHPTH,DFF1E8,$DFF1E8,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES sprite pointer high,W,UHRES sprite pointer (high 5 bits)
+SPRHPTL,DFF1EA,$DFF1EA,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,UHRES sprite pointer low,W,UHRES sprite pointer (low 15 bits)
+BPLHPTH,DFF1EC,$DFF1EC,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,VRAM (UHRES) bitplane pointer high,W,VRAM (UHRES) bitplane pointer high
+BPLHPTL,DFF1EE,$DFF1EE,AGNUS,ECS/AGA,A600/A1200/A3000/A4000,16,15-0,VRAM (UHRES) bitplane pointer low,W,VRAM (UHRES) bitplane pointer low
+BLTCON0,DFF040,$DFF040,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter control register 0,W,Blitter control register 0
+BLTCON1,DFF042,$DFF042,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter control register 1,W,Blitter control register 1
+BLTAFWM,DFF044,$DFF044,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter first word mask for source A,W,Blitter first word mask (source A)
+BLTALWM,DFF046,$DFF046,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter last word mask for source A,W,Blitter last word mask (source A)
+BLTCPTH,DFF048,$DFF048,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source C pointer high,W,Blitter pointer to source C (high 5 bits (OCS: 3 bits))
+BLTCPTL,DFF04A,$DFF04A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source C pointer low,W,Blitter pointer to source C (low 15 bits)
+BLTBPTH,DFF04C,$DFF04C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source B pointer high,W,Blitter pointer to source B (high 5 bits (OCS: 3 bits))
+BLTBPTL,DFF04E,$DFF04E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source B pointer low,W,Blitter pointer to source B (low 15 bits)
+BLTAPTH,DFF050,$DFF050,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source A pointer high,W,Blitter pointer to source A (high 5 bits (OCS: 3 bits))
+BLTAPTL,DFF052,$DFF052,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source A pointer low,W,Blitter pointer to source A (low 15 bits)
+BLTDPTH,DFF054,$DFF054,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Destination D pointer high,W,Blitter pointer to dest D (high 5 bits (OCS: 3 bits))
+BLTDPTL,DFF056,$DFF056,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Destination D pointer low,W,Blitter pointer to dest D (low 15 bits)
+BLTSIZE,DFF058,$DFF058,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter start and size (width/height),W,Blitter start and size (width/height)
+BLTCON0L,DFF05A,$DFF05A,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Lower 8 bits of BLTCON0 (minterms),W,Lower 8 bits of BLTCON0 (minterms)
+BLTSIZV,DFF05C,$DFF05C,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Vertical size (15-bit height),W,Vertical size (15-bit height)
+BLTSIZH,DFF05E,$DFF05E,AGNUS,ECS,A600/A1200/A3000/A4000,16,15-0,Horizontal size/start (11-bit width),W,Horizontal size/start (11-bit width)
+BLTCMOD,DFF060,$DFF060,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Modulo source C,W,Blitter modulo for source C
+BLTBMOD,DFF062,$DFF062,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Modulo source B,W,Blitter modulo for source B
+BLTAMOD,DFF064,$DFF064,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Modulo source A,W,Blitter modulo for source A
+BLTDMOD,DFF066,$DFF066,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Modulo destination D,W,Blitter modulo for dest D
+BLTCDAT,DFF070,$DFF070,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source C data,W,Blitter source C data
+BLTBDAT,DFF072,$DFF072,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source B data,W,Blitter source B data
+BLTADAT,DFF074,$DFF074,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Source A data,W,Blitter source A data
+BLTDDAT,DFF000,$DFF000,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Blitter destination early read (dummy address),R,Blitter destination early read (dummy address)
+SPR0PTH,DFF120,$DFF120,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 0 pointer high,W,Sprite 0 pointer (high 5 bits (OCS: 3 bits))
+SPR0PTL,DFF122,$DFF122,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 0 pointer low,W,Sprite 0 pointer (low 15 bits)
+SPR1PTH,DFF124,$DFF124,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 1 pointer high,W,Sprite 1 pointer (high 5 bits (OCS: 3 bits))
+SPR1PTL,DFF126,$DFF126,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 1 pointer low,W,Sprite 1 pointer (low 15 bits)
+SPR2PTH,DFF128,$DFF128,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 2 pointer high,W,Sprite 2 pointer (high 5 bits (OCS: 3 bits))
+SPR2PTL,DFF12A,$DFF12A,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 2 pointer low,W,Sprite 2 pointer (low 15 bits)
+SPR3PTH,DFF12C,$DFF12C,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 3 pointer high,W,Sprite 3 pointer (high 5 bits (OCS: 3 bits))
+SPR3PTL,DFF12E,$DFF12E,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 3 pointer low,W,Sprite 3 pointer (low 15 bits)
+SPR4PTH,DFF130,$DFF130,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 4 pointer high,W,Sprite 4 pointer (high 5 bits (OCS: 3 bits))
+SPR4PTL,DFF132,$DFF132,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 4 pointer low,W,Sprite 4 pointer (low 15 bits)
+SPR5PTH,DFF134,$DFF134,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 5 pointer high,W,Sprite 5 pointer (high 5 bits (OCS: 3 bits))
+SPR5PTL,DFF136,$DFF136,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0,Sprite 5 pointer low,W,Sprite 5 pointer (low 15 bits)
+SPR6PTH,DFF138,$DFF138,AGNUS,OCS/ECS,A500/A600/A1200/A2000/A3000/A4000,16,15-0
