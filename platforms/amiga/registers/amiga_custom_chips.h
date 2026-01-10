@@ -8,7 +8,7 @@
 
 // Include all individual chip headers
 #include "agnus.h"
-#include "paula.h"
+//#include "paula.h"
 #include "blitter.h"
 #include "denise.h"
 #include "cia.h"
